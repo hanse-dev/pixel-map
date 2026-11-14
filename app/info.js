@@ -36,6 +36,37 @@
     monastery: 'Kloster', bunker: 'Bunker', ship: 'Schiff', theatre: 'Theater', hospital: 'Hospital', building: null, yes: null};
   const kindName = k => k in KIND ? KIND[k] : k;
   const el = id => document.getElementById(id);
+  // Highlight: the chosen building's own hit-map pixels, tinted turquoise with a strong outline.
+  let selected = 0;
+  async function highlight(b) {
+    const layer = el('select-world'); layer.replaceChildren(); selected = b ? b.id : 0;
+    if (!b || !b.box) return;
+    const [x0, y0, x1, y1] = b.box, w = x1 - x0, h = y1 - y0, id = b.id;
+    const ids = new Uint8Array(w * h);
+    for (let row = Math.floor(y0 / size); row <= Math.floor((y1 - 1) / size); row++)
+      for (let col = Math.floor(x0 / size); col <= Math.floor((x1 - 1) / size); col++) {
+        const g = await tile(col, row), left = Math.max(0, col * size - pad), top = Math.max(0, row * size - pad);
+        const ax = Math.max(x0, col * size), ay = Math.max(y0, row * size), bx = Math.min(x1, (col + 1) * size), by = Math.min(y1, (row + 1) * size);
+        const d = g.getImageData(ax - left, ay - top, bx - ax, by - ay).data;
+        for (let yy = 0; yy < by - ay; yy++) for (let xx = 0; xx < bx - ax; xx++) {
+          const k = (yy * (bx - ax) + xx) * 4;
+          if (d[k] + 256 * d[k + 1] + 65536 * d[k + 2] === id) ids[(ay - y0 + yy) * w + (ax - x0 + xx)] = 1;
+        }
+      }
+    if (selected !== id) return;                       // another click arrived meanwhile
+    const P = 2, c = document.createElement('canvas'); c.width = w + 2 * P; c.height = h + 2 * P;
+    const g = c.getContext('2d'), img = g.createImageData(c.width, c.height), at = (x, y) => x >= 0 && y >= 0 && x < w && y < h && ids[y * w + x];
+    for (let y = -P; y < h + P; y++) for (let x = -P; x < w + P; x++) {
+      const inside = at(x, y), k = ((y + P) * c.width + x + P) * 4;
+      let near = 0; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) if (at(x + dx, y + dy)) near = Math.max(near, 3 - Math.max(Math.abs(dx), Math.abs(dy)));
+      if (inside && near === 3 && !(at(x - 1, y) && at(x + 1, y) && at(x, y - 1) && at(x, y + 1))) img.data.set([255, 255, 255, 255], k);      // white edge
+      else if (inside) img.data.set([40, 230, 230, 105], k);                                                                         // turquoise fill
+      else if (near) img.data.set([0, 170, 190, near === 2 ? 255 : 150], k);                                                         // turquoise outline
+    }
+    g.putImageData(img, 0, 0);
+    c.style.cssText = `left:${x0 - P}px;top:${y0 - P}px;width:${c.width}px;height:${c.height}px`;
+    layer.append(c);
+  }
   function text(id, value) { el(id).textContent = value || ''; el(id).hidden = !value; }
   function show(b) {
     const i = b.wikidata ? info[b.wikidata] : null;
@@ -66,10 +97,11 @@
     links.hidden = false;
     text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
     panel.hidden = false;
+    highlight(b);
   }
-  el('building-close').onclick = () => { panel.hidden = true };
+  el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') panel.hidden = true });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { panel.hidden = true; highlight(null) } });
   // the pointer becomes a hand over buildings with an info entry
   let hoverAt = 0;
   view.addEventListener('pointermove', async e => {
@@ -85,7 +117,7 @@
     const r = view.getBoundingClientRect(), mx = (e.clientX - r.left - x) / s, my = (e.clientY - r.top - y) / s;
     try {
       const id = await idAt(mx, my), b = byId.get(id);
-      if (b) show(b); else panel.hidden = true;
+      if (b) show(b); else { panel.hidden = true; highlight(null) }
     } catch (error) { console.error('Hit map tile unavailable:', error) }
   });
 })();
