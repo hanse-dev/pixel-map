@@ -10,3 +10,4 @@ Isometric pixel-art city maps built from open geodata. Illustrative, not survey-
 - © OpenStreetMap contributors, ODbL.
 - Art painted locally with FLUX.2 Klein 9B (FLUX Non-Commercial licence) and Pixel Art Redmond (Apache-2.0). Non-commercial use only.
 - Facades, windows and materials are illustrative. Known limits: St. Katharinen and St. Aegidien copper roofs painted red, Holstentor simplified.
+- The south old town around St. Aegidien (window w14) was re-painted with another seed and blended in as a reviewed patch, because the first paint was noticeably softer.

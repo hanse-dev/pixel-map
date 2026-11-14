@@ -5,7 +5,7 @@
   "height": 2299,
   "status": "Source-grounded illustrative pixel-art map; per-window water checks passed, landmark colours partly unrepaired",
   "source_sha256": "a6ecee0540c38a47893e53ca901ecfdcfb8526e36270aa2eb388713775eaa68c",
-  "image_sha256": "ab9ac8db9ccddbd54efb2a7b58fb07205fb71122933aedf7cd23e6abf99dc8d9",
+  "image_sha256": "684876d5b998631188b74d04f7585c2cbb02354726e52c703e38d434c237e1e6",
   "camera": {
     "type": "orthographic surface",
     "crs": "EPSG:25832",
@@ -53,7 +53,8 @@
     "Facades have no measured evidence; brick walls come from the caption and also appear on some modern buildings.",
     "Copper roofs of St. Katharinen and St. Aegidien are painted red/brick; Holstentor towers are simplified.",
     "DSM rendered at 0.6 m (bDOM20 3x3 max), so small roof detail is coarser than the 0.4 m pilot.",
-    "Roof colour is one DOP20 median per building where OSM has no roof tag; DOP20 is not a true orthophoto."
+    "Roof colour is one DOP20 median per building where OSM has no roof tag; DOP20 is not a true orthophoto.",
+    "Window w14 (south old town around St. Aegidien) was re-painted with another seed and blended in as a reviewed finish patch, because the first paint was noticeably softer."
   ],
   "landmarks": [
     {
@@ -255,7 +256,7 @@
       }
     },
     "resampling": "box",
-    "image_sha256": "ab9ac8db9ccddbd54efb2a7b58fb07205fb71122933aedf7cd23e6abf99dc8d9"
+    "image_sha256": "684876d5b998631188b74d04f7585c2cbb02354726e52c703e38d434c237e1e6"
   },
   "source_deep_zoom": {
     "tile_size": 256,
