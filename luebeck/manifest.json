@@ -3,9 +3,9 @@
   "city_id": "luebeck-altstadt",
   "width": 4532,
   "height": 2299,
-  "status": "Source-grounded illustrative pixel-art map; per-window water checks passed, landmark colours partly unrepaired",
-  "source_sha256": "a6ecee0540c38a47893e53ca901ecfdcfb8526e36270aa2eb388713775eaa68c",
-  "image_sha256": "e7d137782314605eecaf07cbdea105650d210c22274d8def885e1a8af5f59765",
+  "status": "Source-grounded illustrative pixel-art map; 0.4 m tiles, 3 seeds each, per-tile water checks passed, OSM-tagged roofs colour-corrected",
+  "source_sha256": "06ee1e6ab1ce6592decab159df819d57af8b8a2cf428aae6f58ad2fd756a0fc5",
+  "image_sha256": "2b8c85f9524b33169c74b380b99885aa8e9873796fabdb3d6cae5d0871142696",
   "camera": {
     "type": "orthographic surface",
     "crs": "EPSG:25832",
@@ -45,16 +45,15 @@
       -355.6039989586421,
       583.1564317447591
     ],
-    "z0_m": 15.04,
-    "formula": "u=dE*cos(b)-dN*sin(b), v=dE*sin(b)+dN*cos(b); X=(u-u0)*s; Y=(-(sin(e)*v+cos(e)*(z-z0))-y0)*s"
+    "z0_m": 15.04
   },
   "credits": "Contains GeoBasis-DE/LVermGeo SH data: bDOM20 (2023), DGM1 (2022), DOP20 (2025), CC BY 4.0. \u00a9 OpenStreetMap contributors, ODbL. Art painted locally with FLUX.2 Klein 9B (FLUX Non-Commercial) and Pixel Art Redmond (Apache-2.0). Facades, windows and materials are illustrative.",
   "limitations": [
     "Facades have no measured evidence; brick walls come from the caption and also appear on some modern buildings.",
-    "Copper roofs of St. Katharinen and St. Aegidien are painted red/brick; Holstentor towers are simplified.",
-    "DSM rendered at 0.6 m (bDOM20 3x3 max), so small roof detail is coarser than the 0.4 m pilot.",
-    "Roof colour is one DOP20 median per building where OSM has no roof tag; DOP20 is not a true orthophoto.",
-    "Windows w14, w00, w05 and w06 were re-painted with other seeds and blended in as reviewed finish patches, because their first paints were noticeably softer."
+    "St. Katharinen loses its copper roof and church form; the main roof of St. Marien is painted pale grey; the Rathaus courtyard shows an invented garden.",
+    "Copper roofs tagged #33CC99 in OSM are corrected to that bright turquoise (Dom choir).",
+    "Roof colour corrections use OSM roof tags only; orthophoto medians were rejected as evidence.",
+    "Each tile is the sharpest of three seeds on built-up pixels; sequential context infill, not shared-latent denoising."
   ],
   "landmarks": [
     {
@@ -256,7 +255,7 @@
       }
     },
     "resampling": "box",
-    "image_sha256": "e7d137782314605eecaf07cbdea105650d210c22274d8def885e1a8af5f59765"
+    "image_sha256": "2b8c85f9524b33169c74b380b99885aa8e9873796fabdb3d6cae5d0871142696"
   },
   "source_deep_zoom": {
     "tile_size": 256,
@@ -351,6 +350,6 @@
       }
     },
     "resampling": "box",
-    "image_sha256": "a6ecee0540c38a47893e53ca901ecfdcfb8526e36270aa2eb388713775eaa68c"
+    "image_sha256": "06ee1e6ab1ce6592decab159df819d57af8b8a2cf428aae6f58ad2fd756a0fc5"
   }
 }
