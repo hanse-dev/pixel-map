@@ -1,0 +1,47 @@
+{
+  "type": "orthographic surface",
+  "crs": "EPSG:25832",
+  "bearing_deg": 313.6387085289712,
+  "elevation_deg": 35.264389682754654,
+  "px_per_m": 2.449489742783178,
+  "width": 4532,
+  "height": 2299,
+  "pixel_matrix": [
+    [
+      1.6904140118485809,
+      1.7727099222788776,
+      0,
+      -11613860.280366324
+    ],
+    [
+      1.0234745508228305,
+      -0.9759609847826934,
+      -1.9999999999999998,
+      5202349.48358376
+    ]
+  ],
+  "pixel_matrix_coordinates": [
+    "projected_easting_m",
+    "projected_northing_m",
+    "elevation_m"
+  ],
+  "centre_projected_m": [
+    610815.769,
+    5970118.52
+  ],
+  "u_range_m": [
+    -800,
+    1050
+  ],
+  "y_range_screen_m": [
+    -355.6039989586421,
+    583.1564317447591
+  ],
+  "z0_m": 15.04,
+  "depth": {
+    "file": "depth.png",
+    "sha256": "540e99ed2480d6d79437a42fa2e22212b1231200715e04d27971c6093454733f",
+    "metres_per_level": 0.5,
+    "meaning": "height of the visible surface above the measured ground (DGM), per pixel"
+  }
+}
