@@ -52,6 +52,14 @@
   }
   el('building-close').onclick = () => { panel.hidden = true };
   document.addEventListener('keydown', e => { if (e.key === 'Escape') panel.hidden = true });
+  // the pointer becomes a hand over buildings with an info entry
+  let hoverAt = 0;
+  view.addEventListener('pointermove', async e => {
+    if (!ready || e.buttons || performance.now() - hoverAt < 80) return;
+    hoverAt = performance.now();
+    const r = view.getBoundingClientRect(), mx = (e.clientX - r.left - x) / s, my = (e.clientY - r.top - y) / s;
+    try { const b = byId.get(await idAt(mx, my)); view.style.cursor = b && b.wikidata && info[b.wikidata] ? 'pointer' : ''; } catch {}
+  });
   // a click is a press and release that barely moved, so panning never opens the panel
   view.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY] });
   view.addEventListener('pointerup', async e => {

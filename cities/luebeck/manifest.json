@@ -100,7 +100,7 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "af459061d5a21da564fee1d52d4924343ec0347059fb7c70ea46be0910c23323"
+      "image_sha256": "4e411f98da506670a70027c23a90820f78b27f4ce4f904b348f8e22c3d9dada5"
     },
     "source": {
       "tile_size": 256,
@@ -404,7 +404,7 @@
     "hitmap.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
     "hitmap.png": "ef9d9f3b92439379f67fc8f037f90631646d02dd31b042a00ce22477ebfa81a9",
     "map.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
-    "map.png": "af459061d5a21da564fee1d52d4924343ec0347059fb7c70ea46be0910c23323",
+    "map.png": "4e411f98da506670a70027c23a90820f78b27f4ce4f904b348f8e22c3d9dada5",
     "source.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
     "source.png": "06ee1e6ab1ce6592decab159df819d57af8b8a2cf428aae6f58ad2fd756a0fc5",
     "walkable.json": "6ece5c148dbdf51409daa30e281d99589032d74c569fc5c0026b44a62656cf72"
