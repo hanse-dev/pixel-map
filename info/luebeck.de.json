@@ -1,325 +1,781 @@
 {
- "retrieved": "2026-11-14T18:03:50+00:00",
+ "retrieved": "2026-11-14T20:26:11+00:00",
  "lang": "de",
- "source": "Wikidata sitelinks and Wikipedia REST summaries",
+ "source": "Wikidata (CC0), Wikipedia introductions (CC BY-SA 4.0), Wikimedia Commons thumbnails (per-file licence)",
  "items": {
   "Q105785986": {
    "wikidata": "Q105785986",
    "label": "Parkhaus Schmiedestraße",
    "wikidata_url": "https://www.wikidata.org/wiki/Q105785986",
    "title": "Parkhaus Schmiedestraße (Lübeck)",
-   "summary": "Das Parkhaus Schmiedestraße ist ein Parkhaus in der Lübecker Altstadt.",
+   "intro": "Das Parkhaus Schmiedestraße ist ein Parkhaus in der Lübecker Altstadt.\nDas dreistöckige Bauwerk befindet sich in der Schmiedestraße an der Ecke zur Großen Petersgrube, unmittelbar bei der Petrikirche, und nimmt die Grundstücke Schmiedestraße 17–29 (sowie Große Petersgrube 1–3 und Kleine Kiesau 1–9) ein. Die an dieser Stelle befindliche historische Bebauung wurde beim Luftangriff auf Lübeck am 29. März 1942 vernichtet. Schon in der Wiederaufbauplanung während des Zweiten Weltkriegs durch den Stadtbaudirektor Hans Pieper war in diesem Bereich ein Parkhaus vorgesehen. In der Nachkriegszeit blieb die entstandene Brachfläche aber noch längere Zeit unbebaut, bis 1964 das Parkhaus errichtet wurde. Es war Teil der städtebaulichen Bemühungen, die zerstörungsbedingten Brachflächen dafür zu nutzen, die Altstadt autogerechter zu machen. Der Entwurf stammte vom Lübecker Architekten Klaus Spahr, der 1955 bereits mit der Hochgarage am Klingenberg das erste Lübecker Parkhaus für denselben Auftraggeber, den Unternehmer Fritz Handel, geplant hatte.\nDas Parkhaus besitzt eine Kapazität von 420 Stellplätzen und weist im Erdgeschoss zu beiden Seiten des Zufahrts- und Kassenbereichs Gewerbeflächen auf. Organisatorisch wird es gemeinsam mit der nahen, aber bis auf einen Verbindungstunnel räumlich und baulich separaten Hochgarage in der Marlesgrube als Parkhaus Mitte betrieben.\nDer Bau galt schon bald als ein Musterbeispiel für „die neuen Maßstabsprobleme“ und wurde als „Krebsgeschwür“ in der kleinteiligen historischen Umgebung kritisiert. Albert Knoepfli charakterisierte das Parkhaus als Rhinozeros im Porzellanladen, Hartwig Beseler zählte es zu den überdimensionierten Gebäuden, die südlich der Petrikirche „empfindliche Maßstabsbrüche“ bewirkt haben. In dem von Michael Brix herausgegebenen Tagungsband Lübeck – die Altstadt als Denkmal wird als Konsens der öffentlichen Wahrnehmung festgehalten, dass die Nachkriegsbauten an der Schmiedestraße „heute als »Webfehler« in der historischen Stadtstruktur empfunden“ würden. Der Lübecker Architekturkritiker Manfred Finke nannte das Parkhaus hingegen „zumindest als Typus interessant“.",
    "url": "https://de.wikipedia.org/wiki/Parkhaus_Schmiedestra%C3%9Fe_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Parkhaus Schmiedestraße (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Parkhaus Schmiedestraße (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q105785986.jpg",
+    "author": "Der Bischof mit der E-Gitarre",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Parkhaus_Schmiedestra%C3%9Fe.jpg",
+    "width": 640,
+    "height": 349
+   }
   },
   "Q107558531": {
    "wikidata": "Q107558531",
    "label": "Mengstraße 25 (Lübeck)",
    "wikidata_url": "https://www.wikidata.org/wiki/Q107558531",
    "title": "Mengstraße 25",
-   "summary": "Das denkmalgeschützte Haus Mengstraße 25 liegt gegenüber dem neuen Schabbelhaus in der Łübecker Altstadt. Es trug früher den Namen Zum goldenen Hirschen. Das gotische Bürgerhaus ist im Frühjahr 1963 von der Kaufmannschaft zu Lübeck erworben worden.",
+   "intro": "Das denkmalgeschützte Haus Mengstraße 25 liegt gegenüber dem neuen Schabbelhaus in der Łübecker Altstadt. Es trug früher den Namen Zum goldenen Hirschen. Das gotische Bürgerhaus ist im Frühjahr 1963 von der Kaufmannschaft zu Lübeck erworben worden.",
    "url": "https://de.wikipedia.org/wiki/Mengstra%C3%9Fe_25",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Mengstraße 25“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Mengstraße 25“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q107558531.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Mengstra%C3%9Fe_25_%E2%80%93_2016.jpg",
+    "width": 640,
+    "height": 1508
+   }
   },
   "Q120717759": {
    "wikidata": "Q120717759",
    "label": "An der Mauer 49",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120717759"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120717759",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "image": {
+    "src": "img/luebeck/Q120717759.jpg",
+    "author": "Lemke, Martin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebecke_An_der_Mauer_49.jpg",
+    "width": 640,
+    "height": 829
+   }
   },
   "Q120717765": {
    "wikidata": "Q120717765",
    "label": "An der Mauer 51",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120717765"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120717765",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "image": {
+    "src": "img/luebeck/Q120717765.jpg",
+    "author": "Dietmar Rabich",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_An_der_Mauer_51_--_2017_--_0467.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q120717779": {
    "wikidata": "Q120717779",
    "label": "An der Untertrave 98",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120717779"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120717779",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "image": {
+    "src": "img/luebeck/Q120717779.jpg",
+    "author": "Lemke, Martin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebeck_An_der_Untertrave_98-ml.jpg",
+    "width": 640,
+    "height": 799
+   }
   },
   "Q120717797": {
    "wikidata": "Q120717797",
    "label": "Königstraße 28",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120717797"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120717797",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   }
   },
   "Q120717806": {
    "wikidata": "Q120717806",
    "label": "Musterbahn 3",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120717806"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120717806",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   }
   },
   "Q120737032": {
    "wikidata": "Q120737032",
    "label": "Schuppen 6",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120737032"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120737032",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   }
   },
   "Q120737961": {
    "wikidata": "Q120737961",
    "label": "Schuppen 9 (Lübeck)",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q120737961"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q120737961",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   }
   },
   "Q1247773": {
    "wikidata": "Q1247773",
    "label": "Sandstraße 24-28",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1247773",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Sandstraße 24–28",
-   "summary": "Das Gebäude Sandstraße 24–28 ist ein denkmalgeschütztes Bauwerk in der Lübecker Altstadt.",
+   "intro": "Das Gebäude Sandstraße 24–28 ist ein denkmalgeschütztes Bauwerk in der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Sandstra%C3%9Fe_24%E2%80%9328",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Sandstraße 24–28“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Sandstraße 24–28“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1247773.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Warenhaus_%E2%80%93_Konsumverein_f%C3%BCr_L%C3%BCbeck_%E2%80%93_2019.jpg",
+    "width": 640,
+    "height": 651
+   }
   },
   "Q1264997": {
    "wikidata": "Q1264997",
    "label": "Alfstraße 38",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1264997",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Brick Renaissance Style"
+    ]
+   },
    "title": "Alfstraße 38",
-   "summary": "Das Eckgrundstück Alfstraße 38 ist mit einem der wichtigen Profanbauten der Lübecker Altstadt bebaut. Aufgrund seiner Lage an der Ecke der Alfstraße zur Untertrave im Gründungs- oder Kaufmannsviertel lag das Grundstück in der Zeit der Stadtgründung am Hafenmarkt und Trave sogar außerhalb der Stadtmauern. Insbesondere aufgrund der Lage wird die Auffassung vertreten, das Haus sei nicht als Kaufmanns- oder Bürgerhaus erbaut worden, sondern als Haus einer Kaufleutekorporation oder Gilde und habe insbesondere im Untergeschoss dem hafennahen Warenaustausch gedient. Das gesamte Haus steht unter Denkmalschutz.",
+   "intro": "Das Eckgrundstück Alfstraße 38 ist mit einem der wichtigen Profanbauten der Lübecker Altstadt bebaut. Aufgrund seiner Lage an der Ecke der Alfstraße zur Untertrave im Gründungs- oder Kaufmannsviertel lag das Grundstück in der Zeit der Stadtgründung am Hafenmarkt und Trave sogar außerhalb der Stadtmauern. Insbesondere aufgrund der Lage wird die Auffassung vertreten, das Haus sei nicht als Kaufmanns- oder Bürgerhaus erbaut worden, sondern als Haus einer Kaufleutekorporation oder Gilde und habe insbesondere im Untergeschoss dem hafennahen Warenaustausch gedient. Das gesamte Haus steht unter Denkmalschutz.",
    "url": "https://de.wikipedia.org/wiki/Alfstra%C3%9Fe_38",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Alfstraße 38“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Alfstraße 38“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1264997.jpg",
+    "author": "Garitzko",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:Gebaeude_an_der_Untertrave_Luebeck.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q128763923": {
    "wikidata": "Q128763923",
    "label": "Engelsgrube 28",
    "wikidata_url": "https://www.wikidata.org/wiki/Q128763923",
    "title": "Engelsgrube 28",
-   "summary": "In der Lübecker Engelsgrube 28, einem typischen Dielenhaus, sind Eigentümer und Bewohner teilweise seit dem Jahr 1299 dokumentiert. Ein Blick in die Lage und Geschichte des unter Denkmalschutz stehenden historischen Gebäudes in der Innenstadt.",
+   "intro": "In der Lübecker Engelsgrube 28, einem typischen Dielenhaus, sind Eigentümer und Bewohner teilweise seit dem Jahr 1299 dokumentiert. Ein Blick in die Lage und Geschichte des unter Denkmalschutz stehenden historischen Gebäudes in der Innenstadt.",
    "url": "https://de.wikipedia.org/wiki/Engelsgrube_28",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Engelsgrube 28“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Engelsgrube 28“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q128763923.jpg",
+    "author": "KatjaBolza-Schuenemann",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Engelsgrube_heute.jpg",
+    "width": 640,
+    "height": 961
+   }
   },
   "Q130256572": {
    "wikidata": "Q130256572",
    "label": "Tünkenhagen 11",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q130256572"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q130256572",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Schleswig-Holstein"
+    ]
+   },
+   "image": {
+    "src": "img/luebeck/Q130256572.jpg",
+    "author": "Esther Westerveld from Haarlemmermeer, Nederland",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "file": "https://commons.wikimedia.org/wiki/File:T%C3%BCnkenhagen_11.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q131180863": {
    "wikidata": "Q131180863",
    "label": "Peek & Cloppenburg",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q131180863"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q131180863",
+   "facts": {
+    "architect": [
+     "Christoph Ingenhoven"
+    ]
+   }
   },
   "Q1367741": {
    "wikidata": "Q1367741",
    "label": "Schabbelhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1367741",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Schabbelhaus (Lübeck)",
-   "summary": "Das Schabbelhaus in der Lübecker Mengstraße sind zwei Bürgerhäuser der Backsteinrenaissance unterhalb des Buddenbrookhauses zum Ufer der Trave, in einem vom Bombenangriff im März 1942 nicht betroffenen Teil der Straße gelegen. Das Schabbelhaus ist nach dem stiftenden Bäckermeister Schabbel benannt; das Schabbellhaus in Wismar hat einen anderen Hintergrund.",
+   "intro": "Das Schabbelhaus in der Lübecker Mengstraße sind zwei Bürgerhäuser der Backsteinrenaissance unterhalb des Buddenbrookhauses zum Ufer der Trave, in einem vom Bombenangriff im März 1942 nicht betroffenen Teil der Straße gelegen. Das Schabbelhaus ist nach dem stiftenden Bäckermeister Schabbel benannt; das Schabbellhaus in Wismar hat einen anderen Hintergrund.",
    "url": "https://de.wikipedia.org/wiki/Schabbelhaus_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Schabbelhaus (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Schabbelhaus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1367741.jpg",
+    "author": "Herbert Müller-Fried",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:SchabbelhausHLsign.JPG",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q140571655": {
    "wikidata": "Q140571655",
    "label": "Falkenplatz 10",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q140571655"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q140571655",
+   "facts": {
+    "architect": [
+     "Carl Mühlenpfordt"
+    ],
+    "built": "1913"
+   }
   },
   "Q1417152": {
    "wikidata": "Q1417152",
    "label": "Rio",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1417152",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Rio (Lübeck)",
-   "summary": "Das Rio war ein Lübecker Kino.",
+   "intro": "Das Rio war ein Lübecker Kino.",
    "url": "https://de.wikipedia.org/wiki/Rio_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Rio (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Rio (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1417152.jpg",
+    "author": "Der Bischof mit der E-Gitarre at de.wikipedia",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Rio.jpg",
+    "width": 640,
+    "height": 851
+   }
   },
   "Q1427855": {
    "wikidata": "Q1427855",
    "label": "Fleischhauerstraße 20",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1427855",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Fleischhauerstraße 20 (Lübeck)",
-   "summary": "Das denkmalgeschützte Gebäude Fleischhauerstraße 20 in Lübeck wurde in den Jahren 1906–1908 als städtisches Verwaltungsgebäude erbaut.",
+   "intro": "Das denkmalgeschützte Gebäude Fleischhauerstraße 20 (heute auch Königstraße 67a) in Lübeck wurde in den Jahren 1906–1908 als städtisches Verwaltungsgebäude erbaut.",
    "url": "https://de.wikipedia.org/wiki/Fleischhauerstra%C3%9Fe_20_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Fleischhauerstraße 20 (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Fleischhauerstraße 20 (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1427855.jpg",
+    "author": "Lemke, Martin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebeck_Fleischhauerstr_20.jpg",
+    "width": 640,
+    "height": 1057
+   }
   },
   "Q1435580": {
    "wikidata": "Q1435580",
    "label": "Schuppen 10/11",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1435580",
-   "title": "Ang Lee",
-   "summary": "Ang Lee, geb. 23. Oktober 1954 in Pingtung, Taiwan;",
-   "url": "https://de.wikipedia.org/wiki/Schuppen_10",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Schuppen 10/11",
+   "intro": "Die Schuppen 10/11 (auch Hafenschuppen 10/11) sind zwei unter Denkmalschutz stehende ehemalige Hafenschuppen in der Hafen- und Hansestadt Lübeck (Schleswig-Holstein).\nDie zusammenhängenden Bauten dienten bis in die 2000er Jahre als Verwaltungs- und Lagergebäude. Von 2010 bis 2012 wurde der Komplex für Büronutzung umgebaut.",
+   "url": "https://de.wikipedia.org/wiki/Schuppen_10/11",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Ang Lee“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Schuppen 10/11“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1435580.jpg",
+    "author": "Concord",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Schuppen_10_11.JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q14906296": {
    "wikidata": "Q14906296",
    "label": "An der Untertrave 96",
    "wikidata_url": "https://www.wikidata.org/wiki/Q14906296",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Renaissance"
+    ]
+   },
    "title": "An der Untertrave 96",
-   "summary": "Das Etagenmietshaus An der Untertrave 96 wurde 1569 als traufständiges Fachwerklaubenhaus der Renaissance mit Mietwohnungen für den gehobenen Komfort von Kaufleuten errichtet.",
+   "intro": "Das Etagenmietshaus An der Untertrave 96 wurde 1569 als traufständiges Fachwerklaubenhaus der Renaissance mit Mietwohnungen für den gehobenen Komfort von Kaufleuten errichtet.",
    "url": "https://de.wikipedia.org/wiki/An_der_Untertrave_96",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „An der Untertrave 96“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „An der Untertrave 96“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q14906296.jpg",
+    "author": "Agnete",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Untertrave96.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q1494883": {
    "wikidata": "Q1494883",
    "label": "Synagoge",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1494883",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "built": "1880"
+   },
    "title": "Synagoge Lübeck",
-   "summary": "Die Synagoge Lübeck, heute auch Carlebach-Synagoge genannt, liegt in der Lübecker Altstadt, St.-Annen-Straße 13, zwischen der evangelisch-lutherischen Aegidienkirche und dem benachbarten St.-Annen-Kloster, das heute ein städtisches Museum ist. Sie ist das einzige vollständig erhaltene jüdische Gotteshaus in Schleswig-Holstein und wurde nach ihrem ersten Rabbiner Salomon Carlebach (1845–1919) benannt.",
+   "intro": "Die Synagoge Lübeck, heute auch Carlebach-Synagoge genannt, liegt in der Lübecker Altstadt, St.-Annen-Straße 13, zwischen der evangelisch-lutherischen Aegidienkirche und dem benachbarten St.-Annen-Kloster, das heute ein städtisches Museum ist. Sie ist das einzige vollständig erhaltene jüdische Gotteshaus in Schleswig-Holstein und wurde nach ihrem ersten Rabbiner Salomon Carlebach (1845–1919) benannt.",
    "url": "https://de.wikipedia.org/wiki/Synagoge_L%C3%BCbeck",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Synagoge Lübeck“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Synagoge Lübeck“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1494883.jpg",
+    "author": "Phasus",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Die_Synagoge_in_L%C3%BCbeck_2021.jpg",
+    "width": 640,
+    "height": 386
+   }
   },
   "Q1515805": {
    "wikidata": "Q1515805",
    "label": "Gertrudenherberge",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1515805",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Gertrudenherberge",
-   "summary": "Die Gertrudenherberge ist eine mittelalterliche Pilgerherberge in der Hansestadt Lübeck. Die nach der Heiligen Gertrud von Nivelles, der Schutzheiligen der Pilger, benannte Einrichtung gehörte ursprünglich zum Heiligen-Geist-Hospital. Sie ist eines der jüngst wiederentdeckten und damit erst sehr spät unter Schutz gestellten Baudenkmale des mittelalterlichen Welterbes auf der Lübecker Altstadtinsel.",
+   "intro": "Die Gertrudenherberge ist eine mittelalterliche Pilgerherberge in der Hansestadt Lübeck. Die nach der Heiligen Gertrud von Nivelles, der Schutzheiligen der Pilger, benannte Einrichtung gehörte ursprünglich zum Heiligen-Geist-Hospital. Sie ist eines der jüngst wiederentdeckten und damit erst sehr spät unter Schutz gestellten Baudenkmale des mittelalterlichen Welterbes auf der Lübecker Altstadtinsel.",
    "url": "https://de.wikipedia.org/wiki/Gertrudenherberge",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Gertrudenherberge“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Gertrudenherberge“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1515805.jpg",
+    "author": "MrsMyer at German Wikipedia",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:GertrudenherbergeHLvonWesten2008.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q1565675": {
    "wikidata": "Q1565675",
    "label": "Wehde",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1565675",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Wehde (Lübeck)",
-   "summary": "Die Wehde ist ein denkmalgeschütztes historisches Gebäude in Lübeck.",
+   "intro": "Die Wehde ist ein denkmalgeschütztes historisches Gebäude in Lübeck.",
    "url": "https://de.wikipedia.org/wiki/Wehde_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Wehde (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Wehde (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1565675.jpg",
+    "author": "Der Bischof mit der E-Gitarre",
+    "licence": "Copyrighted free use",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Wehde.JPG",
+    "width": 640,
+    "height": 547
+   }
   },
   "Q1595345": {
    "wikidata": "Q1595345",
    "label": "Breite Straße 29",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1595345",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Breite Straße 29 (Lübeck)",
-   "summary": "Das denkmalgeschützte Gebäude Breite Straße 29 in Lübeck, im 20. Jahrhundert auch als (Musik)Haus Robert bekannt, ist ein stattliches Lübecker Bürgerhaus aus dem Rokoko.",
+   "intro": "Das denkmalgeschützte Gebäude Breite Straße 29 in Lübeck, im 20. Jahrhundert auch als (Musik)Haus Robert bekannt, ist ein stattliches Lübecker Bürgerhaus aus dem Rokoko.",
    "url": "https://de.wikipedia.org/wiki/Breite_Stra%C3%9Fe_29_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Breite Straße 29 (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Breite Straße 29 (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1595345.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Robert%E2%80%99sches_Haus.jpg",
+    "width": 640,
+    "height": 902
+   }
   },
   "Q1618163": {
    "wikidata": "Q1618163",
    "label": "Kanzleigebäude",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1618163",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Kanzleigebäude (Lübeck)",
-   "summary": "Das Kanzleigebäude wurde 1485 nach fünfjähriger Bauphase im gotischen Stil erbaut und befindet sich nördlich des Lübecker Rathauses an der Breiten Straße.",
+   "intro": "Das Kanzleigebäude (damals Schriverie) wurde 1485 nach fünfjähriger Bauphase im gotischen Stil erbaut und befindet sich nördlich des Lübecker Rathauses an der Breiten Straße.",
    "url": "https://de.wikipedia.org/wiki/Kanzleigeb%C3%A4ude_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kanzleigebäude (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kanzleigebäude (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1618163.jpg",
+    "author": "Longbow4u",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck-Kanzleigeb%C3%A4ude.01.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q1623386": {
    "wikidata": "Q1623386",
    "label": "Hoghehus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1623386",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "website": "http://www.hoghehus.de/"
+   },
    "title": "Hoghehus",
-   "summary": "Das Hoghehus am Koberg in Lübeck ist das größte erhaltene mittelalterliche Bürgerhaus in Lübeck und steht als Bestandteil des Flächendenkmals der Lübecker Altstadt unter Denkmalschutz.",
+   "intro": "Das Hoghehus am Koberg in Lübeck ist das größte erhaltene mittelalterliche Bürgerhaus in Lübeck und steht als Bestandteil des Flächendenkmals der Lübecker Altstadt unter Denkmalschutz.",
    "url": "https://de.wikipedia.org/wiki/Hoghehus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Hoghehus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Hoghehus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1623386.jpg",
+    "author": "Der Bischof mit der E-Gitarre at German Wikipedia",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Hoghehus.jpg",
+    "width": 640,
+    "height": 624
+   }
   },
   "Q1632968": {
    "wikidata": "Q1632968",
    "label": "Hubbrücke (Lübeck)",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1632968",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "website": "http://luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/bruecken/hubbruecke.html"
+   },
    "title": "Hubbrücke (Lübeck)",
-   "summary": "Die Hubbrücke, mit Namen eigentlich Marstallbrücke, ist eine bewegliche Brücke mit je einem eigenen Tragwerk für Eisenbahn und Straßenfahrzeuge und ursprünglich auch einem für Fußgänger in Lübeck. Sie ist eine von mehr als 200 Brücken in Lübeck und steht als Technisches Denkmal seit 1988 unter Denkmalschutz. Der Straßenteil der Hubbrücke ist seit Mai 2023 gesperrt. Seit September 2024 war auch das einsturzgefährdete Tragwerk für Fußgänger gesperrt, es wurde im November 2024 abgetragen.",
+   "intro": "Die Hubbrücke, mit Namen eigentlich Marstallbrücke (benannt nach dem südlich oberhalb gelegenen Marstall), ist eine bewegliche Brücke mit je einem eigenen Tragwerk für Eisenbahn und Straßenfahrzeuge und ursprünglich auch einem für Fußgänger in Lübeck. Sie ist eine von mehr als 200 Brücken in Lübeck und steht als Technisches Denkmal seit 1988 unter Denkmalschutz. Der Straßenteil der Hubbrücke ist seit Mai 2023 gesperrt. Seit September 2024 war auch das einsturzgefährdete Tragwerk für Fußgänger gesperrt, es wurde im November 2024 abgetragen.",
    "url": "https://de.wikipedia.org/wiki/Hubbr%C3%BCcke_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Hubbrücke (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Hubbrücke (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1632968.jpg",
+    "author": "Arnold Paul",
+    "licence": "CC BY-SA 2.5",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "file": "https://commons.wikimedia.org/wiki/File:Germany_Luebeck_Burgtorbridges.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q1721769": {
    "wikidata": "Q1721769",
    "label": "Kaisertor",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1721769",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Kaisertor",
-   "summary": "Das Kaisertor ist ein Teil der ehemaligen Stadtbefestigungsanlage Lübecks.",
+   "intro": "Das Kaisertor ist ein Teil der ehemaligen Stadtbefestigungsanlage Lübecks.",
    "url": "https://de.wikipedia.org/wiki/Kaisertor",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kaisertor“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kaisertor“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1721769.jpg",
+    "author": "Kresspahl",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:KaisertorHL02.JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q1728606": {
    "wikidata": "Q1728606",
    "label": "Kapitelstraße 7",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1728606",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Kapitelstraße 7",
-   "summary": "Die Kapitelstraße 7 ist ein unter Denkmalschutz stehendes Haus in der Kapitelstraße der Lübecker Altstadt.",
+   "intro": "Die Kapitelstraße 7 ist ein unter Denkmalschutz stehendes Haus in der Kapitelstraße der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Kapitelstra%C3%9Fe_7",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kapitelstraße 7“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kapitelstraße 7“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1728606.jpg",
+    "author": "Der Bischof mit der E-Gitarre at de.wikipedia",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Kapitelstra%C3%9Fe.JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q17506040": {
    "wikidata": "Q17506040",
    "label": "Logenhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q17506040",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Logenhaus (Lübeck)",
-   "summary": "Das Logenhaus in Lübeck ist ein 1882 errichteter denkmalgeschützter Bau, der mehreren Logenvereinigungen dient. Das Logenhaus befindet sich an der Ecke Schildstraße 22–30/St.-Annen-Straße 2.",
+   "intro": "Das Logenhaus in Lübeck ist ein 1882 errichteter denkmalgeschützter Bau, der mehreren Logenvereinigungen dient. Das Logenhaus befindet sich an der Ecke Schildstraße 22–30/St.-Annen-Straße 2.",
    "url": "https://de.wikipedia.org/wiki/Logenhaus_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Logenhaus (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Logenhaus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q17506040.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0 de",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Logenhaus.jpg",
+    "width": 640,
+    "height": 458
+   }
   },
   "Q17577149": {
    "wikidata": "Q17577149",
    "label": "Königstraße 43",
    "wikidata_url": "https://www.wikidata.org/wiki/Q17577149",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Königstraße 43 (Lübeck)",
-   "summary": "Das Gebäude Königstraße 43 in der Königstraße der Lübecker Altstadt war für zwei Jahrhunderte Wohn- und Arbeitsort der Stadtphysici in Lübeck.",
+   "intro": "Das Gebäude Königstraße 43 in der Königstraße der Lübecker Altstadt war für zwei Jahrhunderte Wohn- und Arbeitsort der Stadtphysici in Lübeck.",
    "url": "https://de.wikipedia.org/wiki/K%C3%B6nigstra%C3%9Fe_43_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Königstraße 43 (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Königstraße 43 (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q17577149.jpg",
+    "author": "Concord",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Koenigstrasse_43_06_2016_02.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q1766218": {
    "wikidata": "Q1766218",
    "label": "Reformierte Kirche",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1766218",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Schleswig-Holstein"
+    ],
+    "style": [
+     "klassizistische Architektur"
+    ],
+    "architect": [
+     "Heinrich Nikolaus Börm"
+    ]
+   },
    "title": "Reformierte Kirche (Lübeck)",
-   "summary": "Die Reformierte Kirche in Lübeck wurde Anfang des 19. Jahrhunderts im Stil des Klassizismus errichtet, 1826 erstmals in Nutzung genommen und ist der erste nachgotische Sakralbau im Weltkulturerbe der Lübecker Altstadt.",
+   "intro": "Die Reformierte Kirche in Lübeck wurde Anfang des 19. Jahrhunderts im Stil des Klassizismus errichtet, 1826 erstmals in Nutzung genommen und ist der erste nachgotische Sakralbau im Weltkulturerbe der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Reformierte_Kirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Reformierte Kirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Reformierte Kirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1766218.jpg",
+    "author": "Concord",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HLRefKircheaussen.JPG",
+    "width": 640,
+    "height": 359
+   }
   },
   "Q1779204": {
    "wikidata": "Q1779204",
    "label": "Kolk 20-22",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1779204",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Kolk 20-22",
-   "summary": "Das Gebäude Kolk 20-22 ist ein denkmalgeschütztes Gebäude im Weltkulturerbe der Lübecker Altstadt.",
+   "intro": "Das Gebäude Kolk 20-22 ist ein denkmalgeschütztes Gebäude im Weltkulturerbe der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Kolk_20-22",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kolk 20-22“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kolk 20-22“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1779204.jpg",
+    "author": "Kresspahl",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:PortalKolk2022.JPG",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q1784591": {
    "wikidata": "Q1784591",
    "label": "Kornspeicher Die Eiche",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1784591",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Kornspeicher Die Eiche",
-   "summary": "Der Kornspeicher „Die Eiche“ ist ein denkmalgeschütztes Speichergebäude in der Lübecker Altstadt.",
+   "intro": "Der Kornspeicher „Die Eiche“ ist ein denkmalgeschütztes Speichergebäude in der Lübecker Altstadt.\nDas Grundstück An der Untertrave 34 wurde im Jahr 1323 erstmals als mit einem Kornhaus bebaut urkundlich erwähnt. Zu dem Grundstück gehörte damals noch ein Gang, der mit kleineren Buden bebaut war und Harder Gang genannt wurde. Im Jahr 1873 errichtete der Lübecker Kaufmann und spätere Senator Henry Mann das heute noch bestehende Speichergebäude mit sieben Geschossen am Lübecker Hansahafen, wobei Gang samt Buden bei dieser Gelegenheit mit überbaut wurden. Als Bestandteil des Mannschen Familienvermögens spielt Die Eiche auch im Werk seines Sohnes Thomas Mann eine kleine Rolle. In den Buddenbrooks wird er namentlich neben den anderen Speichern der Firma Mann genannt. Der turmartige Speicher war als Kornspeicher konzipiert. Die Schaufassade wurde in Formen des Historismus in Backstein ausgeführt. Der kleine Treppengiebel ist ein neugotisches Zugeständnis an den damals in Lübeck noch überwiegenden Baustil. Die Eiche wurde 1973 unter Denkmalschutz gestellt und nach Aufgabe der Nutzung als Speicher über lange Jahre von einer Segelmacherei und Taklerei genutzt. Dann wurde er in den 1990er Jahren saniert, zu einem Möbelgeschäft umgebaut und diente danach einem Auktionshaus als Ausstellungs- und Verkaufsraum. Ab 2019 wurde das denkmalgeschützte Gebäude zu einem Kolumbarium umgebaut und im April 2024 als Urnenhaus eröffnet.\nSechs weitere Hafenspeicher der Firma Mann befanden sich am Lübecker Hafen An der Untertrave: Nummer 16 (Der Walfisch), Nummer 24 (Der Adler), Nummer 33 (Die Linde), Nummer 71 (Der Elephant), Nummer 87 (Der Löwe) und Nummer 91 (Der Hirsch). Nur Die Eiche ist in annäherndem Ursprungszustand erhalten. Der Walfisch und der Adler wurden in ihrem Äußeren stark verändert, der Elephant im Zweiten Weltkrieg zerstört. Die Linde, der Löwe und der Hirsch wurden abgebrochen.",
    "url": "https://de.wikipedia.org/wiki/Kornspeicher_Die_Eiche",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kornspeicher Die Eiche“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kornspeicher Die Eiche“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1784591.jpg",
+    "author": "Garitzko",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Auktionshaus_Luebeck.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q1786466": {
    "wikidata": "Q1786466",
    "label": "Kranen-Konvent",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1786466",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "built": "1283"
+   },
    "title": "Kranen-Konvent",
-   "summary": "Das Gebäude des Kranen-Konvents ist eines der ältesten erhaltenen backsteingotischen Bauwerke in der Lübecker Altstadt und Bestandteil des Weltkulturerbes.",
+   "intro": "Das Gebäude des Kranen-Konvents ist eines der ältesten erhaltenen backsteingotischen Bauwerke in der Lübecker Altstadt und Bestandteil des Weltkulturerbes.\nDie Bausubstanz des Gebäudes in der Kleinen Burgstraße 22 geht auf das Jahr 1283 zurück. Der Dachstuhl ist dendrochronologisch auf das Jahr 1283 datiert worden. Sein dreischiffiger und mit drei Jochen Kreuzrippengewölben ausgestatteter Keller ist der älteste erhaltene Gewölbekeller in Lübeck. Gleichwohl fehlen die repräsentativen Architekturmerkmale der privaten Profanbauten der Gotik in Lübeck, insbesondere die vertikalen Gliederungen des schlicht dreieckigen Giebels. Dieser hält sich damit vergleichsweise bescheiden zurück. Das Haus wurde ursprünglich als Beginenhaus aufgrund einer Stiftung des Lübecker Bürgers Wilkinus Crane errichtet und in der Renaissance baulich überformt. In dem Haus fanden etwa 16 bis 20 Beginen eine Bleibe, das wichtigste von fünf Beginenhäusern der Stadt. Von 1470 bis 1480 stammt der Altar des Kranenkonventes, der heute im St.-Annen-Kloster aufbewahrt wird. Die Fenster sind in den heute vorhandenen Proportionen aus dem 18. und 19. Jahrhundert. Die beiden Seitenflügel auf der Hofseite sind über die Gartenanlagen des Grundstücks der ehemaligen Niederlassung des Deutschen Ordens (1268–1806) rechts neben dem Kranen-Konvent zugänglich und stammen aus dem 14. bis 16. Jahrhundert. Der Kranen-Konvent wurde ab Ende des 18. Jahrhunderts als Armenhaus für Frauen und Siechenhaus genutzt, im 20. Jahrhundert als Altenheim und Beratungsstelle des Sozialamtes. In die Sanierung und Städtebauförderung des Blocks 96 der Lübecker Innenstadt wurde das Gebäude des Kranen-Konvents in den 1980er Jahren im Gegensatz zu den Gebäuden des benachbarten Pockenhofes nicht einbezogen.\nBis Mai 2010 wurde das Haus des ehemaligen Kranen-Konvents im Untergeschoss von dem Verein Brockensammlung Lübeck als Lager- und Verkaufsgebäude genutzt. Hier wurden gebrauchte Möbel und Einrichtungsgegenstände gesammelt und an bedürftige Mitbürger abgegeben. Die Brockensammlung hat nun ihr Quartier in einer denkmalgeschützten ehemaligen Turnhalle an der Nordseite des Lübecker Hauptbahnhofs.\nDas Gebäude wurde 2009 bei der Fördermittelvergabe von insgesamt 150 Millionen Euro für die deutschen Welterbestätten durch den Bundesbauminister Wolfgang Tiefensee mit 2,2 Millionen Euro berücksichtigt. Es entstanden eine Reihe von Unterrichtsräumen für die Orientierungsstufe der benachbarten Ernestinenschule. Der Keller wurde nach archäologischen Grabungen und der erforderlichen denkmalpflegerischen Grundsanierung zu einer Mensa umgebaut. Ein so nutzungsintensiver Gebrauch insbesondere des Kellers wird unter konservatorischen Gesichtspunkten jedoch auch kritisch gesehen. Die Bürgerinitiative Rettet Lübeck (BIRL) kämpfte für eine behutsame Nutzung der baugeschichtlich und konstruktiv bedeutenden Kelleranlage, die aus ortsuntypischen byzantinischen Hängekuppeln besteht, und gegen die geplante Nutzung als beheizter Personenaufenthaltsraum, wodurch eine beschleunigte Schädigung des historischen Ziegelmauerwerks aufgrund aufsteigender Feuchtigkeit und kristallisierender Salze eintreten könnte.",
    "url": "https://de.wikipedia.org/wiki/Kranen-Konvent",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Kranen-Konvent“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Kranen-Konvent“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1786466.jpg",
+    "author": "Kresspahl",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Kranen-Konvent.JPG",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q1796493": {
    "wikidata": "Q1796493",
    "label": "Königstraße 5",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1796493",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Königstraße 5 (Lübeck)",
-   "summary": "Das klassizistische Haus Königstraße 5 in der Lübecker Altstadt steht unter Denkmalschutz und dient seit 1891 der Gesellschaft zur Beförderung gemeinnütziger Tätigkeit als Gesellschaftshaus. Einbezogen in diese Nutzung ist seit 1891 das Nachbarhaus Königstraße 7.",
+   "intro": "Das klassizistische Haus Königstraße 5 in der Lübecker Altstadt steht unter Denkmalschutz und dient seit 1891 der Gesellschaft zur Beförderung gemeinnütziger Tätigkeit als Gesellschaftshaus. Einbezogen in diese Nutzung ist seit 1891 das Nachbarhaus Königstraße 7.",
    "url": "https://de.wikipedia.org/wiki/K%C3%B6nigstra%C3%9Fe_5_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Königstraße 5 (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Königstraße 5 (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1796493.jpg",
+    "author": "MrsMyerDE",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:Koenigstra%C3%9Fe5HL.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q1802073": {
    "wikidata": "Q1802073",
    "label": "Landesamt für soziale Dienste",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1802073",
+   "facts": {
+    "built": "1998",
+    "website": "http://www.schleswig-holstein.de/DE/Landesregierung/LASD/lasd_node.html"
+   },
    "title": "Landesamt für Arbeitsschutz, Soziales und Gesundheit",
-   "summary": "Das Landesamt für Arbeitsschutz, Soziales und Gesundheit (LASG) ist eine Landesoberbehörde des Landes Schleswig-Holstein. Die Vorgängerbehörde, das Landesamt für soziale Dienste, ist 1998 nach Umstrukturierung aus den Versorgungsämtern des Bundeslandes hervorgegangen. Sitz der Behörde ist Neumünster, es gibt weitere Standorte in Heide, Kiel, Lübeck, Itzehoe und Schleswig.",
-   "url": "https://de.wikipedia.org/wiki/Landesamt_f%C3%BCr_Arbeitsschutz%2C_Soziales_und_Gesundheit",
+   "intro": "Das Landesamt für Arbeitsschutz, Soziales und Gesundheit (LASG) ist eine Landesoberbehörde des Landes Schleswig-Holstein. Die Vorgängerbehörde, das Landesamt für soziale Dienste, ist 1998 nach Umstrukturierung aus den Versorgungsämtern des Bundeslandes hervorgegangen. Sitz der Behörde ist Neumünster, es gibt weitere Standorte in Heide, Kiel, Lübeck, Itzehoe und Schleswig.\nAm 1. Juli 2025 wurde die Staatliche Arbeitsschutzbehörde des Landes Schleswig-Holstein in das Landesamt für soziale Dienste integriert und bildet mit ihm zusammen nun das LASG.",
+   "url": "https://de.wikipedia.org/wiki/Landesamt_f%C3%BCr_Arbeitsschutz,_Soziales_und_Gesundheit",
    "licence": "CC BY-SA 4.0",
    "attribution": "Wikipedia, „Landesamt für Arbeitsschutz, Soziales und Gesundheit“, CC BY-SA 4.0"
   },
@@ -327,396 +783,1047 @@
    "wikidata": "Q18629959",
    "label": "Progymnasium Dr. Bussenius",
    "wikidata_url": "https://www.wikidata.org/wiki/Q18629959",
+   "facts": {
+    "heritage": [
+     "Kulturerbestätte"
+    ],
+    "built": "1824"
+   },
    "title": "Progymnasium Dr. Bussenius",
-   "summary": "Das Progymnasium Dr. Bussenius war eine unter verschiedenen Namen von 1824 bis 1901 bestehende Privatschule in Lübeck, die auf den Besuch des Katharineums vorbereitete.",
+   "intro": "Das Progymnasium Dr. Bussenius war eine unter verschiedenen Namen von 1824 bis 1901 bestehende Privatschule in Lübeck, die auf den Besuch des Katharineums vorbereitete.",
    "url": "https://de.wikipedia.org/wiki/Progymnasium_Dr._Bussenius",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Progymnasium Dr. Bussenius“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Progymnasium Dr. Bussenius“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q18629959.jpg",
+    "author": "Concord",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Fleischhauerstrasse_67_05_2018_01.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q1879877": {
    "wikidata": "Q1879877",
    "label": "Löwen-Apotheke",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1879877",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Romanische Architektur"
+    ],
+    "built": "1812",
+    "website": "http://m.luebeck-info.com/shopping/loewenapotheke.html"
+   },
    "title": "Löwen-Apotheke (Lübeck)",
-   "summary": "Die Löwen-Apotheke ist einer der ältesten Profanbauten des Weltkulturerbes der Lübecker Altstadt. Die teilweise romanische Bausubstanz geht auf die Zeit vor den großen Lübecker Stadtbränden des 13. Jahrhunderts zurück. Die Gründung der Apotheke wurde während der Lübecker Franzosenzeit im Jahr 1812 durch die eingetretene Gewerbefreiheit ermöglicht.",
+   "intro": "Die Löwen-Apotheke ist einer der ältesten Profanbauten des Weltkulturerbes der Lübecker Altstadt. Die teilweise romanische Bausubstanz geht auf die Zeit vor den großen Lübecker Stadtbränden des 13. Jahrhunderts zurück. Die Gründung der Apotheke wurde während der Lübecker Franzosenzeit im Jahr 1812 durch die eingetretene Gewerbefreiheit ermöglicht.",
    "url": "https://de.wikipedia.org/wiki/L%C3%B6wen-Apotheke_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Löwen-Apotheke (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Löwen-Apotheke (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1879877.jpg",
+    "author": "No machine-readable author provided. Tic-hl~commonswiki assumed (based on copyright claims).",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:Loewenapotheke.JPG",
+    "width": 640,
+    "height": 1030
+   }
   },
   "Q1898021": {
    "wikidata": "Q1898021",
    "label": "Marienwerkhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1898021",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Marienwerkhaus",
-   "summary": "Das Marienwerkhaus ist ein Gebäude in der Lübecker Altstadt. Es dient heute als Gemeindehaus der Mariengemeinde.",
+   "intro": "Das Marienwerkhaus ist ein Gebäude in der Lübecker Altstadt. Es dient heute als Gemeindehaus der Mariengemeinde.",
    "url": "https://de.wikipedia.org/wiki/Marienwerkhaus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Marienwerkhaus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Marienwerkhaus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1898021.jpg",
+    "author": "St._Mary's_Cathedral,_Lubeck,_Germany.jpg: Ahodges7 derivative work: 1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Heute_%E2%80%93_Werkhaus_DV.jpg",
+    "width": 640,
+    "height": 479
+   }
   },
   "Q1920503": {
    "wikidata": "Q1920503",
    "label": "Mengstraße 6",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1920503",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Mengstraße 6",
-   "summary": "Das Haus Mengstraße 6 ist ein denkmalgeschütztes Gebäude in Lübeck.",
+   "intro": "Das Haus Mengstraße 6 ist ein denkmalgeschütztes Gebäude in Lübeck.",
    "url": "https://de.wikipedia.org/wiki/Mengstra%C3%9Fe_6",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Mengstraße 6“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Mengstraße 6“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1920503.jpg",
+    "author": "de:Benutzer:Der Bischof mit der E-Gitarre",
+    "licence": "Copyrighted free use",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Mengstra%C3%9Fe_6.jpg",
+    "width": 640,
+    "height": 966
+   }
   },
   "Q1954986": {
    "wikidata": "Q1954986",
    "label": "Musik- und Kongresshalle Lübeck",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1954986",
+   "facts": {
+    "architect": [
+     "Meinhard von Gerkan"
+    ],
+    "built": "1994",
+    "website": "https://www.muk.de/"
+   },
    "title": "Musik- und Kongresshalle Lübeck",
-   "summary": "Die Musik- und Kongresshalle Lübeck – in Lübeck meist nur MuK genannt – steht auf der Wallhalbinsel am Traveufer gegenüber der Beckergrube und der Mengstraße der Lübecker Altstadt.\nDie MuK wurde von dem Architekten Meinhard von Gerkan entworfen und am 1. Oktober 1994 eröffnet. Sie verbindet die Funktionen einer internationalen Kongresshalle, einer Philharmonie und einer Stadthalle.",
+   "intro": "Die Musik- und Kongresshalle Lübeck – in Lübeck meist nur MuK genannt – steht auf der Wallhalbinsel am Traveufer gegenüber der Beckergrube und der Mengstraße der Lübecker Altstadt.\nDie MuK wurde von dem Architekten Meinhard von Gerkan entworfen und am 1. Oktober 1994 eröffnet. Sie verbindet die Funktionen einer internationalen Kongresshalle, einer Philharmonie und einer Stadthalle.",
    "url": "https://de.wikipedia.org/wiki/Musik-_und_Kongresshalle_L%C3%BCbeck",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Musik- und Kongresshalle Lübeck“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Musik- und Kongresshalle Lübeck“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1954986.jpg",
+    "author": "Photo: Andreas Praefcke",
+    "licence": "CC BY 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:MuK_Musik_und_Kongresshalle_L%C3%BCbeck.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q1958522": {
    "wikidata": "Q1958522",
    "label": "Mühlenstraße 72 (Lübeck)",
    "wikidata_url": "https://www.wikidata.org/wiki/Q1958522",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Mühlenstraße 72 (Lübeck)",
-   "summary": "Das Gebäude Mühlenstraße 72 ist ein denkmalgeschütztes klassizistisches Stadtpalais in der Mühlenstraße der Lübecker Altstadt.",
+   "intro": "Das Gebäude Mühlenstraße 72 ist ein denkmalgeschütztes klassizistisches Stadtpalais in der Mühlenstraße der Lübecker Altstadt.\nDas Grundstück gehörte historisch zunächst zum Lübecker Bischofshof und war vermutlich seit dem Mittelalter mit Wirtschaftsgebäuden des Bischofshofs bebaut. Auf deren erhaltenen Kellern, bestehend aus zwei Tonnengewölben, wurde die heutige Bebauung errichtet. Das Grundstück wurde 1819 von dem Lübecker Ratsherrn Ludwig Mentze erworben, der die aufstehenden Gebäude 1819/20 bis auf die Kellerdecke abbrechen ließ. Er ließ für sich 1820 ein zweistöckiges klassizistisches Wohnhaus mit fünf Achsen errichten. Das mittige Portal wird von einem flachen Dreiecksgiebel abgeschlossen. Es ist von zwei ionischen Pilastern eingerahmt. Entgegen der Zuschreibung von Björn Kommer an den Architekten Joseph Christian Lillie wurde jedoch mit guten Argumenten von Ilsabe von Bülow eine Planung durch Lillie widerlegt. Das Haus ging 1885 in das Eigentum der Hansestadt Lübeck über, die es zunächst als Verwaltungssitz des Stadt- und Landamtes nutzte. 1942 wurde unter dem Stadtbaurat Hespeler ein bombensicherer Aktenraum (Bunker) angebaut. Nach dem Krieg wurde das Haus für verschiedene Verwaltungszwecke genutzt, zunächst als Standesamt, dann für das Wasser- und Hafenbauamt. In den 2000ern wurde das Gebäude privatisiert, saniert und nun als Arztpraxis genutzt. Das Haus wurde in den Jahren 1967 und 1995 in zwei Stufen unter Denkmalschutz gestellt.",
    "url": "https://de.wikipedia.org/wiki/M%C3%BChlenstra%C3%9Fe_72_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Mühlenstraße 72 (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Mühlenstraße 72 (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1958522.jpg",
+    "author": "Der Bischof mit der E-Gitarre",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:WP_M%C3%BChlenstra%C3%9Fe_72.jpg",
+    "width": 640,
+    "height": 570
+   }
   },
   "Q196956": {
    "wikidata": "Q196956",
    "label": "Zeughaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q196956",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Zeughaus (Lübeck)",
-   "summary": "Das Zeughaus am Großen Bauhof und dem Domkirchhof in Lübeck wurde 1594 neben dem Lübecker Dom im Stil der Niederländischen Renaissance erbaut.",
+   "intro": "Das Zeughaus am Großen Bauhof und dem Domkirchhof in Lübeck wurde 1594 neben dem Lübecker Dom im Stil der Niederländischen Renaissance erbaut.",
    "url": "https://de.wikipedia.org/wiki/Zeughaus_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Zeughaus (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Zeughaus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q196956.jpg",
+    "author": "Debauchery at German Wikipedia",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:Voelkerkundemuseum.JPG",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q2235612": {
    "wikidata": "Q2235612",
    "label": "Schildstraße 10",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2235612",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Brick Renaissance Style"
+    ]
+   },
    "title": "Schildstraße 10",
-   "summary": "Das Haus Schildstraße 10 in der Schildstraße der Lübecker Altstadt ist ein denkmalgeschütztes ehemaliges Wohnhaus der Backsteinrenaissance.",
+   "intro": "Das Haus Schildstraße 10 in der Schildstraße der Lübecker Altstadt ist ein denkmalgeschütztes ehemaliges Wohnhaus der Backsteinrenaissance.",
    "url": "https://de.wikipedia.org/wiki/Schildstra%C3%9Fe_10",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Schildstraße 10“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Schildstraße 10“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2235612.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_L%C3%BCbecker_Sanit%C3%A4tskolonnenhaus.jpg",
+    "width": 640,
+    "height": 954
+   }
   },
   "Q2243060": {
    "wikidata": "Q2243060",
    "label": "Schloss Rantzau",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2243060",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Neogotik"
+    ]
+   },
    "title": "Schloss Rantzau (Lübeck)",
-   "summary": "Das Palais Rantzau ist ein neugotisches Stadtpalais im Lübecker Dombezirk, das im Kern eine mittelalterliche Domherren-Kurie enthält. Das im Volksmund auch Schloss genannte Palais befindet sich in der Kapitelstraße an der Ecke zur Parade unweit des Lübecker Doms am ehemaligen Exerzierplatz des Lübecker Stadtmilitärs.",
+   "intro": "Das Palais Rantzau ist ein neugotisches Stadtpalais im Lübecker Dombezirk, das im Kern eine mittelalterliche Domherren-Kurie enthält. Das im Volksmund auch Schloss genannte Palais befindet sich in der Kapitelstraße an der Ecke zur Parade unweit des Lübecker Doms am ehemaligen Exerzierplatz des Lübecker Stadtmilitärs.",
    "url": "https://de.wikipedia.org/wiki/Schloss_Rantzau_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Schloss Rantzau (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Schloss Rantzau (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2243060.jpg",
+    "author": "Tic-hl",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:Schloss_Rantzau_(L%C3%BCbeck).JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q2316268": {
    "wikidata": "Q2316268",
    "label": "Zisterzienserinnenkloster Lübeck (Johanniskloster)",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2316268",
    "title": "St.-Johannis-Kloster (Lübeck)",
-   "summary": "Das St.-Johannis-Kloster in Lübeck wurde zur Zeit Heinrichs des Löwen durch Bischof Heinrich I. als Benediktinerkloster gegründet und 1177 dem Evangelisten Johannes geweiht. Es gehörte zur Diözese Lübeck. Nachdem es zwischenzeitlich ein Doppelkloster war, wurde es 1246 in ein Zisterzienserinnenkloster umgewandelt und nach der Reformation bis 1803 als Jungfrauenstift fortgeführt.",
+   "intro": "Das St.-Johannis-Kloster in Lübeck wurde zur Zeit Heinrichs des Löwen durch Bischof Heinrich I. als Benediktinerkloster gegründet und 1177 dem Evangelisten Johannes geweiht. Es gehörte zur Diözese Lübeck. Nachdem es zwischenzeitlich ein Doppelkloster war, wurde es 1246 in ein Zisterzienserinnenkloster umgewandelt und nach der Reformation bis 1803 als Jungfrauenstift fortgeführt.",
    "url": "https://de.wikipedia.org/wiki/St.-Johannis-Kloster_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „St.-Johannis-Kloster (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „St.-Johannis-Kloster (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2316268.jpg",
+    "author": "(Kresspahl (talk) 13:38, 31 July 2010 (UTC))",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:JohRefektoriumHL01.JPG",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q2415873": {
    "wikidata": "Q2415873",
    "label": "Theater Lübeck",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2415873",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Jugendstilarchitektur"
+    ],
+    "architect": [
+     "Martin Dülfer"
+    ],
+    "built": "1908",
+    "website": "http://www.theaterluebeck.de"
+   },
    "title": "Theater Lübeck",
-   "summary": "Das Theater Lübeck wird von der Lübecker Theater gGmbH, einer Gesellschaft der Hansestadt Lübeck betrieben. Am Theater Lübeck arbeiten rund 400 Menschen, darunter das feste Ensemble für Schauspiel und Oper (Musiktheater), das Philharmonische Orchester, der Chor sowie Gäste. Im historischen Theatergebäude in der Lübecker Altstadt befinden sich drei Spielstätten. Die Sinfoniekonzerte finden in der nahegelegenen Konzerthalle statt.",
+   "intro": "Das Theater Lübeck (auch: Stadttheater, früher: Bühnen der Hansestadt Lübeck) wird von der Lübecker Theater gGmbH, einer Gesellschaft der Hansestadt Lübeck betrieben. Am Theater Lübeck arbeiten rund 400 Menschen, darunter das feste Ensemble für Schauspiel und Oper (Musiktheater), das Philharmonische Orchester, der Chor sowie Gäste. Im historischen Theatergebäude in der Lübecker Altstadt befinden sich drei Spielstätten. Die Sinfoniekonzerte finden in der nahegelegenen Konzerthalle statt.",
    "url": "https://de.wikipedia.org/wiki/Theater_L%C3%BCbeck",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Theater Lübeck“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Theater Lübeck“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2415873.jpg",
+    "author": "Theater Luebeck",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Theaterfassade_201213_(c)Olaf-Malzahn.jpg",
+    "width": 640,
+    "height": 402
+   }
   },
   "Q24669830": {
    "wikidata": "Q24669830",
    "label": "Mengstraße 38",
    "wikidata_url": "https://www.wikidata.org/wiki/Q24669830",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Mengstraße 38",
-   "summary": "Das Haus Mengstraße 38 ist ein denkmalgeschütztes Gebäude in der Lübecker Altstadt.",
+   "intro": "Das Haus Mengstraße 38 ist ein denkmalgeschütztes Gebäude in der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Mengstra%C3%9Fe_38",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Mengstraße 38“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Mengstraße 38“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q24669830.jpg",
+    "author": "Der Bischof mit der E-Gitarre",
+    "licence": "CC BY-SA 3.0 de",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Mengstra%C3%9Fe_38.jpg",
+    "width": 640,
+    "height": 956
+   }
   },
   "Q247787": {
    "wikidata": "Q247787",
    "label": "Zöllnerhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q247787",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Zöllnerhaus (Burgtor)",
-   "summary": "Das Zöllnerhaus ist ein Backsteingebäude der Renaissance aus dem Jahr 1571 in Lübeck, das zum Ensemble des Burgtors gehört.",
+   "intro": "Das Zöllnerhaus ist ein Backsteingebäude der Renaissance aus dem Jahr 1571 in Lübeck, das zum Ensemble des Burgtors gehört.",
    "url": "https://de.wikipedia.org/wiki/Z%C3%B6llnerhaus_(Burgtor)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Zöllnerhaus (Burgtor)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Zöllnerhaus (Burgtor)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q247787.jpg",
+    "author": "Callisa98",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_Gro%C3%9Fe_Burgstra%C3%9Fe_11.JPG",
+    "width": 640,
+    "height": 959
+   }
   },
   "Q25089255": {
    "wikidata": "Q25089255",
    "label": "Schullehrerseminarhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q25089255",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Schullehrerseminarhaus (Lübeck)",
-   "summary": "Das Schullehrerseminarhaus zu Lübeck beherbergte, bis es mit der Entlassung seines letzten Kurses zu Ostern 1925 aufgelöst wurde, das Lübeckische Lehrerseminar. Danach wurde sein Direktor Leiter der das Gebäude beziehenden v. Großheim’schen Realschule. Mit der Schließung der Schule im Jahr 1931 war hier die Nebenschule der in derselben Straße befindlichen Marien-Schule. Heute befindet sich in dem Gebäude das Förderzentrum Berend-Schröder-Schule.",
+   "intro": "Das Schullehrerseminarhaus zu Lübeck beherbergte, bis es mit der Entlassung seines letzten Kurses zu Ostern 1925 aufgelöst wurde, das Lübeckische Lehrerseminar. Danach wurde sein Direktor Leiter der das Gebäude beziehenden v. Großheim’schen Realschule. Mit der Schließung der Schule im Jahr 1931 war hier die Nebenschule der in derselben Straße befindlichen Marien-Schule. Heute befindet sich in dem Gebäude das Förderzentrum Berend-Schröder-Schule.",
    "url": "https://de.wikipedia.org/wiki/Schullehrerseminarhaus_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Schullehrerseminarhaus (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Schullehrerseminarhaus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q25089255.jpg",
+    "author": "Unknown authorUnknown author",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_L5S_Seminargeb%C3%A4ude_und_Uebungsschule.jpg",
+    "width": 640,
+    "height": 422
+   }
   },
   "Q2560411": {
    "wikidata": "Q2560411",
    "label": "Glockengießerstraße 2",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2560411",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Werkmeister-Haus der Lübecker Katharinenkirche",
-   "summary": "Das Werkmeister-Haus der St. Katharinen-Kirche in Lübeck befindet sich am Nordende des Kirchenchors in der Glockengießerstraße 2.",
+   "intro": "Das Werkmeister-Haus der St. Katharinen-Kirche in Lübeck befindet sich am Nordende des Kirchenchors in der Glockengießerstraße 2.",
    "url": "https://de.wikipedia.org/wiki/Werkmeister-Haus_der_L%C3%BCbecker_Katharinenkirche",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Werkmeister-Haus der Lübecker Katharinenkirche“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Werkmeister-Haus der Lübecker Katharinenkirche“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2560411.jpg",
+    "author": "Lemke, Martin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebeck_Glockengiesserstr_2.jpg",
+    "width": 640,
+    "height": 816
+   }
   },
   "Q2581800": {
    "wikidata": "Q2581800",
    "label": "Willy-Brandt-Haus Lübeck",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2581800",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "built": "2007",
+    "website": "http://www.willy-brandt.de/haus-luebeck/"
+   },
    "title": "Willy-Brandt-Haus Lübeck",
-   "summary": "Das Willy-Brandt-Haus Lübeck ist ein Museum und eine Gedenkstätte für den früheren deutschen SPD-Politiker, Bundeskanzler und Friedensnobelpreisträger Willy Brandt.",
+   "intro": "Das Willy-Brandt-Haus Lübeck ist ein Museum und eine Gedenkstätte für den früheren deutschen SPD-Politiker, Bundeskanzler und Friedensnobelpreisträger Willy Brandt.\nDas Gebäude, eine Außenstelle der Bundeskanzler-Willy-Brandt-Stiftung mit Sitz in Berlin, ist außerdem Sitz der Abteilung Denkmalpflege der Hansestadt Lübeck in Schleswig-Holstein. Es ist nach dem Buddenbrookhaus, das an den in Lübeck geborenen Literaturnobelpreisträger Thomas Mann, seinen Bruder Heinrich Mann und die weiteren Mitglieder der Familie Mann erinnert, dem Günter-Grass-Haus, das dem Literaturnobelpreisträger, Maler und Bildhauer Günter Grass gewidmet ist, die dritte Einrichtung der Stadt, die einen Lübecker Nobelpreisträger zum Thema hat. Leiterin des Willy-Brandt-Hauses ist die Historikerin Bettina Greiner.\nWilly Brandt wurde nicht in dem Gebäude in der Lübecker Innenstadt, sondern im Stadtteil St. Lorenz geboren.",
    "url": "https://de.wikipedia.org/wiki/Willy-Brandt-Haus_L%C3%BCbeck",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Willy-Brandt-Haus Lübeck“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Willy-Brandt-Haus Lübeck“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2581800.jpg",
+    "author": "Olaf Malzahn",
+    "licence": "CC BY-SA 3.0 de",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "file": "https://commons.wikimedia.org/wiki/File:Wbhl-01.jpg",
+    "width": 640,
+    "height": 962
+   }
   },
   "Q2592800": {
    "wikidata": "Q2592800",
    "label": "Wolpmann’sches Haus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2592800",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Wolpmann’sches Haus",
-   "summary": "Das Wolpmann’sche Haus in der Königstraße Nr. 81 in Lübeck ist das prächtigste Lübecker Haus aus dem Rokoko und ein denkmalgeschütztes Bauwerk.",
+   "intro": "Das Wolpmann’sche Haus in der Königstraße Nr. 81 in Lübeck ist das prächtigste Lübecker Haus aus dem Rokoko und ein denkmalgeschütztes Bauwerk.",
    "url": "https://de.wikipedia.org/wiki/Wolpmann%E2%80%99sches_Haus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Wolpmann’sches Haus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Wolpmann’sches Haus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2592800.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Wolpmann%E2%80%99sches_Haus.jpg",
+    "width": 640,
+    "height": 940
+   }
   },
   "Q2713736": {
    "wikidata": "Q2713736",
    "label": "Haus der Kaufmannschaft",
    "wikidata_url": "https://www.wikidata.org/wiki/Q2713736",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "website": "https://kaufmannschaft.de/engagements/unsere-liegenschaften/"
+   },
    "title": "Haus der Kaufmannschaft (Lübeck)",
-   "summary": "Das Haus der Kaufmannschaft in Lübeck beherbergt hinter seiner neugotischen Putzfassade von 1838 zwei der schönsten Sitzungsräume der Hansestadt aus der Zeit der Renaissance.",
+   "intro": "Das Haus der Kaufmannschaft in Lübeck beherbergt hinter seiner neugotischen Putzfassade von 1838 zwei der schönsten Sitzungsräume der Hansestadt aus der Zeit der Renaissance.\nDas nach wie vor der Kaufmannschaft zu Lübeck als Nachfolgeorganisation der Lübecker Kaufmanns-Gilden gehörende Haus in der Breite Straße 6–8 neben der Schiffergesellschaft wurde seit 1853 bis Ende des 20. Jahrhunderts von der Handelskammer, später ab 1937 der Industrie- und Handelskammer zu Lübeck als Verwaltungsgebäude genutzt. Heute beherbergt es die Geschäftsstelle der Kaufmannschaft zu Lübeck und mehrere Unternehmen und Betriebe (z. B. die Nordischen Filmtage Lübeck, das Lübeck Management, hydro & meteo, DieStadtgärtner, Aikonetic uvm.). Hinter seinen ehrwürdigen Mauern gegenüber der Lübecker Jakobikirche verbergen sich zwei der schönsten Räume Lübecks, die hier allerdings nicht ihren originären Standort haben, sondern erst im 19. Jahrhundert hier eingebaut wurden:\n\ndas Große Gemach von Tönnies Evers d. J.\ndas nach dem Ratsherrn und Mäzen Thomas Fredenhagen benannte Fredenhagen-Zimmer von Hans Drege.\nDie Gemälde in der Diele sind von dem führenden norddeutschen Manieristen Johannes Willinges.",
    "url": "https://de.wikipedia.org/wiki/Haus_der_Kaufmannschaft_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Haus der Kaufmannschaft (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Haus der Kaufmannschaft (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2713736.jpg",
+    "author": "MrsMyerDE",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:KaufmannschaftHL.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q315187": {
    "wikidata": "Q315187",
    "label": "Buddenbrookhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q315187",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "built": "1758",
+    "website": "http://www.buddenbrookhaus.de/"
+   },
    "title": "Buddenbrookhaus",
-   "summary": "Das Buddenbrookhaus (Heinrich-und-Thomas-Mann-Zentrum) in Lübeck ist seit 1993 eine Gedenkstätte in Trägerschaft der Kulturstiftung Hansestadt Lübeck. Es beherbergt den Förderverein Buddenbrookhaus, die Deutsche Thomas Mann-Gesellschaft, die Heinrich Mann-Gesellschaft, die Golo Mann-Gesellschaft und die Erich-Mühsam-Gesellschaft. Direktorin des Buddenbrookhauses ist seit Februar 2024 Caren Heuer.",
+   "intro": "Das Buddenbrookhaus (Heinrich-und-Thomas-Mann-Zentrum) in Lübeck ist seit 1993 eine Gedenkstätte in Trägerschaft der Kulturstiftung Hansestadt Lübeck. Es beherbergt den Förderverein Buddenbrookhaus, die Deutsche Thomas Mann-Gesellschaft, die Heinrich Mann-Gesellschaft, die Golo Mann-Gesellschaft und die Erich-Mühsam-Gesellschaft. Direktorin des Buddenbrookhauses ist seit Februar 2024 Caren Heuer.\nIm Haus befindet sich ein Museum mit zwei festen Ausstellungen: „Die Buddenbrooks – Ein Jahrhundertroman“ und „Die Manns – eine Schriftstellerfamilie“. Ferner gibt es eine Etage für wechselnde Sonderausstellungen. Das Heinrich-und-Thomas-Mann-Zentrum ist Forschungsstätte und Trägerorganisation der Ausstellungen und literarischen Veranstaltungen. Ende Dezember 2019 wurde das Buddenbrookhaus für Erweiterung und Umbau bis 2029 geschlossen; Teile der Ausstellung sind im Museum Behnhaus-Drägerhaus zu sehen.",
    "url": "https://de.wikipedia.org/wiki/Buddenbrookhaus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Buddenbrookhaus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Buddenbrookhaus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q315187.jpg",
+    "author": "Torsten Bolten",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_Buddenbrookhaus_070311.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q316973": {
    "wikidata": "Q316973",
    "label": "Aegidienkirche (Lübeck)",
    "wikidata_url": "https://www.wikidata.org/wiki/Q316973",
+   "facts": {
+    "style": [
+     "Backsteingotik"
+    ],
+    "built": "1227",
+    "website": "http://www.aegidien-kirche-luebeck.de/"
+   },
    "title": "Aegidienkirche (Lübeck)",
-   "summary": "Die St.-Aegidien-Kirche, auch Aegidienkirche, ist die kleinste und östlichste der Lübecker Innenstadtkirchen und dem heiligen Ägidius geweiht. Sie war das Zentrum des Viertels der Handwerker, das auf dem östlichen Abhang des Innenstadthügels in Richtung Wakenitz angesiedelt war. In diesem Viertel lebten in Umgebung der Kirche seit jeher viele Menschen, die der sozialen Fürsorge bedurften. Die verbliebenen Gebäude der Beginenkonvente werden wie der Aegidienhof heute zum Wohnen genutzt, das St.-Annen-Kloster als Museumsquartier St. Annen. Zusammen machen sie heute das Aegidien-Viertel der Lübecker Altstadt aus.",
+   "intro": "Die St.-Aegidien-Kirche, auch Aegidienkirche, ist die kleinste und östlichste der Lübecker Innenstadtkirchen und dem heiligen Ägidius geweiht. Sie war das Zentrum des Viertels der Handwerker, das auf dem östlichen Abhang des Innenstadthügels in Richtung Wakenitz angesiedelt war. In diesem Viertel lebten in Umgebung der Kirche seit jeher viele Menschen, die der sozialen Fürsorge bedurften. Die verbliebenen Gebäude der Beginenkonvente werden wie der Aegidienhof heute zum Wohnen genutzt, das St.-Annen-Kloster als Museumsquartier St. Annen. Zusammen machen sie heute das Aegidien-Viertel der Lübecker Altstadt aus.",
    "url": "https://de.wikipedia.org/wiki/Aegidienkirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Aegidienkirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Aegidienkirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q316973.jpg",
+    "author": "Carsten Steger",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_St.-Aegidien-Kirche,_L%C3%BCbeck_(view_from_the_southwest).jpg",
+    "width": 640,
+    "height": 640
+   }
   },
   "Q317388": {
    "wikidata": "Q317388",
    "label": "Katharinenkirche",
    "wikidata_url": "https://www.wikidata.org/wiki/Q317388",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "architect": [
+     "Paul Laspeyres"
+    ],
+    "built": "14. Jh.",
+    "website": "https://museumskirche.de/"
+   },
    "title": "Katharinenkirche (Lübeck)",
-   "summary": "Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters („Katharinenkloster)“ und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien.",
+   "intro": "Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters („Katharinenkloster)“ und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien.\nDas Katharinenkloster bestand als Konvent der Franziskaner (fratres minores ‚Minderbrüder‘) von 1225 bis zur Reformation 1531. Es gehörte zur Sächsischen Franziskanerprovinz (Saxonia) und war ab 1274 Sitz einer der zwölf Kustodien (Verwaltungsbereiche) der Saxonia, und zwar für die an der Ostsee gelegenen Konvente. Der mittelalterliche Gebäudekomplex an der Königstraße in der Lübecker Altstadt ist heute Bestandteil des Weltkulturerbes, die ehemalige Klosterkirche ist heute Museumskirche. In den daran anschließenden Gebäudeteilen befinden sich das altsprachliche Gymnasium Katharineum und die Stadtbibliothek.",
    "url": "https://de.wikipedia.org/wiki/Katharinenkirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Katharinenkirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Katharinenkirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q317388.jpg",
+    "author": "Photo: Andreas Praefcke",
+    "licence": "CC BY 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Katharinenkirche_L%C3%BCbeck.jpg",
+    "width": 640,
+    "height": 360
+   }
   },
   "Q321229": {
    "wikidata": "Q321229",
    "label": "Holstentor",
    "wikidata_url": "https://www.wikidata.org/wiki/Q321229",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "website": "http://www.luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/stadttore/holstentor.html"
+   },
    "title": "Holstentor",
-   "summary": "Das Holstentor („Holstein-Tor“) ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt.",
+   "intro": "Das Holstentor („Holstein-Tor“) ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt.\nDas spätgotische Gebäude gehört zu den Überresten der Lübecker Stadtbefestigung. Das Holstentor ist neben dem Burgtor das einzige erhaltene Stadttor Lübecks. Mehr als 300 Jahre lang stand es als „Mittleres Holstentor“ in einer Reihe mit drei weiteren Holstentoren, die im 19. Jahrhundert abgerissen wurden. Das Mittlere Holstentor, das heute als „Holstentor“ bekannt ist, wurde hingegen mehrmals restauriert, zuletzt in den Jahren 2005/2006.\nSeit 1950 befindet sich in den Räumen des Holstentores das Stadtgeschichtliche Museum von Lübeck.",
    "url": "https://de.wikipedia.org/wiki/Holstentor",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Holstentor“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Holstentor“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q321229.jpg",
+    "author": "Glenn Strong",
+    "licence": "CC BY-SA 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Holstentor04.jpg",
+    "width": 640,
+    "height": 474
+   }
   },
   "Q375042": {
    "wikidata": "Q375042",
    "label": "Jakobikirche",
    "wikidata_url": "https://www.wikidata.org/wiki/Q375042",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland",
+     "Baudenkmal",
+     "Kulturdenkmal in Schleswig-Holstein"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "built": "1227",
+    "website": "http://www.luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/kirchen/jakobikirche.html"
+   },
    "title": "Jakobikirche (Lübeck)",
-   "summary": "St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt.",
+   "intro": "St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt.\nSie wurde im Jahre 1334 als Kirche der Seefahrer und Fischer geweiht, die ihr „Schütting“ (von norwegisch Skotting – heute Schøttstuene – für Versammlungshaus)  noch heute in der gegenüberliegenden Schiffergesellschaft haben. Ihr Patron ist der Heilige Jakobus der Ältere. Die Kirche, das Heiligen-Geist-Hospital und die benachbarte Gertrudenherberge sind Stationen auf einem Zweig des norddeutschen Jakobswegs. Seit September 2007 ist die nördliche Turmkapelle der Kirche als Pamir-Kapelle Nationale Gedenkstätte für die zivile Seefahrt.",
    "url": "https://de.wikipedia.org/wiki/Jakobikirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Jakobikirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Jakobikirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q375042.jpg",
+    "author": "Carsten Steger",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_St._James%27_Church,_L%C3%BCbeck_(view_from_the_west).jpg",
+    "width": 640,
+    "height": 731
+   }
   },
   "Q380609": {
    "wikidata": "Q380609",
    "label": "Aegidienstraße 22",
    "wikidata_url": "https://www.wikidata.org/wiki/Q380609",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland",
+     "Kulturdenkmal in Schleswig-Holstein"
+    ]
+   },
    "title": "Aegidienstraße 22",
-   "summary": "Das früher auch Geverdeshof genannte Gebäude Aegidienstraße 22 ist eines der wenigen erhaltenen spätbarocken Palais in der Lübecker Altstadt.",
+   "intro": "Das früher auch Geverdeshof genannte Gebäude Aegidienstraße 22 ist eines der wenigen erhaltenen spätbarocken Palais in der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Aegidienstra%C3%9Fe_22",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Aegidienstraße 22“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Aegidienstraße 22“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q380609.jpg",
+    "author": "Kresspahl",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:GeverdeshofHL.JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q380610": {
    "wikidata": "Q380610",
    "label": "Aegidienstraße 24",
    "wikidata_url": "https://www.wikidata.org/wiki/Q380610",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Aegidienstraße 24",
-   "summary": "Das Haus Aegidienstraße 24 ist ein denkmalgeschütztes Gebäude in der Lübecker Altstadt.",
+   "intro": "Das Haus Aegidienstraße 24 ist ein denkmalgeschütztes Gebäude in der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Aegidienstra%C3%9Fe_24",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Aegidienstraße 24“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Aegidienstraße 24“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q380610.jpg",
+    "author": "Arnold Paul",
+    "licence": "CC BY-SA 2.5",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "file": "https://commons.wikimedia.org/wiki/File:Germany_Luebeck_St_Aegidien.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q3916007": {
    "wikidata": "Q3916007",
    "label": "Lübecker Dom",
    "wikidata_url": "https://www.wikidata.org/wiki/Q3916007",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Brick Romanesque Style"
+    ],
+    "architect": [
+     "Friedhelm Grundmann",
+     "Hans Fleming",
+     "Horst Sandtmann"
+    ],
+    "built": "1173",
+    "website": "http://www.domzuluebeck.de/"
+   },
    "title": "Lübecker Dom",
-   "summary": "Der Lübecker Dom ist der erste große Backsteinkirchbau an der Ostsee und mit fast 132 Metern Länge eine der längsten Backsteinkirchen. 1173 wurde der Lübecker Dom von Heinrich dem Löwen begründet und 1247 geweiht. Patrone der evangelischen Kirche sind die Heiligen Johannes der Täufer und Blasius, Maria und Nikolaus.",
+   "intro": "Der Lübecker Dom (auch Dom zu Lübeck) ist der erste große Backsteinkirchbau an der Ostsee und mit fast 132 Metern Länge eine der längsten Backsteinkirchen. 1173 wurde der Lübecker Dom von Heinrich dem Löwen begründet und 1247 geweiht. Patrone der evangelischen Kirche sind die Heiligen Johannes der Täufer und Blasius (wie im Braunschweiger Dom), Maria und Nikolaus.",
    "url": "https://de.wikipedia.org/wiki/L%C3%BCbecker_Dom",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Lübecker Dom“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Lübecker Dom“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q3916007.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Dom_%E2%80%93_Baubeh%C3%B6rde_%E2%80%93_Stadtarchiv_%E2%80%93_Museum_f%C3%BCr_Natur_und_Umwelt_%E2%80%93_2019.jpg",
+    "width": 640,
+    "height": 481
+   }
   },
   "Q438230": {
    "wikidata": "Q438230",
    "label": "Alter Zolln",
    "wikidata_url": "https://www.wikidata.org/wiki/Q438230",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Alter Zolln",
-   "summary": "Der Alte Zolln ist ein denkmalgeschütztes Gebäude in Lübeck.",
+   "intro": "Der Alte Zolln ist ein denkmalgeschütztes Gebäude in Lübeck.",
    "url": "https://de.wikipedia.org/wiki/Alter_Zolln",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Alter Zolln“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Alter Zolln“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q438230.jpg",
+    "author": "Der Bischof mit der E-Gitarre",
+    "licence": "Copyrighted free use",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Alter_Zolln.jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q482579": {
    "wikidata": "Q482579",
    "label": "An der Mauer 154",
    "wikidata_url": "https://www.wikidata.org/wiki/Q482579",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "built": "1749"
+   },
    "title": "An der Mauer 154",
-   "summary": "An der Mauer 154 ist ein historisches seit 1990 vollständig denkmalgeschütztes zweiachsiges zweigeschossiges traufenständiges Kleinwohnhaus von 1749 in Lübeck.",
+   "intro": "An der Mauer 154 ist  ein historisches  seit 1990 vollständig denkmalgeschütztes zweiachsiges zweigeschossiges traufenständiges Kleinwohnhaus von 1749 in Lübeck.\nIn beiden Geschossen ist die Raumstruktur vollständig erhalten einschließlich der authentisch historischen Ausstattung wie Türen, Fenster, Gothlandplatten und Dachstuhl.\nDas Grundstück wurde erstmals 1315 als bebaut erwähnt. Es war Teil eines mittelalterlichen Ackerhofes unter einem Dach verbunden mit An der Mauer 150-152 und An der Mauer 156-160, wie sich anhand der fortlaufenden Zählung im Dachstuhl feststellen ließ.\nDas Gebäude ist eingetragen in der Liste „Wertvolle Kulturdenkmale aus geschichtlicher Zeit“, nicht nur wie die Mehrzahl der Lübecker eingetragenen Kulturdenkmale bzgl. des Äußeren, sondern mit der gesamten inneren Struktur und zahlreichen originalen Details.",
    "url": "https://de.wikipedia.org/wiki/An_der_Mauer_154",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „An der Mauer 154“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „An der Mauer 154“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q482579.jpg",
+    "author": "Lemke, Martin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebecke_An_der_Mauer_154.jpg",
+    "width": 640,
+    "height": 1123
+   }
   },
   "Q51247046": {
    "wikidata": "Q51247046",
    "label": "Bunker An der Obertrave",
    "wikidata_url": "https://www.wikidata.org/wiki/Q51247046",
+   "facts": {
+    "built": "1940"
+   },
    "title": "Bunker An der Obertrave",
-   "summary": "Der Bunker An der Obertrave wurde als Luftschutzgebäude mit Durchgang zum Gang Im Reinfeld in der Lübecker Altstadt errichtet. Das denkmalgeschützte Bauwerk steht An der Obertrave 19 zwischen Marlesgrube und Dankwartsgrube.",
+   "intro": "Der Bunker An der Obertrave wurde als Luftschutzgebäude mit Durchgang zum Gang Im Reinfeld in der Lübecker Altstadt errichtet. Das denkmalgeschützte Bauwerk steht An der Obertrave 19 zwischen Marlesgrube und Dankwartsgrube.",
    "url": "https://de.wikipedia.org/wiki/Bunker_An_der_Obertrave",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Bunker An der Obertrave“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Bunker An der Obertrave“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q51247046.jpg",
+    "author": "Re Mare",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:2017_6_5_Bunker_An_der_Obertrave_in_L%C3%BCbeck.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q538276": {
    "wikidata": "Q538276",
    "label": "Burgtor",
    "wikidata_url": "https://www.wikidata.org/wiki/Q538276",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "built": "1444",
+    "website": "http://www.luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/stadttore/burgtor.html"
+   },
    "title": "Burgtor (Lübeck)",
-   "summary": "Das 1444 im spätgotischen Stil erbaute Burgtor in Lübeck ist das nördliche von ehemals vier Stadttoren der Lübecker Stadtbefestigung und neben dem Holstentor das einzige, das noch heute erhalten ist. Es hat seinen Namen nach der alten, hoch über der Trave gelegenen Lübecker Burg, die 1227 zum Burgkloster umgebaut wurde. Durch das Tor führt die Große Burgstraße zum Stadtzentrum.",
+   "intro": "Das 1444 im spätgotischen Stil erbaute Burgtor in Lübeck ist das nördliche von ehemals vier Stadttoren der Lübecker Stadtbefestigung und neben dem Holstentor das einzige, das noch heute erhalten ist. Es hat seinen Namen nach der alten, hoch über der Trave gelegenen Lübecker Burg, die 1227 zum Burgkloster umgebaut wurde. Durch das Tor führt die Große Burgstraße zum Stadtzentrum.",
    "url": "https://de.wikipedia.org/wiki/Burgtor_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Burgtor (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Burgtor (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q538276.jpg",
+    "author": "Debauchery",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:Burgtor.jpg",
+    "width": 640,
+    "height": 799
+   }
   },
   "Q538453": {
    "wikidata": "Q538453",
    "label": "Lübecker Rathaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q538453",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "website": "http://www.luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/rathaus/index.html"
+   },
    "title": "Lübecker Rathaus",
-   "summary": "Das Rathaus der Hansestadt Lübeck zählt zu den bekanntesten Bauwerken der Backsteingotik. Es ist eines der größten mittelalterlichen Rathäuser in Deutschland.",
+   "intro": "Das Rathaus der Hansestadt Lübeck zählt zu den bekanntesten Bauwerken der Backsteingotik. Es ist eines der größten mittelalterlichen Rathäuser in Deutschland.",
    "url": "https://de.wikipedia.org/wiki/L%C3%BCbecker_Rathaus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Lübecker Rathaus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Lübecker Rathaus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q538453.jpg",
+    "author": "Mylius",
+    "licence": "GFDL 1.2",
+    "licence_url": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebeck-Rathaus_am_Markt_von_Suedwesten_gesehen-20100905.jpg",
+    "width": 640,
+    "height": 427
+   }
   },
   "Q657603": {
    "wikidata": "Q657603",
    "label": "Salzspeicher",
    "wikidata_url": "https://www.wikidata.org/wiki/Q657603",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "website": "http://www.luebeck.de/tourismus/sightseeing/sehenswuerdigkeiten/gebaeude/salzspeicher.html"
+   },
    "title": "Salzspeicher",
-   "summary": "Die Salzspeicher sind eine Gruppe von Lagerhäusern an der Lübecker Obertrave direkt neben dem Holstentor. Sie wurden im Stil der Backsteinrenaissance und des Backsteinbarock erbaut.",
+   "intro": "Die Salzspeicher sind eine Gruppe von Lagerhäusern an der Lübecker Obertrave direkt neben dem Holstentor. Sie wurden im Stil der Backsteinrenaissance und des Backsteinbarock erbaut.",
    "url": "https://de.wikipedia.org/wiki/Salzspeicher",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Salzspeicher“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Salzspeicher“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q657603.jpg",
+    "author": "unbekannt",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:Luebeck_Salzspeicher.jpg",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q695065": {
    "wikidata": "Q695065",
    "label": "Marienkirche Lübeck",
    "wikidata_url": "https://www.wikidata.org/wiki/Q695065",
+   "facts": {
+    "heritage": [
+     "Baudenkmal"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "architect": [
+     "Bruno Fendrich",
+     "Denis Boniver",
+     "Erich Trautsch",
+     "Gustav Schaumann"
+    ],
+    "built": "14. Jh.",
+    "website": "http://www.st-marien-luebeck.de/"
+   },
    "title": "Marienkirche (Lübeck)",
-   "summary": "Die Lübecker Marienkirche ist die Lübecker Markt- und Hauptpfarrkirche und befindet sich auf dem höchsten Punkt der Lübecker Altstadtinsel. Sie ist Teil des UNESCO-Welterbes Lübecker Altstadt. Als eine der größten Backsteinkirchen wird sie auch als „Mutterkirche der Backsteingotik“ bezeichnet und gilt als ein Hauptwerk des Kirchenbaus im Ostseeraum.",
+   "intro": "Die Lübecker Marienkirche (offiziell St. Marien zu Lübeck) ist die Lübecker Markt- und Hauptpfarrkirche und befindet sich auf dem höchsten Punkt der Lübecker Altstadtinsel. Sie ist Teil des UNESCO-Welterbes Lübecker Altstadt. Als eine der größten Backsteinkirchen wird sie auch als „Mutterkirche der Backsteingotik“ bezeichnet und gilt als ein Hauptwerk des Kirchenbaus im Ostseeraum.\nDer Bau der gotischen Kirche, die einen romanischen Vorgängerbau ersetzte, begann 1251 und war mit der Fertigstellung der Türme hundert Jahre später, 1351, abgeschlossen.\nSt. Marien gehört zur Evangelisch-Lutherischen Kirche in Norddeutschland.",
    "url": "https://de.wikipedia.org/wiki/Marienkirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Marienkirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Marienkirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q695065.jpg",
+    "author": "Carsten Steger",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_St._Mary%27s_Church,_L%C3%BCbeck_(view_from_the_west).jpg",
+    "width": 640,
+    "height": 556
+   }
   },
   "Q798435": {
    "wikidata": "Q798435",
    "label": "Backhaus Alfstraße 32",
    "wikidata_url": "https://www.wikidata.org/wiki/Q798435",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Brick Renaissance Style",
+     "Backsteinrenaissance"
+    ]
+   },
    "title": "Backhaus Alfstraße 32",
-   "summary": "Das historische Alte Backhaus in der Alfstraße 32 der Lübecker Altstadt ist ein Giebelhaus der Backsteinrenaissance.",
+   "intro": "Das historische Alte Backhaus in der Alfstraße 32 der Lübecker Altstadt ist ein Giebelhaus der Backsteinrenaissance.\nEs befindet sich am unteren Ende der Alfstraße als Eckhaus zur Geraden Querstraße, die durch hölzerne Schwibbögen zum gegenüber liegenden Eckhaus der Historischen Fabrik von 1775 überspannt wird. Das Haus wurde von 1303 bis 1890 als Backhaus genutzt. Die Ecklage ist für Backhäuser in Lübeck typisch. Sie wurde seit dem Mittelalter durch die städtischen Brandverhütungsvorschriften vorgeschrieben, damit im Zweifel von zwei Seiten gelöscht werden konnte. Der Treppengiebel aus der Zeit der Renaissance (um 1600) ist an den Nischen und Luken ebenso wie das runde Ziegelportal mit gefastem Backstein gemauert. Das Haus wurde 1966 saniert und steht seit 1967 unter Denkmalschutz. Bei der Sanierung wurde an der Traufseite in der Geraden Querstraße das Windenrad wiederhergestellt, mit dem früher Vorräte auf die Speicherböden gehievt werden konnten. Das Haus wird seit der Sanierung gastronomisch genutzt.",
    "url": "https://de.wikipedia.org/wiki/Backhaus_Alfstra%C3%9Fe_32",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Backhaus Alfstraße 32“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Backhaus Alfstraße 32“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q798435.jpg",
+    "author": "Kresspahl",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:AlfstrHL3238.JPG",
+    "width": 640,
+    "height": 480
+   }
   },
   "Q806787": {
    "wikidata": "Q806787",
    "label": "Bankhaus am Kohlmarkt",
    "wikidata_url": "https://www.wikidata.org/wiki/Q806787",
    "title": "Bankhaus am Kohlmarkt",
-   "summary": "Das Bankhaus am Kohlmarkt ist ein historisches Bankgebäude in Lübeck, Kohlmarkt 7–11. Es liegt auf der Südseite des Kohlmarkts im Zentrum der Lübecker Altstadt, unmittelbar gegenüber vom Markt und nahe dem Rathaus.",
+   "intro": "Das Bankhaus am Kohlmarkt ist ein historisches Bankgebäude in Lübeck, Kohlmarkt 7–11. Es liegt auf der Südseite des Kohlmarkts im Zentrum der Lübecker Altstadt, unmittelbar gegenüber vom Markt und nahe dem Rathaus.",
    "url": "https://de.wikipedia.org/wiki/Bankhaus_am_Kohlmarkt",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Bankhaus am Kohlmarkt“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Bankhaus am Kohlmarkt“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q806787.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0 de",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Kohlmarkt_%E2%80%93_Commerz-Bank.jpg",
+    "width": 640,
+    "height": 561
+   }
   },
   "Q814533": {
    "wikidata": "Q814533",
    "label": "Museum Behnhaus Drägerhaus",
    "wikidata_url": "https://www.wikidata.org/wiki/Q814533",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "architect": [
+     "Joseph Christian Lillie"
+    ],
+    "built": "1783",
+    "website": "https://museum-behnhaus-draegerhaus.de/de/Museum"
+   },
    "title": "Behnhaus",
-   "summary": "Das Behnhaus, offizieller Name Museum Behnhaus Drägerhaus, Galerie des 19. Jahrhunderts und der Klassischen Moderne, ist ein Lübecker Museum und Teil der Lübecker Museen, verwaltet durch die Kulturstiftung Hansestadt Lübeck. Es zeigt die Malerei der Nazarener und vorwiegend deutsche Malerei des 19. Jahrhunderts, des Impressionismus und Expressionismus sowie bürgerliche Wohnkultur aus Rokoko, Klassizismus und Biedermeier.",
+   "intro": "Das Behnhaus, offizieller Name Museum Behnhaus Drägerhaus, Galerie des 19. Jahrhunderts und der Klassischen Moderne, ist ein Lübecker Museum und Teil der Lübecker Museen, verwaltet durch die Kulturstiftung Hansestadt Lübeck. Es zeigt die Malerei der Nazarener und vorwiegend deutsche Malerei des 19. Jahrhunderts, des Impressionismus und Expressionismus sowie bürgerliche Wohnkultur aus Rokoko, Klassizismus und Biedermeier.",
    "url": "https://de.wikipedia.org/wiki/Behnhaus",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Behnhaus“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Behnhaus“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q814533.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_Deutschland,_Behnhaus.jpg",
+    "width": 640,
+    "height": 1039
+   }
   },
   "Q880381": {
    "wikidata": "Q880381",
    "label": "Propsteikirche Herz Jesu",
    "wikidata_url": "https://www.wikidata.org/wiki/Q880381",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Neogotik"
+    ],
+    "architect": [
+     "Arnold Güldenpfennig"
+    ],
+    "built": "1891",
+    "website": "http://www.kath-kirche-luebeck.de/content/view/39/27/"
+   },
    "title": "Propsteikirche Herz Jesu",
-   "summary": "Die Propsteikirche Herz Jesu an der Parade ist die römisch-katholische Hauptkirche Lübecks. Sie wurde 1888 bis 1891 nach einem Entwurf des Architekten und Paderborner Diözesanbaumeisters Arnold Güldenpfennig errichtet und am 10. Mai 1891 konsekriert. Das Patrozinium „Heiligstes Herz Jesu“ ist ein Hinweis auf die in der zweiten Hälfte des 19. Jahrhunderts stark anwachsende Herz-Jesu-Verehrung.",
+   "intro": "Die Propsteikirche Herz Jesu an der Parade ist die römisch-katholische Hauptkirche Lübecks. Sie wurde 1888 bis 1891 nach einem Entwurf des Architekten und Paderborner Diözesanbaumeisters Arnold Güldenpfennig errichtet und am 10. Mai 1891 konsekriert. Das Patrozinium „Heiligstes Herz Jesu“ ist ein Hinweis auf die in der zweiten Hälfte des 19. Jahrhunderts stark anwachsende Herz-Jesu-Verehrung.",
    "url": "https://de.wikipedia.org/wiki/Propsteikirche_Herz_Jesu",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Propsteikirche Herz Jesu“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Propsteikirche Herz Jesu“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q880381.jpg",
+    "author": "Klaus Kegebein",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Herz_Jesu_L%C3%BCbeck,_au%C3%9Fen.jpg",
+    "width": 640,
+    "height": 960
+   }
   },
   "Q896458": {
    "wikidata": "Q896458",
    "label": "Petrikirche",
    "wikidata_url": "https://www.wikidata.org/wiki/Q896458",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Backsteingotik"
+    ],
+    "architect": [
+     "Gustav Schaumann"
+    ],
+    "website": "https://www.st-petri-luebeck.de/"
+   },
    "title": "Petrikirche (Lübeck)",
-   "summary": "St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde.",
+   "intro": "St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde.\nWie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 (Palmarum) sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Da die Ausstattung zerstört und die Petri-Gemeinde inzwischen auf die Nachbarkirchen aufgeteilt worden war, wurde St. Petri 1987 als Kirche für die ganze Stadt wiedereröffnet. Als Stadtkirche ohne Gemeinde ist sie heute ein Ort für Kunst und Kultur, für Wissenschaft und Diskussion, für theologische Veranstaltungen, experimentelle Gottesdienste und Rituale. Sie ist und bleibt jedoch auch ohne Gemeinde eine evangelische Kirche und gehört zum evangelischen Kirchenkreis Lübeck-Lauenburg. Als Hochschulkirche ist sie zudem der Ort für akademische Feierstunden, wie Begrüßungs- und Graduierungsfeiern der Universität zu Lübeck, der Technischen Hochschule Lübeck und der Musikhochschule Lübeck.\nDer weiß getünchte, lichtdurchflutete Kirchraum ist heute bis auf wenige Prinzipalstücke (Altar, Taufbecken, Kreuz und Orgel) leer und bietet so unendliche viele Möglichkeiten der Gestaltung: für Kunst genauso wie für Großveranstaltungen, für Gottesdienste wie für Experimente aller Art.\nIm Kirchraum finden sich zudem einige moderne Kunstwerke. Das Altarkreuz des österreichischen Künstlers Arnulf Rainer, das illuminierte Neonkreuz von Hanna Jäger im Gewölbe und die Neon-Installation \"Yes, it is a church!\" des Berliner Künstlers Christian Jankowski am Eingang zum Kirchraum laden Besuchende zum Nachdenken ein.\nNeben den Ausstellungen und Veranstaltungen im Kirchraum ist St. Petri bei Touristen wie Lübeckerinnen für ihren [Aussichtsturm] bekannt, von dem aus man die ganze Lübecker Altstadt überblickt. Auch das hauseigene Petri-Café lädt zum Verweilen ein.",
    "url": "https://de.wikipedia.org/wiki/Petrikirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Petrikirche (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Petrikirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q896458.jpg",
+    "author": "Carsten Steger",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_St._Peter%27s_Church,_L%C3%BCbeck_(view_from_the_southwest).jpg",
+    "width": 640,
+    "height": 853
+   }
   },
   "Q995760": {
    "wikidata": "Q995760",
    "label": "Brömserhof",
    "wikidata_url": "https://www.wikidata.org/wiki/Q995760",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
    "title": "Brömserhof (Lübeck)",
-   "summary": "Der Brömserhof ist ein kleines Palais des Spätbarock im Aegidienviertel der Lübecker Altstadt.",
+   "intro": "Der Brömserhof ist ein kleines Palais des Spätbarock im Aegidienviertel der Lübecker Altstadt.",
    "url": "https://de.wikipedia.org/wiki/Br%C3%B6mserhof_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
-   "attribution": "Wikipedia, „Brömserhof (Lübeck)“, CC BY-SA 4.0"
+   "attribution": "Wikipedia, „Brömserhof (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q995760.jpg",
+    "author": "Concord",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Broemserhof_4_2013_1.JPG",
+    "width": 640,
+    "height": 359
+   }
   },
   "Q99735520": {
    "wikidata": "Q99735520",
    "label": "Friedenskirche",
-   "wikidata_url": "https://www.wikidata.org/wiki/Q99735520"
+   "wikidata_url": "https://www.wikidata.org/wiki/Q99735520",
+   "facts": {
+    "built": "1973"
+   },
+   "image": {
+    "src": "img/luebeck/Q99735520.jpg",
+    "author": "Peter Oldekop",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_Friedenskirche.jpg",
+    "width": 640,
+    "height": 480
+   }
   }
  }
 }
