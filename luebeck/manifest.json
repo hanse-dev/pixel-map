@@ -1,0 +1,355 @@
+{
+  "title": "L\u00fcbeck Altstadt",
+  "city_id": "luebeck-altstadt",
+  "width": 4532,
+  "height": 2299,
+  "status": "Source-grounded illustrative pixel-art map; per-window water checks passed, landmark colours partly unrepaired",
+  "source_sha256": "a6ecee0540c38a47893e53ca901ecfdcfb8526e36270aa2eb388713775eaa68c",
+  "image_sha256": "ab9ac8db9ccddbd54efb2a7b58fb07205fb71122933aedf7cd23e6abf99dc8d9",
+  "camera": {
+    "type": "orthographic surface",
+    "crs": "EPSG:25832",
+    "bearing_deg": 313.6387085289712,
+    "elevation_deg": 35.264389682754654,
+    "px_per_m": 2.449489742783178,
+    "width": 4532,
+    "height": 2299,
+    "pixel_matrix": [
+      [
+        1.6904140118485809,
+        1.7727099222788776,
+        0,
+        -11613860.280366324
+      ],
+      [
+        1.0234745508228305,
+        -0.9759609847826934,
+        -1.9999999999999998,
+        5202349.48358376
+      ]
+    ],
+    "pixel_matrix_coordinates": [
+      "projected_easting_m",
+      "projected_northing_m",
+      "elevation_m"
+    ],
+    "centre_projected_m": [
+      610815.769,
+      5970118.52
+    ],
+    "u_range_m": [
+      -800,
+      1050
+    ],
+    "y_range_screen_m": [
+      -355.6039989586421,
+      583.1564317447591
+    ],
+    "z0_m": 15.04,
+    "formula": "u=dE*cos(b)-dN*sin(b), v=dE*sin(b)+dN*cos(b); X=(u-u0)*s; Y=(-(sin(e)*v+cos(e)*(z-z0))-y0)*s"
+  },
+  "credits": "Contains GeoBasis-DE/LVermGeo SH data: bDOM20 (2023), DGM1 (2022), DOP20 (2025), CC BY 4.0. \u00a9 OpenStreetMap contributors, ODbL. Art painted locally with FLUX.2 Klein 9B (FLUX Non-Commercial) and Pixel Art Redmond (Apache-2.0). Facades, windows and materials are illustrative.",
+  "limitations": [
+    "Facades have no measured evidence; brick walls come from the caption and also appear on some modern buildings.",
+    "Copper roofs of St. Katharinen and St. Aegidien are painted red/brick; Holstentor towers are simplified.",
+    "DSM rendered at 0.6 m (bDOM20 3x3 max), so small roof detail is coarser than the 0.4 m pilot.",
+    "Roof colour is one DOP20 median per building where OSM has no roof tag; DOP20 is not a true orthophoto."
+  ],
+  "landmarks": [
+    {
+      "id": "marienkirche",
+      "name": "St. Marien",
+      "short_name": "Marienkirche",
+      "lat": 53.867706,
+      "lon": 10.685229,
+      "x": 1952.6,
+      "y": 865.7,
+      "osm": "way/24275959",
+      "view_width": 1024
+    },
+    {
+      "id": "rathaus",
+      "name": "L\u00fcbecker Rathaus",
+      "short_name": "Rathaus",
+      "lat": 53.867007,
+      "lon": 10.685389,
+      "x": 1836.1,
+      "y": 954.4,
+      "osm": "way/43625520",
+      "view_width": 1024
+    },
+    {
+      "id": "petri",
+      "name": "St. Petri",
+      "short_name": "Petrikirche",
+      "lat": 53.865838,
+      "lon": 10.683069,
+      "x": 1346.6,
+      "y": 934.4,
+      "osm": "way/37993986",
+      "view_width": 1024
+    },
+    {
+      "id": "holstentor",
+      "name": "Holstentor",
+      "short_name": "Holstentor",
+      "lat": 53.866256,
+      "lon": 10.679648,
+      "x": 1037.4,
+      "y": 687.7,
+      "osm": "way/27075168",
+      "view_width": 1024
+    },
+    {
+      "id": "dom",
+      "name": "L\u00fcbecker Dom",
+      "short_name": "Dom",
+      "lat": 53.86089,
+      "lon": 10.68578,
+      "x": 701.8,
+      "y": 1669.8,
+      "osm": "way/24276160",
+      "view_width": 1024
+    },
+    {
+      "id": "aegidien",
+      "name": "St. Aegidien",
+      "short_name": "Aegidienkirche",
+      "lat": 53.863955,
+      "lon": 10.689808,
+      "x": 1751.5,
+      "y": 1596.9,
+      "osm": "way/135776766",
+      "view_width": 1024
+    },
+    {
+      "id": "katharinen",
+      "name": "St. Katharinen",
+      "short_name": "Katharinenkirche",
+      "lat": 53.8692,
+      "lon": 10.689776,
+      "x": 2758.6,
+      "y": 1005.3,
+      "osm": "way/147253616",
+      "view_width": 1024
+    },
+    {
+      "id": "jakobi",
+      "name": "St. Jakobi",
+      "short_name": "Jakobikirche",
+      "lat": 53.870841,
+      "lon": 10.689029,
+      "x": 2989.7,
+      "y": 767.7,
+      "osm": "way/37993987",
+      "view_width": 1024
+    },
+    {
+      "id": "burgtor",
+      "name": "Burgtor",
+      "short_name": "Burgtor",
+      "lat": 53.87391,
+      "lon": 10.691189,
+      "x": 3827.2,
+      "y": 574.4,
+      "osm": "way/119866260",
+      "view_width": 1024
+    }
+  ],
+  "opening_landmark": "marienkirche",
+  "export": {
+    "method": "Unchanged native PNG bytes; tiles cut after the artwork is complete",
+    "resampling": "box at lower levels; native level unchanged",
+    "native_upscale": 1
+  },
+  "deep_zoom": {
+    "tile_size": 256,
+    "overlap": 1,
+    "format": "png",
+    "max_level": 13,
+    "tile_count": 239,
+    "levels": {
+      "13": {
+        "width": 4532,
+        "height": 2299,
+        "columns": 18,
+        "rows": 9
+      },
+      "12": {
+        "width": 2266,
+        "height": 1150,
+        "columns": 9,
+        "rows": 5
+      },
+      "11": {
+        "width": 1133,
+        "height": 575,
+        "columns": 5,
+        "rows": 3
+      },
+      "10": {
+        "width": 567,
+        "height": 288,
+        "columns": 3,
+        "rows": 2
+      },
+      "9": {
+        "width": 284,
+        "height": 144,
+        "columns": 2,
+        "rows": 1
+      },
+      "8": {
+        "width": 142,
+        "height": 72,
+        "columns": 1,
+        "rows": 1
+      },
+      "7": {
+        "width": 71,
+        "height": 36,
+        "columns": 1,
+        "rows": 1
+      },
+      "6": {
+        "width": 36,
+        "height": 18,
+        "columns": 1,
+        "rows": 1
+      },
+      "5": {
+        "width": 18,
+        "height": 9,
+        "columns": 1,
+        "rows": 1
+      },
+      "4": {
+        "width": 9,
+        "height": 5,
+        "columns": 1,
+        "rows": 1
+      },
+      "3": {
+        "width": 5,
+        "height": 3,
+        "columns": 1,
+        "rows": 1
+      },
+      "2": {
+        "width": 3,
+        "height": 2,
+        "columns": 1,
+        "rows": 1
+      },
+      "1": {
+        "width": 2,
+        "height": 1,
+        "columns": 1,
+        "rows": 1
+      },
+      "0": {
+        "width": 1,
+        "height": 1,
+        "columns": 1,
+        "rows": 1
+      }
+    },
+    "resampling": "box",
+    "image_sha256": "ab9ac8db9ccddbd54efb2a7b58fb07205fb71122933aedf7cd23e6abf99dc8d9"
+  },
+  "source_deep_zoom": {
+    "tile_size": 256,
+    "overlap": 1,
+    "format": "png",
+    "max_level": 13,
+    "tile_count": 239,
+    "levels": {
+      "13": {
+        "width": 4532,
+        "height": 2299,
+        "columns": 18,
+        "rows": 9
+      },
+      "12": {
+        "width": 2266,
+        "height": 1150,
+        "columns": 9,
+        "rows": 5
+      },
+      "11": {
+        "width": 1133,
+        "height": 575,
+        "columns": 5,
+        "rows": 3
+      },
+      "10": {
+        "width": 567,
+        "height": 288,
+        "columns": 3,
+        "rows": 2
+      },
+      "9": {
+        "width": 284,
+        "height": 144,
+        "columns": 2,
+        "rows": 1
+      },
+      "8": {
+        "width": 142,
+        "height": 72,
+        "columns": 1,
+        "rows": 1
+      },
+      "7": {
+        "width": 71,
+        "height": 36,
+        "columns": 1,
+        "rows": 1
+      },
+      "6": {
+        "width": 36,
+        "height": 18,
+        "columns": 1,
+        "rows": 1
+      },
+      "5": {
+        "width": 18,
+        "height": 9,
+        "columns": 1,
+        "rows": 1
+      },
+      "4": {
+        "width": 9,
+        "height": 5,
+        "columns": 1,
+        "rows": 1
+      },
+      "3": {
+        "width": 5,
+        "height": 3,
+        "columns": 1,
+        "rows": 1
+      },
+      "2": {
+        "width": 3,
+        "height": 2,
+        "columns": 1,
+        "rows": 1
+      },
+      "1": {
+        "width": 2,
+        "height": 1,
+        "columns": 1,
+        "rows": 1
+      },
+      "0": {
+        "width": 1,
+        "height": 1,
+        "columns": 1,
+        "rows": 1
+      }
+    },
+    "resampling": "box",
+    "image_sha256": "a6ecee0540c38a47893e53ca901ecfdcfb8526e36270aa2eb388713775eaa68c"
+  }
+}
