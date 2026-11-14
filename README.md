@@ -2,7 +2,7 @@
 
 Isometric pixel-art city maps built from open geodata. Illustrative, not survey-grade.
 
-- [Lübeck Altstadt](luebeck/viewer.html)
+- [Lübeck Altstadt](luebeck/viewer.html) · press ⛰ or D for the depth effect (height from bDOM20/DGM1, capped at 40 m)
 
 ## Credits and licences
 
