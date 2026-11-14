@@ -1,0 +1,201 @@
+{
+ "status": "Entwurf: Auswahl und Reihenfolge zur Prüfung. Stationstexte kommen aus der Wikipedia-Einleitung (CC BY-SA 4.0); Weg-Angaben (Richtung, Luftlinie) sind aus OSM-Koordinaten berechnet.",
+ "tours": [
+  {
+   "id": "tuerme",
+   "title": "Die Türme der Altstadt",
+   "intro": "Ein Rundgang entlang der Kirchtürme, die Lübecks Silhouette prägen – von Süden nach Norden.",
+   "stations": [
+    {
+     "wikidata": "Q3916007",
+     "lat": 53.860899,
+     "lon": 10.685719
+    },
+    {
+     "wikidata": "Q316973",
+     "lat": 53.863955,
+     "lon": 10.68976,
+     "leg": {
+      "metres": 430,
+      "direction": "Nordosten"
+     }
+    },
+    {
+     "wikidata": "Q896458",
+     "lat": 53.865818,
+     "lon": 10.683229,
+     "leg": {
+      "metres": 480,
+      "direction": "Nordwesten"
+     }
+    },
+    {
+     "wikidata": "Q695065",
+     "lat": 53.867788,
+     "lon": 10.685075,
+     "leg": {
+      "metres": 250,
+      "direction": "Nordosten"
+     }
+    },
+    {
+     "wikidata": "Q375042",
+     "lat": 53.870899,
+     "lon": 10.688953,
+     "leg": {
+      "metres": 430,
+      "direction": "Nordosten"
+     }
+    }
+   ],
+   "length_m": 1590
+  },
+  {
+   "id": "hanse",
+   "title": "Hanse, Handel und Salz",
+   "intro": "Vom westlichen Stadttor über Speicher und Kaufmannshäuser zum Rathaus und zum Hafen.",
+   "stations": [
+    {
+     "wikidata": "Q321229",
+     "lat": 53.86626,
+     "lon": 10.679664
+    },
+    {
+     "wikidata": "Q657603",
+     "lat": 53.865868,
+     "lon": 10.68021,
+     "leg": {
+      "metres": 60,
+      "direction": "Südosten"
+     }
+    },
+    {
+     "wikidata": "Q1784591",
+     "lat": 53.872905,
+     "lon": 10.685426,
+     "leg": {
+      "metres": 850,
+      "direction": "Nordosten"
+     }
+    },
+    {
+     "wikidata": "Q2713736",
+     "lat": 53.870908,
+     "lon": 10.68793,
+     "leg": {
+      "metres": 280,
+      "direction": "Südosten"
+     }
+    },
+    {
+     "wikidata": "Q538453",
+     "lat": 53.867137,
+     "lon": 10.685457,
+     "leg": {
+      "metres": 450,
+      "direction": "Süden"
+     }
+    },
+    {
+     "wikidata": "Q1435580",
+     "lat": 53.876699,
+     "lon": 10.690823,
+     "leg": {
+      "metres": 1120,
+      "direction": "Norden"
+     }
+    }
+   ],
+   "length_m": 2760
+  },
+  {
+   "id": "buergerhaeuser",
+   "title": "Bürgerhäuser und Nobelpreisträger",
+   "intro": "Wohn- und Geschäftshäuser der Kaufmannsfamilien – und zwei Häuser, die heute an Nobelpreisträger erinnern.",
+   "stations": [
+    {
+     "wikidata": "Q315187",
+     "lat": 53.868387,
+     "lon": 10.685802
+    },
+    {
+     "wikidata": "Q1367741",
+     "lat": 53.868832,
+     "lon": 10.681786,
+     "leg": {
+      "metres": 270,
+      "direction": "Westen"
+     }
+    },
+    {
+     "wikidata": "Q1879877",
+     "lat": 53.868081,
+     "lon": 10.688086,
+     "leg": {
+      "metres": 420,
+      "direction": "Osten"
+     }
+    },
+    {
+     "wikidata": "Q2581800",
+     "lat": 53.869724,
+     "lon": 10.689546,
+     "leg": {
+      "metres": 210,
+      "direction": "Nordosten"
+     }
+    },
+    {
+     "wikidata": "Q814533",
+     "lat": 53.870247,
+     "lon": 10.689793,
+     "leg": {
+      "metres": 60,
+      "direction": "Norden"
+     }
+    }
+   ],
+   "length_m": 960
+  },
+  {
+   "id": "stifte",
+   "title": "Klöster, Stifte und Herbergen",
+   "intro": "Orte der Fürsorge und des geistlichen Lebens, verteilt über die Altstadt.",
+   "stations": [
+    {
+     "wikidata": "Q1786466",
+     "lat": 53.872231,
+     "lon": 10.688657
+    },
+    {
+     "wikidata": "Q317388",
+     "lat": 53.869186,
+     "lon": 10.689678,
+     "leg": {
+      "metres": 350,
+      "direction": "Süden"
+     }
+    },
+    {
+     "wikidata": "Q2316268",
+     "lat": 53.867349,
+     "lon": 10.692866,
+     "leg": {
+      "metres": 290,
+      "direction": "Südosten"
+     }
+    },
+    {
+     "wikidata": "Q1515805",
+     "lat": 53.871267,
+     "lon": 10.692043,
+     "leg": {
+      "metres": 440,
+      "direction": "Norden"
+     }
+    }
+   ],
+   "length_m": 1080
+  }
+ ]
+}
