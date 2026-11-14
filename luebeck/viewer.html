@@ -118,7 +118,7 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
     gl.bindBuffer(gl.ARRAY_BUFFER,this.buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([x0,y0,u0,v0,x1,y0,u1,v0,x0,y1,u0,v1,x1,y1,u1,v1]),gl.STREAM_DRAW);
     for(const [name,offset] of [['p',0],['t',8]]){const a=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,16,offset)}
     gl.drawArrays(gl.TRIANGLE_STRIP,0,4)},
-  depthImage(key){let image=this.loading.get(key);if(!image){image=new Image();image.dataset=image.dataset||{};image.decoding='async';image.onload=()=>this.frame();image.src=`depth_files/${key}.png`;this.loading.set(key,image)}return image},
+  depthImage(key){let image=this.loading.get(key);if(!image){image=new Image();image.decoding='async';image.onload=()=>this.frame();image.src=`depth_files/${key}.png`;this.loading.set(key,image)}return image},
   frame(){
     if(!this.on||!this.gl)return;const gl=this.gl,canvas=$('depth-canvas'),dpr=devicePixelRatio||1,w=Math.max(1,Math.round(vw*dpr)),h=Math.max(1,Math.round(vh*dpr));
     if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}
@@ -133,7 +133,7 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
           const [col,row]=key.split('/')[1].split('_').map(Number),tile=spec.tile_size,pad=spec.overlap;
           const left=Math.max(0,col*tile-pad),top=Math.max(0,row*tile-pad),right=Math.min(size.width,(col+1)*tile+pad),bottom=Math.min(size.height,(row+1)*tile+pad);
           gl.bindTexture(gl.TEXTURE_2D,this.tex.get(id));this.quad(this.copy,ndc(left*sx,top*sy,right*sx,bottom*sy),[0,0,1,1])}}
-    }catch(error){this.fail();return}
+    }catch(error){this.fail(error);return}
     for(const [id,t] of this.tex)if(!live.has(id)){gl.deleteTexture(t);this.tex.delete(id)}
     gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,w,h);gl.useProgram(this.parallax);
     gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,this.targets[0].tex);gl.uniform1i(gl.getUniformLocation(this.parallax,'art'),0);
@@ -142,7 +142,7 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
     this.quad(this.parallax,[-1,-1,1,1],[0,0,1,1])},
   animate(){this.raf=null;const d=[this.goal[0]-this.tilt[0],this.goal[1]-this.tilt[1]];this.tilt=[this.tilt[0]+d[0]*.12,this.tilt[1]+d[1]*.12];this.frame();if(this.on&&Math.hypot(...d)>.002)this.raf=requestAnimationFrame(()=>this.animate())},
   aim(gx,gy){this.goal=[clamp(gx,-1,1),clamp(gy,-1,1)];if(this.raf===null)this.raf=requestAnimationFrame(()=>this.animate())},
-  fail(){this.failed=true;this.set(false);$('depth').disabled=true;$('pill').textContent='Depth needs the hosted map or a local server';$('pill').classList.add('visible');clearTimeout(pillTimer);pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),2500)},
+  fail(error){if(error)console.error('Depth effect stopped:',error);this.failed=true;this.set(false);$('depth').disabled=true;$('pill').textContent=location.protocol==='file:'?'Depth needs the hosted map or a local server':'Depth effect is not available in this browser';$('pill').classList.add('visible');clearTimeout(pillTimer);pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),2500)},
   set(value){if(value&&(this.failed||(!this.gl&&!this.init()))){this.failed=true;$('depth').disabled=true;return}
     this.on=value;$('depth').setAttribute('aria-pressed',String(value));$('depth-canvas').hidden=!value;
     if(value){this.tilt=[0,0];this.aim(.5,-.5)}this.frame()}};
