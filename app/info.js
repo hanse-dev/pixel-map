@@ -40,17 +40,35 @@
   function show(b) {
     const i = b.wikidata ? info[b.wikidata] : null;
     text('building-name', (i && (i.title || i.label)) || b.name || 'Gebäude');
-    text('building-kind', [b.historic === 'city_gate' ? 'Stadttor' : kindName(b.kind), b.start_date ? `erbaut ${b.start_date}` : null].filter(Boolean).join(' · '));
-    text('building-summary', i && i.summary);
+    text('building-kind', [b.historic === 'city_gate' ? 'Stadttor' : kindName(b.kind), b.start_date && !(info[b.wikidata] && info[b.wikidata].facts && info[b.wikidata].facts.built) ? `erbaut ${b.start_date}` : null].filter(Boolean).join(' · '));
+    const fig = el('building-figure'), img = el('building-image'), cap = el('building-image-credit');
+    if (i && i.image) {
+      img.src = `../info/${i.image.src}`; img.alt = (i.title || b.name || '') + ' (Foto)';
+      cap.replaceChildren(); const a = document.createElement('a'); a.href = i.image.file; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = `Foto: ${i.image.author}, ${i.image.licence}`; cap.append(a); fig.hidden = false;
+    } else fig.hidden = true;
+    const facts = el('building-facts'); facts.replaceChildren();
+    const f = (i && i.facts) || {};
+    for (const v of [...(f.heritage || []), f.built ? `erbaut ${f.built}` : null, ...(f.style || []), ...(f.architect || []).map(a => `Architekt: ${a}`)].filter(Boolean)) {
+      const li = document.createElement('li'); li.textContent = v; facts.append(li);
+    }
+    facts.hidden = !facts.children.length;
+    const summary = el('building-summary'); summary.replaceChildren();
+    const intro = i && (i.intro || i.summary) || '';
+    for (const part of intro.split(/\n+/).filter(Boolean)) { const p = document.createElement('p'); p.textContent = part; summary.append(p); }
+    summary.hidden = !intro;
+    const long = intro.length > 380; summary.classList.toggle('clamped', long); el('building-more').hidden = !long;
     const links = el('building-links'); links.replaceChildren();
+    if (f.website) { const a = document.createElement('a'); a.href = f.website; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Website'; links.append(a, ' ') }
     if (i && i.url) { const a = document.createElement('a'); a.href = i.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Wikipedia'; links.append(a, ' ') }
     if (b.wikidata) { const a = document.createElement('a'); a.href = `https://www.wikidata.org/wiki/${b.wikidata}`; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Wikidata'; links.append(a, ' ') }
     const o = document.createElement('a'); o.href = `https://www.openstreetmap.org/${b.osm}`; o.target = '_blank'; o.rel = 'noopener'; o.textContent = 'OpenStreetMap'; links.append(o);
     links.hidden = false;
-    text('building-credit', i && i.summary ? `Text: ${i.attribution}` : '');
+    text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
     panel.hidden = false;
   }
   el('building-close').onclick = () => { panel.hidden = true };
+  el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };
   document.addEventListener('keydown', e => { if (e.key === 'Escape') panel.hidden = true });
   // the pointer becomes a hand over buildings with an info entry
   let hoverAt = 0;
