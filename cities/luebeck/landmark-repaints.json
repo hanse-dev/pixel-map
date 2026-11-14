@@ -1,6 +1,6 @@
 {
  "base_map_sha256": "672537e434f4089f1fcc1df68bf6d3e0ba81277e53b39a923471fcd5f1e32f60",
- "map_sha256": "4e411f98da506670a70027c23a90820f78b27f4ce4f904b348f8e22c3d9dada5",
+ "map_sha256": "6470c88a57ec1fbc62909968c82f4a9fb378146d7111658bee086fe49501de54",
  "method": "each landmark repainted from a 2x nearest zoom of its surroundings with the art inside its OSM mask reset to source; chosen try box-downscaled and blended inside the mask (+6 px, 4 px feather), in this order; changed pixels up to 60 px directly above the mask are included so repainted spires are not cut",
  "landmarks": [
   {
@@ -12,10 +12,11 @@
   },
   {
    "name": "Rathaus",
-   "try": "zoom2-1",
-   "raw_sha256": "f856aa0971bbf1901a8764ef48023376601bff107fca528217c0046bc6dbe024",
+   "try": "zoom2-0",
+   "raw_sha256": "572ef74b46479c53a65a9f16086e2c089f3719b56935f0bfe3352160c1648d08",
    "mask_sha256": "eec90fd2f4befeaf9cbaf40256428065b4ee31abcb9c1fa206e854baf5aa0056",
-   "caption_sha256": "685ac1a5112ef2b0a59fc45ac073fcbccbec44e5644a1f4f675f0d34046bce95"
+   "caption_sha256": "dea7d5ff1256960c645a0380c9826af18e04e95dff161e339d81a195ed413f2f",
+   "note": "second repaint: red brick, light arcade; first try was all black glazed brick"
   },
   {
    "name": "Katharinenkirche",
