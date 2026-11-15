@@ -59,7 +59,6 @@
   "Facades have no measured evidence; brick walls and windows are illustrative.",
   "Holstentor, Rathaus, Markt, Katharinenkirche, Burgtor and Salzspeicher were repainted individually; their details are illustrative. The Rathaus repaint used a public-domain photo (Blick auf Rathaus Luebeck.jpg) as a second reference.",
   "Shorelines follow the DOP20 near-infrared band where OSM water polygons were off.",
-  "Railway areas in the north-west are painted as plain ground; tracks are mostly missing.",
   "Roof colours follow OSM tags; OSM's default copper #33CC99 is shown as patina."
  ]
 }

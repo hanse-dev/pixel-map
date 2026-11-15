@@ -1,6 +1,6 @@
 {
  "base_map_sha256": "715e0b3cf3936dfcadaffb4a5be963679f31f60e173a19f185ada2edae5ab934",
- "map_sha256": "67c47cc0da0710e7915cfc6a318cf81eaa0030d6e602d771c0293ceff1402ce4",
+ "map_sha256": "d8b65e82f971caaf5977d56c78e1bff4fd6a4a2000e7d6cbf86522dbe5fc26ec",
  "island_offset_px": [
   800,
   800
@@ -17,9 +17,9 @@
   {
    "name": "Markt",
    "try": "zoom2-1",
-   "note": "open square, stalls flattened in source",
+   "note": "open square; blended only inside the Markt polygon so the Kohlmarkt street and its buildings stay",
    "raw_sha256": "84225dc7f9497047abd24c42eb6d9807e37c6885213ee2669f19f4d67f8f9a46",
-   "mask_sha256": "145a30fa4f9c41f71a75eb008b20e4c5594bbc02a26af770424a633e2a57a45e"
+   "mask_sha256": "b0b6a575b678abdf5e240ed3b2175d2bce4aed3c2d89b539bf30d380ae1a0951"
   },
   {
    "name": "Rathaus",
