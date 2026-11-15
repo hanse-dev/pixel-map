@@ -125,7 +125,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None):
             print(f"warning: {name}: landmark {item['wikidata']} not visible in the bundle"); continue
         i = info.get(item['wikidata'], {})
         landmarks.append({'id': item['id'], 'name': i.get('title') or b.get('name') or item['short_name'], 'short_name': item['short_name'],
-                          'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 1024, 'wikidata': item['wikidata']})
+                          'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 1024, 'wikidata': item['wikidata'], 'building': b['id']})
     tours = []
     tour_file = ROOT / 'config' / f'tours.{name}.json'
     if tour_file.exists():
@@ -222,6 +222,23 @@ def main():
     items = ''.join(f'<li><a href="{n}/">{html.escape(t)}</a></li>' for n, t in cities)
     (SITE / 'index.html').write_text((ROOT / 'app/index.template.html').read_text().replace('__CITIES__', items))
     (SITE / '.nojekyll').write_text('')
+    check_scripts()
+
+
+def check_scripts():
+    """Refuse to publish a page whose inline or app script does not parse (needs node; skipped without it)."""
+    import shutil, subprocess, tempfile
+    if not shutil.which('node'):
+        print('warning: node not found, scripts not syntax-checked'); return
+    files = list((SITE / 'app').glob('*.js'))
+    with tempfile.TemporaryDirectory() as t:
+        for page in SITE.glob('*/index.html'):
+            for i, code in enumerate(re.findall(r'<script>(.*?)</script>', page.read_text(), re.S)):
+                f = Path(t) / f'{page.parent.name}-{i}.js'; f.write_text(code); files.append(f)
+        for f in files:
+            r = subprocess.run(['node', '--check', str(f)], capture_output=True, text=True)
+            if r.returncode:
+                raise SystemExit(f'syntax error in {f.name}:\n{r.stderr[:600]}')
 
 
 if __name__ == '__main__':
