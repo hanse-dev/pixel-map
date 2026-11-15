@@ -37,10 +37,19 @@
   const kindName = k => k in KIND ? KIND[k] : k;
   const el = id => document.getElementById(id);
   // Highlight: the chosen building's own hit-map pixels, tinted turquoise with a strong outline.
-  let selected = 0;
-  async function highlight(b) {
-    const layer = el('select-world'); layer.replaceChildren(); selected = b ? b.id : 0;
-    if (!b || !b.box) return;
+  // Two styles share one painter: the selection (turquoise fill) and the hover (warm glow, no fill).
+  const STYLES = {
+    select: {layer: 'select-world', edge: [255, 255, 255, 255], fill: [40, 230, 230, 105], ring: [[0, 170, 190, 150], [0, 170, 190, 255]]},
+    hover: {layer: 'hover-world', edge: [255, 244, 200, 230], fill: [255, 230, 150, 45], ring: [[255, 200, 70, 90], [255, 200, 70, 200]]},
+  };
+  const current = {select: 0, hover: 0};
+  const masks = new Map();                            // building id -> painted canvas, reused while hovering
+  function highlight(b) { return mark('select', b) }
+  async function mark(kind, b) {
+    const st = STYLES[kind], layer = el(st.layer); current[kind] = b ? b.id : 0;
+    if (!b || !b.box) { layer.replaceChildren(); return }
+    const cacheKey = kind + b.id;
+    if (masks.has(cacheKey)) { if (current[kind] === b.id) layer.replaceChildren(masks.get(cacheKey)); return }
     const [x0, y0, x1, y1] = b.box, w = x1 - x0, h = y1 - y0, id = b.id;
     const ids = new Uint8Array(w * h);
     for (let row = Math.floor(y0 / size); row <= Math.floor((y1 - 1) / size); row++)
@@ -53,19 +62,21 @@
           if (d[k] + 256 * d[k + 1] + 65536 * d[k + 2] === id) ids[(ay - y0 + yy) * w + (ax - x0 + xx)] = 1;
         }
       }
-    if (selected !== id) return;                       // another click arrived meanwhile
+    if (current[kind] !== id) return;                  // another building was chosen meanwhile
     const P = 2, c = document.createElement('canvas'); c.width = w + 2 * P; c.height = h + 2 * P;
     const g = c.getContext('2d'), img = g.createImageData(c.width, c.height), at = (x, y) => x >= 0 && y >= 0 && x < w && y < h && ids[y * w + x];
     for (let y = -P; y < h + P; y++) for (let x = -P; x < w + P; x++) {
       const inside = at(x, y), k = ((y + P) * c.width + x + P) * 4;
       let near = 0; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) if (at(x + dx, y + dy)) near = Math.max(near, 3 - Math.max(Math.abs(dx), Math.abs(dy)));
-      if (inside && near === 3 && !(at(x - 1, y) && at(x + 1, y) && at(x, y - 1) && at(x, y + 1))) img.data.set([255, 255, 255, 255], k);      // white edge
-      else if (inside) img.data.set([40, 230, 230, 105], k);                                                                         // turquoise fill
-      else if (near) img.data.set([0, 170, 190, near === 2 ? 255 : 150], k);                                                         // turquoise outline
+      if (inside && near === 3 && !(at(x - 1, y) && at(x + 1, y) && at(x, y - 1) && at(x, y + 1))) img.data.set(st.edge, k);
+      else if (inside) img.data.set(st.fill, k);
+      else if (near) img.data.set(st.ring[near === 2 ? 1 : 0], k);
     }
     g.putImageData(img, 0, 0);
     c.style.cssText = `left:${x0 - P}px;top:${y0 - P}px;width:${c.width}px;height:${c.height}px`;
-    layer.append(c);
+    if (masks.size > 40) masks.delete(masks.keys().next().value);
+    masks.set(cacheKey, c);
+    layer.replaceChildren(c);
   }
   function text(id, value) { el(id).textContent = value || ''; el(id).hidden = !value; }
   function show(b) {
@@ -108,8 +119,15 @@
     if (!ready || e.buttons || performance.now() - hoverAt < 80) return;
     hoverAt = performance.now();
     const r = view.getBoundingClientRect(), mx = (e.clientX - r.left - x) / s, my = (e.clientY - r.top - y) / s;
-    try { const b = byId.get(await idAt(mx, my)); view.style.cursor = b && b.wikidata && info[b.wikidata] ? 'pointer' : ''; } catch {}
+    try {
+      const b = byId.get(await idAt(mx, my)), linked = b && b.wikidata && info[b.wikidata];
+      view.style.cursor = linked ? 'pointer' : '';
+      const show = linked && b.id !== current.select ? b : null;
+      if ((show ? show.id : 0) !== current.hover) mark('hover', show);
+    } catch {}
   });
+  view.addEventListener('pointerleave', () => mark('hover', null));
+  view.addEventListener('pointerdown', () => mark('hover', null));
   // a click is a press and release that barely moved, so panning never opens the panel
   view.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY] });
   view.addEventListener('pointerup', async e => {
