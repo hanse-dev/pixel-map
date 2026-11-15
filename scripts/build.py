@@ -145,6 +145,30 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None):
                                  'view_width': 900, 'building': b['id'], 'leg': st.get('leg')})
             if len(stations) >= 2:
                 tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': t.get('length_m', 0), 'stations': stations})
+    stones, stones_credit = [], None
+    stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
+    if stone_file.exists() and (bundle / 'ground.json').exists():
+        import numpy as np
+        from pyproj import Transformer
+        sdata = json.loads(stone_file.read_text()); ground = json.loads((bundle / 'ground.json').read_text())
+        h = np.array(ground['heights_dm'], np.float32).reshape(ground['rows'], ground['columns']) / 10
+        tf = Transformer.from_crs(4326, ground['crs'], always_xy=True)
+        M = np.array(camera['pixel_matrix'])
+        places = {}
+        for st in sdata['stones']:
+            e, n = tf.transform(st['lon'], st['lat'])
+            c = int(round((e - ground['west']) / ground['step_m'])); r = int(round((ground['north'] - n) / ground['step_m']))
+            if not (0 <= r < ground['rows'] and 0 <= c < ground['columns']):
+                continue
+            px, py = M @ [e, n, float(h[r, c]), 1]
+            if not (0 <= px < manifest['size'][0] and 0 <= py < manifest['size'][1]):
+                continue
+            key = (round(st['lat'], 5), round(st['lon'], 5))
+            place = places.setdefault(key, {'x': round(float(px), 1), 'y': round(float(py), 1), 'address': st['address'], 'people': []})
+            place['people'].append({k: st[k] for k in ('given', 'surname', 'born', 'laid', 'biography')})
+        stones = sorted(places.values(), key=lambda p: (p['y'], p['x']))
+        stones_credit = sdata['source']
+        print(f"{name}: {sum(len(p['people']) for p in stones)} Stolpersteine an {len(stones)} Adressen im Kartenausschnitt")
     credits = manifest['credits']
     data = {'title': config['title'], 'city_id': name, 'width': manifest['size'][0], 'height': manifest['size'][1],
             'status': config.get('status', 'Illustrative pixel-art map from open geodata'),
@@ -154,7 +178,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None):
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json('preview-map.webp'), 'SOURCE': script_json('preview-source.webp'),
