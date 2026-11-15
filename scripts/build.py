@@ -86,7 +86,11 @@ def outline_tiles(bundle, out, wanted):
     rgba[ring & ~edge] = (40, 28, 10, 150)            # dark halo keeps the line visible on light roofs
     rgba[edge] = (255, 214, 90, 235)
     image = Image.fromarray(rgba, 'RGBA')
-    return pyramid(image, out / 'outline_files', fmt='png')
+    fill = np.zeros_like(rgba)                         # "Eingefärbt": the whole building tinted, edge kept
+    fill[inside] = (255, 196, 60, 120)
+    fill[ring & ~edge] = (40, 28, 10, 150)
+    fill[edge] = (255, 230, 120, 255)
+    return pyramid(image, out / 'outline_files', fmt='png'), pyramid(Image.fromarray(fill, 'RGBA'), out / 'fill_files', fmt='png')
     import math
     maximum = math.ceil(math.log2(max(image.size)))
     levels = {}
@@ -106,7 +110,7 @@ def outline_tiles(bundle, out, wanted):
     return {'tile_size': 256, 'overlap': 1, 'format': 'png', 'max_level': maximum, 'levels': levels}
 
 
-def city_page(name, config, cities, outline=None, tiles=None):
+def city_page(name, config, cities, outline=None, tiles=None, fill=None):
     bundle = ROOT / 'cities' / name
     manifest = json.loads((bundle / 'manifest.json').read_text())
     camera = json.loads((bundle / 'camera.json').read_text())
@@ -150,7 +154,7 @@ def city_page(name, config, cities, outline=None, tiles=None):
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline,
+            'tours': tours, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json('preview-map.webp'), 'SOURCE': script_json('preview-source.webp'),
@@ -186,8 +190,8 @@ def main():
         lang = configs[name].get('lang', 'de'); info_file = ROOT / 'info' / f'{name}.{lang}.json'
         info = json.loads(info_file.read_text())['items'] if info_file.exists() else {}
         wanted = {b['id'] for b in json.loads((root / 'buildings.json').read_text())['buildings'] if b.get('wikidata') in info}
-        outline = outline_tiles(root, out, wanted) if wanted else None
-        (out / 'index.html').write_text(city_page(name, configs[name], cities, outline, tiles))
+        outline, fill = outline_tiles(root, out, wanted) if wanted else (None, None)
+        (out / 'index.html').write_text(city_page(name, configs[name], cities, outline, tiles, fill))
         (out / 'viewer.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./">'
                                          '<script>location.replace("./"+location.hash)</script><a href="./">Karte öffnen</a>')
         print(f'built {name}')
