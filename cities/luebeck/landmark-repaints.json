@@ -1,44 +1,53 @@
 {
- "base_map_sha256": "672537e434f4089f1fcc1df68bf6d3e0ba81277e53b39a923471fcd5f1e32f60",
- "map_sha256": "6470c88a57ec1fbc62909968c82f4a9fb378146d7111658bee086fe49501de54",
- "method": "each landmark repainted from a 2x nearest zoom of its surroundings with the art inside its OSM mask reset to source; chosen try box-downscaled and blended inside the mask (+6 px, 4 px feather), in this order; changed pixels up to 60 px directly above the mask are included so repainted spires are not cut",
+ "base_map_sha256": "715e0b3cf3936dfcadaffb4a5be963679f31f60e173a19f185ada2edae5ab934",
+ "map_sha256": "67c47cc0da0710e7915cfc6a318cf81eaa0030d6e602d771c0293ceff1402ce4",
+ "island_offset_px": [
+  800,
+  800
+ ],
+ "method": "each landmark repainted from a 2x or 4x nearest zoom with the art inside its mask reset to source; blended inside the mask (+6 px, 4 px feather, changed pixels up to 60 px above)",
  "landmarks": [
   {
    "name": "Holstentor",
-   "try": "zoom2-2",
-   "raw_sha256": "8e2b07467252750c70ce20eb712a915e87fd59451a80ffa6ab56d0b7ae9c6866",
-   "mask_sha256": "98984081569cd8d4eff963e84bf66511b3f113e7a0455b5e7f8c732b428542b1",
-   "caption_sha256": "13065a8b14a48946a91d180ae7ce1fdaca33f443bf6ab2a51e8d74c719d89c4d"
+   "try": "zoom4-2",
+   "note": "text, 4x zoom, symmetric towers",
+   "raw_sha256": "d0735e5aed2e4c8e2fe10657a57896cc1f191a1771d5c4eba28a834fe66fec0a",
+   "mask_sha256": "98984081569cd8d4eff963e84bf66511b3f113e7a0455b5e7f8c732b428542b1"
+  },
+  {
+   "name": "Markt",
+   "try": "zoom2-1",
+   "note": "open square, stalls flattened in source",
+   "raw_sha256": "84225dc7f9497047abd24c42eb6d9807e37c6885213ee2669f19f4d67f8f9a46",
+   "mask_sha256": "145a30fa4f9c41f71a75eb008b20e4c5594bbc02a26af770424a633e2a57a45e"
   },
   {
    "name": "Rathaus",
-   "try": "zoom2-0",
-   "raw_sha256": "572ef74b46479c53a65a9f16086e2c089f3719b56935f0bfe3352160c1648d08",
-   "mask_sha256": "eec90fd2f4befeaf9cbaf40256428065b4ee31abcb9c1fa206e854baf5aa0056",
-   "caption_sha256": "dea7d5ff1256960c645a0380c9826af18e04e95dff161e339d81a195ed413f2f",
-   "note": "second repaint: red brick, light arcade; first try was all black glazed brick"
+   "try": "zoom2-ref-1",
+   "note": "photo reference: Blick auf Rathaus Luebeck.jpg (public domain)",
+   "raw_sha256": "0b1c5fc36e502f6d73d31044be25376230ea766692d71cffa86f1e5d7714ebb9",
+   "mask_sha256": "eec90fd2f4befeaf9cbaf40256428065b4ee31abcb9c1fa206e854baf5aa0056"
   },
   {
    "name": "Katharinenkirche",
    "try": "zoom2-0",
+   "note": "",
    "raw_sha256": "130d7a9bf986d0c91c11873010579c9fcc40fd3b71599c3a888422b5e3d8f3a6",
-   "mask_sha256": "85a9f3dbf12edf564c1b9d5e41d4c1cbaf1f715bb0192159377f98e820cd71ff",
-   "caption_sha256": "fd8baa01e13303858bb4ace3a2446dcf62b4365bf1ac3eb1cbdbb17e8e36966b"
+   "mask_sha256": "85a9f3dbf12edf564c1b9d5e41d4c1cbaf1f715bb0192159377f98e820cd71ff"
   },
   {
    "name": "Burgtor",
    "try": "zoom2-1",
+   "note": "",
    "raw_sha256": "412394395a54768567b151a5f22fd0488b9e87dd45a72a945bc0d0fd48747595",
-   "mask_sha256": "cf65925b943e62b00e1b44a03486b7450cdcada1d1da95de8b42a0ff8b50a931",
-   "caption_sha256": "2e23983ce5a038e72e0168a9cc62181c916bcf0a921760c18a356aa27fa131d4"
+   "mask_sha256": "cf65925b943e62b00e1b44a03486b7450cdcada1d1da95de8b42a0ff8b50a931"
   },
   {
    "name": "Salzspeicher",
    "try": "zoom2-2",
+   "note": "",
    "raw_sha256": "6b075def648c64728d84eeb9035032c13e2d679ede6b6d61b47f5d25bb0bc831",
-   "mask_sha256": "070b84762fa6b3853fe6f413130a57722e20700cce15a0975b2ee927cb0510b9",
-   "caption_sha256": "b7b612c702a6794ab157a4918e763711a69f40bbf14b866a4ac0b9d21ea41923"
+   "mask_sha256": "070b84762fa6b3853fe6f413130a57722e20700cce15a0975b2ee927cb0510b9"
   }
- ],
- "blend_script_sha256": "a60da5312fe7513200a9c0359b926f778619cb699f3c77cebf2529d1a79b31fa"
+ ]
 }

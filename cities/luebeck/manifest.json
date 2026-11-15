@@ -1,10 +1,10 @@
 {
   "format": "pixel-map-bundle/1",
   "city": "luebeck-altstadt-04",
-  "title": "L\u00fcbeck Altstadt (0.4 m tiles)",
+  "title": "L\u00fcbeck Altstadt und Umgebung (0.4 m tiles)",
   "size": [
-    4532,
-    2299
+    6132,
+    3899
   ],
   "tiles": {
     "map": {
@@ -12,71 +12,71 @@
       "overlap": 1,
       "format": "png",
       "max_level": 13,
-      "tile_count": 239,
+      "tile_count": 521,
       "levels": {
         "13": {
-          "width": 4532,
-          "height": 2299,
-          "columns": 18,
-          "rows": 9
+          "width": 6132,
+          "height": 3899,
+          "columns": 24,
+          "rows": 16
         },
         "12": {
-          "width": 2266,
-          "height": 1150,
-          "columns": 9,
-          "rows": 5
+          "width": 3066,
+          "height": 1950,
+          "columns": 12,
+          "rows": 8
         },
         "11": {
-          "width": 1133,
-          "height": 575,
-          "columns": 5,
-          "rows": 3
+          "width": 1533,
+          "height": 975,
+          "columns": 6,
+          "rows": 4
         },
         "10": {
-          "width": 567,
-          "height": 288,
+          "width": 767,
+          "height": 488,
           "columns": 3,
           "rows": 2
         },
         "9": {
-          "width": 284,
-          "height": 144,
+          "width": 384,
+          "height": 244,
           "columns": 2,
           "rows": 1
         },
         "8": {
-          "width": 142,
-          "height": 72,
+          "width": 192,
+          "height": 122,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 71,
-          "height": 36,
+          "width": 96,
+          "height": 61,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 36,
-          "height": 18,
+          "width": 48,
+          "height": 31,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 18,
-          "height": 9,
+          "width": 24,
+          "height": 16,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 9,
-          "height": 5,
+          "width": 12,
+          "height": 8,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 5,
-          "height": 3,
+          "width": 6,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
@@ -100,78 +100,78 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "6470c88a57ec1fbc62909968c82f4a9fb378146d7111658bee086fe49501de54"
+      "image_sha256": "67c47cc0da0710e7915cfc6a318cf81eaa0030d6e602d771c0293ceff1402ce4"
     },
     "source": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
       "max_level": 13,
-      "tile_count": 239,
+      "tile_count": 521,
       "levels": {
         "13": {
-          "width": 4532,
-          "height": 2299,
-          "columns": 18,
-          "rows": 9
+          "width": 6132,
+          "height": 3899,
+          "columns": 24,
+          "rows": 16
         },
         "12": {
-          "width": 2266,
-          "height": 1150,
-          "columns": 9,
-          "rows": 5
+          "width": 3066,
+          "height": 1950,
+          "columns": 12,
+          "rows": 8
         },
         "11": {
-          "width": 1133,
-          "height": 575,
-          "columns": 5,
-          "rows": 3
+          "width": 1533,
+          "height": 975,
+          "columns": 6,
+          "rows": 4
         },
         "10": {
-          "width": 567,
-          "height": 288,
+          "width": 767,
+          "height": 488,
           "columns": 3,
           "rows": 2
         },
         "9": {
-          "width": 284,
-          "height": 144,
+          "width": 384,
+          "height": 244,
           "columns": 2,
           "rows": 1
         },
         "8": {
-          "width": 142,
-          "height": 72,
+          "width": 192,
+          "height": 122,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 71,
-          "height": 36,
+          "width": 96,
+          "height": 61,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 36,
-          "height": 18,
+          "width": 48,
+          "height": 31,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 18,
-          "height": 9,
+          "width": 24,
+          "height": 16,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 9,
-          "height": 5,
+          "width": 12,
+          "height": 8,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 5,
-          "height": 3,
+          "width": 6,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
@@ -195,78 +195,78 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "06ee1e6ab1ce6592decab159df819d57af8b8a2cf428aae6f58ad2fd756a0fc5"
+      "image_sha256": "2771028a4a00be92764d69f4f13b06e9acf73c1c159f570fc581f0344e543e30"
     },
     "depth": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
       "max_level": 13,
-      "tile_count": 239,
+      "tile_count": 521,
       "levels": {
         "13": {
-          "width": 4532,
-          "height": 2299,
-          "columns": 18,
-          "rows": 9
+          "width": 6132,
+          "height": 3899,
+          "columns": 24,
+          "rows": 16
         },
         "12": {
-          "width": 2266,
-          "height": 1150,
-          "columns": 9,
-          "rows": 5
+          "width": 3066,
+          "height": 1950,
+          "columns": 12,
+          "rows": 8
         },
         "11": {
-          "width": 1133,
-          "height": 575,
-          "columns": 5,
-          "rows": 3
+          "width": 1533,
+          "height": 975,
+          "columns": 6,
+          "rows": 4
         },
         "10": {
-          "width": 567,
-          "height": 288,
+          "width": 767,
+          "height": 488,
           "columns": 3,
           "rows": 2
         },
         "9": {
-          "width": 284,
-          "height": 144,
+          "width": 384,
+          "height": 244,
           "columns": 2,
           "rows": 1
         },
         "8": {
-          "width": 142,
-          "height": 72,
+          "width": 192,
+          "height": 122,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 71,
-          "height": 36,
+          "width": 96,
+          "height": 61,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 36,
-          "height": 18,
+          "width": 48,
+          "height": 31,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 18,
-          "height": 9,
+          "width": 24,
+          "height": 16,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 9,
-          "height": 5,
+          "width": 12,
+          "height": 8,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 5,
-          "height": 3,
+          "width": 6,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
@@ -290,78 +290,78 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "540e99ed2480d6d79437a42fa2e22212b1231200715e04d27971c6093454733f"
+      "image_sha256": "2d88b376c57106076743d3000268817bbc6ffe51f259d5ab5f055e171bff7259"
     },
     "hitmap": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
       "max_level": 13,
-      "tile_count": 239,
+      "tile_count": 521,
       "levels": {
         "13": {
-          "width": 4532,
-          "height": 2299,
-          "columns": 18,
-          "rows": 9
+          "width": 6132,
+          "height": 3899,
+          "columns": 24,
+          "rows": 16
         },
         "12": {
-          "width": 2266,
-          "height": 1150,
-          "columns": 9,
-          "rows": 5
+          "width": 3066,
+          "height": 1950,
+          "columns": 12,
+          "rows": 8
         },
         "11": {
-          "width": 1133,
-          "height": 575,
-          "columns": 5,
-          "rows": 3
+          "width": 1533,
+          "height": 975,
+          "columns": 6,
+          "rows": 4
         },
         "10": {
-          "width": 567,
-          "height": 288,
+          "width": 767,
+          "height": 488,
           "columns": 3,
           "rows": 2
         },
         "9": {
-          "width": 284,
-          "height": 144,
+          "width": 384,
+          "height": 244,
           "columns": 2,
           "rows": 1
         },
         "8": {
-          "width": 142,
-          "height": 72,
+          "width": 192,
+          "height": 122,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 71,
-          "height": 36,
+          "width": 96,
+          "height": 61,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 36,
-          "height": 18,
+          "width": 48,
+          "height": 31,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 18,
-          "height": 9,
+          "width": 24,
+          "height": 16,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 9,
-          "height": 5,
+          "width": 12,
+          "height": 8,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 5,
-          "height": 3,
+          "width": 6,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
@@ -385,7 +385,7 @@
         }
       },
       "resampling": "nearest",
-      "image_sha256": "ef9d9f3b92439379f67fc8f037f90631646d02dd31b042a00ce22477ebfa81a9"
+      "image_sha256": "3ac7d5e284f1a2493380ae1f3f651310f6de0662a1e4eae7d67c3dfdd7dfa8f8"
     }
   },
   "credits": {
@@ -397,16 +397,16 @@
     "osm": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
   },
   "files": {
-    "buildings.json": "6201832f1ecbbb8ed88cc0bb40853239bc69d6232ad66300eb0e2d73f7681c85",
-    "camera.json": "98af0782a3e89bc8a1b9c0b3c26b59bc64477a217caafe810dbaf4a788121aea",
-    "depth.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
-    "depth.png": "540e99ed2480d6d79437a42fa2e22212b1231200715e04d27971c6093454733f",
-    "hitmap.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
-    "hitmap.png": "ef9d9f3b92439379f67fc8f037f90631646d02dd31b042a00ce22477ebfa81a9",
-    "map.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
-    "map.png": "6470c88a57ec1fbc62909968c82f4a9fb378146d7111658bee086fe49501de54",
-    "source.dzi": "e7d997d48064f139183404df748e451326f7ba45cf6c7c0383654f781b238b4e",
-    "source.png": "06ee1e6ab1ce6592decab159df819d57af8b8a2cf428aae6f58ad2fd756a0fc5",
-    "walkable.json": "6ece5c148dbdf51409daa30e281d99589032d74c569fc5c0026b44a62656cf72"
+    "buildings.json": "9f094a21d20bb7f82bbef39334f14fe3bd4f87b2881287ce86d9d4e12748b2ea",
+    "camera.json": "0d293eec24d408afca2f1a908caccd7682e9939ee8450bb6e3da2d79d3103e8a",
+    "depth.dzi": "374fb334edb61f0929fac0198ea228dc5bea750496e2680618a166f39e9bb035",
+    "depth.png": "2d88b376c57106076743d3000268817bbc6ffe51f259d5ab5f055e171bff7259",
+    "hitmap.dzi": "374fb334edb61f0929fac0198ea228dc5bea750496e2680618a166f39e9bb035",
+    "hitmap.png": "3ac7d5e284f1a2493380ae1f3f651310f6de0662a1e4eae7d67c3dfdd7dfa8f8",
+    "map.dzi": "374fb334edb61f0929fac0198ea228dc5bea750496e2680618a166f39e9bb035",
+    "map.png": "67c47cc0da0710e7915cfc6a318cf81eaa0030d6e602d771c0293ceff1402ce4",
+    "source.dzi": "374fb334edb61f0929fac0198ea228dc5bea750496e2680618a166f39e9bb035",
+    "source.png": "2771028a4a00be92764d69f4f13b06e9acf73c1c159f570fc581f0344e543e30",
+    "walkable.json": "ae22ac678077a684061209ed44045fa51f05e7e18a1d97771a2e4b69a7b58b03"
   }
 }
