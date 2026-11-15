@@ -1,0 +1,400 @@
+{
+ "status": "Daten für die Zeitleiste. Ereignisse wörtlich aus Wikipedia (mit Artikelversion), Baudaten aus Wikidata (P571/P1619). Noch nicht im Viewer.",
+ "events": [
+  {
+   "year": 819,
+   "until": null,
+   "text": "Erste slawische Burganlage von Alt-Lübeck am Zusammenfluss von Trave und Schwartau",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1072,
+   "until": null,
+   "text": "Der Name „Liubice“ wird in der Chronik des Geschichtsschreibers Adam von Bremen genannt.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1138,
+   "until": null,
+   "text": "Zerstörung Alt-Lübecks, innerslawische Machtkämpfe",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1143,
+   "until": null,
+   "text": "Graf Adolf II. von Schauenburg gründet die deutsche Stadt Lübeck auf der Halbinsel zwischen Trave und Wakenitz als bescheidene kaufmännische Siedlung neben einer slawischen Niederlassung.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1158,
+   "until": null,
+   "text": "Graf Adolf II. überlässt den Hügel Buku (heutige Lübecker Innenstadt) Herzog Heinrich dem Löwen, der Lübeck dort ein zweites Mal entstehen lässt.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1226,
+   "until": null,
+   "text": "Die norddeutschen Fürsten und Städte können die dänische Vorherrschaft abschütteln, Kaiser Friedrich II. erteilt Lübeck das Reichsfreiheitsprivileg. Lübeck wird Freie Reichsstadt, soll auf ewig dem Reichsoberhaupt unterstehen. Die Bestimmung bleibt 711 Jahre, bis 1937, in Kraft.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1227,
+   "until": null,
+   "text": "Norddeutsche Fürsten und Städte, darunter Lübeck, besiegen in der Schlacht bei Bornhöved den Fürsten Waldemar endgültig. Zum Dank wird in Lübeck das Dominikanerkloster an der Stelle der ehemaligen königlichen Burg gegründet (Burgkloster).",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1358,
+   "until": null,
+   "text": "Erster Hansetag in Lübeck. Der Ausdruck „Städte von der deutschen Hanse“ wird erstmals urkundlich belegt. Die Hanse als Organisationsform ist allmählich, nicht durch einen Gründungsakt, entstanden.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1367,
+   "until": 1370,
+   "text": "Zweiter siegreicher Krieg gegen König Waldemar, abgeschlossen durch den Frieden von Stralsund und Sicherung der hansischen Privilegien und Wirtschaftsinteressen im Norden.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1563,
+   "until": 1570,
+   "text": "Nordischer Siebenjähriger Krieg (Lübeck mit Dänemark gegen Schweden), letzter ehrenvoller, aber erfolgloser Seekrieg der Stadt, beendet durch den Frieden von Stettin",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1669,
+   "until": null,
+   "text": "Letzter in Lübeck abgehaltener Hansetag. Lübeck, Hamburg und Bremen bleiben bis ins 20. Jahrhundert als Freie und Hansestädte die Erben.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1810,
+   "until": null,
+   "text": "Gewaltsame Angliederung an das französische Kaiserreich, Beginn der Lübecker Franzosenzeit",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1813,
+   "until": null,
+   "text": "Übergabe der Stadt an Kronprinz Bernadotte aus Schweden (Alliierter).",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1815,
+   "until": null,
+   "text": "Lübeck wird Mitglied des Deutschen Bundes.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1866,
+   "until": null,
+   "text": "Eintritt in den Norddeutschen Bund.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1871,
+   "until": null,
+   "text": "Die Freie und Hansestadt Lübeck wird Gliedstaat des Reiches.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1897,
+   "until": null,
+   "text": "Im Zuge der Heeresvermehrung erhält Lübeck sein eigenes, das 3. Hanseatische, Regiment",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1911,
+   "until": null,
+   "text": "Lübeck wird Großstadt.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1933,
+   "until": null,
+   "text": "Absetzung des Senates, Abschaffung der Bürgerschaft, Regierung durch Bevollmächtigten der NSDAP, gemeinsamer „Reichsstatthalter“ für Lübeck und Mecklenburg mit Sitz in Schwerin",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1937,
+   "until": null,
+   "text": "Abschaffung der Reichsfreiheit Lübecks, Eingliederung in die preußische Provinz Schleswig-Holstein",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1942,
+   "until": null,
+   "text": "Am 28. März werden große Teile der Altstadt durch Bomben vernichtet.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1945,
+   "until": null,
+   "text": "Lübeck wird kampflos von britischen Truppen besetzt.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1987,
+   "until": null,
+   "text": "Die UNESCO erklärt Lübeck zum Weltkulturerbe – das erste Kulturdenkmal dieser Art in der Bundesrepublik.",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  },
+  {
+   "year": 1993,
+   "until": null,
+   "text": "Lübeck feiert 850 Jahre Hansestadt Lübeck",
+   "source": "https://de.wikipedia.org/w/index.php?title=Geschichte_der_Hansestadt_L%C3%BCbeck&oldid=269518625#Zeitliche_%C3%9Cbersicht",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Geschichte der Hansestadt Lübeck“, Abschnitt „Zeitliche Übersicht“"
+  }
+ ],
+ "buildings": [
+  {
+   "year": 1173,
+   "label": "1173",
+   "wikidata": "Q3916007",
+   "name": "Lübecker Dom",
+   "source": "https://www.wikidata.org/wiki/Q3916007",
+   "precision": "year"
+  },
+  {
+   "year": 1227,
+   "label": "1227",
+   "wikidata": "Q316973",
+   "name": "Aegidienkirche",
+   "source": "https://www.wikidata.org/wiki/Q316973",
+   "precision": "year"
+  },
+  {
+   "year": 1227,
+   "label": "1227",
+   "wikidata": "Q375042",
+   "name": "Jakobikirche",
+   "source": "https://www.wikidata.org/wiki/Q375042",
+   "precision": "year"
+  },
+  {
+   "year": 1283,
+   "label": "1283",
+   "wikidata": "Q1786466",
+   "name": "Kranen-Konvent",
+   "source": "https://www.wikidata.org/wiki/Q1786466",
+   "precision": "year"
+  },
+  {
+   "year": 1350,
+   "label": "14. Jh.",
+   "wikidata": "Q317388",
+   "name": "Katharinenkirche",
+   "source": "https://www.wikidata.org/wiki/Q317388",
+   "precision": "century"
+  },
+  {
+   "year": 1350,
+   "label": "14. Jh.",
+   "wikidata": "Q695065",
+   "name": "Marienkirche",
+   "source": "https://www.wikidata.org/wiki/Q695065",
+   "precision": "century"
+  },
+  {
+   "year": 1444,
+   "label": "1444",
+   "wikidata": "Q538276",
+   "name": "Burgtor",
+   "source": "https://www.wikidata.org/wiki/Q538276",
+   "precision": "year"
+  },
+  {
+   "year": 1749,
+   "label": "1749",
+   "wikidata": "Q482579",
+   "name": "An der Mauer 154",
+   "source": "https://www.wikidata.org/wiki/Q482579",
+   "precision": "year"
+  },
+  {
+   "year": 1758,
+   "label": "1758",
+   "wikidata": "Q315187",
+   "name": "Buddenbrookhaus",
+   "source": "https://www.wikidata.org/wiki/Q315187",
+   "precision": "year"
+  },
+  {
+   "year": 1783,
+   "label": "1783",
+   "wikidata": "Q814533",
+   "name": "Behnhaus",
+   "source": "https://www.wikidata.org/wiki/Q814533",
+   "precision": "year"
+  },
+  {
+   "year": 1812,
+   "label": "1812",
+   "wikidata": "Q1879877",
+   "name": "Löwen-Apotheke",
+   "source": "https://www.wikidata.org/wiki/Q1879877",
+   "precision": "year"
+  },
+  {
+   "year": 1824,
+   "label": "1824",
+   "wikidata": "Q18629959",
+   "name": "Progymnasium Dr. Bussenius",
+   "source": "https://www.wikidata.org/wiki/Q18629959",
+   "precision": "year"
+  },
+  {
+   "year": 1880,
+   "label": "1880",
+   "wikidata": "Q1494883",
+   "name": "Synagoge Lübeck",
+   "source": "https://www.wikidata.org/wiki/Q1494883",
+   "precision": "year"
+  },
+  {
+   "year": 1891,
+   "label": "1891",
+   "wikidata": "Q880381",
+   "name": "Propsteikirche Herz Jesu",
+   "source": "https://www.wikidata.org/wiki/Q880381",
+   "precision": "year"
+  },
+  {
+   "year": 1899,
+   "label": "1899",
+   "wikidata": "Q1649884",
+   "name": "St. Matthäi",
+   "source": "https://www.wikidata.org/wiki/Q1649884",
+   "precision": "year"
+  },
+  {
+   "year": 1908,
+   "label": "1908",
+   "wikidata": "Q2415873",
+   "name": "Theater Lübeck",
+   "source": "https://www.wikidata.org/wiki/Q2415873",
+   "precision": "year"
+  },
+  {
+   "year": 1910,
+   "label": "1910",
+   "wikidata": "Q1009493",
+   "name": "Buniamshof",
+   "source": "https://www.wikidata.org/wiki/Q1009493",
+   "precision": "year"
+  },
+  {
+   "year": 1913,
+   "label": "1913",
+   "wikidata": "Q140571655",
+   "name": "Falkenplatz 10",
+   "source": "https://www.wikidata.org/wiki/Q140571655",
+   "precision": "year"
+  },
+  {
+   "year": 1940,
+   "label": "1940",
+   "wikidata": "Q51247046",
+   "name": "Bunker An der Obertrave",
+   "source": "https://www.wikidata.org/wiki/Q51247046",
+   "precision": "year"
+  },
+  {
+   "year": 1949,
+   "label": "1949",
+   "wikidata": "Q2550616",
+   "name": "Wasserstraßen- und Schifffahrtsamt Lübeck",
+   "source": "https://www.wikidata.org/wiki/Q2550616",
+   "precision": "year"
+  },
+  {
+   "year": 1951,
+   "label": "1951",
+   "wikidata": "Q99735836",
+   "name": "St. Thomas",
+   "source": "https://www.wikidata.org/wiki/Q99735836",
+   "precision": "year"
+  },
+  {
+   "year": 1973,
+   "label": "1973",
+   "wikidata": "Q99735520",
+   "name": "Friedenskirche",
+   "source": "https://www.wikidata.org/wiki/Q99735520",
+   "precision": "year"
+  },
+  {
+   "year": 1994,
+   "label": "1994",
+   "wikidata": "Q1954986",
+   "name": "Musik- und Kongresshalle Lübeck",
+   "source": "https://www.wikidata.org/wiki/Q1954986",
+   "precision": "year"
+  },
+  {
+   "year": 1998,
+   "label": "1998",
+   "wikidata": "Q1802073",
+   "name": "Landesamt für Arbeitsschutz, Soziales und Gesundheit",
+   "source": "https://www.wikidata.org/wiki/Q1802073",
+   "precision": "year"
+  },
+  {
+   "year": 2007,
+   "label": "2007",
+   "wikidata": "Q2581800",
+   "name": "Willy-Brandt-Haus Lübeck",
+   "source": "https://www.wikidata.org/wiki/Q2581800",
+   "precision": "year"
+  }
+ ],
+ "gaps": "Ohne Datum auf Wikidata: u. a. Rathaus, Holstentor, Petrikirche, Salzspeicher. Daten stehen in den Wikipedia-Texten, sollten aber mit Beleg auf Wikidata nachgetragen werden."
+}
