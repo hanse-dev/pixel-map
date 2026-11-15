@@ -110,6 +110,8 @@
     panel.hidden = false;
     highlight(b);
   }
+  // tours open a station's panel by building id; null closes it
+  window.pixelMapShowBuilding = id => { const b = id ? byId.get(id) : null; if (b) show(b); else { panel.hidden = true; highlight(null) } };
   el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { panel.hidden = true; highlight(null) } });

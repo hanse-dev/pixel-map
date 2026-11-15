@@ -122,6 +122,25 @@ def city_page(name, config, cities, outline=None, tiles=None):
         i = info.get(item['wikidata'], {})
         landmarks.append({'id': item['id'], 'name': i.get('title') or b.get('name') or item['short_name'], 'short_name': item['short_name'],
                           'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 1024, 'wikidata': item['wikidata']})
+    tours = []
+    tour_file = ROOT / 'config' / f'tours.{name}.json'
+    if tour_file.exists():
+        by_q = {}
+        for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
+            if b.get('wikidata') and 'centre' in b and b['visible_px'] > by_q.get(b['wikidata'], {}).get('visible_px', 0):
+                by_q[b['wikidata']] = b
+        for t in json.loads(tour_file.read_text())['tours']:
+            stations = []
+            for k, st in enumerate(t['stations']):
+                b = by_q.get(st['wikidata'])
+                if not b:
+                    print(f"warning: tour {t['id']}: {st['wikidata']} not in bundle"); continue
+                i = info.get(st['wikidata'], {})
+                nm = (i.get('title') or b.get('name') or st['wikidata']).replace(' (Lübeck)', '')
+                stations.append({'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
+                                 'view_width': 900, 'building': b['id'], 'leg': st.get('leg')})
+            if len(stations) >= 2:
+                tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': t.get('length_m', 0), 'stations': stations})
     credits = manifest['credits']
     data = {'title': config['title'], 'city_id': name, 'width': manifest['size'][0], 'height': manifest['size'][1],
             'status': config.get('status', 'Illustrative pixel-art map from open geodata'),
@@ -131,7 +150,7 @@ def city_page(name, config, cities, outline=None, tiles=None):
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline,
+            'tours': tours, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json('preview-map.webp'), 'SOURCE': script_json('preview-source.webp'),
