@@ -92,7 +92,10 @@ def city_page(name, config, cities, outline=None):
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json(preview(bundle / 'map.png')), 'SOURCE': script_json(preview(bundle / 'source.png')),
               'DATA': script_json(data), 'TITLE': html.escape(config['title'] + ' · Pixel Map')}
-    return re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
+    import hashlib
+    version = hashlib.sha256((ROOT / 'app/info.js').read_bytes()).hexdigest()[:10]
+    page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
+    return page.replace('src="../app/info.js"', f'src="../app/info.js?v={version}"')   # new code is never served from cache
 
 
 def main():

@@ -40,7 +40,7 @@
   // Two styles share one painter: the selection (turquoise fill) and the hover (warm glow, no fill).
   const STYLES = {
     select: {layer: 'select-world', edge: [255, 255, 255, 255], fill: [40, 230, 230, 105], ring: [[0, 170, 190, 150], [0, 170, 190, 255]]},
-    hover: {layer: 'hover-world', edge: [255, 244, 200, 230], fill: [255, 230, 150, 45], ring: [[255, 200, 70, 90], [255, 200, 70, 200]]},
+    hover: {layer: 'hover-world', edge: [255, 250, 220, 255], fill: [255, 215, 90, 95], ring: [[255, 190, 40, 150], [255, 190, 40, 255]]},
   };
   const current = {select: 0, hover: 0};
   const masks = new Map();                            // building id -> painted canvas, reused while hovering
