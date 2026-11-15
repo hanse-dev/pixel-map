@@ -1,8 +1,33 @@
 {
- "retrieved": "2026-11-14T20:26:11+00:00",
+ "retrieved": "2026-11-15T05:19:07+00:00",
  "lang": "de",
  "source": "Wikidata (CC0), Wikipedia introductions (CC BY-SA 4.0), Wikimedia Commons thumbnails (per-file licence)",
  "items": {
+  "Q1009493": {
+   "wikidata": "Q1009493",
+   "label": "Buniamshof",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1009493",
+   "facts": {
+    "architect": [
+     "Erwin Barth"
+    ],
+    "built": "1910"
+   },
+   "title": "Buniamshof",
+   "intro": "Das Buniamshof (voller Name: Stadion Buniamshof oder kurz: Buni) ist ein Fußballstadion mit Leichtathletikanlage in Lübeck. Nach dem Stadion an der Lohmühle, Heimspielstätte des VfB Lübeck, ist es das zweitgrößte Stadion der Stadt. Es finden auf dem Buniamshof regelmäßig regionale und nationale Leichtathletikmeisterschaften statt. Die Anlage verfügt als einzige in Schleswig-Holstein über eine Kunststoffbahn mit acht Spuren, weshalb hier auch nationale und internationale Meisterschaften und Länderkämpfe stattfinden können. Die Sportstätte wird regelmäßig von den Vereinen 1. FC Phönix, LBV Phönix, MTV Lübeck und der Lübecker Turnerschaft als Trainings- und Wettkampfort genutzt. Seit 1990 trägt auch die American-Football-Mannschaft der Lübeck Cougars (German Football League 2) hier ihre Heimspiele aus. Das Stadion bietet seit dem Umbau 2021 insgesamt 2500 Plätze, davon sind knapp 1500 überdachte Sitzplätze.",
+   "url": "https://de.wikipedia.org/wiki/Buniamshof",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Buniamshof“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1009493.jpg",
+    "author": "User:Hans-Rudi der Letzte",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Stadion_Buniamshof_2021cropped.jpg",
+    "width": 640,
+    "height": 206
+   }
+  },
   "Q105785986": {
    "wikidata": "Q105785986",
    "label": "Parkhaus Schmiedestraße",
@@ -187,6 +212,30 @@
     "file": "https://commons.wikimedia.org/wiki/File:Gebaeude_an_der_Untertrave_Luebeck.jpg",
     "width": 640,
     "height": 480
+   }
+  },
+  "Q1268724": {
+   "wikidata": "Q1268724",
+   "label": "Handelshof",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1268724",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Handelshof (Lübeck)",
+   "intro": "Der Handelshof ist ein ehemaliges Büro- und Geschäftshaus in der Hansestadt Lübeck (Schleswig-Holstein), das nach einem umfassenden Umbau seit 2009 als Hotel genutzt wird. Die vom ursprünglichen Bau erhaltene Fassade steht unter Denkmalschutz.",
+   "url": "https://de.wikipedia.org/wiki/Handelshof_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Handelshof (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1268724.jpg",
+    "author": "Jan Peer Baumann",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:BA_Handelshof_L%C3%BCbeck_Front_2009.jpg",
+    "width": 640,
+    "height": 403
    }
   },
   "Q128763923": {
@@ -468,6 +517,36 @@
     "height": 902
    }
   },
+  "Q1596371": {
+   "wikidata": "Q1596371",
+   "label": "Lindesche Villa",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1596371",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Klassizismus"
+    ],
+    "architect": [
+     "Joseph Christian Lillie"
+    ]
+   },
+   "title": "Lindesche Villa",
+   "intro": "Die Lindesche Villa ist ein unter Denkmalschutz stehendes klassizistisches Bauwerk an der Ratzeburger Allee der Lübecker Vorstadt St. Jürgen, die ihren Namen durch Max Linde erhielt und seit 1968 als Standesamt der Hansestadt Lübeck genutzt wird.",
+   "url": "https://de.wikipedia.org/wiki/Lindesche_Villa",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Lindesche Villa“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1596371.jpg",
+    "author": "unbekannt",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:Standesamt_l%C3%BCbeck.jpg",
+    "width": 640,
+    "height": 427
+   }
+  },
   "Q1618163": {
    "wikidata": "Q1618163",
    "label": "Kanzleigebäude",
@@ -540,6 +619,37 @@
     "file": "https://commons.wikimedia.org/wiki/File:Germany_Luebeck_Burgtorbridges.jpg",
     "width": 640,
     "height": 480
+   }
+  },
+  "Q1649884": {
+   "wikidata": "Q1649884",
+   "label": "St. Matthäi",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1649884",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Neogotik"
+    ],
+    "architect": [
+     "Hugo Groothoff"
+    ],
+    "built": "1899"
+   },
+   "title": "St. Matthäi (Lübeck)",
+   "intro": "St. Matthäi ist ein denkmalgeschütztes neugotisches Kirchengebäude in Lübeck-St. Lorenz-Nord und gottesdienstliches Zentrum der gleichnamigen Kirchengemeinde im Kirchenkreis Lübeck-Lauenburg der Nordelbischen Kirche.",
+   "url": "https://de.wikipedia.org/wiki/St._Matth%C3%A4i_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St. Matthäi (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1649884.jpg",
+    "author": "Andreas Geick",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:St._Matth%C3%A4i-Kirche_in_L%C3%BCbeck._-_panoramio.jpg",
+    "width": 640,
+    "height": 960
    }
   },
   "Q1721769": {
@@ -833,6 +943,30 @@
     "height": 1030
    }
   },
+  "Q18922485": {
+   "wikidata": "Q18922485",
+   "label": "Polizei- und Feuerwache",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q18922485",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Polizei- und Feuerwache (St. Lorenz)",
+   "intro": "Die Polizei- und Feuerwache im Lübecker Stadtteil St. Lorenz ist ein 1902 erbautes, heute denkmalgeschütztes Gebäudeensemble aus zwei nebeneinander gelegenen Gebäuden in der Hansestraße.\nDas Anwachsen der Vorstadt hatte den Bau einer dortigen Polizei- und Feuerwache notwendig gemacht. Das Gebäudeensemble nahm 1902 seinen Betrieb auf.",
+   "url": "https://de.wikipedia.org/wiki/Polizei-_und_Feuerwache_(St._Lorenz)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Polizei- und Feuerwache (St. Lorenz)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q18922485.jpg",
+    "author": "1970gemini",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Polizei_Feuerwehr.jpg",
+    "width": 640,
+    "height": 370
+   }
+  },
   "Q1898021": {
    "wikidata": "Q1898021",
    "label": "Marienwerkhaus",
@@ -849,7 +983,7 @@
    "attribution": "Wikipedia, „Marienwerkhaus“, CC BY-SA 4.0",
    "image": {
     "src": "img/luebeck/Q1898021.jpg",
-    "author": "St._Mary's_Cathedral,_Lubeck,_Germany.jpg: Ahodges7 derivative work: 1970gemini",
+    "author": "St._Mary's_Cathedral,_Lubeck,_Germany.jpg : Ahodges7 derivative work: 1970gemini",
     "licence": "CC BY-SA 3.0",
     "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "https://commons.wikimedia.org/wiki/File:HL_Heute_%E2%80%93_Werkhaus_DV.jpg",
@@ -1009,6 +1143,60 @@
     "height": 480
    }
   },
+  "Q2245253": {
+   "wikidata": "Q2245253",
+   "label": "Schlösschen Bellevue",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q2245253",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Schleswig-Holstein"
+    ],
+    "style": [
+     "Rokoko"
+    ]
+   },
+   "title": "Schlösschen Bellevue",
+   "intro": "Das Schlösschen Bellevue (auch Küselsches Palais) ist ein ehemaliges Sommerhaus im Stil des Rokoko an der Trave in der Hansestadt Lübeck.",
+   "url": "https://de.wikipedia.org/wiki/Schl%C3%B6sschen_Bellevue",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Schlösschen Bellevue“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2245253.jpg",
+    "author": "MrsMyerDE",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:SchloesschenBellevue.jpg",
+    "width": 640,
+    "height": 427
+   }
+  },
+  "Q2255232": {
+   "wikidata": "Q2255232",
+   "label": "Schwedische Kirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q2255232",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Neogotik"
+    ]
+   },
+   "title": "Schwedische Kirche (Lübeck)",
+   "intro": "Die Schwedische Kirche (schwedisch Svenska Kyrkan) ist ein ehemaliges Kirchengebäude der einstigen Schwedischen Staatskirche aus dem frühen 20. Jahrhundert im Stadtteil St. Gertrud der Hansestadt Lübeck. Sie wurde profaniert und zum Wohngebäude umgebaut.",
+   "url": "https://de.wikipedia.org/wiki/Schwedische_Kirche_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Schwedische Kirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2255232.jpg",
+    "author": "MrsMyerDE",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:SvenskaKyrkanLuebeck.jpg",
+    "width": 640,
+    "height": 960
+   }
+  },
   "Q2316268": {
    "wikidata": "Q2316268",
    "label": "Zisterzienserinnenkloster Lübeck (Johanniskloster)",
@@ -1020,7 +1208,7 @@
    "attribution": "Wikipedia, „St.-Johannis-Kloster (Lübeck)“, CC BY-SA 4.0",
    "image": {
     "src": "img/luebeck/Q2316268.jpg",
-    "author": "(Kresspahl (talk) 13:38, 31 July 2010 (UTC))",
+    "author": "( Kresspahl ( talk ) 13:38, 31 July 2010 (UTC))",
     "licence": "CC BY-SA 3.0",
     "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
     "file": "https://commons.wikimedia.org/wiki/File:JohRefektoriumHL01.JPG",
@@ -1058,6 +1246,30 @@
     "file": "https://commons.wikimedia.org/wiki/File:Theaterfassade_201213_(c)Olaf-Malzahn.jpg",
     "width": 640,
     "height": 402
+   }
+  },
+  "Q2443638": {
+   "wikidata": "Q2443638",
+   "label": "Tor der Hoffnung",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q2443638",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Tor der Hoffnung",
+   "intro": "Das Tor der Hoffnung ist eine unter Denkmalschutz stehende Wohnanlage mit zugehörigem Park in Lübeck. Es befindet sich im Stadtteil St. Gertrud im Bezirk Marli unmittelbar am Ufer der Wakenitz.",
+   "url": "https://de.wikipedia.org/wiki/Tor_der_Hoffnung",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Tor der Hoffnung“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2443638.jpg",
+    "author": "1970gemini at German Wikipedia",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "https://commons.wikimedia.org/wiki/File:HL_TdH_%E2%80%93_Stra%C3%9Fenansicht.jpg",
+    "width": 640,
+    "height": 649
    }
   },
   "Q24669830": {
@@ -1124,13 +1336,26 @@
    "attribution": "Wikipedia, „Schullehrerseminarhaus (Lübeck)“, CC BY-SA 4.0",
    "image": {
     "src": "img/luebeck/Q25089255.jpg",
-    "author": "Unknown authorUnknown author",
+    "author": "Unknown author Unknown author",
     "licence": "Public domain",
     "licence_url": null,
     "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_L5S_Seminargeb%C3%A4ude_und_Uebungsschule.jpg",
     "width": 640,
     "height": 422
    }
+  },
+  "Q2550616": {
+   "wikidata": "Q2550616",
+   "label": "Wasserstraßen- und Schifffahrtsamt Lübeck",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q2550616",
+   "facts": {
+    "built": "1949"
+   },
+   "title": "Wasserstraßen- und Schifffahrtsamt Lübeck",
+   "intro": "Das Wasserstraßen- und Schifffahrtsamt Lübeck (WSA Lübeck) war ein Wasserstraßen- und Schifffahrtsamt in Deutschland. Es gehörte zum Dienstbereich der Generaldirektion Wasserstraßen und Schifffahrt, vormals Wasser- und Schifffahrtsdirektion Nord. Zum 13. Oktober 2020 ging es zusammen mit dem Wasserstraßen- und Schifffahrtsamt Stralsund im neugebildeten Wasserstraßen- und Schifffahrtsamt Ostsee auf.",
+   "url": "https://de.wikipedia.org/wiki/Wasserstra%C3%9Fen-_und_Schifffahrtsamt_L%C3%BCbeck",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Wasserstraßen- und Schifffahrtsamt Lübeck“, CC BY-SA 4.0"
   },
   "Q2560411": {
    "wikidata": "Q2560411",
@@ -1821,6 +2046,34 @@
     "licence": "CC BY-SA 3.0",
     "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
     "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_Friedenskirche.jpg",
+    "width": 640,
+    "height": 480
+   }
+  },
+  "Q99735836": {
+   "wikidata": "Q99735836",
+   "label": "St. Thomaskirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q99735836",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "architect": [
+     "Gerhard Langmaack"
+    ],
+    "built": "1951"
+   },
+   "title": "St. Thomas (Lübeck)",
+   "intro": "Die St. Thomas-Kirche ist ein evangelisch-lutherisches Kirchengebäude im Ortsteil Marli der Hansestadt Lübeck.",
+   "url": "https://de.wikipedia.org/wiki/St._Thomas_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St. Thomas (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q99735836.jpg",
+    "author": "Peter Oldekop",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_St_Thomas.jpg",
     "width": 640,
     "height": 480
    }

@@ -1,23 +1,65 @@
 {
- "title": "Lübeck Altstadt",
+ "title": "Lübeck Altstadt und Umgebung",
  "lang": "de",
  "opening": "marienkirche",
  "status": "Illustrative pixel-art map from open geodata; 0.4 m tiles, landmarks repainted and reviewed",
  "landmarks": [
-  {"id": "marienkirche", "short_name": "Marienkirche", "wikidata": "Q695065"},
-  {"id": "rathaus", "short_name": "Rathaus", "wikidata": "Q538453"},
-  {"id": "holstentor", "short_name": "Holstentor", "wikidata": "Q321229"},
-  {"id": "salzspeicher", "short_name": "Salzspeicher", "wikidata": "Q657603"},
-  {"id": "petrikirche", "short_name": "Petrikirche", "wikidata": "Q896458"},
-  {"id": "dom", "short_name": "Dom", "wikidata": "Q3916007"},
-  {"id": "aegidienkirche", "short_name": "Aegidienkirche", "wikidata": "Q316973"},
-  {"id": "katharinen", "short_name": "Katharinenkirche", "wikidata": "Q317388"},
-  {"id": "jakobikirche", "short_name": "Jakobikirche", "wikidata": "Q375042"},
-  {"id": "burgtor", "short_name": "Burgtor", "wikidata": "Q538276"}
+  {
+   "id": "marienkirche",
+   "short_name": "Marienkirche",
+   "wikidata": "Q695065"
+  },
+  {
+   "id": "rathaus",
+   "short_name": "Rathaus",
+   "wikidata": "Q538453"
+  },
+  {
+   "id": "holstentor",
+   "short_name": "Holstentor",
+   "wikidata": "Q321229"
+  },
+  {
+   "id": "salzspeicher",
+   "short_name": "Salzspeicher",
+   "wikidata": "Q657603"
+  },
+  {
+   "id": "petrikirche",
+   "short_name": "Petrikirche",
+   "wikidata": "Q896458"
+  },
+  {
+   "id": "dom",
+   "short_name": "Dom",
+   "wikidata": "Q3916007"
+  },
+  {
+   "id": "aegidienkirche",
+   "short_name": "Aegidienkirche",
+   "wikidata": "Q316973"
+  },
+  {
+   "id": "katharinen",
+   "short_name": "Katharinenkirche",
+   "wikidata": "Q317388"
+  },
+  {
+   "id": "jakobikirche",
+   "short_name": "Jakobikirche",
+   "wikidata": "Q375042"
+  },
+  {
+   "id": "burgtor",
+   "short_name": "Burgtor",
+   "wikidata": "Q538276"
+  }
  ],
  "limitations": [
   "Facades have no measured evidence; brick walls and windows are illustrative.",
-  "Holstentor, Rathaus, Katharinenkirche, Burgtor and Salzspeicher were repainted individually with a landmark description; their details are illustrative.",
+  "Holstentor, Rathaus, Markt, Katharinenkirche, Burgtor and Salzspeicher were repainted individually; their details are illustrative. The Rathaus repaint used a public-domain photo (Blick auf Rathaus Luebeck.jpg) as a second reference.",
+  "Shorelines follow the DOP20 near-infrared band where OSM water polygons were off.",
+  "Railway areas in the north-west are painted as plain ground; tracks are mostly missing.",
   "Roof colours follow OSM tags; OSM's default copper #33CC99 is shown as patina."
  ]
 }
