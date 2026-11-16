@@ -18,11 +18,11 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 
 ## Karte Lübeck
 
-- [ ] **Bahnhof:** Gleise im westlichen Teil des zweiten Rings nachmalen (der Gleis-Nachmalgang lief nur im ersten Ring; harte Kante am alten Kartenrand)
+- [x] **Bahnhof:** Gleise im westlichen Teil des zweiten Rings nachmalen (der Gleis-Nachmalgang lief nur im ersten Ring; harte Kante am alten Kartenrand)
 - [ ] **Bahnhofsgebäude:** die knallblaue Fassade stammt aus einer OSM-Farbangabe; prüfen und gedämpft korrigieren
-- [ ] **Kleingärten:** Renderer erkennt sie jetzt als Grün (isometric-cities `e99c936`); betroffene Kacheln neu malen (unten Mitte: orange Sandfläche bzw. unbemalte graue Fläche)
+- [x] **Kleingärten:** Renderer erkennt sie jetzt als Grün (isometric-cities `e99c936`); betroffene Kacheln neu malen (unten Mitte: orange Sandfläche bzw. unbemalte graue Fläche)
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
-- [ ] Zweiten Ring durchsehen, veröffentlichen, danach `scripts/update_city.sh luebeck`
+- [x] Zweiten Ring durchsehen, veröffentlichen, danach `scripts/update_city.sh luebeck`
 - [ ] Backup `luebeck-v2` (Kartenpaket + Kachelspeicher) im Repo `pixel-map-luebeck`
 
 ## Infrastruktur
