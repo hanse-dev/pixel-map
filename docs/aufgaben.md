@@ -23,7 +23,7 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 - [x] **Kleingärten:** Renderer erkennt sie jetzt als Grün (isometric-cities `e99c936`); betroffene Kacheln neu malen (unten Mitte: orange Sandfläche bzw. unbemalte graue Fläche)
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
 - [x] Zweiten Ring durchsehen, veröffentlichen, danach `scripts/update_city.sh luebeck`
-- [ ] Backup `luebeck-v2` (Kartenpaket + Kachelspeicher) im Repo `pixel-map-luebeck`
+- [x] Backup `luebeck-v2` (Kartenpaket + Kachelspeicher) im Repo `pixel-map-luebeck`
 
 ## Infrastruktur
 
