@@ -1,5 +1,5 @@
 {
- "retrieved": "2026-11-15T05:19:07+00:00",
+ "retrieved": "2026-11-16T06:23:15+00:00",
  "lang": "de",
  "source": "Wikidata (CC0), Wikipedia introductions (CC BY-SA 4.0), Wikimedia Commons thumbnails (per-file licence)",
  "items": {
@@ -64,6 +64,16 @@
     "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Mengstra%C3%9Fe_25_%E2%80%93_2016.jpg",
     "width": 640,
     "height": 1508
+   }
+  },
+  "Q116771483": {
+   "wikidata": "Q116771483",
+   "label": "Einfamilienhaus der Familie Decker (geb. Steffann)",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q116771483",
+   "facts": {
+    "architect": [
+     "Emil Steffann"
+    ]
    }
   },
   "Q120717759": {
@@ -163,6 +173,35 @@
     ]
    }
   },
+  "Q1231989": {
+   "wikidata": "Q1231989",
+   "label": "Friedrich-von-Bodelschwingh-Kirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1231989",
+   "facts": {
+    "style": [
+     "Moderne"
+    ],
+    "architect": [
+     "Friedhelm Grundmann",
+     "Horst Sandtmann"
+    ],
+    "website": "https://www.laurentius-luebeck.de/orte/kirchen/bodelschwinghkirche.html"
+   },
+   "title": "Friedrich-von-Bodelschwingh-Kirche (Lübeck)",
+   "intro": "Die Friedrich-von-Bodelschwingh-Kirche in Lübeck ist eine evangelisch-lutherische Kirche. Sie ist nach Friedrich von Bodelschwingh benannt.\nDie Kirche gehörte zur von 1963 bis 2021 bestehenden ehemaligen Ev.-Luth. Kirchengemeinde Friedrich von Bodelschwingh. Nach Zusammenschluss der Lübecker Kirchengemeinden Bugenhagen, Friedrich von Bodelschwingh, Paul Gerhardt, St. Lorenz und St. Markus zum 1. Januar 2022 ist die Kirche ein Gotteshaus der neuen Ev.-Luth. Laurentius-Kirchengemeinde Lübeck.",
+   "url": "https://de.wikipedia.org/wiki/Friedrich-von-Bodelschwingh-Kirche_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Friedrich-von-Bodelschwingh-Kirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1231989.jpg",
+    "author": "Andreas Geick",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:Friedrich-von-Bodelschwingh-Kirche_(Luebeck).jpg",
+    "width": 640,
+    "height": 412
+   }
+  },
   "Q1247773": {
    "wikidata": "Q1247773",
    "label": "Sandstraße 24-28",
@@ -236,6 +275,30 @@
     "file": "https://commons.wikimedia.org/wiki/File:BA_Handelshof_L%C3%BCbeck_Front_2009.jpg",
     "width": 640,
     "height": 403
+   }
+  },
+  "Q1269759": {
+   "wikidata": "Q1269759",
+   "label": "Haus Hölzerne Klinke",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1269759",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Haus Hölzerne Klinke",
+   "intro": "Das Haus Hölzerne Klinke ist ein denkmalgeschütztes klassizistisches Gebäude in Lübeck.",
+   "url": "https://de.wikipedia.org/wiki/Haus_H%C3%B6lzerne_Klinke",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Haus Hölzerne Klinke“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1269759.jpg",
+    "author": "de:Benutzer:Der Bischof mit der E-Gitarre",
+    "licence": "Copyrighted free use",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_Haus_H%C3%B6lzerne_Klinke.jpg",
+    "width": 640,
+    "height": 538
    }
   },
   "Q128763923": {
@@ -652,6 +715,30 @@
     "height": 960
    }
   },
+  "Q1712082": {
+   "wikidata": "Q1712082",
+   "label": "St. Bonifatius",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1712082",
+   "facts": {
+    "architect": [
+     "Emil Steffann"
+    ]
+   },
+   "title": "St. Bonifatius (Lübeck)",
+   "intro": "Das Kirchengebäude von St. Bonifatius wurde 1952 von dem Architekten Emil Steffann in der Vorstadt Lübeck-St. Lorenz-Nord als Notkirche errichtet, da die Anzahl der Katholiken mit den Flüchtlingen des Zweiten Weltkriegs um das Fünffache angestiegen war.",
+   "url": "https://de.wikipedia.org/wiki/St._Bonifatius_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St. Bonifatius (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1712082.jpg",
+    "author": "Re Mare at de.wikipedia",
+    "licence": "GFDL",
+    "licence_url": "http://www.gnu.org/copyleft/fdl.html",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_St._Bonifatius_01.jpg",
+    "width": 640,
+    "height": 480
+   }
+  },
   "Q1721769": {
    "wikidata": "Q1721769",
    "label": "Kaisertor",
@@ -943,6 +1030,30 @@
     "height": 1030
    }
   },
+  "Q1880166": {
+   "wikidata": "Q1880166",
+   "label": "Lübecker Wasserkunst (1867)",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1880166",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ]
+   },
+   "title": "Lübecker Wasserkunst (1867)",
+   "intro": "Die Lübecker Wasserkunst befindet sich im Stadtteil St. Jürgen der Hansestadt Lübeck direkt an der Wakenitz. Das zentrale Gebäude ist der Wasserturm, der als historistisches Bauwerk die Formensprache der Backsteingotik aufnimmt. Er wurde 1867 errichtet und 1890 aufgestockt.",
+   "url": "https://de.wikipedia.org/wiki/L%C3%BCbecker_Wasserkunst_(1867)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Lübecker Wasserkunst (1867)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1880166.jpg",
+    "author": "Autan",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Wasserkunst_L%C3%BCbeck,_Blick_nach_Nordost.png",
+    "width": 640,
+    "height": 853
+   }
+  },
   "Q18922485": {
    "wikidata": "Q18922485",
    "label": "Polizei- und Feuerwache",
@@ -1197,6 +1308,25 @@
     "height": 960
    }
   },
+  "Q22692207": {
+   "wikidata": "Q22692207",
+   "label": "Hansehalle",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q22692207",
+   "title": "Hansehalle",
+   "intro": "Die Hansehalle, auch als Hansehölle bekannt, ist eine Mehrzweckhalle im Stadtteil St. Lorenz-Nord der schleswig-holsteinischen Stadt Lübeck. Die Halle verfügt über 3200 Plätze und liegt direkt neben dem Stadion an der Lohmühle, der Spielstätte des VfB Lübeck. In der Hansehalle finden die Heimspiele des VfL Lübeck-Schwartau (bis 2017 spielend unter dem Vereinsnamen VfL Bad Schwartau) in der 2. Handball-Bundesliga statt.",
+   "url": "https://de.wikipedia.org/wiki/Hansehalle",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Hansehalle“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q22692207.jpg",
+    "author": "Anjalorenz",
+    "licence": "CC0",
+    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "https://commons.wikimedia.org/wiki/File:Hansehalle.jpg",
+    "width": 640,
+    "height": 480
+   }
+  },
   "Q2316268": {
    "wikidata": "Q2316268",
    "label": "Zisterzienserinnenkloster Lübeck (Johanniskloster)",
@@ -1214,6 +1344,38 @@
     "file": "https://commons.wikimedia.org/wiki/File:JohRefektoriumHL01.JPG",
     "width": 640,
     "height": 853
+   }
+  },
+  "Q2316312": {
+   "wikidata": "Q2316312",
+   "label": "St.-Jürgen-Kapelle",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q2316312",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Architektur der Renaissance",
+     "Proto-Baroque"
+    ],
+    "architect": [
+     "Joseph Christian Lillie"
+    ],
+    "built": "1646"
+   },
+   "title": "St.-Jürgen-Kapelle (Lübeck)",
+   "intro": "Die St.-Jürgen-Kapelle ist eine Kirche in Lübeck.",
+   "url": "https://de.wikipedia.org/wiki/St.-J%C3%BCrgen-Kapelle_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St.-Jürgen-Kapelle (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q2316312.jpg",
+    "author": "Der Bischof mit der E-Gitarre at de.wikipedia",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:WP_St_J%C3%BCrgen_Kapelle_1.jpg",
+    "width": 640,
+    "height": 480
    }
   },
   "Q2415873": {
