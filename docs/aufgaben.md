@@ -14,6 +14,8 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
   - Fortschritt merken (zuletzt besuchte Station)
 - [ ] **Thema „Geschichte“** fertigstellen: Zeitleiste (Daten in `config/timeline.luebeck.json`), „Was war hier?“ aus der OSM-Versionsgeschichte, historische Fotos von Commons
 - [ ] Auf echtem Handy und Tablet testen (bisher nur Desktop-Browser-Engines)
+- [ ] Chrome: feine helle Haarlinien an Kachelgrenzen bei Zwischen-Zoomstufen prüfen
+- [ ] Langfristig: Kacheln per Canvas/WebGL zeichnen statt als viele <img> (flüssigeres Zoomen bei großen Karten)
 - [ ] Favicon ergänzen (vermeidet eine 404 in Chrome)
 
 ## Karte Lübeck
