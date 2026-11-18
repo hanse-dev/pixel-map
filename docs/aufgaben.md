@@ -36,9 +36,10 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 
 ## Spiel (`pixel-map-game`)
 
-- [ ] Gemeinsame Basis: Kartenpaket laden, Figur auf `walkable.json`, Gebäude-Klick, Dialoge
+- [ ] Gemeinsame Basis aus dem Krimi herauslösen (Karte, Laufen, Verdeckung, Dialoge) für Hanse-Sim und Zeitreise
 - [ ] Prototyp Hanse-Wirtschaftssimulation
-- [ ] Prototyp Krimi
+- [x] Prototyp Krimi „Die Marzipan-Krone“ (`pixel-map-game`): Figur läuft durch die Straßen, Verdeckung durch Gebäude, 6 Orte, Notizbuch, Anklage
+- [ ] Krimi: Feedback einarbeiten; Figuren an den Orten zeigen; Musik/Geräusche; Handy-Steuerung testen
 - [ ] Prototyp Zeitreise (nutzt die Zeitleisten-Daten)
 
 ## Geschichte einzelner Häuser (Ideen)
