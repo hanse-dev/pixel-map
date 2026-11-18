@@ -4,6 +4,7 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 
 ## Website / UX
 
+- [ ] **Touren durch Lübeck inhaltlich überarbeiten**: Auswahl der Stationen, Reihenfolge entlang echter Wege, Länge und Dauer, eigene Einleitungs- und Überleitungstexte (mit Quellen), ggf. neue Themen
 - [ ] **Rundgänge UX überarbeiten**
   - Einstieg: Rundgänge sind im Orte-Menü versteckt; eigener Einstieg, z. B. Karte mit Rundgang-Kacheln beim ersten Besuch oder im Thema „Entdecken“
   - Übersicht vor dem Start: Einleitung, Stationen als Liste, Länge, Weg auf der Karte
@@ -15,7 +16,8 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 - [ ] **Thema „Geschichte“** fertigstellen: Zeitleiste (Daten in `config/timeline.luebeck.json`), „Was war hier?“ aus der OSM-Versionsgeschichte, historische Fotos von Commons
 - [ ] Auf echtem Handy und Tablet testen (bisher nur Desktop-Browser-Engines)
 - [ ] Chrome: feine helle Haarlinien an Kachelgrenzen bei Zwischen-Zoomstufen prüfen
-- [ ] **WebGL-Kartenebene testen** (online mit `?gl=1`, auch auf Handy); wenn gut: standardmäßig einschalten
+- [x] WebGL-Kartenebene: getestet, standardmäßig an (`?gl=0` als Rückfall)
+- [ ] WebGL auf Handy und Tablet prüfen
 - [ ] Favicon ergänzen (vermeidet eine 404 in Chrome)
 
 ## Karte Lübeck

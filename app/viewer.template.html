@@ -161,11 +161,11 @@ function tick(now){raf=null;if(animation){if(animation.start===null)animation.st
 
 // WebGL map layer (branch webgl-renderer): the preview and the art tiles are drawn on one canvas.
 // Each tile is cut to its own cell (overlap trimmed), so neighbours share exact edges and no seams or
-// unrasterised gaps appear while zooming. Opt-in with ?gl=1; falls back to the DOM images without WebGL.
+// unrasterised gaps appear while zooming. Falls back to the DOM images without WebGL, on context loss, or with ?gl=0.
 const gl2d={on:false,gl:null,tex:new Map(),poster:null,queued:false,
   init(){
-    // off by default while it is being tried: ?gl=1 turns it on (?gl=0 or no parameter keeps the DOM images)
-    if(new URLSearchParams(location.search).get('gl')!=='1')return false;
+    // default on; ?gl=0 keeps the DOM images
+    if(new URLSearchParams(location.search).get('gl')==='0')return false;
     const c=$('art-canvas'),gl=c.getContext('webgl',{alpha:false,antialias:false,premultipliedAlpha:false,preserveDrawingBuffer:false});
     if(!gl)return false;
     const sh=(t,src)=>{const o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o};
