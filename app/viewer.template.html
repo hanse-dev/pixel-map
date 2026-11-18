@@ -7,7 +7,7 @@
 <style>
 :root{color-scheme:dark;--ink:#f1f1e9;--panel:#1c2226e8;--line:#ffffff26;--accent:#e2d9b8}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);font:13px system-ui;background:#15171b;overflow:hidden}button,a,input{font:inherit}button,a{color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-#view{position:fixed;inset:0;overflow:hidden;touch-action:none;cursor:grab;background:#15171b}#view:active{cursor:grabbing}.clip{position:absolute;inset:0;pointer-events:none}.world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.world img{position:absolute;max-width:none;pointer-events:none;user-select:none;image-rendering:pixelated}.poster{inset:0;will-change:transform;image-rendering:auto}#view{background:#6b6a62}.clip[hidden]{display:none}#depth-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}#depth-canvas[hidden]{display:none}
+#view{position:fixed;inset:0;overflow:hidden;touch-action:none;cursor:grab;background:#15171b}#view:active{cursor:grabbing}.clip{position:absolute;inset:0;pointer-events:none}.world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.world img{position:absolute;max-width:none;pointer-events:none;user-select:none;image-rendering:pixelated}.poster{inset:0;will-change:transform;image-rendering:auto}#view{background:#6b6a62}.clip[hidden]{display:none}#art-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}#art-canvas[hidden]{display:none}#depth-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}#depth-canvas[hidden]{display:none}
 nav{position:fixed;z-index:5;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);display:flex;gap:3px;align-items:center;width:max-content;max-width:calc(100% - 20px);padding:5px;background:var(--panel);border:1px solid var(--line);border-radius:15px;box-shadow:0 6px 30px #0004}nav button{display:inline-flex;justify-content:center;align-items:center;min-height:44px;border:0;background:transparent;border-radius:10px;white-space:nowrap}nav button[aria-pressed=true],nav button[aria-expanded=true]{background:#ffffff20}nav button:hover{background:#ffffff18}.icon{width:44px;flex:none;font-size:17px;padding:0!important}nav button:disabled{opacity:.35;cursor:default}#cities{display:flex;gap:4px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid var(--line)}#cities a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9px;text-decoration:none}#cities a[aria-current=page]{background:#ffffff20}
 #tours-title{margin:12px 4px 6px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#b9b4a6}#tour-list{display:grid;gap:3px}#tour-list button{min-height:44px;padding:8px 10px;border:0;border-radius:8px;background:transparent;color:inherit;text-align:left}#tour-list button:hover{background:#ffffff20}#tour-list small{display:block;color:#b9b4a6}
 #tour-bar{position:fixed;z-index:5;top:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;padding:6px 6px 6px 14px;background:var(--panel);border:1px solid var(--line);border-radius:99px;max-width:calc(100% - 32px)}#tour-bar[hidden]{display:none}#tour-bar button{min-height:36px;padding:0 12px;border:0;border-radius:99px;background:#ffffff20}
@@ -42,6 +42,7 @@ body.memorial #outline-world,body.memorial #hover-world,body.memorial #tours-tit
 </head>
 <body>
 <div id="view" tabindex="0" role="region" aria-label="City map. Drag or pinch. Number keys visit landmarks; brackets move between places; zero fits the map.">
+  <canvas id="art-canvas" hidden></canvas>
   <div class="world" id="art-world"><img class="poster" id="picture" draggable="false" alt="City artwork"></div>
   <canvas id="depth-canvas" hidden></canvas>
   <div class="world" id="outline-world"></div>
@@ -116,7 +117,7 @@ let vw=0,vh=0,s=1,x=0,y=0,fitted=false,initialised=false,compare=false,reveal=50
 const minScale=()=>Math.min(vw/W,vh/H),maxScale=()=>Math.max(4,minScale()),pose=()=>({s,x,y});
 for(const world of worlds){world.style.width=W+'px';world.style.height=H+'px'}
 for(const id of ['picture','source-picture']){$(id).style.width=W+'px';$(id).style.height=H+'px'}
-$('picture').src=ART;$('mini-picture').src=ART;   // the source preview loads with the first comparison
+$('picture').onload=()=>gl2d.frame();$('picture').src=ART;$('mini-picture').src=ART;   // the source preview loads with the first comparison
 $('mini').style.setProperty('--map-aspect',W+'/'+H);
 function bound(){s=clamp(s,minScale(),maxScale());x=W*s<=vw?(vw-W*s)/2:clamp(x,vw-W*s,0);y=H*s<=vh?(vh-H*s)/2:clamp(y,vh-H*s,0)}
 function refreshTiles(now=performance.now()){
@@ -132,13 +133,13 @@ function refreshTiles(now=performance.now()){
     for(let row=r0;row<=r1;row++)for(let col=c0;col<=c1;col++){
       const key=`${level}/${col}_${row}`,left=Math.max(0,col*tile-pad),top=Math.max(0,row*tile-pad),right=Math.min(size.width,(col+1)*tile+pad),bottom=Math.min(size.height,(row+1)*tile+pad);
       needed.add(key);let image=cache.get(key);
-      if(!image){image=document.createElement('img');image.alt='';image.draggable=false;image.decoding='async';image.style.cssText=`left:${left*sx}px;top:${top*sy}px;width:${(right-left)*sx}px;height:${(bottom-top)*sy}px`;if(!layer)image.onload=()=>{if(depth.on)depth.frame()};image.src=`${[artDir,'source_files',outlineMode===1&&DATA.fill_tiles?'fill_files':'outline_files'][layer]}/${key}.${spec.format||'png'}`;worlds[layer].appendChild(image);cache.set(key,image)}
+      if(!image){image=document.createElement('img');image.alt='';image.draggable=false;image.decoding='async';image.style.cssText=`left:${left*sx}px;top:${top*sy}px;width:${(right-left)*sx}px;height:${(bottom-top)*sy}px`;if(!layer)image.onload=()=>{if(depth.on)depth.frame();gl2d.ready(image)};image.src=`${[artDir,'source_files',outlineMode===1&&DATA.fill_tiles?'fill_files':'outline_files'][layer]}/${key}.${spec.format||'png'}`;if(!(layer===0&&gl2d.on))worlds[layer].appendChild(image);image.dataset.level=String(level);image.dataset.box=[left*sx,top*sy,(right-left)*sx,(bottom-top)*sy,col*tile*sx,row*tile*sy,Math.min(size.width,(col+1)*tile)*sx,Math.min(size.height,(row+1)*tile)*sy,left,top,right,bottom].join(',');cache.set(key,image)}
       image.dataset.seen=String(now);
     }
-    for(const [key,image] of cache){if(!needed.has(key)&&now-Number(image.dataset.seen)>1000){image.remove();cache.delete(key)}}
+    for(const [key,image] of cache){if(!needed.has(key)&&now-Number(image.dataset.seen)>1000){image.remove();if(!layer)gl2d.forget(image);cache.delete(key)}}
   }
 }
-function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();schedule()}
+function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();gl2d.frame();schedule()}
 function setPose(p){s=p.s;x=p.x;y=p.y;draw()}
 function stop(){clearTimeout(pillTimer);$('pill').classList.remove('visible');playing=false;tourStart=null;animation=null;$('tour').querySelector('span').textContent='Wahrzeichen-Tour';$('tour').setAttribute('aria-pressed','false');$('tour').setAttribute('aria-label','Play tour')}
 function schedule(){if(raf===null)raf=requestAnimationFrame(tick)}
@@ -157,6 +158,54 @@ function tick(now){raf=null;if(animation){if(animation.start===null)animation.st
 // Depth: per-pixel parallax from the exported height-above-ground tiles. The art tiles already in
 // the DOM and matching depth tiles are composited into two viewport-sized textures, then one pass
 // shifts each pixel by its height along the pointer tilt. Ground stays put; towers lean.
+
+// WebGL map layer (branch webgl-renderer): the preview and the art tiles are drawn on one canvas.
+// Each tile is cut to its own cell (overlap trimmed), so neighbours share exact edges and no seams or
+// unrasterised gaps appear while zooming. Opt-in with ?gl=1; falls back to the DOM images without WebGL.
+const gl2d={on:false,gl:null,tex:new Map(),poster:null,queued:false,
+  init(){
+    // off by default while it is being tried: ?gl=1 turns it on (?gl=0 or no parameter keeps the DOM images)
+    if(new URLSearchParams(location.search).get('gl')!=='1')return false;
+    const c=$('art-canvas'),gl=c.getContext('webgl',{alpha:false,antialias:false,premultipliedAlpha:false,preserveDrawingBuffer:false});
+    if(!gl)return false;
+    const sh=(t,src)=>{const o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o};
+    const p=gl.createProgram();
+    gl.attachShader(p,sh(gl.VERTEX_SHADER,'attribute vec2 p;attribute vec2 t;varying vec2 v;void main(){v=t;gl_Position=vec4(p,0.,1.);}'));
+    gl.attachShader(p,sh(gl.FRAGMENT_SHADER,'precision mediump float;uniform sampler2D img;varying vec2 v;void main(){gl_FragColor=texture2D(img,v);}'));
+    gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))return false;
+    this.gl=gl;this.prog=p;this.buf=gl.createBuffer();this.aP=gl.getAttribLocation(p,'p');this.aT=gl.getAttribLocation(p,'t');
+    gl.useProgram(p);gl.uniform1i(gl.getUniformLocation(p,'img'),0);
+    c.addEventListener('webglcontextlost',e=>{e.preventDefault();this.fallback()});
+    return true},
+  texture(image,smooth){const gl=this.gl,t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,smooth?gl.LINEAR:gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);return t},
+  ready(image){if(!this.on)return;(image.decode?image.decode():Promise.resolve()).then(()=>{if(!this.tex.has(image)&&this.gl)this.tex.set(image,this.texture(image,false));this.frame()},()=>{})},
+  forget(image){const t=this.tex.get(image);if(t){this.gl.deleteTexture(t);this.tex.delete(image)}},
+  quad(rect,uv){const gl=this.gl,[x0,y0,x1,y1]=rect,[u0,v0,u1,v1]=uv;
+    gl.bindBuffer(gl.ARRAY_BUFFER,this.buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([x0,y0,u0,v0,x1,y0,u1,v0,x0,y1,u0,v1,x1,y1,u1,v1]),gl.STREAM_DRAW);
+    gl.enableVertexAttribArray(this.aP);gl.vertexAttribPointer(this.aP,2,gl.FLOAT,false,16,0);gl.enableVertexAttribArray(this.aT);gl.vertexAttribPointer(this.aT,2,gl.FLOAT,false,16,8);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4)},
+  frame(){if(!this.on||this.queued)return;this.queued=true;requestAnimationFrame(()=>{this.queued=false;this.draw()})},
+  draw(){const gl=this.gl,c=$('art-canvas'),dpr=devicePixelRatio||1,w=Math.max(1,Math.round(vw*dpr)),h=Math.max(1,Math.round(vh*dpr));
+    if(c.width!==w||c.height!==h){c.width=w;c.height=h}
+    gl.viewport(0,0,w,h);gl.clearColor(107/255,106/255,98/255,1);gl.clear(gl.COLOR_BUFFER_BIT);
+    const ndc=(l,t,r,b)=>[(l*s+x)/vw*2-1,1-(t*s+y)/vh*2,(r*s+x)/vw*2-1,1-(b*s+y)/vh*2];
+    const poster=$('picture');
+    if(!this.poster&&poster.complete&&poster.naturalWidth)this.poster=this.texture(poster,true);
+    if(this.poster){gl.bindTexture(gl.TEXTURE_2D,this.poster);this.quad(ndc(0,0,W,H),[0,0,1,1])}
+    // coarse levels first, finer on top; each tile drawn over its own cell only
+    const items=[...tileMaps[0].values()].filter(i=>this.tex.has(i)).sort((a,b)=>Number(a.dataset.level)-Number(b.dataset.level));
+    for(const image of items){
+      const [,,,,cx0,cy0,cx1,cy1,l,t,r,b]=image.dataset.box.split(',').map(Number);
+      const sxp=(cx1-cx0),syp=(cy1-cy0),tw=r-l,th=b-t,lev=image.dataset.level,spec=DATA.viewer_tiles[0],sz=spec.levels[lev],kx=W/sz.width,ky=H/sz.height;
+      const u0=(cx0/kx-l)/tw,v0=(cy0/ky-t)/th,u1=(cx1/kx-l)/tw,v1=(cy1/ky-t)/th;
+      gl.bindTexture(gl.TEXTURE_2D,this.tex.get(image));this.quad(ndc(cx0,cy0,cx1,cy1),[u0,v0,u1,v1]);
+    }},
+  start(){if(!this.init())return;this.on=true;$('art-canvas').hidden=false;$('art-world').style.display='none';
+    for(const image of tileMaps[0].values()){image.remove();if(image.complete)this.ready(image)}this.frame()},
+  fallback(){this.on=false;$('art-canvas').hidden=true;$('art-world').style.display='';for(const image of tileMaps[0].values())$('art-world').appendChild(image);this.tex.clear();this.poster=null}};
 const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Map(),failed:false,raf:null,
   supported(){return !!(DATA.depth_tiles&&DATA.viewer_tiles&&$('depth')&&$('depth-canvas'))},
   init(){
@@ -218,8 +267,8 @@ const PALETTES=DATA.palettes||[{name:'Gedeckt',dir:'map_files',f:''}];
 let palette=0;try{const v=Number(localStorage.getItem('pixel-map-palette'));if(v>=0&&v<PALETTES.length)palette=v}catch{}
 // The default level is baked into its own tiles; others reuse the painted tiles with a CSS filter.
 function setPalette(i,announce=true){palette=(i+PALETTES.length)%PALETTES.length;const p=PALETTES[palette];
-  if(p.dir&&p.dir!==artDir){artDir=p.dir;for(const image of tileMaps[0].values())image.remove();tileMaps[0].clear();for(const [k,t] of depth.tex)if(k.startsWith('art')){if(depth.gl)depth.gl.deleteTexture(t);depth.tex.delete(k)}refreshTiles()}
-  for(const id of ['art-world','source-world','depth-canvas'])$(id).style.filter=p.f||'';
+  if(p.dir&&p.dir!==artDir){artDir=p.dir;for(const image of tileMaps[0].values()){image.remove();gl2d.forget(image)}tileMaps[0].clear();for(const [k,t] of depth.tex)if(k.startsWith('art')){if(depth.gl)depth.gl.deleteTexture(t);depth.tex.delete(k)}refreshTiles()}
+  for(const id of ['art-world','art-canvas','source-world','depth-canvas'])$(id).style.filter=p.f||'';
   $('palette').setAttribute('aria-label','Farbstufe: '+p.name);$('palette-name').textContent=p.name+' · F';try{localStorage.setItem('pixel-map-palette',String(palette))}catch{}
   if(announce){clearTimeout(pillTimer);$('pill').textContent='Farbe: '+p.name;$('pill').classList.add('visible');pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),1500)}}
 $('palette').onclick=()=>setPalette(palette+1);setPalette(palette,false);
@@ -282,7 +331,7 @@ function hashPlace(){let id;try{id=decodeURIComponent(location.hash.split('/').p
 addEventListener('hashchange',()=>{const i=hashPlace();if(i>=0)visit(i,true,false)});
 function resize(){const cx=(vw/2-x)/s,cy=(vh/2-y)/s;vw=view.clientWidth;vh=view.clientHeight;if(!vw||!vh)return;if(miniUser===null){$('mini').hidden=vw<500;$('overview').setAttribute('aria-pressed',String(!$('mini').hidden))}if(!initialised){initialised=true;const linked=hashPlace(),opening=route.findIndex(p=>p.id===DATA.opening_landmark);if(route.length){visit(linked>=0?linked:Math.max(0,opening),false,false);return}fit(false);return}if(fitted)fit(false);else{stop();x=vw/2-cx*s;y=vh/2-cy*s;draw()}}
 function preference(){if(reduced.matches)stop();$('tour').disabled=reduced.matches||!route.length}
-reduced.addEventListener('change',preference);document.addEventListener('wheel',()=>stop(),{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});new ResizeObserver(resize).observe(view);preference();resize();
+reduced.addEventListener('change',preference);document.addEventListener('wheel',()=>stop(),{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});gl2d.start();new ResizeObserver(resize).observe(view);preference();resize();
 </script>
 <script src="../app/info.js"></script>
 <script src="../app/memorial.js"></script>
