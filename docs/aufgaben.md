@@ -22,7 +22,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
   - Übersicht vor dem Start (Einleitung, Stationsliste, Länge, Weg auf der Karte)
   - Ende des Rundgangs: Zusammenfassung, Vorschlag für den nächsten
   - Fortschritt merken (zuletzt besuchte Station)
-- [ ] **Tiefeneffekt funktioniert sichtbar nicht** – prüfen (meldet „an“ mit geladenen Daten; vermutlich zu schwach oder von der WebGL-Kartenebene verdeckt) und reparieren
+- [x] **Tiefeneffekt**: doppelt so stark, schwenkt von selbst wenn die Maus ruht (und auf dem Handy), Umrisse/Hervorhebung währenddessen aus, Hinweis beim Einschalten
+- [ ] Tiefeneffekt: Schlieren hinter hohen Türmen (dort ist nichts gemalt); evtl. Hintergrund aus Nachbarpixeln auffüllen
 - [ ] **Karte drehen**: vier feste Blickrichtungen (N/O/S/W), je eine eigene gemalte Karte, Umschalten in der Ansicht. Erst Pilot: 1024er-Ausschnitt um die Marienkirche aus Süden neben der heutigen Ansicht (startet nach dem dritten Ring, die GPU ist bis dahin belegt)
 - [ ] **Thema „Geschichte“** fertigstellen: Zeitleiste (Daten in `config/timeline.luebeck.json`), „Was war hier?“ aus der OSM-Versionsgeschichte, historische Fotos von Commons
 - [ ] Auf echtem Handy und Tablet testen (bisher nur Desktop-Browser-Engines), auch WebGL
@@ -36,6 +37,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
 - [ ] „Geistergleise“: verblasste Gleise am Übergang östlich vom Bahnhof
 - [ ] **Theater Lübeck**: die Front im Pixelbild entspricht nicht dem Wikipedia-Foto; als Wahrzeichen mit Fotoreferenz nachmalen (wie Rathaus)
+- [ ] **Dom**: linker Turmschaft im Bild neben der Geometrie gemalt (Hervorhebung erfasst ihn nicht) – als Wahrzeichen neu malen
 - [ ] Weitere Wahrzeichen aus mehreren OSM-Gebäuden prüfen und in `config/luebeck.json` → `groups` zusammenfassen (Rathaus erledigt)
 - [ ] Backup `luebeck-v3` (dritter Ring) im Repo `pixel-map-luebeck`
 
@@ -60,7 +62,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 ## Erledigt (zuletzt)
 
-- [x] Hervorhebung der Gebäude geschlossen: Wandlücken in der Klick-Karte gefüllt; Rathaus aus 6 OSM-Teilen als ein Gebäude
+- [x] Hervorhebung der Gebäude geschlossen: Lücken bis 10 px (Wände, Boden zwischen Strebepfeilern) in der Klick-Karte gefüllt; Rathaus aus 6 OSM-Teilen als ein Gebäude
 
 - [x] Zentrale Startseite: Karte, Rundgänge, Gedenken und Spiele an einer Stelle; Direktlinks `?tour=…` und `?theme=…`; ⌂ in der Karte
 - [x] Cloudflare R2: Kacheln liegen in R2, Website und Spiele laden sie von dort

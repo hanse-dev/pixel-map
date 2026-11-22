@@ -101,6 +101,8 @@ body.side #side #tour-list button:hover{background:#ffffff14}
 #side-results button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:7px 10px;border:0;border-radius:8px;background:none;color:inherit;font:inherit;cursor:pointer}
 #side-results button small{opacity:.65;font-size:.85em}#side-results button:hover,#side-results button.on{background:#ffffff18}
 #side-results p{margin:4px 2px;opacity:.7}
+
+body.depth-on #outline-world,body.depth-on #hover-world,body.depth-on #select-world{display:none!important}
 </style>
 </head>
 <body>
@@ -281,7 +283,7 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
     const quadVS='attribute vec2 p;attribute vec2 t;varying vec2 v;void main(){v=t;gl_Position=vec4(p,0.,1.);}';
     this.copy=program(quadVS,'precision mediump float;uniform sampler2D img;varying vec2 v;void main(){gl_FragColor=texture2D(img,v);}');
     this.parallax=program(quadVS,`precision highp float;uniform sampler2D art,hgt;uniform vec2 shift;varying vec2 v;
-      const float CAP=40.;const int N=16;
+      const float CAP=40.;const int N=40;
       void main(){vec2 q=v;for(int i=0;i<=N;i++){float hc=CAP*(1.-float(i)/float(N));vec2 c=v-shift*hc;
         if(min(texture2D(hgt,c).r*255.*${DATA.depth_tiles.metres_per_level||.5},CAP)>=hc){q=c;break;}}
       gl_FragColor=texture2D(art,clamp(q,0.,1.));}`);
@@ -318,14 +320,20 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
     gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,w,h);gl.useProgram(this.parallax);
     gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,this.targets[0].tex);gl.uniform1i(gl.getUniformLocation(this.parallax,'art'),0);
     gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,this.targets[1].tex);gl.uniform1i(gl.getUniformLocation(this.parallax,'hgt'),1);gl.activeTexture(gl.TEXTURE0);
-    const perMetre=(DATA.camera&&DATA.camera.px_per_m||2.45)*.08*s;gl.uniform2f(gl.getUniformLocation(this.parallax,'shift'),this.tilt[0]*perMetre/vw,-this.tilt[1]*perMetre/vh);
+    const perMetre=(DATA.camera&&DATA.camera.px_per_m||2.45)*.17*s;gl.uniform2f(gl.getUniformLocation(this.parallax,'shift'),this.tilt[0]*perMetre/vw,-this.tilt[1]*perMetre/vh);
     this.quad(this.parallax,[-1,-1,1,1],[0,0,1,1])},
-  animate(){this.raf=null;const d=[this.goal[0]-this.tilt[0],this.goal[1]-this.tilt[1]];this.tilt=[this.tilt[0]+d[0]*.12,this.tilt[1]+d[1]*.12];this.frame();if(this.on&&Math.hypot(...d)>.002)this.raf=requestAnimationFrame(()=>this.animate())},
-  aim(gx,gy){this.goal=[clamp(gx,-1,1),clamp(gy,-1,1)];if(this.raf===null)this.raf=requestAnimationFrame(()=>this.animate())},
+  animate(){this.raf=null;
+    // resting pointer or touch screen: a slow sway shows the heights (not with reduced motion)
+    if(this.on&&!reduced.matches&&performance.now()-(this.moved||0)>1500){const t=performance.now()/1000;this.goal=[Math.sin(t*.9)*.7,Math.cos(t*.6)*.45]}
+    const d=[this.goal[0]-this.tilt[0],this.goal[1]-this.tilt[1]];this.tilt=[this.tilt[0]+d[0]*.12,this.tilt[1]+d[1]*.12];this.frame();
+    if(this.on&&(Math.hypot(...d)>.002||!reduced.matches))this.raf=requestAnimationFrame(()=>this.animate())},
+  aim(gx,gy){this.moved=performance.now();this.goal=[clamp(gx,-1,1),clamp(gy,-1,1)];if(this.raf===null)this.raf=requestAnimationFrame(()=>this.animate())},
   fail(error){if(error)console.error('Depth effect stopped:',error);this.failed=true;this.set(false);$('depth').disabled=true;$('pill').textContent=location.protocol==='file:'?'Depth needs the hosted map or a local server':'Depth effect is not available in this browser';$('pill').classList.add('visible');clearTimeout(pillTimer);pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),2500)},
   set(value){if(value&&(this.failed||(!this.gl&&!this.init()))){this.failed=true;$('depth').disabled=true;return}
     this.on=value;$('depth').setAttribute('aria-pressed',String(value));$('depth-canvas').hidden=!value;
-    if(value){this.tilt=[0,0];this.aim(.5,-.5)}this.frame()}};
+    document.body.classList.toggle('depth-on',value);   // outlines and highlights cannot follow the parallax
+    if(value){this.tilt=[0,0];this.aim(.5,-.5);this.moved=0;clearTimeout(pillTimer);$('pill').textContent=matchMedia('(pointer:fine)').matches?'Tiefeneffekt: Maus über die Karte bewegen':'Tiefeneffekt an';$('pill').classList.add('visible');pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),2500)}
+    else if(this.raf!==null){cancelAnimationFrame(this.raf);this.raf=null}this.frame()}};
 if(depth.supported()){$('depth').hidden=false;$('depth').onclick=()=>{stop();depth.set(!depth.on)}}
 // Colour levels: a display filter over map, comparison source and depth canvas; tiles stay unchanged.
 const PALETTES=DATA.palettes||[{name:'Gedeckt',dir:'map_files',f:''}];
