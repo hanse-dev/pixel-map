@@ -31,8 +31,11 @@ def speakable(text, limit=650):
 
 def script(t, k):
     st, nxt = t['stations'][k], t['stations'][k + 1] if k + 1 < len(t['stations']) else None
-    intro = (by_title.get(st['source']['title']) or {}).get('intro', '') if st.get('source') else ''
+    intro = st['place']['text'] if st.get('place') else (by_title.get(st['source']['title']) or {}).get('intro', '') if st.get('source') else ''
     lines = [f"Station {k + 1}: {st['name']}.", speakable(intro or st.get('blurb', ''))]
+    if st.get('quiz'):
+        q = st['quiz']; abc = ['A', 'B', 'C', 'D']
+        lines.append('Und jetzt ein Rätsel: ' + q['q'] + ' ' + ' '.join(f'{abc[i]}: {o}.' for i, o in enumerate(q['options'])) + ' Tippe deine Antwort an!')
     if nxt:
         m = nxt['leg']['minutes']
         words = {1: 'eine Minute', 2: 'zwei Minuten', 3: 'drei Minuten', 4: 'vier Minuten', 5: 'fünf Minuten', 6: 'sechs Minuten',

@@ -1,0 +1,65 @@
+{
+ "licence": "CC BY-SA 4.0",
+ "items": {
+  "Lübecker Gänge und Höfe": {
+   "title": "Lübecker Gänge und Höfe",
+   "wikidata": "Q1880126",
+   "lat": null,
+   "lon": null,
+   "intro": "Die Gänge und Höfe in Lübeck (besonders dicht erhalten im Norden an den Straßen Engelswisch, Engelsgrube und Glockengießerstraße sowie im Süden rund um den Lübecker Dom, aber auch sonst im Gebiet der Innenstadt, mit Ausnahme der kriegszerstörten Bereiche) sind ein Überrest aus dem mittelalterlichen Städtebau. Die Höfe beruhen häufig auf Stiftungen wohlhabender Lübecker Bürger. Hinter den giebelseitigen Straßenhäusern wurden damals die so genannten „Buden“ errichtet, meist zweistöckige Gebäude mit einem Grundriss mit wenig mehr als einem Zimmer. Die Buden in den Gängen waren oft Wohnräume der Beschäftigten des Gewerbes, das im Straßenhaus ausgeübt wurde.\nDie Gänge und Höfe sind fast immer durch einen Durchgang im Straßenhaus zu erreichen. Einer von Lübeckschen Fremdenführern gerne erzählten Legende nach musste lediglich die Grundvoraussetzung erfüllt sein, dass ein Sarg hindurchgetragen werden konnte. Gänge sind lediglich schmale Durchgänge, die heutzutage nur noch gelegentlich die andere Straßenseite des Quartiers erreichen, Höfe weiten sich dagegen meist um einen zentralen Platz, der heutzutage einen Baum, ein Spielgerät oder gelegentlich eine Laube enthält.\nDie meisten der Gänge und Höfe in Lübeck sind frei zugänglich, manche sind in den Nachtstunden mit einem Tor oder einer Tür verschlossen.",
+   "url": "https://de.wikipedia.org/wiki/L%C3%BCbecker_G%C3%A4nge_und_H%C3%B6fe",
+   "source": "https://de.wikipedia.org/w/index.php?curid=305910&oldid=270109347",
+   "attribution": "Wikipedia, „Lübecker Gänge und Höfe“, CC BY-SA 4.0"
+  },
+  "Mühlentor (Lübeck)": {
+   "title": "Mühlentor (Lübeck)",
+   "wikidata": "Q1958544",
+   "lat": 53.85838611,
+   "lon": 10.69156111,
+   "intro": "Mühlentor ist die zusammenfassende Bezeichnung für die Stadttor-Anlage der Lübecker Stadtbefestigung, welche den Eingang zur Stadt von Süden her sicherte. Daneben findet der Begriff bis in die Gegenwart Verwendung als Bezeichnung für den Teil von Lübeck-St. Jürgen, der das unmittelbare ehemalige Torvorland umfasst.\nInsgesamt bestand die Mühlentor-Anlage aus vier hintereinander gestaffelten Toren, die in verschiedenen Jahrhunderten errichtet wurden, wobei die jüngeren den älteren vorgelagert wurden. Allerdings existierten zu keinem Zeitpunkt alle vier Torbauten zugleich.",
+   "url": "https://de.wikipedia.org/wiki/M%C3%BChlentor_(L%C3%BCbeck)",
+   "source": "https://de.wikipedia.org/w/index.php?curid=767756&oldid=263553890",
+   "attribution": "Wikipedia, „Mühlentor (Lübeck)“, CC BY-SA 4.0"
+  },
+  "Lübecker Stadtbefestigung": {
+   "title": "Lübecker Stadtbefestigung",
+   "wikidata": "Q1880153",
+   "lat": null,
+   "lon": null,
+   "intro": "Die Lübecker Stadtbefestigung war eine der ausgedehntesten städtischen Befestigungsanlagen in Norddeutschland und Nordeuropa und ist in Teilen noch heute erhalten.\n\n",
+   "url": "https://de.wikipedia.org/wiki/L%C3%BCbecker_Stadtbefestigung",
+   "source": "https://de.wikipedia.org/w/index.php?curid=1364367&oldid=259970681",
+   "attribution": "Wikipedia, „Lübecker Stadtbefestigung“, CC BY-SA 4.0"
+  },
+  "Wallanlagen (Lübeck)": {
+   "title": "Wallanlagen (Lübeck)",
+   "wikidata": "Q55100533",
+   "lat": null,
+   "lon": null,
+   "intro": "Die Wallanlagen sind die größte und älteste Parkanlage der Stadt Lübeck.\n\n",
+   "url": "https://de.wikipedia.org/wiki/Wallanlagen_(L%C3%BCbeck)",
+   "source": "https://de.wikipedia.org/w/index.php?curid=2755450&oldid=267026726",
+   "attribution": "Wikipedia, „Wallanlagen (Lübeck)“, CC BY-SA 4.0"
+  },
+  "Hüxtertor": {
+   "title": "Hüxtertor",
+   "wikidata": "Q1652701",
+   "lat": 53.86483,
+   "lon": 10.695,
+   "intro": "Das Hüxtertor war eines der mittelalterlichen Stadttore Lübecks und Teil der Lübecker Stadtbefestigung.",
+   "url": "https://de.wikipedia.org/wiki/H%C3%BCxtertor",
+   "source": "https://de.wikipedia.org/w/index.php?curid=2870232&oldid=261664477",
+   "attribution": "Wikipedia, „Hüxtertor“, CC BY-SA 4.0"
+  },
+  "Burgtorbrücke": {
+   "title": "Burgtorbrücke",
+   "wikidata": "Q1016053",
+   "lat": 53.8747,
+   "lon": 10.6918,
+   "intro": "Die Burgtorbrücke ist eine Straße und gleichnamige Brücke am Rande der Lübecker Altstadt.",
+   "url": "https://de.wikipedia.org/wiki/Burgtorbr%C3%BCcke",
+   "source": "https://de.wikipedia.org/w/index.php?curid=5829315&oldid=267426671",
+   "attribution": "Wikipedia, „Burgtorbrücke“, CC BY-SA 4.0"
+  }
+ }
+}

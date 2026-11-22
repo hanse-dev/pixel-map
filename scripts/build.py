@@ -147,6 +147,47 @@ def first_sentence(text):
     return text[:m.end()] if m else text[:240]
 
 
+class Places:
+    """Walk stations that are not buildings: courtyards from the Wikipedia list of Lübeck's Gänge und Höfe
+    (placed at the entrance of the OSM way of that name, by the street of its address) and places with
+    Wikipedia coordinates or an OSM area (vanished gates, parks)."""
+    def __init__(self, name, bundle):
+        import numpy as np
+        from pyproj import Transformer
+        self.w = json.loads((bundle / 'walkable.json').read_text())
+        self.ground = json.loads((bundle / 'ground.json').read_text()); self.M = np.array(json.loads((bundle / 'camera.json').read_text())['pixel_matrix'])
+        self.h = np.array(self.ground['heights_dm'], np.float32).reshape(self.ground['rows'], self.ground['columns']) / 10
+        self.tf = Transformer.from_crs(4326, self.ground['crs'], always_xy=True)
+        f = ROOT / 'info' / f'{name}.gaenge.json'; self.gaenge = json.loads(f.read_text()) if f.exists() else {'items': []}
+        f = ROOT / 'info' / f'{name}.places.json'; self.places = json.loads(f.read_text())['items'] if f.exists() else {}
+
+    def pixel(self, lat, lon):
+        e, n = self.tf.transform(lon, lat); g = self.ground
+        r = min(max(int(round((g['north'] - n) / g['step_m'])), 0), g['rows'] - 1); c = min(max(int(round((e - g['west']) / g['step_m'])), 0), g['columns'] - 1)
+        x, y = self.M @ [e, n, float(self.h[r, c]), 1]
+        return round(float(x), 1), round(float(y), 1)
+
+    def station(self, st):
+        norm = lambda t: re.sub(r'[^a-zäöüß]', '', t.lower())
+        if 'gang' in st:
+            row = next((r for r in self.gaenge['items'] if norm(r['name']) == norm(st['gang']) and (not st.get('address') or r['address'].startswith(st['address']))), None)
+            ways = [w for w in self.w['ways'] if w.get('name') and norm(w['name']) == norm(st.get('osm_name', st['gang']))]
+            if not row or not ways: return None
+            street = norm(re.sub(r'\s*[\d–-].*$', '', row['address']))
+            snodes = [n for w in self.w['ways'] if w.get('name') and norm(w['name']) == street for n in w['nodes']]
+            P = self.w['nodes']; cand = [n for w in ways for n in w['nodes']]
+            n = min(cand, key=lambda a: min(((P[a][0] - P[b][0]) ** 2 + (P[a][1] - P[b][1]) ** 2 for b in snodes), default=0))
+            return {'name': row['name'], 'x': P[n][0], 'y': P[n][1], 'address': row['address'], 'access': row['access'], 'text': row['text'],
+                    'credit': f"Text: {self.gaenge['attribution']}, CC BY-SA 4.0", 'url': self.gaenge['source'], 'title': 'Lübecker Gänge und Höfe'}
+        p = self.places.get(st.get('place'))
+        if not p: return None
+        at = st.get('at') or (p.get('lat'), p.get('lon'))       # "at": [lat, lon] where Wikipedia has no coordinates
+        if at[0] is None: return None
+        x, y = self.pixel(*at)
+        return {'name': st.get('name') or p['title'].replace(' (Lübeck)', ''), 'x': x, 'y': y, 'text': p['intro'], 'credit': f"Text: {p['attribution']}",
+                'url': p['url'], 'title': p['title']}
+
+
 class Walk:
     """Footpaths of the bundle's street graph, measured on the ground (metres) and drawn in map pixels.
     Streets are preferred over alleys, yards and paths; with the hit map, stretches hidden behind
@@ -171,7 +212,8 @@ class Walk:
         self.ok = np.nonzero([len(n) for n in self.nb])[0]; self.tree = cKDTree(self.P[self.ok])
         self.ids = hitmap
 
-    def doors(self, b, pad=24):
+    def doors(self, b, pad=None):
+        pad = b.get('pad', 24) if pad is None else pad
         """Street nodes right around a building (its box widened by pad px); alleys only if no street."""
         import numpy as np
         x0, y0, x1, y1 = b['box']
@@ -305,17 +347,31 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
                 by_q[b['wikidata']] = b
         import hashlib
         key = hashlib.sha256(tour_file.read_bytes() + (bundle / 'walkable.json').read_bytes() + (bundle / 'buildings.json').read_bytes()
-                             + (info_file.read_bytes() if info_file.exists() else b'')).hexdigest()
+                             + (info_file.read_bytes() if info_file.exists() else b'')
+                             + b''.join(f.read_bytes() for f in sorted((ROOT / 'info').glob(f'{name}.*.json')) if 'stolper' not in f.name)
+                             + Path(__file__).read_bytes()).hexdigest()
         cache = ROOT / 'config' / f'{name}.walks.json'
         ids = hit_ids(bundle)
         if ids is None and cache.exists() and json.loads(cache.read_text())['key'] == key:
             tours = json.loads(cache.read_text())['tours']           # CI: paths measured locally against the hit map
         else:
             if ids is None: print(f'warning: {name}: no hit map, walk paths drawn without hiding (run the build locally)')
-            walk = Walk(bundle, ids)
+            walk = Walk(bundle, ids); places = Places(name, bundle)
             for t in json.loads(tour_file.read_text())['tours']:
                 stations, previous, at = [], None, None
                 for k, st in enumerate(t['stations']):
+                    if 'wikidata' not in st:                 # a courtyard or a place without a building of its own
+                        place = places.station(st)
+                        if not place:
+                            print(f"warning: tour {t['id']}: {st} not found"); continue
+                        b = {'id': None, 'box': [place['x'] - 3, place['y'] - 3, place['x'] + 3, place['y'] + 3], 'pad': 4}
+                        station = {'id': f"{t['id']}-{k + 1}", 'name': place['name'], 'short_name': place['name'], 'x': place['x'], 'y': place['y'],
+                                   'view_width': 700, 'building': None, 'place': place, 'blurb': first_sentence(place['text'])}
+                        if previous:
+                            metres, path = walk.route(previous, b, at); at = walk.end
+                            station['leg'] = {'metres': round(metres, -1), 'minutes': max(1, round(metres / 75)), 'path': path}
+                        stations.append(station); previous = b
+                        continue
                     b = by_q.get(st['wikidata'])
                     if not b:
                         print(f"warning: tour {t['id']}: {st['wikidata']} not in bundle"); continue
@@ -324,6 +380,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
                     station = {'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
                                'view_width': 900, 'building': b['id'], 'blurb': first_sentence(i.get('intro') or ''),
                                'source': i.get('title') and {'title': i['title'], 'url': i.get('url')}}
+                    if st.get('quiz'): station['quiz'] = st['quiz']
                     if previous:
                         metres, path = walk.route(previous, b, at); at = walk.end
                         station['leg'] = {'metres': round(metres, -1), 'minutes': max(1, round(metres / 75)), 'path': path}

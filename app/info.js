@@ -138,6 +138,22 @@
   const sayState = () => { const say = el('building-say'); say.textContent = reader.paused ? '🔊 Vorlesen' : '⏸ Pause'; say.setAttribute('aria-pressed', String(!reader.paused)) };
   reader.addEventListener('play', sayState); reader.addEventListener('pause', sayState); reader.addEventListener('ended', sayState);
   new MutationObserver(() => { if (panel.hidden) reader.pause() }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
+  // a walk station without a building of its own (a courtyard, a vanished gate): its text and source
+  window.pixelMapShowPlace = st => {
+    const p = st.place; highlight(null); reader.pause();
+    el('building-figure').hidden = true; el('building-facts').hidden = true; el('building-say').hidden = true;
+    text('building-name', p.name);
+    text('building-address', p.address ? '📍 ' + p.address + (p.access ? ` · ${p.access}` : '') : '');
+    text('building-kind', p.title === 'Lübecker Gänge und Höfe' ? 'Gang oder Hof' : '');
+    const summary = el('building-summary'); summary.replaceChildren();
+    for (const part of (p.text || '').split(/\n+/).filter(Boolean)) { const q = document.createElement('p'); q.textContent = part; summary.append(q) }
+    summary.hidden = !p.text; const long = (p.text || '').length > 380; summary.classList.toggle('clamped', long); el('building-more').hidden = !long;
+    const links = el('building-links'); links.replaceChildren();
+    const a = document.createElement('a'); a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Wikipedia'; links.append(a); links.hidden = false;
+    text('building-credit', p.credit);
+    panel.dataset.box = [st.x - 4, st.y - 4, st.x + 4, st.y + 4].join(',');
+    panel.hidden = false;
+  };
   window.pixelMapShowBuilding = id => { const b = id ? byId.get(id) : null; if (b) show(b); else { panel.hidden = true; highlight(null) } };
   el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };

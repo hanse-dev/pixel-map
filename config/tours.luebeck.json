@@ -1,17 +1,235 @@
 {
  "note": "Rundgänge: Stationen per Wikidata; Reihenfolge nach Fußwegen im Straßennetz der Karte geplant (keine Umwege). Länge, Gehzeit und Weg berechnet scripts/build.py. Texte der Stationen: erster Satz der Wikipedia-Einleitung (CC BY-SA 4.0), im Viewer verlinkt.",
  "tours": [
-  {"id": "hanse", "title": "Hanse: Salz, Rat und Hafen",
+  {
+   "id": "hanse",
+   "title": "Hanse: Salz, Rat und Hafen",
    "intro": "Vom westlichen Stadttor über die Salzspeicher zum Rathaus, weiter zu Kanzlei, Kaufleuten und Seefahrern bis zum Speicher an der Untertrave.",
-   "stations": [{"wikidata": "Q321229"}, {"wikidata": "Q657603"}, {"wikidata": "Q538453"}, {"wikidata": "Q1618163"}, {"wikidata": "Q2713736"}, {"wikidata": "Q375042"}, {"wikidata": "Q1784591"}]},
-  {"id": "kirchen", "title": "Die Hauptkirchen",
+   "stations": [
+    {
+     "wikidata": "Q321229"
+    },
+    {
+     "wikidata": "Q657603"
+    },
+    {
+     "wikidata": "Q538453"
+    },
+    {
+     "wikidata": "Q1618163"
+    },
+    {
+     "wikidata": "Q2713736"
+    },
+    {
+     "wikidata": "Q375042"
+    },
+    {
+     "wikidata": "Q1784591"
+    }
+   ]
+  },
+  {
+   "id": "kirchen",
+   "title": "Die Hauptkirchen",
    "intro": "Von Süden nach Norden durch die Altstadt: Dom, Aegidien, Petri, Marien, Katharinen und Jakobi – die Türme, die Lübecks Silhouette prägen.",
-   "stations": [{"wikidata": "Q3916007"}, {"wikidata": "Q316973"}, {"wikidata": "Q896458"}, {"wikidata": "Q695065"}, {"wikidata": "Q317388"}, {"wikidata": "Q375042"}]},
-  {"id": "buergerhaeuser", "title": "Kaufmannshäuser, Thomas Mann und Willy Brandt",
+   "stations": [
+    {
+     "wikidata": "Q3916007"
+    },
+    {
+     "wikidata": "Q316973"
+    },
+    {
+     "wikidata": "Q896458"
+    },
+    {
+     "wikidata": "Q695065"
+    },
+    {
+     "wikidata": "Q317388"
+    },
+    {
+     "wikidata": "Q375042"
+    }
+   ]
+  },
+  {
+   "id": "buergerhaeuser",
+   "title": "Kaufmannshäuser, Thomas Mann und Willy Brandt",
    "intro": "Durch Mengstraße und Königstraße: Häuser der Kaufmannsfamilien, das Buddenbrookhaus, das Willy-Brandt-Haus und das Behnhaus.",
-   "stations": [{"wikidata": "Q1367741"}, {"wikidata": "Q315187"}, {"wikidata": "Q1879877"}, {"wikidata": "Q2581800"}, {"wikidata": "Q814533"}, {"wikidata": "Q1623386"}]},
-  {"id": "kloester", "title": "Klöster, Konvente und eine Pilgerherberge",
+   "stations": [
+    {
+     "wikidata": "Q1367741"
+    },
+    {
+     "wikidata": "Q315187"
+    },
+    {
+     "wikidata": "Q1879877"
+    },
+    {
+     "wikidata": "Q2581800"
+    },
+    {
+     "wikidata": "Q814533"
+    },
+    {
+     "wikidata": "Q1623386"
+    }
+   ]
+  },
+  {
+   "id": "kloester",
+   "title": "Klöster, Konvente und eine Pilgerherberge",
    "intro": "Orte des geistlichen Lebens und der Fürsorge im Osten und Norden der Altstadt.",
-   "stations": [{"wikidata": "Q2316268"}, {"wikidata": "Q317388"}, {"wikidata": "Q1786466"}, {"wikidata": "Q1515805"}]}
+   "stations": [
+    {
+     "wikidata": "Q2316268"
+    },
+    {
+     "wikidata": "Q317388"
+    },
+    {
+     "wikidata": "Q1786466"
+    },
+    {
+     "wikidata": "Q1515805"
+    }
+   ]
+  },
+  {
+   "id": "gaenge",
+   "title": "Gänge und Höfe",
+   "intro": "Hinter den Giebelhäusern im Norden der Altstadt: schmale Gänge, Buden und Stiftshöfe aus vielen Jahrhunderten. Die meisten sind frei zugänglich – bitte leise, hier wohnen Menschen.",
+   "stations": [
+    {
+     "gang": "Schiffer Hof",
+     "osm_name": "Schiffer-Hof"
+    },
+    {
+     "gang": "Krusenhof"
+    },
+    {
+     "gang": "Bäcker-Gang"
+    },
+    {
+     "gang": "Füchtingshof",
+     "osm_name": "Füchtings Hof"
+    },
+    {
+     "gang": "Glandorps Hof"
+    },
+    {
+     "gang": "Lödings Hof"
+    }
+   ]
+  },
+  {
+   "id": "befestigung",
+   "title": "Stadtmauer und Tore",
+   "intro": "Einmal um die Altstadtinsel: von den beiden erhaltenen Stadttoren zu den Stellen der verschwundenen Tore und durch die Wallanlagen.",
+   "stations": [
+    {
+     "wikidata": "Q538276"
+    },
+    {
+     "place": "Hüxtertor"
+    },
+    {
+     "place": "Mühlentor (Lübeck)"
+    },
+    {
+     "wikidata": "Q1721769"
+    },
+    {
+     "place": "Wallanlagen (Lübeck)",
+     "at": [
+      53.858953,
+      10.682535
+     ]
+    },
+    {
+     "wikidata": "Q321229"
+    }
+   ]
+  },
+  {
+   "id": "kinder",
+   "title": "Rätselrunde für Kinder",
+   "intro": "Fünf berühmte Orte, fünf Rätsel: Wer gut hinschaut und zuhört, findet die Antworten.",
+   "stations": [
+    {
+     "wikidata": "Q321229",
+     "quiz": {
+      "q": "Auf welchem Geldschein war das Holstentor früher abgebildet?",
+      "options": [
+       "auf dem 5-Euro-Schein",
+       "auf dem 50-DM-Schein",
+       "auf dem 100-Mark-Schein"
+      ],
+      "answer": 1,
+      "fact": "Ein Stich der Westansicht des Holstentors ist auf der Rückseite der von 1960 bis 1991 produzierten 50-DM-Scheine.",
+      "source": "https://de.wikipedia.org/wiki/Holstentor"
+     }
+    },
+    {
+     "wikidata": "Q657603",
+     "quiz": {
+      "q": "Wofür brauchte man das viele Salz aus den Salzspeichern vor allem?",
+      "options": [
+       "zum Streuen auf glatten Straßen",
+       "um Fisch haltbar zu machen",
+       "zum Brotbacken"
+      ],
+      "answer": 1,
+      "fact": "Das Salz wurde vornehmlich zum Konservieren von in Norwegen und Schonen gefangenem Fisch benötigt und ermöglichte so den Heringshandel.",
+      "source": "https://de.wikipedia.org/wiki/Salzspeicher"
+     }
+    },
+    {
+     "wikidata": "Q896458",
+     "quiz": {
+      "q": "Wie kommt man auf die Aussichtsplattform der Petrikirche in 50 Metern Höhe?",
+      "options": [
+       "mit einem Aufzug",
+       "nur über eine Leiter",
+       "mit einer Seilbahn"
+      ],
+      "answer": 0,
+      "fact": "Die in 50 m Höhe gelegene Aussichtsplattform des 108 m hohen Turmes kann per Aufzug erreicht werden.",
+      "source": "https://de.wikipedia.org/wiki/Petrikirche_(Lübeck)"
+     }
+    },
+    {
+     "wikidata": "Q538453",
+     "quiz": {
+      "q": "Wozu sind die runden Löcher in der hohen Ziermauer des Rathauses am Markt?",
+      "options": [
+       "damit Tauben darin wohnen",
+       "damit der Wind hindurchkann und die Mauer nicht umdrückt",
+       "für Kanonen"
+      ],
+      "answer": 1,
+      "fact": "Die runden Löcher in den Ziermauern der Fassade zum Markt hin haben den Zweck, den Wind zu brechen und die Fassade vor zu starkem Winddruck zu schützen.",
+      "source": "https://de.wikipedia.org/wiki/Lübecker_Rathaus"
+     }
+    },
+    {
+     "wikidata": "Q695065",
+     "quiz": {
+      "q": "Was dachte der Teufel der Sage nach, als er beim Bau der Marienkirche half?",
+      "options": [
+       "dass hier eine Burg entsteht",
+       "dass hier ein Wirtshaus gebaut wird",
+       "dass hier ein Schloss für ihn entsteht"
+      ],
+      "answer": 1,
+      "fact": "Der Sage nach soll der Teufel an der Errichtung der Marienkirche beteiligt gewesen sein, in dem Glauben, dass es sich um den Bau eines Wirtshauses handele. Daran erinnert eine Teufelsfigur im Marienkirchhof.",
+      "source": "https://de.wikipedia.org/wiki/Marienkirche_(Lübeck)"
+     }
+    }
+   ]
+  }
  ]
 }

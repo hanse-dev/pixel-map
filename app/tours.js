@@ -78,6 +78,7 @@
   // ---------- reading aloud ----------
   // Each station has a spoken introduction (scripts/narrate.py). While "Vorlesen" is on, arriving at a
   // station plays it; when it ends and "Automatisch weiter" is on, the walk moves on after a short pause.
+  let quiz = null;
   const audio = new Audio(); audio.preload = 'auto'; window.pixelMapAudio = audio;   // for tests and the console
   const pref = (k, d) => { try { const v = localStorage.getItem('pixel-map-' + k); return v === null ? d : v === '1' } catch { return d } };
   const keep = (k, v) => { try { localStorage.setItem('pixel-map-' + k, v ? '1' : '0') } catch {} };
@@ -125,13 +126,14 @@
     time.textContent = `${fmt(audio.currentTime)} / ${fmt(d)}`; if (d) bar.value = Math.round(audio.currentTime / d * 1000);
   });
   bar.addEventListener('input', () => { if (audio.duration) audio.currentTime = bar.value / 1000 * audio.duration });
-  audio.addEventListener('ended', () => {
-    sync();
-    if (!auto || !tourActive) return;
+  audio.addEventListener('ended', () => { sync(); countdownToNext() });
+  function countdownToNext() {
+    if (!auto || !tourActive || wait) return;
+    if (quiz && !quiz.hidden && !quiz.dataset.solved) { countdown.textContent = 'Löse das Rätsel – dann geht es weiter.'; countdown.hidden = false; return }
     let n = 4;
     const tick = () => { countdown.textContent = current === route.length - 1 ? `Rundgang endet in ${n} s · Pause zum Bleiben` : `Weiter in ${n} s · Pause zum Bleiben`; countdown.hidden = false; if (n-- <= 0) { cancel(); $('next').click() } };
     tick(); wait = setInterval(tick, 1000);
-  });
+  }
   speakBox.onchange = () => { speak = speakBox.checked; keep('vorlesen', speak); if (!speak) audio.pause() };
   voiceSel.onchange = () => {                           // switch voice and continue at the same point of the text
     const at = audio.duration ? audio.currentTime / audio.duration : 0, was = !audio.paused;
@@ -142,10 +144,30 @@
   };
   autoBox.onchange = () => { auto = autoBox.checked; keep('weiter', auto); if (!auto) cancel() };
   addEventListener('keydown', e => { if (tourActive && e.key === 'k' && !e.target.closest('input,textarea')) play.click() });
+  // a riddle at a station (Rätselrunde): three answers, the right one shows the fact and its source
+  quiz = el('div', { className: 'walk-quiz', hidden: true });
+  player.after(quiz);
+  let quizFor = null;
+  function riddle(st) {
+    quizFor = st; quiz.replaceChildren(); quiz.hidden = !(st && st.quiz); delete quiz.dataset.solved;
+    if (quiz.hidden) return;
+    const q = st.quiz, note = el('p', { className: 'quiz-note', ariaLive: 'polite' });
+    quiz.append(el('b', { textContent: '🧩 ' + q.q }),
+      el('div', { className: 'quiz-opts' }, ...q.options.map((o, i) => el('button', { textContent: o, onclick: e => {
+        const right = i === q.answer; e.target.classList.add(right ? 'right' : 'wrong');
+        if (right) {
+          quiz.querySelectorAll('.quiz-opts button').forEach(b => b.disabled = true);
+          note.replaceChildren('Richtig! ' + q.fact + ' ', el('a', { href: q.source, target: '_blank', rel: 'noopener', textContent: 'Quelle: Wikipedia' }));
+          if (window.pixelMapCount) pixelMapCount(`raetsel/${st.id}`, 'Rätsel gelöst');
+          quiz.dataset.solved = '1'; if (audio.ended) { cancel(); setTimeout(countdownToNext, 2500) }
+        } else note.textContent = 'Leider nicht – versuch es noch einmal!';
+      } }))), note);
+  }
   (function follow() {                                   // a new station (or the end of the walk) changes what is read
     const st = tourActive ? route[current] : null;
     player.hidden = !tourActive;
     if (st !== playingFor) { audio.pause(); load(st) }
+    if (st !== quizFor) riddle(st);
     requestAnimationFrame(follow);
   })();
 
