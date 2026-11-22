@@ -269,9 +269,37 @@ def main(argv=None):
                                          '<script>location.replace("./"+location.hash)</script><a href="./">Karte öffnen</a>')
         print(f'built {name}' + (f' (tiles from {base})' if base else ''))
     items = ''.join(f'<li><a href="{n}/">{html.escape(t)}</a></li>' for n, t in cities)
-    (SITE / 'index.html').write_text((ROOT / 'app/index.template.html').read_text().replace('__CITIES__', items))
+    (SITE / 'index.html').write_text(start_page(cities, items))
     (SITE / '.nojekyll').write_text('')
     check_scripts()
+
+
+GAMES = 'https://hanse-dev.github.io/pixel-map-game/'
+
+
+def start_page(cities, items):
+    """The start page: map, walks, memorial and games of the first city in one place."""
+    name = cities[0][0]
+    base = json.loads((SITE / name / 'tiles.json').read_text())['base'] or f'{name}/'
+    tours = json.loads((ROOT / 'config' / f'tours.{name}.json').read_text())['tours'] if (ROOT / 'config' / f'tours.{name}.json').exists() else []
+    icons = {'tuerme': '⛪', 'hanse': '⚖', 'buergerhaeuser': '🏛', 'stifte': '🕯'}
+    km = lambda t: f"{t.get('length_m', 0) / 1000:.1f}".replace('.', ',')
+    cards = ''.join(f'<a class="card" href="{name}/?tour={html.escape(t["id"])}"><div class="k">{icons.get(t["id"], "🚶")}</div>'
+                    f'<h3>{html.escape(t["title"])}</h3><p>{html.escape(t.get("intro") or "")}</p>'
+                    f'<span class="tag">Rundgang · {len(t["stations"])} Stationen · {km(t)} km</span></a>'
+                    for t in tours)
+    stones = ''
+    page = (SITE / name / 'index.html').read_text()
+    sfile = ROOT / 'info' / f'{name}.stolpersteine.json'
+    if sfile.exists():
+        data = json.loads(re.search(r'const DATA=(.*?), ART=', page, re.S)[1])
+        n = sum(len(p['people']) for p in data.get('stones') or [])
+        stones = f'{n} Steine an {len(data.get("stones") or [])} Adressen liegen im Kartenausschnitt.' if n else ''
+    out = (ROOT / 'app/index.template.html').read_text()
+    for k, v in {'__PREVIEW__': html.escape(base + 'preview-map.webp'), '__TOURS__': cards, '__STONES__': stones,
+                 '__GAMES__': GAMES, '__CITIES__': items}.items():
+        out = out.replace(k, v)
+    return out
 
 
 def check_scripts():

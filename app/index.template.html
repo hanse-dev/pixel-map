@@ -1,18 +1,71 @@
 <!doctype html>
 <html lang="de">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pixel Map</title>
+<title>Pixel Map Lübeck</title>
+<meta name="description" content="Lübeck als isometrische Pixelart-Karte aus offenen Geodaten: erkunden, Rundgänge, Gedenken und kleine Spiele.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%222%22 y=%222%22 width=%2212%22 height=%2212%22 fill=%22%23b5532f%22/%3E%3C/svg%3E">
 <style>
-:root{--bg:#f6f1e9;--fg:#2a2420;--muted:#6b6058;--link:#9a3b22}
-@media (prefers-color-scheme:dark){:root{--bg:#1d1a17;--fg:#eee6dc;--muted:#a89c90;--link:#e98a64}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}
-main{max-width:640px;margin:0 auto;padding:48px 16px}
-a{color:var(--link)} p.small{color:var(--muted);font-size:14px}
+:root{--bg:#f6f1e9;--card:#fffaf3;--fg:#2a2420;--muted:#6b6058;--line:#e3d8c9;--accent:#b5532f;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1a17;--card:#26221e;--fg:#eee6dc;--muted:#a89c90;--line:#3a332c;--accent:#e98a64;--accent-ink:#1d1a17}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+.hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;background:#3b3630 center/cover no-repeat;color:#fff}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.72))}
+.hero .in{position:relative;z-index:1;max-width:1040px;width:100%;margin:0 auto;padding:32px 16px 40px}
+.hero h1{font-size:clamp(2em,6vw,3.4em);line-height:1.05;margin:0 0 .2em;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero p{font-size:1.15em;max-width:640px;margin:0 0 1.2em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:700;text-decoration:none;padding:.75em 1.3em;border-radius:12px;margin:0 .5em .5em 0}
+.cta.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.5)}
+main{max-width:1040px;margin:0 auto;padding:8px 16px 48px}
+h2{font-size:1.5em;margin:1.6em 0 .2em}.lead{color:var(--muted);margin:0 0 1em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:transform .15s,border-color .15s}
+a.card:hover,a.card:focus-visible{transform:translateY(-2px);border-color:var(--accent)}
+.card .k{font-size:1.6em}.card h3{margin:.25em 0 .15em;font-size:1.1em}.card p{margin:0;color:var(--muted);font-size:.95em}
+.tag{display:inline-block;font-size:.8em;font-weight:600;color:var(--accent);margin-top:.4em}
+.quiet{background:transparent}
+footer{max-width:1040px;margin:0 auto;padding:0 16px 40px;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
 </style>
+</head>
+<body>
+<header class="hero" style="background-image:url(__PREVIEW__)">
+  <div class="in">
+    <h1>Pixel Map Lübeck</h1>
+    <p>Die Altstadt und ihre Ränder als isometrische Pixelart: gemalt aus echten Höhen-, Luftbild- und Kartendaten. Klick dich durch Kirchen, Tore und Speicher.</p>
+    <a class="cta" href="luebeck/">Karte öffnen</a><a class="cta ghost" href="#spiele">Spiele</a>
+  </div>
+</header>
 <main>
-<h1>Pixel Map</h1>
-<ul>__CITIES__</ul>
-<p class="small">Isometrische Pixelart-Karten aus offenen Geodaten. Gebäude anklicken für Infos aus Wikipedia. Illustrativ, keine Vermessung. Nicht-kommerziell.</p>
+  <h2>Entdecken</h2>
+  <p class="lead">Gebäude mit Umriss lassen sich anklicken: Foto, Baujahr, Adresse und ein Text aus Wikipedia.</p>
+  <div class="grid">
+    <a class="card" href="luebeck/"><div class="k">🗺</div><h3>Karte erkunden</h3><p>Frei zoomen und schieben, mit Tiefeneffekt und Vergleich zum Quellbild.</p></a>
+    __TOURS__
+  </div>
+
+  <h2>Gedenken</h2>
+  <p class="lead">Stolpersteine erinnern an Menschen, die im Nationalsozialismus verfolgt wurden.</p>
+  <div class="grid">
+    <a class="card quiet" href="luebeck/?theme=memorial"><div class="k">▫</div><h3>Stolpersteine in Lübeck</h3><p>__STONES__ Eine ruhige Ansicht ohne Hervorhebungen, mit Verweisen auf die Biografien der Initiative „Stolpersteine für Lübeck“.</p></a>
+  </div>
+
+  <h2 id="spiele">Spielen</h2>
+  <p class="lead">Drei Prototypen auf derselben Karte. Deine Figur läuft durch die echten Straßen.</p>
+  <div class="grid">
+    <a class="card" href="__GAMES__krimi/"><div class="k">🔍</div><h3>Die Marzipan-Krone</h3><p>Ein Rezeptbuch verschwindet am Morgen des Marzipan-Wettbewerbs.</p><span class="tag">Krimi · 10–15 Min.</span></a>
+    <a class="card" href="__GAMES__hanse/"><div class="k">⚓</div><h3>Kaufmann zu Lübeck</h3><p>Handel mit Salz, Hering und Tuch im Jahr 1400. Ziel: Ratsherr.</p><span class="tag">Handel · 15–20 Min.</span></a>
+    <a class="card" href="__GAMES__quiz/"><div class="k">❓</div><h3>Lübeck-Quiz</h3><p>Zehn Fragen, die Antwort ist ein Ort: Lauf hin.</p><span class="tag">Quiz · 10 Min.</span></a>
+  </div>
+
+  <h2>Weitere Karten</h2>
+  <ul>__CITIES__</ul>
 </main>
+<footer>
+  Illustrative Karte, keine Vermessung. Geodaten: GeoBasis-DE/LVermGeo SH (CC BY 4.0) · © OpenStreetMap-Mitwirkende (ODbL) · Texte: Wikipedia (CC BY-SA 4.0) · Bild: FLUX.2 Klein mit Pixel Art Redmond, nur nicht-kommerzielle Nutzung.
+</footer>
+</body>
 </html>
