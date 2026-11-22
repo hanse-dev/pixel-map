@@ -10,7 +10,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
   - [x] Gebäude-Infos als größeres Popup neben dem angeklickten Gebäude (folgt beim Verschieben, Pfeil zum Gebäude); auf dem Handy als Blatt von unten
   - [x] Laufender Rundgang bleibt oben in der Leiste; auf dem Handy kleine Leiste mit ‹ › ✕ über der Karte
   - [x] **Tabs** oben in der Leiste: Entdecken · Rundgänge · Ansicht · Info (gewählter Tab bleibt gespeichert)
-  - [x] **Orte nach Kategorien**: 28 Orte in Kirchen und Synagoge · Tore, Brücken und Wasser · Rathaus, Hanse und Handel · Museen und Bürgerhäuser · Kultur
+  - [x] **Orte nach Kategorien**: 28 Wahrzeichen plus alle 66 weiteren Gebäude mit Wikipedia-Eintrag in 6 aufklappbaren Kategorien (automatisch eingeordnet, Ausnahmen in `config/luebeck.json` → `category_overrides`)
+  - [x] **Suche** nach Gebäudenamen und Adressen (16.000 Gebäude), Taste `/`
 
 ## Website / UX
 

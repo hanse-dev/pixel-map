@@ -87,6 +87,41 @@ def groups_of(name, root, configs):
     return out
 
 
+CATEGORY_RULES = [   # (category, words in the name, OSM building kinds); first match wins
+    ('kirchen', ('kirche', 'kapelle', 'kloster', 'konvent', 'synagoge', 'st. ', 'st.-'), ('church', 'chapel', 'cathedral', 'synagogue')),
+    ('kultur', ('theater', 'kongress', 'logenhaus', 'rio', 'halle', 'buniamshof', 'stadion'), ('grandstand', 'sports_centre', 'temple')),
+    ('hanse', ('speicher', 'schuppen', 'handel', 'zoll', 'bank', 'backhaus', 'kaufmann', 'kanzlei', 'rathaus'), ('warehouse', 'industrial')),
+    ('tore', ('tor', 'brücke', 'wasser', 'bunker', 'schifffahrt'), ('bunker', 'bridge')),
+    ('oeffentlich', ('schule', 'seminar', 'gymnasium', 'landesamt', 'polizei', 'feuerwache', 'parkhaus', 'amt'), ('school', 'office', 'government', 'public', 'parking', 'retail', 'commercial')),
+]
+
+
+def category_of(name, kind):
+    low = name.lower()
+    for cat, words, kinds in CATEGORY_RULES:
+        if any(w in low for w in words) or kind in kinds:
+            return cat
+    return 'museen'                                   # houses, villas and the rest
+
+
+def extra_places(config, bundle, info, groups):
+    """Every other building with a Wikipedia entry, sorted into the place categories."""
+    names = {c['id']: c['name'] for c in config.get('categories', [])}
+    curated = {l['wikidata'] for l in config['landmarks']}
+    members = {m for _, ms in groups for m in ms[1:]}
+    best = {}
+    for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
+        q = b.get('wikidata')
+        if q in info and q not in curated and 'centre' in b and b['id'] not in members and b['visible_px'] > best.get(q, {}).get('visible_px', 0):
+            best[q] = b
+    out = []
+    for q, b in best.items():
+        name = (info[q].get('title') or info[q].get('label') or b.get('name') or q).replace(' (Lübeck)', '')
+        cat = config.get('category_overrides', {}).get(q) or category_of(name, b.get('kind'))
+        out.append({'name': name, 'category': names.get(cat, cat), 'building': b['id'], 'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 900})
+    return sorted(out, key=lambda p: p['name'])
+
+
 def outline_tiles(bundle, out, wanted, groups=()):
     """Gold outlines of the buildings that open an info panel, as an RGBA Deep Zoom pyramid."""
     import numpy as np
@@ -198,7 +233,8 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}), 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}),
+            'places_extra': extra_places(config, bundle, info, groups_of(name, ROOT / 'cities' / name, {name: config})), 'categories': [c['name'] for c in config.get('categories', [])], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json(base + 'preview-map.webp'), 'SOURCE': script_json(base + 'preview-source.webp'),

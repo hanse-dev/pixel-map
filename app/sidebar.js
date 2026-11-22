@@ -30,8 +30,56 @@
   }
   const links = el('div', { className: 'side-links' },
     el('a', { href: '../', textContent: '⌂ Startseite' }), el('a', { href: 'https://hanse-dev.github.io/pixel-map-game/', textContent: '🎲 Spiele' }));
+  // search: every building by name or address; landmarks and Wikipedia entries first
+  const input = el('input', { type: 'search', id: 'side-search', placeholder: 'Suchen: Gebäude, Adresse …', autocomplete: 'off', ariaLabel: 'Gebäude oder Adresse suchen' });
+  const results = el('div', { id: 'side-results', role: 'listbox', hidden: true });
+  const fold = t => t.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/strasse\b/g, 'str').replace(/str\./g, 'str').replace(/[^a-z0-9 ]+/g, ' ');
+  let index = null;
+  async function load() {
+    if (index) return index;
+    const [b, i] = await Promise.all([fetch(DATA.buildings_url).then(r => r.json()), DATA.info_url ? fetch(DATA.info_url).then(r => r.json()).catch(() => ({ items: {} })) : { items: {} }]);
+    const info = i.items || {}, lead = new Map();
+    for (const [l, ms] of DATA.groups || []) for (const m of ms) lead.set(m, l);
+    const seen = new Set();
+    index = [];
+    for (const r of b.buildings) {
+      if (!r.centre || lead.has(r.id) && lead.get(r.id) !== r.id) continue;
+      const wiki = r.wikidata && info[r.wikidata];
+      const name = (wiki && (wiki.title || wiki.label) || r.name || '').replace(' (Lübeck)', '');
+      if (!name && !r.address) continue;
+      const key = r.wikidata || r.id; if (r.wikidata && seen.has(key)) continue; seen.add(key);
+      const street = r.address ? r.address.split(',')[0] : '';
+      index.push({ name: name || street, sub: name && street && street !== name ? street : '', rank: wiki ? 2 : name ? 1 : 0,
+        text: fold(`${name} ${r.address || ''}`), point: { x: r.centre[0], y: r.centre[1], view_width: 700, building: r.id } });
+    }
+    return index;
+  }
+  let picked = 0, shown = [];
+  async function search() {
+    const q = fold(input.value).split(' ').filter(Boolean);
+    if (!q.length) { results.hidden = true; return }
+    const all = await load();
+    const hit = (e, w) => /^\d+$/.test(w) ? new RegExp(`(^| )${w}[a-z]?( |$)`).test(e.text) : e.text.includes(w);   // house numbers match whole
+    shown = all.filter(e => q.every(w => hit(e, w)))
+      .sort((a, b) => (b.text.startsWith(q[0]) - a.text.startsWith(q[0])) || b.rank - a.rank || a.name.localeCompare(b.name, 'de')).slice(0, 8);
+    picked = 0;
+    results.replaceChildren(...(shown.length ? shown.map((e, k) => el('button', { role: 'option', className: k === 0 ? 'on' : '', onclick: () => go(e) },
+      el('b', { textContent: e.name }), e.sub ? el('small', { textContent: e.sub }) : null)) : [el('p', { textContent: 'Nichts gefunden.' })]));
+    results.hidden = false;
+  }
+  function go(e) { results.hidden = true; input.value = e.name; flyToBuilding(e.point); if (narrow.matches) show(false) }
+  input.addEventListener('input', search);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { input.value = ''; results.hidden = true; return }
+    if (!shown.length || results.hidden) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); picked = (picked + (e.key === 'ArrowDown' ? 1 : -1) + shown.length) % shown.length; [...results.children].forEach((b, k) => b.classList.toggle('on', k === picked)) }
+    if (e.key === 'Enter') { e.preventDefault(); go(shown[picked]) }
+  });
+  addEventListener('keydown', e => {                    // "/" jumps to the search
+    if (e.key === '/' && !e.target.closest('input,textarea')) { e.preventDefault(); show(true); select('entdecken'); input.focus() }
+  });
   const tabs = [
-    { id: 'entdecken', label: 'Entdecken', icon: '🧭', panes: [section('sec-theme', 'Thema', $('themes')),
+    { id: 'entdecken', label: 'Entdecken', icon: '🧭', panes: [section('sec-search', null, input, results), section('sec-theme', 'Thema', $('themes')),
       section('sec-places', 'Orte', el('div', { className: 'side-steps' }, step('‹ Voriger Ort', 'previous'), step('Nächster Ort ›', 'next')), $('cities'), $('place-list'))] },
     { id: 'rundgaenge', label: 'Rundgänge', icon: '🚶', panes: [section('sec-tours', null,
       el('p', { className: 'side-hint', textContent: 'Wähle einen Rundgang. Die Karte führt dich von Station zu Station.' }), $('tour-list'))] },

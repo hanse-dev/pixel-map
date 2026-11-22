@@ -198,7 +198,7 @@
  "categories": [
   {
    "id": "kirchen",
-   "name": "Kirchen und Synagoge"
+   "name": "Kirchen, Klöster und Synagoge"
   },
   {
    "id": "tore",
@@ -210,11 +210,20 @@
   },
   {
    "id": "museen",
-   "name": "Museen und Bürgerhäuser"
+   "name": "Bürgerhäuser und Museen"
   },
   {
    "id": "kultur",
-   "name": "Kultur"
+   "name": "Kultur, Sport und Freizeit"
+  },
+  {
+   "id": "oeffentlich",
+   "name": "Schulen, Ämter und Geschäftshäuser"
   }
- ]
+ ],
+ "category_overrides": {
+  "Q2443638": "museen",
+  "Q18922485": "oeffentlich",
+  "Q2560411": "museen"
+ }
 }
