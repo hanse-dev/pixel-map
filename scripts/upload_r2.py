@@ -14,8 +14,10 @@ from botocore.config import Config
 
 env = {}
 for line in (Path.home() / '.config/pixel-map/r2.env').read_text().splitlines():
-    if '=' in line:
+    if '=' in line and not line.lstrip().startswith('#'):
         k, v = line.split('=', 1); env[k.strip()] = v.strip()
+if any(env.get(k, '').startswith('HIER_') or not env.get(k) for k in ('R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY')):
+    sys.exit('~/.config/pixel-map/r2.env: Access Key ID und Secret Access Key fehlen noch')
 s3 = boto3.client('s3', endpoint_url=env['R2_ENDPOINT'], aws_access_key_id=env['R2_ACCESS_KEY_ID'],
                   aws_secret_access_key=env['R2_SECRET_ACCESS_KEY'], region_name='auto',
                   config=Config(retries={'max_attempts': 8, 'mode': 'standard'}, max_pool_connections=32))
