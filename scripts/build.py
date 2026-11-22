@@ -552,12 +552,13 @@ def start_page(cities, items):
     """The start page: map, walks, memorial and games of the first city in one place."""
     name = cities[0][0]
     base = json.loads((SITE / name / 'tiles.json').read_text())['base'] or f'{name}/'
-    tours = json.loads((ROOT / 'config' / f'tours.{name}.json').read_text())['tours'] if (ROOT / 'config' / f'tours.{name}.json').exists() else []
-    icons = {'kirchen': '⛪', 'hanse': '⚓', 'buergerhaeuser': '🏛', 'kloester': '🕯'}
+    page_data = json.loads(re.search(r'const DATA=(.*?), ART=', (SITE / name / 'index.html').read_text(), re.S)[1])
+    tours = page_data.get('tours') or []          # measured lengths and times, as on the map
+    icons = {'kirchen': '⛪', 'hanse': '⚓', 'buergerhaeuser': '🏛', 'kloester': '🕯', 'gaenge': '🚪', 'befestigung': '🏰', 'kinder': '🧩'}
     km = lambda t: f"{t.get('length_m', 0) / 1000:.1f}".replace('.', ',')
     cards = ''.join(f'<a class="card" href="{name}/?tour={html.escape(t["id"])}"><div class="k">{icons.get(t["id"], "🚶")}</div>'
                     f'<h3>{html.escape(t["title"])}</h3><p>{html.escape(t.get("intro") or "")}</p>'
-                    f'<span class="tag">Rundgang · {len(t["stations"])} Stationen · {km(t)} km · ca. {round(t.get("length_m", 0) / 75)} Min. Gehzeit</span></a>'
+                    f'<span class="tag">Rundgang · {len(t["stations"])} Stationen · {km(t)} km · ca. {t.get("minutes", 0)} Min. Gehzeit</span></a>'
                     for t in tours)
     stones = ''
     page = (SITE / name / 'index.html').read_text()
