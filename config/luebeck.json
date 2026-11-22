@@ -7,52 +7,170 @@
   {
    "id": "marienkirche",
    "short_name": "Marienkirche",
-   "wikidata": "Q695065"
-  },
-  {
-   "id": "rathaus",
-   "short_name": "Rathaus",
-   "wikidata": "Q538453"
-  },
-  {
-   "id": "holstentor",
-   "short_name": "Holstentor",
-   "wikidata": "Q321229"
-  },
-  {
-   "id": "salzspeicher",
-   "short_name": "Salzspeicher",
-   "wikidata": "Q657603"
-  },
-  {
-   "id": "petrikirche",
-   "short_name": "Petrikirche",
-   "wikidata": "Q896458"
+   "wikidata": "Q695065",
+   "category": "kirchen"
   },
   {
    "id": "dom",
    "short_name": "Dom",
-   "wikidata": "Q3916007"
+   "wikidata": "Q3916007",
+   "category": "kirchen"
   },
   {
-   "id": "aegidienkirche",
-   "short_name": "Aegidienkirche",
-   "wikidata": "Q316973"
-  },
-  {
-   "id": "katharinen",
-   "short_name": "Katharinenkirche",
-   "wikidata": "Q317388"
+   "id": "petrikirche",
+   "short_name": "Petrikirche",
+   "wikidata": "Q896458",
+   "category": "kirchen"
   },
   {
    "id": "jakobikirche",
    "short_name": "Jakobikirche",
-   "wikidata": "Q375042"
+   "wikidata": "Q375042",
+   "category": "kirchen"
+  },
+  {
+   "id": "katharinen",
+   "short_name": "Katharinenkirche",
+   "wikidata": "Q317388",
+   "category": "kirchen"
+  },
+  {
+   "id": "aegidienkirche",
+   "short_name": "Aegidienkirche",
+   "wikidata": "Q316973",
+   "category": "kirchen"
+  },
+  {
+   "id": "synagoge",
+   "short_name": "Carlebach-Synagoge",
+   "wikidata": "Q1494883",
+   "category": "kirchen"
+  },
+  {
+   "id": "herz-jesu",
+   "short_name": "Propsteikirche Herz Jesu",
+   "wikidata": "Q880381",
+   "category": "kirchen"
+  },
+  {
+   "id": "reformierte-kirche",
+   "short_name": "Reformierte Kirche",
+   "wikidata": "Q1766218",
+   "category": "kirchen"
+  },
+  {
+   "id": "holstentor",
+   "short_name": "Holstentor",
+   "wikidata": "Q321229",
+   "category": "tore"
   },
   {
    "id": "burgtor",
    "short_name": "Burgtor",
-   "wikidata": "Q538276"
+   "wikidata": "Q538276",
+   "category": "tore"
+  },
+  {
+   "id": "kaisertor",
+   "short_name": "Kaisertor",
+   "wikidata": "Q1721769",
+   "category": "tore"
+  },
+  {
+   "id": "hubbruecke",
+   "short_name": "Hubbrücke",
+   "wikidata": "Q1632968",
+   "category": "tore"
+  },
+  {
+   "id": "wasserkunst",
+   "short_name": "Wasserkunst",
+   "wikidata": "Q1880166",
+   "category": "tore"
+  },
+  {
+   "id": "rathaus",
+   "short_name": "Rathaus",
+   "wikidata": "Q538453",
+   "category": "hanse"
+  },
+  {
+   "id": "kanzlei",
+   "short_name": "Kanzleigebäude",
+   "wikidata": "Q1618163",
+   "category": "hanse"
+  },
+  {
+   "id": "salzspeicher",
+   "short_name": "Salzspeicher",
+   "wikidata": "Q657603",
+   "category": "hanse"
+  },
+  {
+   "id": "die-eiche",
+   "short_name": "Kornspeicher „Die Eiche“",
+   "wikidata": "Q1784591",
+   "category": "hanse"
+  },
+  {
+   "id": "kaufmannschaft",
+   "short_name": "Haus der Kaufmannschaft",
+   "wikidata": "Q2713736",
+   "category": "hanse"
+  },
+  {
+   "id": "zeughaus",
+   "short_name": "Zeughaus",
+   "wikidata": "Q196956",
+   "category": "hanse"
+  },
+  {
+   "id": "buddenbrookhaus",
+   "short_name": "Buddenbrookhaus",
+   "wikidata": "Q315187",
+   "category": "museen"
+  },
+  {
+   "id": "behnhaus",
+   "short_name": "Behnhaus Drägerhaus",
+   "wikidata": "Q814533",
+   "category": "museen"
+  },
+  {
+   "id": "willy-brandt-haus",
+   "short_name": "Willy-Brandt-Haus",
+   "wikidata": "Q2581800",
+   "category": "museen"
+  },
+  {
+   "id": "schabbelhaus",
+   "short_name": "Schabbelhaus",
+   "wikidata": "Q1367741",
+   "category": "museen"
+  },
+  {
+   "id": "loewen-apotheke",
+   "short_name": "Löwen-Apotheke",
+   "wikidata": "Q1879877",
+   "category": "museen"
+  },
+  {
+   "id": "hoghehus",
+   "short_name": "Hoghehus",
+   "wikidata": "Q1623386",
+   "category": "museen"
+  },
+  {
+   "id": "theater",
+   "short_name": "Theater",
+   "wikidata": "Q2415873",
+   "category": "kultur"
+  },
+  {
+   "id": "muk",
+   "short_name": "Musik- und Kongresshalle",
+   "wikidata": "Q1954986",
+   "category": "kultur"
   }
  ],
  "limitations": [
@@ -75,6 +193,28 @@
     "way/146451835"
    ],
    "note": "Hauptbau, Anbauten an der Renaissance-Laube, Neues Gemach und Langes Haus sind in OSM eigene Gebäude"
+  }
+ ],
+ "categories": [
+  {
+   "id": "kirchen",
+   "name": "Kirchen und Synagoge"
+  },
+  {
+   "id": "tore",
+   "name": "Tore, Brücken und Wasser"
+  },
+  {
+   "id": "hanse",
+   "name": "Rathaus, Hanse und Handel"
+  },
+  {
+   "id": "museen",
+   "name": "Museen und Bürgerhäuser"
+  },
+  {
+   "id": "kultur",
+   "name": "Kultur"
   }
  ]
 }

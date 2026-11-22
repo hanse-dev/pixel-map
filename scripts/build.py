@@ -144,7 +144,8 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             print(f"warning: {name}: landmark {item['wikidata']} not visible in the bundle"); continue
         i = info.get(item['wikidata'], {})
         landmarks.append({'id': item['id'], 'name': i.get('title') or b.get('name') or item['short_name'], 'short_name': item['short_name'],
-                          'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 1024, 'wikidata': item['wikidata'], 'building': b['id']})
+                          'x': b['centre'][0], 'y': b['centre'][1], 'view_width': 1024, 'wikidata': item['wikidata'], 'building': b['id'],
+                          'category': {c['id']: c['name'] for c in config.get('categories', [])}.get(item.get('category'))})
     tours = []
     tour_file = ROOT / 'config' / f'tours.{name}.json'
     if tour_file.exists():

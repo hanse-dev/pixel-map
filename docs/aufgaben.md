@@ -9,8 +9,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
   - [x] Thema, Rundgänge, Orte, Ansicht, Hilfe und Quellen links in einer Leiste; auf dem Handy als Schublade
   - [x] Gebäude-Infos als größeres Popup neben dem angeklickten Gebäude (folgt beim Verschieben, Pfeil zum Gebäude); auf dem Handy als Blatt von unten
   - [x] Laufender Rundgang bleibt oben in der Leiste; auf dem Handy kleine Leiste mit ‹ › ✕ über der Karte
-  - [ ] **Tabs** oben in der Leiste (z. B. Entdecken · Rundgänge · Ansicht · Info), darunter der jeweilige Inhalt
-  - [ ] **Orte nach Kategorien** ordnen (z. B. Kirchen · Tore und Befestigung · Hanse und Handel · Museen und Bürgerhäuser) statt einer ungeordneten Liste
+  - [x] **Tabs** oben in der Leiste: Entdecken · Rundgänge · Ansicht · Info (gewählter Tab bleibt gespeichert)
+  - [x] **Orte nach Kategorien**: 28 Orte in Kirchen und Synagoge · Tore, Brücken und Wasser · Rathaus, Hanse und Handel · Museen und Bürgerhäuser · Kultur
 
 ## Website / UX
 

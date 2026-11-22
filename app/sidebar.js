@@ -1,38 +1,77 @@
 'use strict';
-// Seitenleiste: theme, walks, places, view settings and sources in one panel on the left instead of
-// menus over the map; building details open as a popup next to the building. It reuses the viewer's own controls (moved, not copied), so every
-// handler and shortcut keeps working. On narrow screens the panel is a drawer.
+// Seitenleiste: theme, places, walks, view settings and sources in a tabbed panel on the left instead of
+// menus over the map; building details open as a popup next to the building. It reuses the viewer's
+// own controls (moved, not copied), so every handler and shortcut keeps working. On phones the panel
+// is a drawer.
 (() => {
   const params = new URLSearchParams(location.search);
   if (params.get('seite') !== '1') return;           // trial: ?seite=1
   const $ = id => document.getElementById(id), body = document.body;
   const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); e.append(...kids.filter(Boolean)); return e };
-  const section = (cls, title, ...kids) => el('section', { className: `side-sec ${cls}` }, el('h2', { textContent: title }), ...kids);
+  const section = (cls, title, ...kids) => el('section', { className: `side-sec ${cls}` }, title ? el('h2', { textContent: title }) : null, ...kids);
   const narrow = matchMedia('(max-width: 760px)');
+  const remember = { get() { try { return localStorage.getItem('pixel-map-side-tab') } catch { return null } }, set(v) { try { localStorage.setItem('pixel-map-side-tab', v) } catch {} } };
 
   const side = el('aside', { id: 'side', ariaLabel: 'Karte steuern' });
   const collapse = el('button', { id: 'side-collapse', className: 'side-icon', ariaLabel: 'Leiste einklappen', title: 'Leiste einklappen', textContent: '«' });
   const head = el('header', { className: 'side-head' },
     el('a', { href: '../', className: 'side-home', title: 'Startseite', textContent: '⌂' }),
     el('div', {}, el('b', { textContent: 'Pixel Map' }), el('span', { textContent: DATA.title || '' })), collapse);
-
-
   if ((DATA.navigation || []).length < 2) $('cities').hidden = true;   // one map: nothing to switch to
 
-  // a running walk stays on top, also while a station's details are open
+  // a running walk stays on top of every tab, also while a station's details are open
   const step = (label, id) => el('button', { textContent: label, onclick: () => $(id).click() });
   const walk = el('div', { className: 'side-walk' }, $('tour-bar'), el('div', { className: 'side-steps' }, step('‹ Zurück', 'previous'), step('Weiter ›', 'next')));
-  const tours = section('sec-tours', 'Rundgänge', $('tour-list'));
-  const places = section('sec-places', 'Orte', el('div', { className: 'side-steps' }, step('‹ Voriger Ort', 'previous'), step('Nächster Ort ›', 'next')), $('cities'), $('place-list'));
-  const settings = section('sec-view', 'Ansicht', $('view-menu'));
-  const more = section('sec-more', 'Hilfe und Quellen',
-    el('div', { className: 'side-row' },
-      el('button', { textContent: '? Bedienung', onclick: () => $('help-toggle').click() }),
-      el('button', { textContent: 'ⓘ Quellen', onclick: () => { $('info').hidden = !$('info').hidden } })),
-    $('info'));
-  const lists = el('div', { className: 'side-lists' }, section('sec-theme', 'Thema', $('themes')), tours, places, settings, more);
-  side.append(head, walk, lists);
+
+  // walks: each entry also says what it is about
+  for (const [i, b] of [...$('tour-list').children].entries()) {
+    const t = (DATA.tours || [])[i];
+    if (t && t.intro) b.append(el('span', { className: 'tour-intro', textContent: t.intro }));
+  }
+  const links = el('div', { className: 'side-links' },
+    el('a', { href: '../', textContent: '⌂ Startseite' }), el('a', { href: 'https://hanse-dev.github.io/pixel-map-game/', textContent: '🎲 Spiele' }));
+  const tabs = [
+    { id: 'entdecken', label: 'Entdecken', icon: '🧭', panes: [section('sec-theme', 'Thema', $('themes')),
+      section('sec-places', 'Orte', el('div', { className: 'side-steps' }, step('‹ Voriger Ort', 'previous'), step('Nächster Ort ›', 'next')), $('cities'), $('place-list'))] },
+    { id: 'rundgaenge', label: 'Rundgänge', icon: '🚶', panes: [section('sec-tours', null,
+      el('p', { className: 'side-hint', textContent: 'Wähle einen Rundgang. Die Karte führt dich von Station zu Station.' }), $('tour-list'))] },
+    { id: 'ansicht', label: 'Ansicht', icon: '🎨', panes: [section('sec-view', null, $('view-menu'))] },
+    { id: 'info', label: 'Info', icon: 'ⓘ', panes: [section('sec-more', null,
+      el('div', { className: 'side-row' },
+        el('button', { textContent: '? Bedienung', onclick: () => $('help-toggle').click() }),
+        el('button', { textContent: 'ⓘ Quellen', onclick: () => { $('info').hidden = !$('info').hidden } })),
+      $('info'), links)] },
+  ];
+  const bar = el('div', { className: 'side-tabs', role: 'tablist', ariaLabel: 'Bereiche' });
+  const panels = el('div', { className: 'side-panels' });
+  for (const t of tabs) {
+    t.button = el('button', { role: 'tab', id: `tab-${t.id}`, ariaSelected: 'false', onclick: () => select(t.id) }, el('span', { textContent: t.icon, ariaHidden: 'true' }), el('b', { textContent: t.label }));
+    t.button.setAttribute('aria-controls', `pane-${t.id}`);
+    t.pane = el('div', { role: 'tabpanel', id: `pane-${t.id}`, hidden: true }, ...t.panes);
+    t.pane.setAttribute('aria-labelledby', `tab-${t.id}`);
+    bar.append(t.button); panels.append(t.pane);
+  }
+  function select(id, focus = false) {
+    const t = tabs.find(x => x.id === id && !x.button.hidden) || tabs[0];
+    for (const x of tabs) { const on = x === t; x.button.setAttribute('aria-selected', String(on)); x.button.tabIndex = on ? 0 : -1; x.pane.hidden = !on }
+    if (focus) t.button.focus();
+    remember.set(t.id);
+  }
+  bar.addEventListener('keydown', e => {                       // arrow keys move between tabs
+    const visible = tabs.filter(t => !t.button.hidden), i = visible.findIndex(t => t.button.getAttribute('aria-selected') === 'true');
+    const k = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+    if (k) { e.preventDefault(); select(visible[(i + k + visible.length) % visible.length].id, true) }
+  });
+  // Gedenken shows no walks
+  const walksTab = tabs[1];
+  new MutationObserver(() => {
+    walksTab.button.hidden = body.classList.contains('memorial');
+    if (walksTab.button.hidden && walksTab.button.getAttribute('aria-selected') === 'true') select('entdecken');
+  }).observe(body, { attributes: true, attributeFilter: ['class'] });
+
+  side.append(head, walk, bar, panels);
   body.append(side);
+  select(remember.get() || 'entdecken');
   $('tours-title').remove();
   for (const id of ['themes', 'view-menu', 'places']) $(id).removeAttribute('role');
 
