@@ -4,6 +4,9 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 
 ## Website / UX
 
+- [x] Zentrale Startseite (Karte, Rundgänge, Gedenken, Spiele)
+- [ ] **Seitenleiste** testen (`?seite=1`), dann als Standard; auf dem Handy evtl. Gebäude-Infos als unteres Blatt statt Schublade
+
 - [ ] **Touren durch Lübeck inhaltlich überarbeiten**: Auswahl der Stationen, Reihenfolge entlang echter Wege, Länge und Dauer, eigene Einleitungs- und Überleitungstexte (mit Quellen), ggf. neue Themen
 - [ ] **Rundgänge UX überarbeiten**
   - Einstieg: Rundgänge sind im Orte-Menü versteckt; eigener Einstieg, z. B. Karte mit Rundgang-Kacheln beim ersten Besuch oder im Thema „Entdecken“

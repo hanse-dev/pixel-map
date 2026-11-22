@@ -38,6 +38,43 @@ body.memorial #outline-world,body.memorial #hover-world,body.memorial #tours-tit
 @media(max-width:620px){.help-grid{grid-template-columns:1fr}}
 @media(max-width:500px){nav{gap:0;padding:4px}#previous{display:none}#mini{width:140px;right:12px}#pill{top:max(18px,env(safe-area-inset-top))}}@media(max-width:340px){nav{gap:0;padding:2px}#overview{display:none}}
 @media(prefers-reduced-motion:reduce){#pill{transition:none}}
+
+/* Seitenleiste (app/sidebar.js) */
+body.side{--side-w:340px}
+#side{display:none}
+body.side #side{display:flex;flex-direction:column;position:fixed;z-index:7;left:0;top:0;bottom:0;width:var(--side-w);max-width:88vw;overflow:auto;overscroll-behavior:contain;background:#1c2226;border-right:1px solid var(--line);box-shadow:4px 0 24px #0005;transition:transform .2s ease}
+body.side #view{left:var(--side-w);transition:left .2s ease}
+body.side.side-closed #side{transform:translateX(-102%)}
+body.side.side-closed #view{left:0}
+body.side nav{display:none}
+#side-open{display:none}
+body.side.side-closed #side-open{display:block;position:fixed;z-index:6;top:14px;left:14px;padding:9px 14px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:inherit;font:inherit;font-weight:600;cursor:pointer}
+.side-head{display:flex;align-items:center;gap:10px;padding:14px 14px 10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#1c2226;z-index:1}
+.side-head div{flex:1;display:flex;flex-direction:column;line-height:1.25}.side-head span{font-size:.85em;opacity:.75}
+.side-home,.side-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:transparent;color:inherit;text-decoration:none;font-size:1.1em;cursor:pointer}
+.side-sec{padding:12px 14px;border-bottom:1px solid var(--line)}
+.side-sec h2{margin:0 0 8px;font-size:.75em;letter-spacing:.08em;text-transform:uppercase;opacity:.7;font-weight:700}
+body.side #side .menu,body.side #side .menu[hidden],body.side #side #places,body.side #side #places[hidden]{display:grid!important;position:static;transform:none;width:auto;max-width:none;max-height:none;padding:0;background:none;border:0;box-shadow:none;gap:4px}
+body.side #side .menu button,body.side #side #place-list button,body.side #side #tour-list button{text-align:left;width:100%}
+body.side #side #place-list,body.side #side #tour-list{display:grid;gap:4px}
+body.side #side #themes{grid-template-columns:repeat(3,1fr)}
+body.side #side #themes button small{display:none}
+body.side #side #themes button[aria-checked=true]{outline:2px solid var(--accent);outline-offset:-2px}
+body.side #side #tour-bar{position:static;transform:none;margin:0 0 8px;border-radius:12px;max-width:none}
+.side-walk{padding:10px 14px;border-bottom:1px solid var(--line);background:#26302f}.side-walk:has(#tour-bar[hidden]){display:none}
+.side-steps{display:flex;gap:6px;margin:0 0 8px}.side-steps button{flex:1;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#ffffff0d;color:inherit;font:inherit;cursor:pointer}.side-steps button:hover{background:#ffffff1a}
+body.side #side #cities[hidden]{display:none}
+body.side #side #tour-bar{flex-direction:column;align-items:stretch;gap:6px;padding:10px 12px}body.side #side #tour-end{align-self:flex-start}
+body.side #side #info{position:static;width:auto;max-width:none;max-height:none;margin-top:8px;padding:10px;background:#0002}
+.side-row{display:flex;gap:6px}.side-row button{flex:1}
+.side-detail{display:none}
+#side.detail .side-detail{display:block}#side.detail .side-lists{display:none}
+body.side #side #building{position:static;width:auto;max-width:none;max-height:none;background:none;border:0;border-radius:0;padding:12px 14px}
+body.side #side #building-close.side-back{position:static;display:inline-block;width:auto;height:auto;margin:0 0 10px;padding:6px 12px;border-radius:10px;font-size:.95em}
+body.memorial #side .sec-tours,body.memorial #side .sec-places{display:none}
+body.side #pill,body.side #tour-bar{left:calc(var(--side-w) + (100% - var(--side-w)) / 2)}
+body.side.side-closed #pill{left:50%}
+@media (max-width:760px){body.side #view,body.side.side-closed #view{left:0}body.side #side{width:min(var(--side-w),88vw)}body.side #pill{left:50%}}
 </style>
 </head>
 <body>
@@ -300,7 +337,7 @@ function setHelp(open){$('help').hidden=!open;$('help-toggle').setAttribute('ari
 $('help-toggle').onclick=()=>setHelp($('help').hidden);$('help-close').onclick=$('help-ok').onclick=()=>setHelp(false);
 setTimeout(()=>{let seen=false;try{seen=localStorage.getItem('pixel-map-help-seen')==='1'}catch{}if(!seen&&!location.hash&&!/[?&](tour|theme)=/.test(location.search))setHelp(true)},600);
 function setCompare(value){if(value&&!$('source-picture').src)$('source-picture').src=SOURCE;stop();closePlaces();compare=value;$('source').setAttribute('aria-pressed',String(value));$('source-clip').hidden=!value;$('divider').hidden=!value;setReveal(reveal);refreshTiles()}
-function setReveal(value){reveal=clamp(value,0,100);$('source-clip').style.clipPath=`inset(0 ${100-reveal}% 0 0)`;$('divider').style.left=reveal+'%';$('divider').setAttribute('aria-valuenow',String(Math.round(reveal)))}
+function setReveal(value){reveal=clamp(value,0,100);$('source-clip').style.clipPath=`inset(0 ${100-reveal}% 0 0)`;$('divider').style.left=(view.getBoundingClientRect().left+reveal/100*vw)+'px';$('divider').setAttribute('aria-valuenow',String(Math.round(reveal)))}
 function toggleMini(){stop();$('mini').hidden=!$('mini').hidden;miniUser=!$('mini').hidden;$('overview').setAttribute('aria-pressed',String(!$('mini').hidden))}
 for(const link of DATA.navigation||[]){const a=document.createElement('a');a.textContent=link.name;a.href=link.href;if(link.id===DATA.city_id)a.setAttribute('aria-current','page');a.onclick=stop;$('cities').appendChild(a)}
 function fillPlaces(){$('place-list').replaceChildren();for(const [index,point] of route.entries()){const b=document.createElement('button');b.textContent=point.short_name||point.name;b.onclick=()=>visit(index);$('place-list').appendChild(b)}}
@@ -324,7 +361,7 @@ view.addEventListener('pointermove',e=>{if(depth.on&&!reduced.matches)depth.aim(
 for(const name of ['pointerup','pointercancel','lostpointercapture'])view.addEventListener(name,e=>pointers.delete(e.pointerId));
 view.addEventListener('dblclick',e=>{const r=view.getBoundingClientRect(),target=s<1?1:Math.min(4,Math.floor(s)+1);zoom(target/s,e.clientX-r.left,e.clientY-r.top)});
 function dragControl(element,move){let active=false;element.addEventListener('pointerdown',e=>{stop();active=true;element.setPointerCapture(e.pointerId);move(e)});element.addEventListener('pointermove',e=>{if(active)move(e)});for(const name of ['pointerup','pointercancel','lostpointercapture'])element.addEventListener(name,()=>{active=false})}
-dragControl($('divider'),e=>setReveal(e.clientX/vw*100));
+dragControl($('divider'),e=>setReveal((e.clientX-view.getBoundingClientRect().left)/vw*100));
 dragControl($('mini'),e=>{fitted=false;const r=$('mini').getBoundingClientRect();x=vw/2-clamp((e.clientX-r.left)/r.width,0,1)*W*s;y=vh/2-clamp((e.clientY-r.top)/r.height,0,1)*H*s;draw()});
 $('divider').addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();stop();setReveal(e.key==='Home'?0:e.key==='End'?100:reveal+(e.key==='ArrowRight'?5:-5))}});
 $('mini').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fit()}});
@@ -341,5 +378,6 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 </script>
 <script src="../app/info.js"></script>
 <script src="../app/memorial.js"></script>
+<script src="../app/sidebar.js"></script>
 </body>
 </html>

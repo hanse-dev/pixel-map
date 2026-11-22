@@ -191,9 +191,11 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     values = {'ART': script_json(base + 'preview-map.webp'), 'SOURCE': script_json(base + 'preview-source.webp'),
               'DATA': script_json(data), 'TITLE': html.escape(config['title'] + ' · Pixel Map')}
     import hashlib
-    version = hashlib.sha256((ROOT / 'app/info.js').read_bytes()).hexdigest()[:10]
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
-    return page.replace('src="../app/info.js"', f'src="../app/info.js?v={version}"')   # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar'):                                    # new code is never served from cache
+        version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
+        page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
+    return page
 
 
 def make_tiles(name, root, out, configs):
