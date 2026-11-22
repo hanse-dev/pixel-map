@@ -396,7 +396,7 @@ function setTheme(t){if(!THEMES[t]||t===theme)return closeMenus();if(typeof endT
   else if(theme==='memorial'){if(DATA.outline_tiles)setOutlines(themeOutline,false);setPalette(themePalette,false)}
   theme=t;document.body.classList.toggle('memorial',t==='memorial');$('memorial-world').hidden=t!=='memorial';$('theme-name').textContent=THEMES[t];
   for(const b of $('themes').querySelectorAll('button'))b.setAttribute('aria-checked',String(b.dataset.theme===t));closeMenus();
-  if(window.pixelMapTheme)window.pixelMapTheme(t);clearTimeout(pillTimer);$('pill').textContent='Thema: '+THEMES[t];$('pill').classList.add('visible');pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),1500)}
+  if(window.pixelMapTheme)window.pixelMapTheme(t);if(window.pixelMapCount)pixelMapCount('thema/'+t,THEMES[t]);clearTimeout(pillTimer);$('pill').textContent='Thema: '+THEMES[t];$('pill').classList.add('visible');pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),1500)}
 for(const b of $('themes').querySelectorAll('button'))b.onclick=()=>setTheme(b.dataset.theme);
 $('themes').querySelector('[data-theme=explore]').setAttribute('aria-checked','true');
 if(!(DATA.stones||[]).length)$('themes').querySelector('[data-theme=memorial]').disabled=true;
@@ -450,6 +450,7 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 {const q=new URLSearchParams(location.search),t=q.get('theme'),tour=(DATA.tours||[]).find(x=>x.id===q.get('tour'));
  if(t&&t!=='explore')setTimeout(()=>setTheme(t),300);if(tour)setTimeout(()=>startTour(tour),500)}
 </script>
+<script src="../app/count.js"></script>
 <script src="../app/info.js"></script>
 <script src="../app/memorial.js"></script>
 <script src="../app/sidebar.js"></script>

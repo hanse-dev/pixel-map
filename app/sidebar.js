@@ -67,7 +67,7 @@
       el('b', { textContent: e.name }), e.sub ? el('small', { textContent: e.sub }) : null)) : [el('p', { textContent: 'Nichts gefunden.' })]));
     results.hidden = false;
   }
-  function go(e) { results.hidden = true; input.value = e.name; flyToBuilding(e.point); if (narrow.matches) show(false) }
+  function go(e) { if (window.pixelMapCount) pixelMapCount('suche', 'Suche'); results.hidden = true; input.value = e.name; flyToBuilding(e.point); if (narrow.matches) show(false) }
   input.addEventListener('input', search);
   input.addEventListener('keydown', e => {
     if (e.key === 'Escape') { input.value = ''; results.hidden = true; return }

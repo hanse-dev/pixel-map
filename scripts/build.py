@@ -131,6 +131,15 @@ def hit_ids(bundle):
     return a[..., 0] | (a[..., 1] << 8) | (a[..., 2] << 16)
 
 
+def analytics_tag():
+    """GoatCounter's script when config/analytics.json names a code; nothing otherwise."""
+    f = ROOT / 'config' / 'analytics.json'
+    code = json.loads(f.read_text()).get('goatcounter', '') if f.exists() else ''
+    if not re.fullmatch(r'[a-z0-9-]{2,50}', code or ''): return ''
+    return (f'<script>window.goatcounter={{allow_local:false}}</script>'
+            f'<script data-goatcounter="https://{code}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n')
+
+
 def first_sentence(text):
     """The opening sentence of a Wikipedia introduction (abbreviations like St. and dates stay intact)."""
     text = re.sub(r'\s+', ' ', text).strip()
@@ -379,7 +388,8 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
               'DATA': script_json(data), 'TITLE': html.escape(config['title'] + ' · Pixel Map')}
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
-    for js in ('info', 'memorial', 'sidebar', 'tours'):                                    # new code is never served from cache
+    page = page.replace('</head>', analytics_tag() + '</head>', 1)
+    for js in ('info', 'memorial', 'sidebar', 'tours', 'count'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page
@@ -459,7 +469,7 @@ def main(argv=None):
                                          '<script>location.replace("./"+location.hash)</script><a href="./">Karte öffnen</a>')
         print(f'built {name}' + (f' (tiles from {base})' if base else ''))
     items = ''.join(f'<li><a href="{n}/">{html.escape(t)}</a></li>' for n, t in cities)
-    (SITE / 'index.html').write_text(start_page(cities, items))
+    (SITE / 'index.html').write_text(start_page(cities, items).replace('</head>', analytics_tag() + '</head>', 1))
     (SITE / '.nojekyll').write_text('')
     check_scripts()
 

@@ -53,6 +53,7 @@
     animate(hero({ x: (x0 + x1) / 2, y: (y0 + y1) / 2, zoom }));
   }
   function begin(t, at = 0) {
+    if (window.pixelMapCount) pixelMapCount(`rundgang/${t.id}/start`, t.title);
     if (open) open.remove(); open = null;
     startTour(t);
     if (at > 0) setTimeout(() => visit(at), 50);
@@ -155,6 +156,7 @@
     if (window.pixelMapShowBuilding) window.pixelMapShowBuilding(null);
     const t = tourActive, i = tours.indexOf(t), next = tours[(i + 1) % tours.length];
     progress.set(t.id, null);
+    if (window.pixelMapCount) pixelMapCount(`rundgang/${t.id}/ende`, t.title);
     done.replaceChildren(
       el('h2', { textContent: 'Rundgang geschafft!' }),
       el('p', { textContent: `${t.title}: ${t.stations.length} Stationen, ${km(t.length_m)} km.` }),

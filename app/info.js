@@ -126,8 +126,9 @@
       let v = null; try { v = localStorage.getItem('pixel-map-stimme') } catch {}
       const src = clips[v] || clips[DATA.default_voice] || Object.values(clips)[0];
       if (reader.dataset.src !== src) { reader.src = src; reader.dataset.src = src }
-      reader.play();
+      reader.play(); if (window.pixelMapCount) pixelMapCount(`vorlesen/${b.wikidata}`, 'Vorlesen');
     };
+    if (window.pixelMapCount) pixelMapCount(`gebaeude/${b.wikidata || 'ohne'}`, (i && i.title) || b.name || b.address || 'Gebäude');
     panel.dataset.box = b.box ? b.box.join(',') : '';   // map pixels, for a popup placed next to the building
     panel.hidden = false;
     highlight(b);
