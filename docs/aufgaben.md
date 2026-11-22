@@ -1,49 +1,52 @@
 # Aufgaben
 
-Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten verschieben oder löschen.
+Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.2026.
+
+## Gerade in Arbeit
+
+- [ ] **Dritter Kachelring** malen (80 von 108 Kacheln), prüfen, als neue Kartenversion nach R2 laden und veröffentlichen
+- [ ] **Seitenleiste** (zum Ausprobieren: `?seite=1`), danach als Standard
+  - [x] Thema, Rundgänge, Orte, Ansicht, Hilfe und Quellen links in einer Leiste; auf dem Handy als Schublade
+  - [x] Gebäude-Infos als größeres Popup neben dem angeklickten Gebäude (folgt beim Verschieben, Pfeil zum Gebäude); auf dem Handy als Blatt von unten
+  - [x] Laufender Rundgang bleibt oben in der Leiste; auf dem Handy kleine Leiste mit ‹ › ✕ über der Karte
+  - [ ] **Tabs** oben in der Leiste (z. B. Entdecken · Rundgänge · Ansicht · Info), darunter der jeweilige Inhalt
+  - [ ] **Orte nach Kategorien** ordnen (z. B. Kirchen · Tore und Befestigung · Hanse und Handel · Museen und Bürgerhäuser) statt einer ungeordneten Liste
 
 ## Website / UX
 
-- [x] Zentrale Startseite (Karte, Rundgänge, Gedenken, Spiele)
-- [ ] **Seitenleiste** testen (`?seite=1`), dann als Standard; auf dem Handy evtl. Gebäude-Infos als unteres Blatt statt Schublade
-
-- [ ] **Touren durch Lübeck inhaltlich überarbeiten**: Auswahl der Stationen, Reihenfolge entlang echter Wege, Länge und Dauer, eigene Einleitungs- und Überleitungstexte (mit Quellen), ggf. neue Themen
-- [ ] **Rundgänge UX überarbeiten**
-  - Einstieg: Rundgänge sind im Orte-Menü versteckt; eigener Einstieg, z. B. Karte mit Rundgang-Kacheln beim ersten Besuch oder im Thema „Entdecken“
-  - Übersicht vor dem Start: Einleitung, Stationen als Liste, Länge, Weg auf der Karte
-  - Weg zwischen den Stationen als Linie entlang der Straßen (`walkable.json`) statt nur Luftlinie und Richtung
-  - Steuerung während des Rundgangs: deutliche Weiter/Zurück-Knöpfe im Panel, nicht nur ‹ › unten; Station x von y sichtbar am Panel
-  - Info-Panel und Rundgang-Leiste überlagern sich nicht; auf dem Handy Panel als unteres Blatt
-  - Ende des Rundgangs: Abschluss mit Zusammenfassung, Vorschlag für den nächsten Rundgang
+- [ ] **Rundgänge überarbeiten** – wirken zufällig
+  - Inhalt: Stationen nach einem klaren roten Faden auswählen, Reihenfolge entlang echter Wege, Start und Ziel an markanten Punkten, realistische Länge und Dauer
+  - Texte: eigene Einleitung und Überleitung pro Station (mit Quellen)
+  - Weg zwischen den Stationen als Linie entlang der Straßen (`walkable.json`) statt Luftlinie und Himmelsrichtung
+  - Übersicht vor dem Start (Einleitung, Stationsliste, Länge, Weg auf der Karte)
+  - Ende des Rundgangs: Zusammenfassung, Vorschlag für den nächsten
   - Fortschritt merken (zuletzt besuchte Station)
+- [ ] **Tiefeneffekt funktioniert sichtbar nicht** – prüfen (meldet „an“ mit geladenen Daten; vermutlich zu schwach oder von der WebGL-Kartenebene verdeckt) und reparieren
+- [ ] **Karte drehen**: vier feste Blickrichtungen (N/O/S/W), je eine eigene gemalte Karte, Umschalten in der Ansicht. Erst Pilot: 1024er-Ausschnitt um die Marienkirche aus Süden neben der heutigen Ansicht (startet nach dem dritten Ring, die GPU ist bis dahin belegt)
 - [ ] **Thema „Geschichte“** fertigstellen: Zeitleiste (Daten in `config/timeline.luebeck.json`), „Was war hier?“ aus der OSM-Versionsgeschichte, historische Fotos von Commons
-- [ ] Auf echtem Handy und Tablet testen (bisher nur Desktop-Browser-Engines)
+- [ ] Auf echtem Handy und Tablet testen (bisher nur Desktop-Browser-Engines), auch WebGL
 - [ ] Chrome: feine helle Haarlinien an Kachelgrenzen bei Zwischen-Zoomstufen prüfen
-- [x] WebGL-Kartenebene: getestet, standardmäßig an (`?gl=0` als Rückfall)
-- [ ] WebGL auf Handy und Tablet prüfen
-- [ ] Favicon ergänzen (vermeidet eine 404 in Chrome)
+- [ ] Favicon für die Karte ergänzen (vermeidet eine 404 in Chrome)
 
 ## Karte Lübeck
 
-- [x] **Bahnhof:** Gleise im westlichen Teil des zweiten Rings nachmalen (der Gleis-Nachmalgang lief nur im ersten Ring; harte Kante am alten Kartenrand)
+- [ ] **Uferkacheln neu malen**: der Renderer glättet jetzt Infrarot-Ufer und setzt keine Bäume mehr ins Wasser (isometric-cities `6cfff3f`, `c1840c1`); die schon gemalten Kacheln mit Wasser-Sprenkeln (Wakenitz, Wallanlagen) und dunklen „Bäumen“ an Brücken neu malen
 - [ ] **Bahnhofsgebäude:** die knallblaue Fassade stammt aus einer OSM-Farbangabe; prüfen und gedämpft korrigieren
-- [x] **Kleingärten:** Renderer erkennt sie jetzt als Grün (isometric-cities `e99c936`); betroffene Kacheln neu malen (unten Mitte: orange Sandfläche bzw. unbemalte graue Fläche)
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
-- [x] Zweiten Ring durchsehen, veröffentlichen, danach `scripts/update_city.sh luebeck`
-- [x] Backup `luebeck-v2` (Kartenpaket + Kachelspeicher) im Repo `pixel-map-luebeck`
+- [ ] „Geistergleise“: verblasste Gleise am Übergang östlich vom Bahnhof
+- [ ] Backup `luebeck-v3` (dritter Ring) im Repo `pixel-map-luebeck`
+
+## Spiele (`pixel-map-game`)
+
+- [ ] Feedback zu Krimi, Hanse-Kaufmann und Quiz einarbeiten
+- [ ] Figuren an den Orten zeigen; Musik/Geräusche
+- [ ] Auf dem Handy testen (Steuerung, Lesbarkeit)
+- [ ] Optional: Zeitreise-Spiel (nutzt die Zeitleisten-Daten)
 
 ## Infrastruktur
 
-- [ ] **Cloudflare R2** einrichten (Anleitung: `docs/cloudflare-r2-einrichten.md`), dann Kacheln dorthin und aus dem Git-Verlauf entfernen
 - [ ] Entscheidung: monatliche automatische Aktualisierung der Wikipedia-Daten als Pull Request (braucht ausdrückliche Freigabe)
-
-## Spiel (`pixel-map-game`)
-
-- [ ] Gemeinsame Basis aus dem Krimi herauslösen (Karte, Laufen, Verdeckung, Dialoge) für Hanse-Sim und Zeitreise
-- [ ] Prototyp Hanse-Wirtschaftssimulation
-- [x] Prototyp Krimi „Die Marzipan-Krone“ (`pixel-map-game`): Figur läuft durch die Straßen, Verdeckung durch Gebäude, 6 Orte, Notizbuch, Anklage
-- [ ] Krimi: Feedback einarbeiten; Figuren an den Orten zeigen; Musik/Geräusche; Handy-Steuerung testen
-- [ ] Prototyp Zeitreise (nutzt die Zeitleisten-Daten)
+- [ ] GitHub zeigt für `pixel-map` noch 848 MB; falls das nach einigen Tagen nicht sinkt, GitHub-Support um Bereinigung bitten
 
 ## Geschichte einzelner Häuser (Ideen)
 
@@ -51,3 +54,13 @@ Offene Punkte für Pixel Map und die Lübeck-Karte. Erledigtes nach unten versch
 - [ ] Wikipedia-Artikel zu einzelnen Häusern über die Adresse finden
 - [ ] Historische Fotos und Postkarten von Commons
 - [ ] Optional, aufwendig: historische Lübecker Adressbücher (ca. 1800–1950)
+
+## Erledigt (zuletzt)
+
+- [x] Zentrale Startseite: Karte, Rundgänge, Gedenken und Spiele an einer Stelle; Direktlinks `?tour=…` und `?theme=…`; ⌂ in der Karte
+- [x] Cloudflare R2: Kacheln liegen in R2, Website und Spiele laden sie von dort
+- [x] Repo verkleinert: Git-Verlauf von 848 MB auf 32 MB (Sicherung unter `~/MyStuff/backups/`)
+- [x] Spiele: gemeinsame Basis, Krimi „Die Marzipan-Krone“, Hanse-Kaufmann (1400), Lübeck-Quiz; online unter hanse-dev.github.io/pixel-map-game
+- [x] Karten-Durchsicht auf Artefakte; Renderer-Korrektur für Ufer und Wasser
+- [x] WebGL-Kartenebene standardmäßig an (`?gl=0` als Rückfall); keine schwarzen Flecken beim Zoomen
+- [x] Zweiter Ring mit Bahnhofsgleisen und Kleingärten veröffentlicht; Backup `luebeck-v2`
