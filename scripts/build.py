@@ -403,6 +403,20 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     if audio_file.exists() and (ROOT / 'config' / f'{name}.tiles.json').exists():
         root_url = json.loads((ROOT / 'config' / f'{name}.tiles.json').read_text())['base']
         spoken_buildings = {q: {v: root_url + f for v, f in d.items()} for q, d in json.loads(audio_file.read_text()).get('buildings', {}).items()}
+    timeline, historic = None, {}
+    tl_file = ROOT / 'config' / f'timeline.{name}.json'
+    if tl_file.exists():
+        tl = json.loads(tl_file.read_text()); by_wd = {}
+        for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
+            if b.get('wikidata') and 'centre' in b and b['visible_px'] > by_wd.get(b['wikidata'], {}).get('visible_px', 0): by_wd[b['wikidata']] = b
+        built = [{'year': x['year'], 'label': x['label'], 'name': (info.get(x['wikidata'], {}).get('title') or x['name']).replace(' (Lübeck)', ''),
+                  'building': by_wd[x['wikidata']]['id'], 'x': by_wd[x['wikidata']]['centre'][0], 'y': by_wd[x['wikidata']]['centre'][1], 'view_width': 900}
+                 for x in tl['buildings'] if x['wikidata'] in by_wd]
+        timeline = {'events': [{k: e.get(k) for k in ('year', 'until', 'text', 'source')} for e in tl['events']], 'built': built,
+                    'credit': 'Ereignisse: Wikipedia, „Geschichte der Hansestadt Lübeck“ (CC BY-SA 4.0); Baujahre: Wikidata (CC0)'}
+    h_file = ROOT / 'info' / f'{name}.historic.json'
+    if h_file.exists():
+        historic = json.loads(h_file.read_text())['items']
     stones, stones_credit = [], None
     stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
     if stone_file.exists() and (bundle / 'ground.json').exists():
@@ -436,7 +450,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'voices': [{k: v[k] for k in ('id', 'name', 'label', 'credit')} for v in config.get('voices', [])], 'spoken': spoken_buildings, 'default_voice': config.get('default_voice'),
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'timeline': timeline, 'historic': historic, 'voices': [{k: v[k] for k in ('id', 'name', 'label', 'credit')} for v in config.get('voices', [])], 'spoken': spoken_buildings, 'default_voice': config.get('default_voice'),
             'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}),
             'places_extra': extra_places(config, bundle, info, groups_of(name, ROOT / 'cities' / name, {name: config})), 'categories': [c['name'] for c in config.get('categories', [])], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
@@ -446,7 +460,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
     page = page.replace('</head>', analytics_tag() + '</head>', 1)
-    for js in ('info', 'memorial', 'sidebar', 'tours', 'count'):                                    # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page

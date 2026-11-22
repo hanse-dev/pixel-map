@@ -138,6 +138,16 @@ body.depth-on #route-world{display:none}
 .walk-quiz{margin-top:10px;padding:10px 12px;border:1px solid var(--accent);border-radius:12px;background:#ffffff08}.walk-quiz[hidden]{display:none}
 .quiz-opts{display:grid;gap:6px;margin:8px 0}.quiz-opts button{text-align:left;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#ffffff10;color:inherit;font:inherit;cursor:pointer}
 .quiz-opts button.right{background:#4f8a3a;border-color:#7fc463}.quiz-opts button.wrong{background:#8a3a3a;border-color:#c46363}.quiz-note{margin:0;font-size:.9em}.quiz-note a{color:inherit}
+
+body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85) brightness(1.02)}
+.sec-history[hidden]{display:none}.tl-head{display:flex;align-items:center;gap:10px}.tl-year{font-size:1.6em;font-weight:700;min-width:3.2em;font-variant-numeric:tabular-nums}
+.tl-range{flex:1;accent-color:var(--accent)}.tl-jumps{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 8px}.tl-jumps button{padding:3px 8px;border-radius:99px;border:1px solid var(--line);background:#ffffff0d;color:inherit;font:inherit;font-size:.8em;cursor:pointer}
+.tl-events{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:6px;font-size:.9em}.tl-events li{opacity:.65;border-left:2px solid var(--line);padding-left:8px}.tl-events li.now{opacity:1;border-color:var(--accent)}.tl-events a{color:inherit;opacity:.8;font-size:.85em}
+.tl-sub{margin:6px 0 4px;font-size:.78em;text-transform:uppercase;letter-spacing:.06em;opacity:.7}.tl-built{display:flex;flex-wrap:wrap;gap:4px}.tl-built button{padding:4px 8px;border-radius:8px;border:1px solid var(--line);background:#ffffff0d;color:inherit;font:inherit;font-size:.82em;cursor:pointer}.tl-built p{margin:0;opacity:.7;font-size:.88em}
+.tl-credit{font-size:.72em;opacity:.55;margin:8px 0 0}
+#building-past[hidden]{display:none}#building-past h3{margin:10px 0 6px;font-size:.85em;text-transform:uppercase;letter-spacing:.06em;opacity:.75}
+.past-strip{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}.past-strip figure{margin:0;flex:none;width:150px}.past-strip img{width:150px;height:110px;object-fit:cover;border-radius:6px;display:block;filter:none}
+.past-strip figcaption{font-size:.72em;opacity:.8;line-height:1.3;margin-top:3px}
 </style>
 </head>
 <body>
@@ -192,7 +202,7 @@ body.depth-on #route-world{display:none}
 </section>
 <section id="themes" class="menu" role="menu" hidden aria-label="Thema">
   <button role="menuitemradio" data-theme="explore"><b>Entdecken</b><small>Wahrzeichen, Gebäude-Infos, Rundgänge</small></button>
-  <button role="menuitemradio" data-theme="history" disabled><b>Geschichte</b><small>Zeitleiste, frühere Läden, alte Fotos – folgt</small></button>
+  <button role="menuitemradio" data-theme="history"><b>Geschichte</b><small>Zeitleiste und alte Bilder</small></button>
   <button role="menuitemradio" data-theme="memorial"><b>Gedenken</b><small>Stolpersteine</small></button>
 </section>
 <section id="view-menu" class="menu" role="menu" hidden aria-label="Ansicht">
@@ -206,7 +216,7 @@ body.depth-on #route-world{display:none}
 </section>
 <section id="places" hidden aria-label="Orte"><div id="cities"></div><div id="place-list"></div><h3 id="tours-title" hidden>Rundgänge</h3><div id="tour-list"></div></section>
 <div id="tour-bar" hidden><span id="tour-step"></span><button id="tour-end" aria-label="Rundgang beenden">Rundgang beenden</button></div>
-<section id="building" hidden aria-live="polite" aria-label="Gebäude-Informationen"><button id="building-close" aria-label="Schließen">×</button><figure id="building-figure" hidden><img id="building-image" alt=""><figcaption id="building-image-credit"></figcaption></figure><h2 id="building-name"></h2><p id="building-address"></p><p id="building-kind"></p><ul id="building-facts" hidden></ul><button id="building-say" class="say" hidden aria-pressed="false">🔊 Vorlesen</button><div id="building-summary"></div><button id="building-more" hidden>Weiterlesen</button><p id="building-links"></p><p id="building-credit"></p></section>
+<section id="building" hidden aria-live="polite" aria-label="Gebäude-Informationen"><button id="building-close" aria-label="Schließen">×</button><figure id="building-figure" hidden><img id="building-image" alt=""><figcaption id="building-image-credit"></figcaption></figure><h2 id="building-name"></h2><p id="building-address"></p><p id="building-kind"></p><ul id="building-facts" hidden></ul><div id="building-past" hidden></div><button id="building-say" class="say" hidden aria-pressed="false">🔊 Vorlesen</button><div id="building-summary"></div><button id="building-more" hidden>Weiterlesen</button><p id="building-links"></p><p id="building-credit"></p></section>
 <section id="info" hidden aria-label="Quellen und Herkunft"><p id="status"></p><p id="credits"></p><p id="licence"></p><a id="download" download="provenance.json">Provenance ↓</a><details><summary>Camera and method</summary><pre id="method"></pre></details></section>
 <script>
 'use strict';
@@ -458,5 +468,6 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 <script src="../app/memorial.js"></script>
 <script src="../app/sidebar.js"></script>
 <script src="../app/tours.js"></script>
+<script src="../app/history.js"></script>
 </body>
 </html>
