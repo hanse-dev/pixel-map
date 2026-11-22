@@ -6,7 +6,6 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 **Ohne GPU, nacheinander:**
 1. [x] **Barrierefreiheit**: axe-core ohne Befunde (WCAG 2 A/AA), deutsche Screenreader-Texte, Tab-Reihenfolge Leiste → Karte, sichtbarer Fokus, Fokus springt ins Popup und zurück, Vorlesen für alle 94 Gebäude mit Wikipedia-Text (beide Stimmen). Offen: Test mit echtem Screenreader (VoiceOver)
-   - alt:: Tastatur (Tab-Reihenfolge, Fokus sichtbar, Escape), Screenreader-Beschriftungen, Kontraste, Vorlesen auch für einzelne Gebäude
 2. [ ] **Statistik ohne Tracking** (keine Cookies, keine personenbezogenen Daten): welche Gebäude, Rundgänge, Spiele genutzt werden
 3. [ ] **Neue Rundgänge**: Gänge und Höfe · Stadtmauer und Wälle · Kinder-Rundgang mit Rätseln
 4. [ ] **Thema „Geschichte“**: Zeitleiste, frühere Läden (OSM-Versionsgeschichte), historische Fotos (Commons)
