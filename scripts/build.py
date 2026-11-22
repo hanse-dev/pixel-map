@@ -77,12 +77,24 @@ def pyramid(image, folder, *, fmt='webp', resample=Image.Resampling.BOX):
     return {'tile_size': TILE, 'overlap': 1, 'format': fmt, 'max_level': maximum, 'levels': levels}
 
 
-def outline_tiles(bundle, out, wanted):
+def groups_of(name, root, configs):
+    """[[lead id, [member ids]]]: landmarks that OSM splits into several buildings (config "groups")."""
+    by_osm = {b['osm']: b['id'] for b in json.loads((root / 'buildings.json').read_text())['buildings']}
+    out = []
+    for g in configs[name].get('groups', []):
+        ids = [by_osm[o] for o in g['osm'] if o in by_osm]
+        if ids: out.append([ids[0], ids])
+    return out
+
+
+def outline_tiles(bundle, out, wanted, groups=()):
     """Gold outlines of the buildings that open an info panel, as an RGBA Deep Zoom pyramid."""
     import numpy as np
     from scipy import ndimage as ndi
     rgb = np.asarray(Image.open(bundle / 'hitmap.png').convert('RGB')).astype(np.uint32)
     ids = rgb[..., 0] | (rgb[..., 1] << 8) | (rgb[..., 2] << 16)
+    for lead, members in groups:                      # one outline around all parts of a landmark
+        ids[np.isin(ids, members)] = lead
     inside = np.isin(ids, sorted(wanted))
     edge = np.zeros_like(inside)                      # a pixel of a wanted building next to anything else
     for axis in (0, 1):
@@ -185,7 +197,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}), 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
     values = {'ART': script_json(base + 'preview-map.webp'), 'SOURCE': script_json(base + 'preview-source.webp'),
@@ -209,9 +221,9 @@ def make_tiles(name, root, out, configs):
              'depth': pyramid(Image.open(root / 'depth.png').convert('L'), out / 'depth_files', fmt='png', resample=Image.Resampling.NEAREST)}
     for kind, src in (('map', graded), ('source', Image.open(root / 'source.png').convert('RGB'))):
         p = src.copy(); p.thumbnail((1600, 1600), Image.Resampling.BOX); p.save(out / f'preview-{kind}.webp', 'WEBP', quality=80)
-    wanted = outline_ids(name, root, configs)
-    outline, fill = outline_tiles(root, out, wanted) if wanted else (None, None)
-    return {'tiles': tiles, 'outline': outline, 'fill': fill, 'outline_ids_sha256': ids_digest(wanted),
+    wanted, groups = outline_ids(name, root, configs), groups_of(name, root, configs)
+    outline, fill = outline_tiles(root, out, wanted, groups) if wanted else (None, None)
+    return {'tiles': tiles, 'outline': outline, 'fill': fill, 'outline_ids_sha256': ids_digest(wanted, groups),
             'hitmap': json.loads((root / 'manifest.json').read_text())['tiles']['hitmap']}
 
 
@@ -222,9 +234,9 @@ def outline_ids(name, root, configs):
     return {b['id'] for b in json.loads((root / 'buildings.json').read_text())['buildings'] if b.get('wikidata') in info}
 
 
-def ids_digest(ids):
+def ids_digest(ids, groups=()):
     import hashlib
-    return hashlib.sha256(','.join(map(str, sorted(ids))).encode()).hexdigest()
+    return hashlib.sha256((','.join(map(str, sorted(ids))) + json.dumps(groups)).encode()).hexdigest()
 
 
 def main(argv=None):
@@ -240,7 +252,8 @@ def main(argv=None):
             raise SystemExit('--tiles-out needs --tiles-base')
         for name, _ in cities:
             root = ROOT / 'cities' / name
-            version = json.loads((root / 'manifest.json').read_text())['tiles']['map']['image_sha256'][:12]
+            tiles_meta = json.loads((root / 'manifest.json').read_text())['tiles']
+            version = tiles_meta['map']['image_sha256'][:12] + '-' + tiles_meta['hitmap']['image_sha256'][:6]
             meta = make_tiles(name, root, a.tiles_out / name / version, configs)
             record = {'base': a.tiles_base.rstrip('/') + '/', 'path': f'{name}/{version}/', **meta}
             (ROOT / 'config' / f'{name}.tiles.json').write_text(json.dumps(record, indent=1) + '\n')
@@ -261,7 +274,7 @@ def main(argv=None):
         remote = ROOT / 'config' / f'{name}.tiles.json'
         if remote.exists():                         # tiles are served from object storage
             meta = json.loads(remote.read_text()); base = meta['base'] + meta['path']
-            if meta['outline_ids_sha256'] != ids_digest(outline_ids(name, root, configs)):
+            if meta['outline_ids_sha256'] != ids_digest(outline_ids(name, root, configs), groups_of(name, root, configs)):
                 print(f'warning: {name}: info entries changed since the outline tiles were made; remake tiles to update outlines')
         else:                                       # tiles are made into the site
             meta = make_tiles(name, root, out, configs); base = ''

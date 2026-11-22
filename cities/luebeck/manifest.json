@@ -385,7 +385,7 @@
         }
       },
       "resampling": "nearest",
-      "image_sha256": "602d0441d2d314384867d5ceaa38fab45464188f73beb25c08dbc74ddeec0bf8"
+      "image_sha256": "99843c2fcf946dde76700bcfcf6e6e628b5f55eca8a092983755672784e8870e"
     }
   },
   "credits": {
@@ -403,11 +403,17 @@
     "depth.png": "1ecec4ca52afee60ba34204688dc6455c23723f8f53a9ac1ad90bb8fd3e1d3da",
     "ground.json": "0eaae2f801b1c388394f009051ea639372cf6ff2d3cc94923e05ebce251acc99",
     "hitmap.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
-    "hitmap.png": "602d0441d2d314384867d5ceaa38fab45464188f73beb25c08dbc74ddeec0bf8",
+    "hitmap.png": "99843c2fcf946dde76700bcfcf6e6e628b5f55eca8a092983755672784e8870e",
     "map.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
     "map.png": "10433c0d14c5b76f4062c69df482c6df0e5a37a30bd3a6b79ffcedcffdc90460",
     "source.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
     "source.png": "1fb277c9d2bc5badcdf704fe6658d8df4232bbe1eacaa0dc1f754aab0d2483cd",
     "walkable.json": "5b688616e3cd460439043956bf524d08cbe0c452662718197ba07218394d3f9c"
-  }
+  },
+  "repairs": [
+    {
+      "hitmap": "close_gaps (1-3 px slits inside one building)",
+      "filled_px": 124462
+    }
+  ]
 }

@@ -61,5 +61,20 @@
   "Shorelines follow the DOP20 near-infrared band where OSM water polygons were off.",
   "Roof colours follow OSM tags; OSM's default copper #33CC99 is shown as patina.",
   "Allotment gardens are painted as green plots; individual garden houses are illustrative."
+ ],
+ "groups": [
+  {
+   "name": "Rathaus",
+   "wikidata": "Q538453",
+   "osm": [
+    "way/43625520",
+    "way/148053497",
+    "way/148053499",
+    "way/29044923",
+    "way/43625521",
+    "way/146451835"
+   ],
+   "note": "Hauptbau, Anbauten an der Renaissance-Laube, Neues Gemach und Langes Haus sind in OSM eigene Gebäude"
+  }
  ]
 }

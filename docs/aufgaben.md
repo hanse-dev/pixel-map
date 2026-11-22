@@ -34,6 +34,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 - [ ] **Bahnhofsgebäude:** die knallblaue Fassade stammt aus einer OSM-Farbangabe; prüfen und gedämpft korrigieren
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
 - [ ] „Geistergleise“: verblasste Gleise am Übergang östlich vom Bahnhof
+- [ ] **Theater Lübeck**: die Front im Pixelbild entspricht nicht dem Wikipedia-Foto; als Wahrzeichen mit Fotoreferenz nachmalen (wie Rathaus)
+- [ ] Weitere Wahrzeichen aus mehreren OSM-Gebäuden prüfen und in `config/luebeck.json` → `groups` zusammenfassen (Rathaus erledigt)
 - [ ] Backup `luebeck-v3` (dritter Ring) im Repo `pixel-map-luebeck`
 
 ## Spiele (`pixel-map-game`)
@@ -56,6 +58,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 - [ ] Optional, aufwendig: historische Lübecker Adressbücher (ca. 1800–1950)
 
 ## Erledigt (zuletzt)
+
+- [x] Hervorhebung der Gebäude geschlossen: Wandlücken in der Klick-Karte gefüllt; Rathaus aus 6 OSM-Teilen als ein Gebäude
 
 - [x] Zentrale Startseite: Karte, Rundgänge, Gedenken und Spiele an einer Stelle; Direktlinks `?tour=…` und `?theme=…`; ⌂ in der Karte
 - [x] Cloudflare R2: Kacheln liegen in R2, Website und Spiele laden sie von dort

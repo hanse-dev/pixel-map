@@ -7,7 +7,16 @@
   const panel = document.getElementById('building'), byId = new Map(), tiles = new Map();
   let info = {}, ready = false, down = null;
   Promise.all([fetch(DATA.buildings_url).then(r => r.json()), DATA.info_url ? fetch(DATA.info_url).then(r => r.ok ? r.json() : {items: {}}).catch(() => ({items: {}})) : {items: {}}])
-    .then(([b, i]) => { for (const r of b.buildings) byId.set(r.id, r); info = i.items || {}; ready = true; })
+    .then(([b, i]) => {
+      for (const r of b.buildings) byId.set(r.id, r);
+      for (const [lead, members] of DATA.groups || []) {     // parts of one landmark answer and light up together
+        const L = byId.get(lead); if (!L) continue;
+        const parts = members.map(m => byId.get(m)).filter(Boolean);
+        L.members = parts.map(m => m.id);
+        L.box = [Math.min(...parts.map(m => m.box[0])), Math.min(...parts.map(m => m.box[1])), Math.max(...parts.map(m => m.box[2])), Math.max(...parts.map(m => m.box[3]))];
+        for (const m of parts) byId.set(m.id, L);
+      }
+      info = i.items || {}; ready = true; })
     .catch(error => console.error('Building data unavailable:', error));
 
   const spec = DATA.hitmap_tiles, level = spec.max_level, size = spec.tile_size, pad = spec.overlap;
@@ -51,7 +60,7 @@
     if (!b || !b.box) { layer.replaceChildren(); return }
     const cacheKey = kind + b.id;
     if (masks.has(cacheKey)) { if (current[kind] === b.id) layer.replaceChildren(masks.get(cacheKey)); return }
-    const [x0, y0, x1, y1] = b.box, w = x1 - x0, h = y1 - y0, id = b.id;
+    const [x0, y0, x1, y1] = b.box, w = x1 - x0, h = y1 - y0, id = b.id, own = new Set(b.members || [id]);
     const ids = new Uint8Array(w * h);
     for (let row = Math.floor(y0 / size); row <= Math.floor((y1 - 1) / size); row++)
       for (let col = Math.floor(x0 / size); col <= Math.floor((x1 - 1) / size); col++) {
@@ -60,7 +69,7 @@
         const d = g.getImageData(ax - left, ay - top, bx - ax, by - ay).data;
         for (let yy = 0; yy < by - ay; yy++) for (let xx = 0; xx < bx - ax; xx++) {
           const k = (yy * (bx - ax) + xx) * 4;
-          if (d[k] + 256 * d[k + 1] + 65536 * d[k + 2] === id) ids[(ay - y0 + yy) * w + (ax - x0 + xx)] = 1;
+          if (own.has(d[k] + 256 * d[k + 1] + 65536 * d[k + 2])) ids[(ay - y0 + yy) * w + (ax - x0 + xx)] = 1;
         }
       }
     if (current[kind] !== id) return;                  // another building was chosen meanwhile
