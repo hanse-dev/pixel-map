@@ -2,6 +2,24 @@
 
 Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.2026.
 
+## Reihenfolge (Stand 23.11.2026)
+
+**Ohne GPU, nacheinander:**
+1. [ ] **Barrierefreiheit**: Tastatur (Tab-Reihenfolge, Fokus sichtbar, Escape), Screenreader-Beschriftungen, Kontraste, Vorlesen auch für einzelne Gebäude
+2. [ ] **Statistik ohne Tracking** (keine Cookies, keine personenbezogenen Daten): welche Gebäude, Rundgänge, Spiele genutzt werden
+3. [ ] **Neue Rundgänge**: Gänge und Höfe · Stadtmauer und Wälle · Kinder-Rundgang mit Rätseln
+4. [ ] **Thema „Geschichte“**: Zeitleiste, frühere Läden (OSM-Versionsgeschichte), historische Fotos (Commons)
+5. [ ] **Krimi** auf echte Rundgänge abstimmen, mit Vorlesen und Figuren an den Orten
+
+**GPU, nacheinander:** dritter Ring → Gleise neu → Uferkacheln → Vorlese-Pilot (Chatterbox) → **Nachtfassung** (beleuchtete Fenster, als Ansicht umschaltbar) → **Drehen**: Pilot-Ausschnitt Marienkirche aus Süden, umschaltbar unter Ansicht → Blickrichtung
+
+**Später:**
+- [ ] Teilen-Link für Ausschnitt und Gebäude
+- [ ] Rundgang offline mitnehmen (Kacheln und Audio vorab laden)
+- [ ] „Wo bin ich?“: GPS-Standort auf der Karte
+- [ ] Schnitzeljagd vor Ort (Fragen nur an der Station lösbar)
+- [ ] Englische Fassung (Texte und Vorlesen)
+
 ## Gerade in Arbeit
 
 - [ ] **Dritter Kachelring** malen (80 von 108 Kacheln), prüfen, als neue Kartenversion nach R2 laden und veröffentlichen
