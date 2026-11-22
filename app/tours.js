@@ -81,6 +81,12 @@
   const pref = (k, d) => { try { const v = localStorage.getItem('pixel-map-' + k); return v === null ? d : v === '1' } catch { return d } };
   const keep = (k, v) => { try { localStorage.setItem('pixel-map-' + k, v ? '1' : '0') } catch {} };
   let speak = pref('vorlesen', true), auto = pref('weiter', true), wait = null, playingFor = null;
+  const voices = DATA.voices || [];
+  let voice = (() => { try { return localStorage.getItem('pixel-map-stimme') } catch { return null } })();
+  if (!voices.some(v => v.id === voice)) voice = DATA.default_voice || (voices[0] && voices[0].id);
+  const clip = st => st && st.audio && (st.audio[voice] || Object.values(st.audio)[0]);
+  const voiceSel = el('select', { className: 'au-voice', ariaLabel: 'Stimme' }, ...voices.map(v => el('option', { value: v.id, textContent: `${v.name} (${v.label})`, selected: v.id === voice })));
+  const credit = () => `Gelesen von ${(voices.find(v => v.id === voice) || {}).credit || 'Piper'} · Text: Wikipedia (CC BY-SA 4.0)`;
   const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   const play = el('button', { className: 'au-play', ariaLabel: 'Vorlesen abspielen', textContent: '▶' });
   const time = el('span', { className: 'au-time', textContent: '0:00 / 0:00' });
@@ -91,18 +97,19 @@
       el('button', { className: 'au-step', ariaLabel: 'Vorige Station', textContent: '⏮', onclick: () => step(-1) }), play,
       el('button', { className: 'au-step', ariaLabel: 'Nächste Station', textContent: '⏭', onclick: () => step(1) }), time),
     bar,
-    el('div', { className: 'au-opts' }, el('label', {}, speakBox, ' Vorlesen'), el('label', {}, autoBox, ' Automatisch weiter')),
+    el('div', { className: 'au-opts' }, el('label', {}, speakBox, ' Vorlesen'), el('label', {}, autoBox, ' Automatisch weiter'), voices.length > 1 ? el('label', {}, 'Stimme ', voiceSel) : null),
     el('div', { className: 'au-next', hidden: true }),
-    el('div', { className: 'au-credit', textContent: 'Gelesen von Piper, Stimme „Thorsten“ (CC0) · Text: Wikipedia (CC BY-SA 4.0)' }));
+    el('div', { className: 'au-credit', textContent: credit() }));
   (document.querySelector('.side-walk') || $('tour-bar')).append(player);
   const countdown = player.querySelector('.au-next');
   function step(d) { cancel(); if (d > 0) $('next').click(); else $('previous').click() }
   function cancel() { clearInterval(wait); wait = null; countdown.hidden = true }
   function load(st) {
     cancel(); playingFor = st;
-    if (!st || !st.audio) { audio.removeAttribute('src'); player.classList.add('silent'); return }
+    const c = clip(st);
+    if (!c) { audio.removeAttribute('src'); player.classList.add('silent'); return }
     player.classList.remove('silent');
-    audio.src = st.audio.url; time.textContent = `0:00 / ${fmt(st.audio.seconds)}`; bar.value = 0;
+    audio.src = c.url; time.textContent = `0:00 / ${fmt(c.seconds)}`; bar.value = 0;
     if (speak) setTimeout(() => { if (playingFor === st) audio.play().catch(() => sync()) }, reduced.matches ? 0 : 800);
   }
   function sync() { play.textContent = audio.paused ? '▶' : '⏸'; play.setAttribute('aria-label', audio.paused ? 'Abspielen' : 'Pause') }
@@ -113,7 +120,7 @@
   };
   audio.addEventListener('play', sync); audio.addEventListener('pause', sync);
   audio.addEventListener('timeupdate', () => {
-    const d = audio.duration || (playingFor && playingFor.audio && playingFor.audio.seconds) || 0;
+    const d = audio.duration || (clip(playingFor) || {}).seconds || 0;
     time.textContent = `${fmt(audio.currentTime)} / ${fmt(d)}`; if (d) bar.value = Math.round(audio.currentTime / d * 1000);
   });
   bar.addEventListener('input', () => { if (audio.duration) audio.currentTime = bar.value / 1000 * audio.duration });
@@ -125,6 +132,13 @@
     tick(); wait = setInterval(tick, 1000);
   });
   speakBox.onchange = () => { speak = speakBox.checked; keep('vorlesen', speak); if (!speak) audio.pause() };
+  voiceSel.onchange = () => {                           // switch voice and continue at the same point of the text
+    const at = audio.duration ? audio.currentTime / audio.duration : 0, was = !audio.paused;
+    voice = voiceSel.value; try { localStorage.setItem('pixel-map-stimme', voice) } catch {}
+    player.querySelector('.au-credit').textContent = credit();
+    const c = clip(playingFor); if (!c) return;
+    audio.src = c.url; audio.addEventListener('loadedmetadata', () => { audio.currentTime = at * audio.duration; if (was) audio.play() }, { once: true });
+  };
   autoBox.onchange = () => { auto = autoBox.checked; keep('weiter', auto); if (!auto) cancel() };
   addEventListener('keydown', e => { if (tourActive && e.key === 'k' && !e.target.closest('input,textarea')) play.click() });
   (function follow() {                                   // a new station (or the end of the walk) changes what is read

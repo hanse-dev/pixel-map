@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Read the walk stations aloud: one audio file per station from its Wikipedia introduction, spoken
-locally with Piper (voice: Thorsten, CC0 dataset), then uploaded to R2 with the tiles.
+"""Read the walk stations aloud: one audio file per station and voice (config "voices") from its
+Wikipedia introduction, spoken locally with Piper, then uploaded to R2 with the tiles.
 
   python3 scripts/narrate.py luebeck tiles      # writes tiles/audio/<city>/<hash>.mp3 and config/<city>.audio.json
 
@@ -10,8 +10,9 @@ import hashlib, json, re, subprocess, sys, tempfile, wave
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VOICE = Path.home() / 'MyStuff/models/piper/de_DE-thorsten-high.onnx'
+MODELS = Path.home() / 'MyStuff/models/piper'
 city, out = sys.argv[1], Path(sys.argv[2])
+voices = json.loads((ROOT / 'config' / f'{city}.json').read_text())['voices']
 walks = json.loads((ROOT / 'config' / f'{city}.walks.json').read_text())['tours']
 info = json.loads((ROOT / 'info' / f'{city}.de.json').read_text())['items']
 by_title = {v.get('title'): v for v in info.values()}
@@ -43,25 +44,26 @@ def script(t, k):
 
 
 from piper import PiperVoice
-voice = PiperVoice.load(str(VOICE))
 folder = out / 'audio' / city; folder.mkdir(parents=True, exist_ok=True)
 index, made = {}, 0
-for t in walks:
-    for k, st in enumerate(t['stations']):
-        text = script(t, k)
-        h = hashlib.sha256(text.encode()).hexdigest()[:16]
-        mp3 = folder / f'{h}.mp3'
-        if not mp3.exists():
-            with tempfile.TemporaryDirectory() as tmp:
-                wav = Path(tmp) / 'a.wav'
-                with wave.open(str(wav), 'wb') as w:
-                    voice.synthesize_wav(text, w)
-                subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
-            made += 1
-        secs = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(mp3)],
-                                    capture_output=True, text=True, check=True).stdout)
-        index[st['id']] = {'file': f'audio/{city}/{h}.mp3', 'seconds': round(secs, 1), 'text': text}
+for v in voices:
+    voice = PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
+    for t in walks:
+        for k, st in enumerate(t['stations']):
+            text = script(t, k)
+            h = hashlib.sha256((v['model'] + text).encode()).hexdigest()[:16]
+            mp3 = folder / f'{h}.mp3'
+            if not mp3.exists():
+                with tempfile.TemporaryDirectory() as tmp:
+                    wav = Path(tmp) / 'a.wav'
+                    with wave.open(str(wav), 'wb') as w:
+                        voice.synthesize_wav(text, w)
+                    subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
+                made += 1
+            secs = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(mp3)],
+                                        capture_output=True, text=True, check=True).stdout)
+            index.setdefault(st['id'], {'text': text})[v['id']] = {'file': f'audio/{city}/{h}.mp3', 'seconds': round(secs, 1)}
 (ROOT / 'config' / f'{city}.audio.json').write_text(json.dumps({
-    'voice': 'Piper, Stimme „Thorsten“ (Datensatz CC0, thorsten-voice.de); Texte nach Wikipedia (CC BY-SA 4.0)',
+    'voices': {v['id']: v['credit'] for v in voices}, 'texts': 'nach Wikipedia (CC BY-SA 4.0)',
     'stations': index}, ensure_ascii=False, indent=1) + '\n')
-print({'stations': len(index), 'spoken': made, 'minutes': round(sum(v['seconds'] for v in index.values()) / 60, 1)})
+print({'stations': len(index), 'voices': len(voices), 'spoken': made})

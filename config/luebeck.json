@@ -225,5 +225,22 @@
   "Q2443638": "museen",
   "Q18922485": "oeffentlich",
   "Q2560411": "museen"
- }
+ },
+ "voices": [
+  {
+   "id": "thorsten",
+   "name": "Thorsten",
+   "label": "männlich",
+   "model": "de_DE-thorsten-high",
+   "credit": "Piper, Stimme „Thorsten“ (Datensatz CC0, thorsten-voice.de)"
+  },
+  {
+   "id": "kerstin",
+   "name": "Kerstin",
+   "label": "weiblich",
+   "model": "de_DE-kerstin-low",
+   "credit": "Piper, Stimme „Kerstin“ (Datensatz CC0)"
+  }
+ ],
+ "default_voice": "thorsten"
 }

@@ -330,7 +330,9 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
         spoken = json.loads(audio_file.read_text())['stations']; root_url = json.loads((ROOT / 'config' / f'{name}.tiles.json').read_text())['base']
         for t in tours:
             for st in t['stations']:
-                if st['id'] in spoken: st['audio'] = {'url': root_url + spoken[st['id']]['file'], 'seconds': spoken[st['id']]['seconds']}
+                if st['id'] in spoken:
+                    st['audio'] = {v['id']: {'url': root_url + spoken[st['id']][v['id']]['file'], 'seconds': spoken[st['id']][v['id']]['seconds']}
+                                   for v in config.get('voices', []) if v['id'] in spoken[st['id']]}
     stones, stones_credit = [], None
     stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
     if stone_file.exists() and (bundle / 'ground.json').exists():
@@ -364,7 +366,8 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}),
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'voices': [{k: v[k] for k in ('id', 'name', 'label', 'credit')} for v in config.get('voices', [])], 'default_voice': config.get('default_voice'),
+            'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}),
             'places_extra': extra_places(config, bundle, info, groups_of(name, ROOT / 'cities' / name, {name: config})), 'categories': [c['name'] for c in config.get('categories', [])], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
