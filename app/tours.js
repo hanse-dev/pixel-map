@@ -23,10 +23,13 @@
     svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.classList.add('route');
     t.stations.forEach((st, k) => {
       if (!st.leg) return;
-      const p = document.createElementNS(NS, 'polyline');
-      p.setAttribute('points', st.leg.path.map(q => q.join(',')).join(' '));
-      p.setAttribute('class', step < 0 ? 'next' : k === step ? 'now' : k < step ? 'done' : 'next');
-      svg.append(p);
+      const state = step < 0 ? 'next' : k === step ? 'now' : k < step ? 'done' : 'next';
+      for (const [visible, pts] of st.leg.path) {          // stretches behind buildings are drawn faintly
+        const p = document.createElementNS(NS, 'polyline');
+        p.setAttribute('points', pts.map(q => q.join(',')).join(' '));
+        p.setAttribute('class', state + (visible ? '' : ' hidden'));
+        svg.append(p);
+      }
     });
     layer.append(svg);
     t.stations.forEach((st, k) => layer.append(el('div', { className: 'stop' + (k === step ? ' now' : step >= 0 && k < step ? ' done' : ''), textContent: k + 1, style: `left:${st.x}px;top:${st.y}px` })));
@@ -42,7 +45,8 @@
   const list = $('tour-list');
   let open = null;
   function showRoute(t) {
-    const xs = t.stations.flatMap(s => [s.x, ...(s.leg ? s.leg.path.map(p => p[0]) : [])]), ys = t.stations.flatMap(s => [s.y, ...(s.leg ? s.leg.path.map(p => p[1]) : [])]);
+    const pts = st => st.leg ? st.leg.path.flatMap(r => r[1]) : [];
+    const xs = t.stations.flatMap(s => [s.x, ...pts(s).map(p => p[0])]), ys = t.stations.flatMap(s => [s.y, ...pts(s).map(p => p[1])]);
     const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
     render(t, -1);
     const zoom = Math.min(1, vw / ((x1 - x0) * 1.25 + 80), vh / ((y1 - y0) * 1.25 + 80));   // the whole walk in view

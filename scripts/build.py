@@ -122,6 +122,15 @@ def extra_places(config, bundle, info, groups):
     return sorted(out, key=lambda p: p['name'])
 
 
+def hit_ids(bundle):
+    """Building id per map pixel from the bundle's hit map, or None when only the small files are here (CI)."""
+    if not (bundle / 'hitmap.png').exists(): return None
+    import numpy as np
+    Image.MAX_IMAGE_PIXELS = None
+    a = np.asarray(Image.open(bundle / 'hitmap.png').convert('RGB')).astype(np.uint32)
+    return a[..., 0] | (a[..., 1] << 8) | (a[..., 2] << 16)
+
+
 def first_sentence(text):
     """The opening sentence of a Wikipedia introduction (abbreviations like St. and dates stay intact)."""
     text = re.sub(r'\s+', ' ', text).strip()
@@ -130,8 +139,12 @@ def first_sentence(text):
 
 
 class Walk:
-    """Footpaths of the bundle's street graph, measured on the ground (metres) and drawn in map pixels."""
-    def __init__(self, bundle):
+    """Footpaths of the bundle's street graph, measured on the ground (metres) and drawn in map pixels.
+    Streets are preferred over alleys, yards and paths; with the hit map, stretches hidden behind
+    buildings in the oblique view are marked so the viewer can draw them faintly."""
+    COST = {'footway': 1.8, 'path': 1.8, 'steps': 2.0, 'service': 1.4, 'track': 1.6, 'cycleway': 1.5}
+
+    def __init__(self, bundle, hitmap=None):
         import numpy as np
         from scipy.spatial import cKDTree
         camera = json.loads((bundle / 'camera.json').read_text()); M = np.array(camera['pixel_matrix'])
@@ -139,38 +152,70 @@ class Walk:
         self.P = np.array(w['nodes'], float)
         z = camera.get('z0_m', 15.0)
         G = (np.linalg.inv(M[:, :2]) @ (self.P.T - M[:, 3:4] - M[:, 2:3] * z)).T
-        self.nb = [[] for _ in self.P]
+        self.nb = [[] for _ in self.P]; street = np.zeros(len(self.P), bool)
         for way in w['ways']:
+            k = self.COST.get(way['highway'], 1.0)
             for a, b in zip(way['nodes'], way['nodes'][1:]):
-                d = float(np.hypot(*(G[a] - G[b]))); self.nb[a].append((b, d)); self.nb[b].append((a, d))
+                d = float(np.hypot(*(G[a] - G[b]))); self.nb[a].append((b, d, k)); self.nb[b].append((a, d, k))
+            if k == 1.0: street[way['nodes']] = True
+        self.street = street
         self.ok = np.nonzero([len(n) for n in self.nb])[0]; self.tree = cKDTree(self.P[self.ok])
+        self.ids = hitmap
 
-    def doors(self, b, pad=20):
-        """Street nodes right around a building (its box widened by pad px): a walk may arrive on any side."""
+    def doors(self, b, pad=24):
+        """Street nodes right around a building (its box widened by pad px); alleys only if no street."""
         import numpy as np
         x0, y0, x1, y1 = b['box']
         P = self.P[self.ok]
-        inside = np.nonzero((P[:, 0] >= x0 - pad) & (P[:, 0] <= x1 + pad) & (P[:, 1] >= y0 - pad) & (P[:, 1] <= y1 + pad))[0]
-        return [int(self.ok[i]) for i in inside] or [int(self.ok[self.tree.query([(x0 + x1) / 2, y1])[1]])]
+        inside = self.ok[np.nonzero((P[:, 0] >= x0 - pad) & (P[:, 0] <= x1 + pad) & (P[:, 1] >= y0 - pad) & (P[:, 1] <= y1 + pad))[0]]
+        streets = [int(n) for n in inside if self.street[n]]
+        return streets or [int(n) for n in inside] or [int(self.ok[self.tree.query([(x0 + x1) / 2, y1])[1]])]
 
     def route(self, a, b, start=None):
-        """Shortest walk from where the last leg ended (start) or any door of a, to the nearest door of b."""
+        """Walk from where the last leg ended (start) or any door of a to the nearest door of b.
+        Returns metres and [[visible, points], ...] runs."""
         import heapq
         starts, goals = [start] if start is not None else self.doors(a), set(self.doors(b))
-        dist, prev = {n: 0.0 for n in starts}, {}
+        cost, prev, metres = {n: 0.0 for n in starts}, {}, {n: 0.0 for n in starts}
         q = [(0.0, n) for n in starts]; heapq.heapify(q); t = None
         while q:
-            d, n = heapq.heappop(q)
-            if d > dist[n]: continue
+            c, n = heapq.heappop(q)
+            if c > cost[n]: continue
             if n in goals: t = n; break
-            for m, e in self.nb[n]:
-                if d + e < dist.get(m, 1e18): dist[m] = d + e; prev[m] = n; heapq.heappush(q, (d + e, m))
+            for m, d, k in self.nb[n]:
+                if c + d * k < cost.get(m, 1e18): cost[m] = c + d * k; metres[m] = metres[n] + d; prev[m] = n; heapq.heappush(q, (c + d * k, m))
         if t is None: return 0.0, []
         path, n = [t], t
         while n in prev: n = prev[n]; path.append(n)
-        pts = [[round(float(self.P[i][0]), 1), round(float(self.P[i][1]), 1)] for i in reversed(path)]
         self.end = t
-        return dist.get(t, 0.0), simplify(pts, 1.5)
+        pts = [[round(float(self.P[i][0]), 1), round(float(self.P[i][1]), 1)] for i in reversed(path)]
+        return metres[t], self.runs(pts, {a['id'], b['id']})
+
+    def runs(self, pts, own):
+        """Split a path into stretches seen in the map and stretches hidden behind other buildings."""
+        if self.ids is None or len(pts) < 2: return [[1, simplify(pts, 1.5)]]
+        import numpy as np
+        dense = []
+        for p, q in zip(pts[:-1], pts[1:]):
+            n = max(1, int(np.hypot(q[0] - p[0], q[1] - p[1]) / 2))
+            dense += [[p[0] + (q[0] - p[0]) * k / n, p[1] + (q[1] - p[1]) * k / n] for k in range(n)]
+        dense.append(pts[-1])
+        H, W = self.ids.shape
+        vis = []
+        for x, y in dense:
+            i = int(self.ids[min(max(int(y), 0), H - 1), min(max(int(x), 0), W - 1)])
+            vis.append(i == 0 or i in own)
+        vis = np.array(vis)
+        for k in range(len(vis)):                       # ignore flicker shorter than 4 samples (8 px)
+            if 0 < k < len(vis) - 1 and vis[k] != vis[k - 1]:
+                j = k
+                while j < len(vis) and vis[j] == vis[k] and j - k < 4: j += 1
+                if j - k < 4 and j < len(vis): vis[k:j] = vis[k - 1]
+        out, start = [], 0
+        for k in range(1, len(dense) + 1):
+            if k == len(dense) or vis[k] != vis[start]:
+                out.append([int(vis[start]), simplify([[round(a, 1), round(b, 1)] for a, b in dense[start:k + 1]], 1.5)]); start = k
+        return out
 
 
 def simplify(pts, tol):
@@ -249,26 +294,37 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
         for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
             if b.get('wikidata') and 'centre' in b and b['visible_px'] > by_q.get(b['wikidata'], {}).get('visible_px', 0):
                 by_q[b['wikidata']] = b
-        walk = Walk(bundle)
-        for t in json.loads(tour_file.read_text())['tours']:
-            stations, previous, at = [], None, None
-            for k, st in enumerate(t['stations']):
-                b = by_q.get(st['wikidata'])
-                if not b:
-                    print(f"warning: tour {t['id']}: {st['wikidata']} not in bundle"); continue
-                i = info.get(st['wikidata'], {})
-                nm = (i.get('title') or b.get('name') or st['wikidata']).replace(' (Lübeck)', '')
-                station = {'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
-                           'view_width': 900, 'building': b['id'], 'blurb': first_sentence(i.get('intro') or ''),
-                           'source': i.get('title') and {'title': i['title'], 'url': i.get('url')}}
-                if previous:
-                    metres, path = walk.route(previous, b, at); at = walk.end
-                    station['leg'] = {'metres': round(metres, -1), 'minutes': max(1, round(metres / 75)), 'path': path}
-                stations.append(station); previous = b
-            if len(stations) >= 2:
-                length = sum(s['leg']['metres'] for s in stations[1:])
-                tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': length,
-                              'minutes': round(length / 75), 'stations': stations})
+        import hashlib
+        key = hashlib.sha256(tour_file.read_bytes() + (bundle / 'walkable.json').read_bytes() + (bundle / 'buildings.json').read_bytes()
+                             + (info_file.read_bytes() if info_file.exists() else b'')).hexdigest()
+        cache = ROOT / 'config' / f'{name}.walks.json'
+        ids = hit_ids(bundle)
+        if ids is None and cache.exists() and json.loads(cache.read_text())['key'] == key:
+            tours = json.loads(cache.read_text())['tours']           # CI: paths measured locally against the hit map
+        else:
+            if ids is None: print(f'warning: {name}: no hit map, walk paths drawn without hiding (run the build locally)')
+            walk = Walk(bundle, ids)
+            for t in json.loads(tour_file.read_text())['tours']:
+                stations, previous, at = [], None, None
+                for k, st in enumerate(t['stations']):
+                    b = by_q.get(st['wikidata'])
+                    if not b:
+                        print(f"warning: tour {t['id']}: {st['wikidata']} not in bundle"); continue
+                    i = info.get(st['wikidata'], {})
+                    nm = (i.get('title') or b.get('name') or st['wikidata']).replace(' (Lübeck)', '')
+                    station = {'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
+                               'view_width': 900, 'building': b['id'], 'blurb': first_sentence(i.get('intro') or ''),
+                               'source': i.get('title') and {'title': i['title'], 'url': i.get('url')}}
+                    if previous:
+                        metres, path = walk.route(previous, b, at); at = walk.end
+                        station['leg'] = {'metres': round(metres, -1), 'minutes': max(1, round(metres / 75)), 'path': path}
+                    stations.append(station); previous = b
+                if len(stations) >= 2:
+                    length = sum(s['leg']['metres'] for s in stations[1:])
+                    tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': length,
+                                  'minutes': round(length / 75), 'stations': stations})
+            if ids is not None:
+                cache.write_text(json.dumps({'key': key, 'tours': tours}, ensure_ascii=False, separators=(',', ':')) + '\n')
     stones, stones_credit = [], None
     stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
     if stone_file.exists() and (bundle / 'ground.json').exists():
