@@ -15,13 +15,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 ## Website / UX
 
-- [ ] **Rundgänge überarbeiten** – wirken zufällig
-  - Inhalt: Stationen nach einem klaren roten Faden auswählen, Reihenfolge entlang echter Wege, Start und Ziel an markanten Punkten, realistische Länge und Dauer
-  - Texte: eigene Einleitung und Überleitung pro Station (mit Quellen)
-  - Weg zwischen den Stationen als Linie entlang der Straßen (`walkable.json`) statt Luftlinie und Himmelsrichtung
-  - Übersicht vor dem Start (Einleitung, Stationsliste, Länge, Weg auf der Karte)
-  - Ende des Rundgangs: Zusammenfassung, Vorschlag für den nächsten
-  - Fortschritt merken (zuletzt besuchte Station)
+- [x] **Rundgänge überarbeitet**: 4 neue Rundgänge mit rotem Faden (Hanse · Hauptkirchen · Kaufmannshäuser/Thomas Mann/Willy Brandt · Klöster und Herbergen), Reihenfolge nach echten Fußwegen; Weg als Linie entlang der Straßen mit nummerierten Stationen; Übersicht vor dem Start mit Länge und Gehzeit; Fortsetzen bei der letzten Station; Abschluss mit Vorschlag für den nächsten
+- [ ] Rundgänge: eigene Überleitungstexte zwischen den Stationen (bisher erster Satz der Wikipedia-Einleitung im Popup); weitere Themen (z. B. Gänge und Höfe, Stadtmauer und Wälle)
 - [x] **Tiefeneffekt**: doppelt so stark, schwenkt von selbst wenn die Maus ruht (und auf dem Handy), Umrisse/Hervorhebung währenddessen aus, Hinweis beim Einschalten
 - [ ] Tiefeneffekt: Schlieren hinter hohen Türmen (dort ist nichts gemalt); evtl. Hintergrund aus Nachbarpixeln auffüllen
 - [ ] **Karte drehen**: vier feste Blickrichtungen (N/O/S/W), je eine eigene gemalte Karte, Umschalten in der Ansicht. Erst Pilot: 1024er-Ausschnitt um die Marienkirche aus Süden neben der heutigen Ansicht (startet nach dem dritten Ring, die GPU ist bis dahin belegt)

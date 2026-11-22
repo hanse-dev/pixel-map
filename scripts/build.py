@@ -122,6 +122,67 @@ def extra_places(config, bundle, info, groups):
     return sorted(out, key=lambda p: p['name'])
 
 
+def first_sentence(text):
+    """The opening sentence of a Wikipedia introduction (abbreviations like St. and dates stay intact)."""
+    text = re.sub(r'\s+', ' ', text).strip()
+    m = re.search(r'(?<!St)(?<!\d)(?<![A-Z])[.!?](?=\s+[A-ZÄÖÜ„])', text)
+    return text[:m.end()] if m else text[:240]
+
+
+class Walk:
+    """Footpaths of the bundle's street graph, measured on the ground (metres) and drawn in map pixels."""
+    def __init__(self, bundle):
+        import numpy as np
+        from scipy.spatial import cKDTree
+        camera = json.loads((bundle / 'camera.json').read_text()); M = np.array(camera['pixel_matrix'])
+        w = json.loads((bundle / 'walkable.json').read_text())
+        self.P = np.array(w['nodes'], float)
+        z = camera.get('z0_m', 15.0)
+        G = (np.linalg.inv(M[:, :2]) @ (self.P.T - M[:, 3:4] - M[:, 2:3] * z)).T
+        self.nb = [[] for _ in self.P]
+        for way in w['ways']:
+            for a, b in zip(way['nodes'], way['nodes'][1:]):
+                d = float(np.hypot(*(G[a] - G[b]))); self.nb[a].append((b, d)); self.nb[b].append((a, d))
+        self.ok = np.nonzero([len(n) for n in self.nb])[0]; self.tree = cKDTree(self.P[self.ok])
+
+    def doors(self, b, pad=20):
+        """Street nodes right around a building (its box widened by pad px): a walk may arrive on any side."""
+        import numpy as np
+        x0, y0, x1, y1 = b['box']
+        P = self.P[self.ok]
+        inside = np.nonzero((P[:, 0] >= x0 - pad) & (P[:, 0] <= x1 + pad) & (P[:, 1] >= y0 - pad) & (P[:, 1] <= y1 + pad))[0]
+        return [int(self.ok[i]) for i in inside] or [int(self.ok[self.tree.query([(x0 + x1) / 2, y1])[1]])]
+
+    def route(self, a, b, start=None):
+        """Shortest walk from where the last leg ended (start) or any door of a, to the nearest door of b."""
+        import heapq
+        starts, goals = [start] if start is not None else self.doors(a), set(self.doors(b))
+        dist, prev = {n: 0.0 for n in starts}, {}
+        q = [(0.0, n) for n in starts]; heapq.heapify(q); t = None
+        while q:
+            d, n = heapq.heappop(q)
+            if d > dist[n]: continue
+            if n in goals: t = n; break
+            for m, e in self.nb[n]:
+                if d + e < dist.get(m, 1e18): dist[m] = d + e; prev[m] = n; heapq.heappush(q, (d + e, m))
+        if t is None: return 0.0, []
+        path, n = [t], t
+        while n in prev: n = prev[n]; path.append(n)
+        pts = [[round(float(self.P[i][0]), 1), round(float(self.P[i][1]), 1)] for i in reversed(path)]
+        self.end = t
+        return dist.get(t, 0.0), simplify(pts, 1.5)
+
+
+def simplify(pts, tol):
+    """Ramer-Douglas-Peucker in map pixels."""
+    if len(pts) < 3: return pts
+    (x0, y0), (x1, y1) = pts[0], pts[-1]; L = ((x1 - x0) ** 2 + (y1 - y0) ** 2) ** .5 or 1
+    d = [abs((x1 - x0) * (y0 - y) - (x0 - x) * (y1 - y0)) / L for x, y in pts[1:-1]]
+    k = max(range(len(d)), key=d.__getitem__)
+    if d[k] <= tol: return [pts[0], pts[-1]]
+    return simplify(pts[:k + 2], tol)[:-1] + simplify(pts[k + 1:], tol)
+
+
 def outline_tiles(bundle, out, wanted, groups=()):
     """Gold outlines of the buildings that open an info panel, as an RGBA Deep Zoom pyramid."""
     import numpy as np
@@ -188,18 +249,26 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
         for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
             if b.get('wikidata') and 'centre' in b and b['visible_px'] > by_q.get(b['wikidata'], {}).get('visible_px', 0):
                 by_q[b['wikidata']] = b
+        walk = Walk(bundle)
         for t in json.loads(tour_file.read_text())['tours']:
-            stations = []
+            stations, previous, at = [], None, None
             for k, st in enumerate(t['stations']):
                 b = by_q.get(st['wikidata'])
                 if not b:
                     print(f"warning: tour {t['id']}: {st['wikidata']} not in bundle"); continue
                 i = info.get(st['wikidata'], {})
                 nm = (i.get('title') or b.get('name') or st['wikidata']).replace(' (Lübeck)', '')
-                stations.append({'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
-                                 'view_width': 900, 'building': b['id'], 'leg': st.get('leg')})
+                station = {'id': f"{t['id']}-{k + 1}", 'name': nm, 'short_name': nm, 'x': b['centre'][0], 'y': b['centre'][1],
+                           'view_width': 900, 'building': b['id'], 'blurb': first_sentence(i.get('intro') or ''),
+                           'source': i.get('title') and {'title': i['title'], 'url': i.get('url')}}
+                if previous:
+                    metres, path = walk.route(previous, b, at); at = walk.end
+                    station['leg'] = {'metres': round(metres, -1), 'minutes': max(1, round(metres / 75)), 'path': path}
+                stations.append(station); previous = b
             if len(stations) >= 2:
-                tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': t.get('length_m', 0), 'stations': stations})
+                length = sum(s['leg']['metres'] for s in stations[1:])
+                tours.append({'id': t['id'], 'title': t['title'], 'intro': t.get('intro'), 'length_m': length,
+                              'minutes': round(length / 75), 'stations': stations})
     stones, stones_credit = [], None
     stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
     if stone_file.exists() and (bundle / 'ground.json').exists():
@@ -241,7 +310,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
               'DATA': script_json(data), 'TITLE': html.escape(config['title'] + ' · Pixel Map')}
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
-    for js in ('info', 'memorial', 'sidebar'):                                    # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar', 'tours'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page
@@ -334,11 +403,11 @@ def start_page(cities, items):
     name = cities[0][0]
     base = json.loads((SITE / name / 'tiles.json').read_text())['base'] or f'{name}/'
     tours = json.loads((ROOT / 'config' / f'tours.{name}.json').read_text())['tours'] if (ROOT / 'config' / f'tours.{name}.json').exists() else []
-    icons = {'tuerme': '⛪', 'hanse': '⚖', 'buergerhaeuser': '🏛', 'stifte': '🕯'}
+    icons = {'kirchen': '⛪', 'hanse': '⚓', 'buergerhaeuser': '🏛', 'kloester': '🕯'}
     km = lambda t: f"{t.get('length_m', 0) / 1000:.1f}".replace('.', ',')
     cards = ''.join(f'<a class="card" href="{name}/?tour={html.escape(t["id"])}"><div class="k">{icons.get(t["id"], "🚶")}</div>'
                     f'<h3>{html.escape(t["title"])}</h3><p>{html.escape(t.get("intro") or "")}</p>'
-                    f'<span class="tag">Rundgang · {len(t["stations"])} Stationen · {km(t)} km</span></a>'
+                    f'<span class="tag">Rundgang · {len(t["stations"])} Stationen · {km(t)} km · ca. {round(t.get("length_m", 0) / 75)} Min. Gehzeit</span></a>'
                     for t in tours)
     stones = ''
     page = (SITE / name / 'index.html').read_text()

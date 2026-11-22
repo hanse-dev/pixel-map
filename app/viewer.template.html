@@ -103,6 +103,23 @@ body.side #side #tour-list button:hover{background:#ffffff14}
 #side-results p{margin:4px 2px;opacity:.7}
 
 body.depth-on #outline-world,body.depth-on #hover-world,body.depth-on #select-world{display:none!important}
+
+#route-world{pointer-events:none}
+.route{position:absolute;left:0;top:0;overflow:visible}
+.route polyline{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:calc(5px * var(--inv,1))}
+.route .next{stroke:#ffc24d;stroke-opacity:.95;stroke-width:calc(6px * var(--inv,1));stroke-dasharray:calc(12px * var(--inv,1)) calc(7px * var(--inv,1));filter:drop-shadow(0 0 calc(2px * var(--inv,1)) #000a)}
+.route .done{stroke:#fff;stroke-opacity:.35}
+.route .now{stroke:#ffb43a;stroke-width:calc(7px * var(--inv,1))}
+.stop{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#1c2226;border:2px solid #ffd27a;color:#fff;font:700 13px/22px system-ui,sans-serif;text-align:center;transform:scale(var(--inv,1));box-shadow:0 2px 6px #0008}
+.stop.now{background:#ffb43a;color:#1c2226}.stop.done{opacity:.55}
+body.depth-on #route-world{display:none}
+.tour-detail{margin:-2px 0 8px;padding:10px 12px;border:1px solid var(--accent);border-top:0;border-radius:0 0 12px 12px;background:#ffffff06}
+.tour-meta{margin:0 0 6px;font-size:.88em;opacity:.8}
+.tour-steps{margin:0 0 10px;padding-left:1.4em;font-size:.92em;line-height:1.5}.tour-steps small{opacity:.65}
+.tour-go{display:flex;gap:8px;flex-wrap:wrap}.tour-go button{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#ffffff10;color:inherit;font:inherit;cursor:pointer}
+.tour-go button.primary{background:var(--accent);color:#1c2226;border-color:transparent;font-weight:700}
+#walk-done{position:fixed;z-index:9;left:50%;top:50%;transform:translate(-50%,-50%);width:min(420px,calc(100vw - 32px));padding:20px 22px;background:#1c2226fa;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px #000a}
+#walk-done[hidden]{display:none}#walk-done h2{margin:0 0 .4em}#walk-done .small{opacity:.8;font-size:.92em}
 </style>
 </head>
 <body>
@@ -113,6 +130,7 @@ body.depth-on #outline-world,body.depth-on #hover-world,body.depth-on #select-wo
   <div class="world" id="outline-world"></div>
   <div class="world" id="hover-world"></div>
   <div class="world" id="select-world"></div>
+  <div class="world" id="route-world"></div>
   <div class="world" id="memorial-world" hidden></div>
   <div class="clip" id="source-clip" hidden><div class="world" id="source-world"><img class="poster" id="source-picture" draggable="false" alt="Registered source"></div></div>
 </div>
@@ -178,7 +196,7 @@ const DATA=__DATA__, ART=__ART__, SOURCE=__SOURCE__, TB=DATA.tiles_base||'';   /
 const $=id=>document.getElementById(id),view=$('view'),W=DATA.width,H=DATA.height;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),ease=t=>t*t*(3-2*t);
 const route=(DATA.landmarks||[]).map((p,i)=>({...p,id:p.id||String(i+1)}));
-const pointers=new Map(),worlds=[$('art-world'),$('source-world'),$('outline-world'),$('hover-world'),$('select-world'),$('memorial-world')],tileMaps=[new Map(),new Map(),new Map()];let outlinesOn=!!DATA.outline_tiles,outlineMode=0,artDir=DATA.art_dir||'map_files';
+const pointers=new Map(),worlds=[$('art-world'),$('source-world'),$('outline-world'),$('hover-world'),$('select-world'),$('route-world'),$('memorial-world')],tileMaps=[new Map(),new Map(),new Map()];let outlinesOn=!!DATA.outline_tiles,outlineMode=0,artDir=DATA.art_dir||'map_files';
 let vw=0,vh=0,s=1,x=0,y=0,fitted=false,initialised=false,compare=false,reveal=50,current=0,playing=false,raf=null,animation=null,tourStart=null,lastTileTime=-Infinity,pillTimer=null,tourBase=0,tourFrom=null,miniUser=null;
 const minScale=()=>Math.min(vw/W,vh/H),maxScale=()=>Math.max(4,minScale()),pose=()=>({s,x,y});
 for(const world of worlds){world.style.width=W+'px';world.style.height=H+'px'}
@@ -206,7 +224,7 @@ function refreshTiles(now=performance.now()){
     for(const [key,image] of cache){if(!needed.has(key)&&now-Number(image.dataset.seen)>1000){image.remove();if(!layer)gl2d.forget(image);cache.delete(key)}}
   }
 }
-function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();gl2d.frame();schedule()}
+function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));$('route-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();gl2d.frame();schedule()}
 function setPose(p){s=p.s;x=p.x;y=p.y;draw()}
 function stop(){clearTimeout(pillTimer);$('pill').classList.remove('visible');playing=false;tourStart=null;animation=null;$('tour').querySelector('span').textContent='Wahrzeichen-Tour';$('tour').setAttribute('aria-pressed','false');$('tour').setAttribute('aria-label','Play tour')}
 function schedule(){if(raf===null)raf=requestAnimationFrame(tick)}
@@ -215,7 +233,7 @@ function fit(soft=true){stop();closePlaces();fitted=true;const z=minScale(),targ
 function hero(point){const cy=point.y-Number(point.look_up||0),preferred=Math.max(.5,Math.min(1,vw/(point.view_width||1024)));const centred=vh>vw?Math.min(1,Math.max(vw/(2*Math.max(1,Math.min(point.x,W-point.x))),vh/(2*Math.max(1,Math.min(cy,H-cy))))):0;const z=clamp(Number(point.zoom??DATA.hero_zoom??Math.max(preferred,centred)),Math.max(vw/W,vh/H),maxScale());return {s:z,x:vw/2-point.x*z,y:vh/2-cy*z}}
 function notify(point){clearTimeout(pillTimer);$('pill').textContent=point.short_name||point.name||'';$('pill').classList.add('visible');pillTimer=setTimeout(()=>$('pill').classList.remove('visible'),1500)}
 function closePlaces(){const wasOpen=!$('places').hidden;$('places').hidden=true;$('places-toggle').setAttribute('aria-expanded','false');if(wasOpen)$('places-toggle').focus()}
-function visit(index,soft=true,link=true){if(!route.length)return;stop();closePlaces();fitted=false;current=(index+route.length)%route.length;const point=route[current];for(const b of $('place-list').querySelectorAll('button[data-i]'))b.setAttribute('aria-current',Number(b.dataset.i)===current?'location':'false');soft?animate(hero(point)):setPose(hero(point));notify(point);if(tourActive)$('tour-step').textContent=`${tourActive.title} · ${current+1}/${route.length}`+(point.leg&&current>0?` · ≈ ${point.leg.metres} m nach ${point.leg.direction}`:'');if(window.pixelMapShowBuilding&&point.building&&theme!=='memorial')setTimeout(()=>window.pixelMapShowBuilding(point.building),soft&&!reduced.matches?650:0);if(link)history.replaceState(null,'','#'+encodeURIComponent(DATA.city_id||'map')+'/'+encodeURIComponent(point.id))}
+function visit(index,soft=true,link=true){if(!route.length)return;stop();closePlaces();fitted=false;current=(index+route.length)%route.length;const point=route[current];for(const b of $('place-list').querySelectorAll('button[data-i]'))b.setAttribute('aria-current',Number(b.dataset.i)===current?'location':'false');soft?animate(hero(point)):setPose(hero(point));notify(point);if(tourActive)$('tour-step').textContent=`${tourActive.title} · ${current+1}/${route.length}`+(point.leg&&current>0?` · ${point.leg.minutes} Min. zu Fuß`:'');if(window.pixelMapShowBuilding&&point.building&&theme!=='memorial')setTimeout(()=>window.pixelMapShowBuilding(point.building),soft&&!reduced.matches?650:0);if(link)history.replaceState(null,'','#'+encodeURIComponent(DATA.city_id||'map')+'/'+encodeURIComponent(point.id))}
 function zoom(f,cx,cy){stop();fitted=false;const z=clamp(s*f,minScale(),maxScale());x=cx-(cx-x)*z/s;y=cy-(cy-y)*z/s;s=z;draw()}
 function tick(now){raf=null;if(animation){if(animation.start===null)animation.start=now;const a=animation,t=clamp((now-a.start)/600,0,1),q=ease(t);s=a.from.s+(a.to.s-a.from.s)*q;x=a.from.x+(a.to.x-a.from.x)*q;y=a.from.y+(a.to.y-a.from.y)*q;if(t===1)animation=null;draw()}
   if(playing){if(tourStart===null)tourStart=now;const p=(now-tourStart)/6000,index=(tourBase+Math.floor(p))%route.length,f=p-Math.floor(p),a=hero(route[index]),b=hero(route[(index+1)%route.length]),q=ease(clamp((f-.5)*2,0,1));if(current!==index){current=index;notify(route[index]);if(window.pixelMapShowBuilding&&route[index].building&&theme!=='memorial')window.pixelMapShowBuilding(route[index].building)}const target={s:a.s+(b.s-a.s)*q,x:a.x+(b.x-a.x)*q,y:a.y+(b.y-a.y)*q},intro=ease(clamp((now-tourStart)/600,0,1));s=tourFrom.s+(target.s-tourFrom.s)*intro;x=tourFrom.x+(target.x-tourFrom.x)*intro;y=tourFrom.y+(target.y-tourFrom.y)*intro;draw()}
@@ -420,5 +438,6 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 <script src="../app/info.js"></script>
 <script src="../app/memorial.js"></script>
 <script src="../app/sidebar.js"></script>
+<script src="../app/tours.js"></script>
 </body>
 </html>
