@@ -57,7 +57,7 @@ body.side.side-closed #side-open{display:block;position:fixed;z-index:6;top:14px
 body.side #side .menu,body.side #side .menu[hidden],body.side #side #places,body.side #side #places[hidden]{display:grid!important;position:static;transform:none;width:auto;max-width:none;max-height:none;padding:0;background:none;border:0;box-shadow:none;gap:4px}
 body.side #side .menu button,body.side #side #place-list button,body.side #side #tour-list button{text-align:left;width:100%}
 body.side #side #place-list,body.side #side #tour-list{display:grid;gap:4px}
-body.side #side #themes{grid-template-columns:repeat(3,1fr)}
+body.side #side #themes .theme-group{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 body.side #side #themes button small{display:none}
 body.side #side #themes button[aria-checked=true]{outline:2px solid var(--accent);outline-offset:-2px}
 body.side #side #tour-bar{position:static;transform:none;margin:0 0 8px;border-radius:12px;max-width:none}
@@ -132,24 +132,27 @@ body.depth-on #route-world{display:none}
 .au-opts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.85em;opacity:.9}.au-opts label{display:flex;align-items:center;gap:5px;cursor:pointer}
 .au-next{font-size:.85em;color:var(--accent)}.au-credit{font-size:.72em;opacity:.55}.au-next[hidden]{display:none}
 .au.silent .au-play,.au.silent .au-bar,.au.silent .au-time{opacity:.35;pointer-events:none}
+.side-title{font-size:1em;margin:0;font-weight:700}
+:focus-visible{outline:2px solid var(--accent)!important;outline-offset:2px}
+#building .say{margin:4px 0 8px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:#ffffff12;color:inherit;font:inherit;cursor:pointer}#building .say[hidden]{display:none}
 </style>
 </head>
 <body>
-<div id="view" tabindex="0" role="region" aria-label="City map. Drag or pinch. Number keys visit landmarks; brackets move between places; zero fits the map.">
+<div id="view" tabindex="0" role="main" aria-label="Karte. Ziehen oder mit zwei Fingern verschieben, Pfeiltasten verschieben, Plus und Minus zoomen, 0 zeigt die ganze Karte. Gebäude über die Suche oder die Ortsliste öffnen.">
   <canvas id="art-canvas" hidden></canvas>
-  <div class="world" id="art-world"><img class="poster" id="picture" draggable="false" alt="City artwork"></div>
+  <div class="world" id="art-world"><img class="poster" id="picture" draggable="false" alt="Pixelart-Karte von Lübeck"></div>
   <canvas id="depth-canvas" hidden></canvas>
   <div class="world" id="outline-world"></div>
   <div class="world" id="hover-world"></div>
   <div class="world" id="select-world"></div>
   <div class="world" id="route-world"></div>
   <div class="world" id="memorial-world" hidden></div>
-  <div class="clip" id="source-clip" hidden><div class="world" id="source-world"><img class="poster" id="source-picture" draggable="false" alt="Registered source"></div></div>
+  <div class="clip" id="source-clip" hidden><div class="world" id="source-world"><img class="poster" id="source-picture" draggable="false" alt="Ausgangsbild aus Geodaten"></div></div>
 </div>
-<div id="divider" role="slider" tabindex="0" aria-label="Source comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" hidden></div>
+<div id="divider" role="slider" tabindex="0" aria-label="Vergleich mit dem Ausgangsbild" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" hidden></div>
 <div id="pill" aria-live="polite"></div>
-<div id="mini" role="button" tabindex="0" aria-label="Map overview"><img id="mini-picture" alt=""><span id="extent"></span></div>
-<nav aria-label="Map controls">
+<div id="mini" role="button" tabindex="0" aria-label="Übersichtskarte"><img id="mini-picture" alt=""><span id="extent"></span></div>
+<nav aria-label="Kartensteuerung">
   <button class="icon" id="home" aria-label="Startseite" title="Startseite" onclick="location.href='../'">⌂</button>
   <button id="theme-toggle" class="label" aria-haspopup="menu" aria-expanded="false" aria-controls="themes" title="Thema · T"><span id="theme-name">Entdecken</span> ▾</button>
   <button class="icon" id="places-toggle" aria-label="Orte" title="Orte" aria-expanded="false" aria-controls="places">☷</button>
@@ -198,10 +201,10 @@ body.depth-on #route-world{display:none}
   <button id="fit" role="menuitem">⤢ <span>Ganze Karte</span><small>0</small></button>
   <button id="tour" role="menuitem" aria-pressed="false">▶ <span>Wahrzeichen-Tour</span><small>Leertaste</small></button>
 </section>
-<section id="places" hidden aria-label="Places"><div id="cities"></div><div id="place-list"></div><h3 id="tours-title" hidden>Rundgänge</h3><div id="tour-list"></div></section>
+<section id="places" hidden aria-label="Orte"><div id="cities"></div><div id="place-list"></div><h3 id="tours-title" hidden>Rundgänge</h3><div id="tour-list"></div></section>
 <div id="tour-bar" hidden><span id="tour-step"></span><button id="tour-end" aria-label="Rundgang beenden">Rundgang beenden</button></div>
-<section id="building" hidden aria-live="polite" aria-label="Building"><button id="building-close" aria-label="Close">×</button><figure id="building-figure" hidden><img id="building-image" alt=""><figcaption id="building-image-credit"></figcaption></figure><h2 id="building-name"></h2><p id="building-address"></p><p id="building-kind"></p><ul id="building-facts" hidden></ul><div id="building-summary"></div><button id="building-more" hidden>Weiterlesen</button><p id="building-links"></p><p id="building-credit"></p></section>
-<section id="info" hidden aria-label="Credits and provenance"><p id="status"></p><p id="credits"></p><p id="licence"></p><a id="download" download="provenance.json">Provenance ↓</a><details><summary>Camera and method</summary><pre id="method"></pre></details></section>
+<section id="building" hidden aria-live="polite" aria-label="Gebäude-Informationen"><button id="building-close" aria-label="Schließen">×</button><figure id="building-figure" hidden><img id="building-image" alt=""><figcaption id="building-image-credit"></figcaption></figure><h2 id="building-name"></h2><p id="building-address"></p><p id="building-kind"></p><ul id="building-facts" hidden></ul><button id="building-say" class="say" hidden aria-pressed="false">🔊 Vorlesen</button><div id="building-summary"></div><button id="building-more" hidden>Weiterlesen</button><p id="building-links"></p><p id="building-credit"></p></section>
+<section id="info" hidden aria-label="Quellen und Herkunft"><p id="status"></p><p id="credits"></p><p id="licence"></p><a id="download" download="provenance.json">Provenance ↓</a><details><summary>Camera and method</summary><pre id="method"></pre></details></section>
 <script>
 'use strict';
 const DATA=__DATA__, ART=__ART__, SOURCE=__SOURCE__, TB=DATA.tiles_base||'';   // TB: where tiles are served from ('' = this site)

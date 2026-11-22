@@ -118,11 +118,25 @@
     const o = document.createElement('a'); o.href = `https://www.openstreetmap.org/${b.osm}`; o.target = '_blank'; o.rel = 'noopener'; o.textContent = 'OpenStreetMap'; links.append(o);
     links.hidden = false;
     text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
+    // read aloud (spoken in advance with the chosen voice; see scripts/narrate.py)
+    const say = el('building-say'), clips = (DATA.spoken || {})[b.wikidata];
+    reader.pause(); say.hidden = !clips; say.textContent = '🔊 Vorlesen'; say.setAttribute('aria-pressed', 'false');
+    say.onclick = () => {
+      if (!reader.paused) { reader.pause(); return }
+      let v = null; try { v = localStorage.getItem('pixel-map-stimme') } catch {}
+      const src = clips[v] || clips[DATA.default_voice] || Object.values(clips)[0];
+      if (reader.dataset.src !== src) { reader.src = src; reader.dataset.src = src }
+      reader.play();
+    };
     panel.dataset.box = b.box ? b.box.join(',') : '';   // map pixels, for a popup placed next to the building
     panel.hidden = false;
     highlight(b);
   }
   // tours open a station's panel by building id; null closes it
+  const reader = new Audio(); reader.preload = 'none';
+  const sayState = () => { const say = el('building-say'); say.textContent = reader.paused ? '🔊 Vorlesen' : '⏸ Pause'; say.setAttribute('aria-pressed', String(!reader.paused)) };
+  reader.addEventListener('play', sayState); reader.addEventListener('pause', sayState); reader.addEventListener('ended', sayState);
+  new MutationObserver(() => { if (panel.hidden) reader.pause() }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
   window.pixelMapShowBuilding = id => { const b = id ? byId.get(id) : null; if (b) show(b); else { panel.hidden = true; highlight(null) } };
   el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };

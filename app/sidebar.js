@@ -16,7 +16,7 @@
   const collapse = el('button', { id: 'side-collapse', className: 'side-icon', ariaLabel: 'Leiste einklappen', title: 'Leiste einklappen', textContent: '«' });
   const head = el('header', { className: 'side-head' },
     el('a', { href: '../', className: 'side-home', title: 'Startseite', textContent: '⌂' }),
-    el('div', {}, el('b', { textContent: 'Pixel Map' }), el('span', { textContent: DATA.title || '' })), collapse);
+    el('div', {}, el('h1', { className: 'side-title', textContent: 'Pixel Map' }), el('span', { textContent: DATA.title || '' })), collapse);
   if ((DATA.navigation || []).length < 2) $('cities').hidden = true;   // one map: nothing to switch to
 
   // a running walk stays on top of every tab, also while a station's details are open
@@ -118,10 +118,14 @@
   }).observe(body, { attributes: true, attributeFilter: ['class'] });
 
   side.append(head, walk, bar, panels);
-  body.append(side);
+  body.prepend(side);                                   // first in the tab order, as on screen
+  // themes are a choice of one
+  const group = el('div', { role: 'radiogroup', ariaLabel: 'Thema', className: 'theme-group' }, ...$('themes').querySelectorAll('button')); $('themes').append(group);
+  for (const b of $('themes').querySelectorAll('button')) { b.setAttribute('role', 'radio'); if (!b.hasAttribute('aria-checked')) b.setAttribute('aria-checked', 'false') }
   select(remember.get() || 'entdecken');
   $('tours-title').remove();
   for (const id of ['themes', 'view-menu', 'places']) $(id).removeAttribute('role');
+  for (const b of $('view-menu').querySelectorAll('[role=menuitem]')) b.removeAttribute('role');
 
   const open = el('button', { id: 'side-open', ariaLabel: 'Leiste öffnen', title: 'Leiste öffnen', textContent: '☰  Menü' });
   body.append(open);
@@ -172,6 +176,13 @@
       requestAnimationFrame(step);
     }, 750);
   }
+  // opened from the keyboard (list, search, walk): focus moves into the popup, closing returns it
+  let back = null;
+  new MutationObserver(() => {
+    if (!panel.hidden && document.activeElement && document.activeElement !== body && !panel.contains(document.activeElement) && side.contains(document.activeElement)) {
+      back = document.activeElement; const h = $('building-name'); h.tabIndex = -1; setTimeout(() => h.focus({ preventScroll: true }), 700);
+    } else if (panel.hidden && back) { back.focus({ preventScroll: true }); back = null }
+  }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
   new MutationObserver(() => { if (!panel.hidden && !raf) raf = requestAnimationFrame(place) })
     .observe(panel, { attributes: true, attributeFilter: ['hidden', 'data-box'] });
 

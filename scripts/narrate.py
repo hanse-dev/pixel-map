@@ -45,7 +45,7 @@ def script(t, k):
 
 from piper import PiperVoice
 folder = out / 'audio' / city; folder.mkdir(parents=True, exist_ok=True)
-index, made = {}, 0
+index, buildings, made = {}, {}, 0
 for v in voices:
     voice = PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
     for t in walks:
@@ -63,7 +63,21 @@ for v in voices:
             secs = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(mp3)],
                                         capture_output=True, text=True, check=True).stdout)
             index.setdefault(st['id'], {'text': text})[v['id']] = {'file': f'audio/{city}/{h}.mp3', 'seconds': round(secs, 1)}
+    # every building with a Wikipedia entry: its name and introduction, for the popup's read-aloud button
+    for q, item in info.items():
+        if not item.get('intro'): continue
+        text = f"{(item.get('title') or item.get('label') or '').replace(' (Lübeck)', '')}. {speakable(item['intro'], 900)}"
+        h = hashlib.sha256((v['model'] + text).encode()).hexdigest()[:16]
+        mp3 = folder / f'{h}.mp3'
+        if not mp3.exists():
+            with tempfile.TemporaryDirectory() as tmp:
+                wav = Path(tmp) / 'a.wav'
+                with wave.open(str(wav), 'wb') as w:
+                    voice.synthesize_wav(text, w)
+                subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
+            made += 1
+        buildings.setdefault(q, {})[v['id']] = f'audio/{city}/{h}.mp3'
 (ROOT / 'config' / f'{city}.audio.json').write_text(json.dumps({
     'voices': {v['id']: v['credit'] for v in voices}, 'texts': 'nach Wikipedia (CC BY-SA 4.0)',
-    'stations': index}, ensure_ascii=False, indent=1) + '\n')
+    'stations': index, 'buildings': buildings}, ensure_ascii=False, indent=1) + '\n')
 print({'stations': len(index), 'voices': len(voices), 'spoken': made})

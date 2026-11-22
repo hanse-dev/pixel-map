@@ -258,5 +258,335 @@
     "seconds": 32.3
    }
   }
+ },
+ "buildings": {
+  "Q1009493": {
+   "thorsten": "audio/luebeck/24beb86f36ed29a9.mp3",
+   "kerstin": "audio/luebeck/c6e99370628d7ef9.mp3"
+  },
+  "Q105785986": {
+   "thorsten": "audio/luebeck/467b0979d96d315c.mp3",
+   "kerstin": "audio/luebeck/d81536df36fb895c.mp3"
+  },
+  "Q107558531": {
+   "thorsten": "audio/luebeck/1a56bbb0a947956c.mp3",
+   "kerstin": "audio/luebeck/9b2e7288ad0faf7e.mp3"
+  },
+  "Q1231989": {
+   "thorsten": "audio/luebeck/eb7602a2338669e4.mp3",
+   "kerstin": "audio/luebeck/ad500c6de0232417.mp3"
+  },
+  "Q1247773": {
+   "thorsten": "audio/luebeck/e401c420b7ee6260.mp3",
+   "kerstin": "audio/luebeck/9c8dae669fe04952.mp3"
+  },
+  "Q1264997": {
+   "thorsten": "audio/luebeck/8de9231253471911.mp3",
+   "kerstin": "audio/luebeck/fd8eaf41e05f71fe.mp3"
+  },
+  "Q1268724": {
+   "thorsten": "audio/luebeck/9898a4676bb213fa.mp3",
+   "kerstin": "audio/luebeck/59ae55feaf3c42dc.mp3"
+  },
+  "Q1269759": {
+   "thorsten": "audio/luebeck/e4993c112defbfce.mp3",
+   "kerstin": "audio/luebeck/c6ea27308ad84754.mp3"
+  },
+  "Q128763923": {
+   "thorsten": "audio/luebeck/0780a541e8cdc902.mp3",
+   "kerstin": "audio/luebeck/fe61d126cbd3d0ac.mp3"
+  },
+  "Q1367741": {
+   "thorsten": "audio/luebeck/756dba03a0409c2c.mp3",
+   "kerstin": "audio/luebeck/416f14e4624cdd4c.mp3"
+  },
+  "Q1417152": {
+   "thorsten": "audio/luebeck/2a4580bff340ce7b.mp3",
+   "kerstin": "audio/luebeck/fa3d5ffc74d0d90b.mp3"
+  },
+  "Q1427855": {
+   "thorsten": "audio/luebeck/0773079a057d6691.mp3",
+   "kerstin": "audio/luebeck/3cb0f9ab171c1aa7.mp3"
+  },
+  "Q1435580": {
+   "thorsten": "audio/luebeck/64d0ddf3d58fc76e.mp3",
+   "kerstin": "audio/luebeck/23ff825b6f7e0905.mp3"
+  },
+  "Q14906296": {
+   "thorsten": "audio/luebeck/f7baeee06ab69c5e.mp3",
+   "kerstin": "audio/luebeck/55165c8f1195e7fc.mp3"
+  },
+  "Q1494883": {
+   "thorsten": "audio/luebeck/c2f085d9c070f44b.mp3",
+   "kerstin": "audio/luebeck/5ac878022b3f0be5.mp3"
+  },
+  "Q1515805": {
+   "thorsten": "audio/luebeck/81bb4eeab6649ae4.mp3",
+   "kerstin": "audio/luebeck/744fc7126ee48694.mp3"
+  },
+  "Q1565675": {
+   "thorsten": "audio/luebeck/96f5c01fdd9e008d.mp3",
+   "kerstin": "audio/luebeck/1f780f69ef0df8ce.mp3"
+  },
+  "Q1595345": {
+   "thorsten": "audio/luebeck/31f39a6fe1d37d0f.mp3",
+   "kerstin": "audio/luebeck/0669c7979a517a17.mp3"
+  },
+  "Q1596371": {
+   "thorsten": "audio/luebeck/c3a3e440c1ebb527.mp3",
+   "kerstin": "audio/luebeck/9f2a3ecc30b311ba.mp3"
+  },
+  "Q1618163": {
+   "thorsten": "audio/luebeck/b57a7120da9a1096.mp3",
+   "kerstin": "audio/luebeck/8ecbbb9628f605a0.mp3"
+  },
+  "Q1623386": {
+   "thorsten": "audio/luebeck/3efa91c241a7e0a6.mp3",
+   "kerstin": "audio/luebeck/8be2fefea0ad407e.mp3"
+  },
+  "Q1632968": {
+   "thorsten": "audio/luebeck/c22eed6e59318207.mp3",
+   "kerstin": "audio/luebeck/b53f205b47388481.mp3"
+  },
+  "Q1649884": {
+   "thorsten": "audio/luebeck/398c504a2bf57cf8.mp3",
+   "kerstin": "audio/luebeck/67f99a818dae5055.mp3"
+  },
+  "Q1712082": {
+   "thorsten": "audio/luebeck/da321206aeb4f121.mp3",
+   "kerstin": "audio/luebeck/463540864c88efd0.mp3"
+  },
+  "Q1721769": {
+   "thorsten": "audio/luebeck/03d9b43cddd0e26d.mp3",
+   "kerstin": "audio/luebeck/c50f80ddf8342a77.mp3"
+  },
+  "Q1728606": {
+   "thorsten": "audio/luebeck/5d45f668acbb2426.mp3",
+   "kerstin": "audio/luebeck/38310a162c6593fb.mp3"
+  },
+  "Q17506040": {
+   "thorsten": "audio/luebeck/c5fa53edc2212da6.mp3",
+   "kerstin": "audio/luebeck/74f21918937bb476.mp3"
+  },
+  "Q17577149": {
+   "thorsten": "audio/luebeck/b17d96d02a91821a.mp3",
+   "kerstin": "audio/luebeck/7eb5d81c342717e4.mp3"
+  },
+  "Q1766218": {
+   "thorsten": "audio/luebeck/e5d25684e9e5f8dd.mp3",
+   "kerstin": "audio/luebeck/84205bcc8b5732b4.mp3"
+  },
+  "Q1779204": {
+   "thorsten": "audio/luebeck/e7a55408e4f20f27.mp3",
+   "kerstin": "audio/luebeck/35891f245e320ca2.mp3"
+  },
+  "Q1784591": {
+   "thorsten": "audio/luebeck/2468b4c3f764037b.mp3",
+   "kerstin": "audio/luebeck/77851d3c311b5986.mp3"
+  },
+  "Q1786466": {
+   "thorsten": "audio/luebeck/18e8ca8db76ee0b4.mp3",
+   "kerstin": "audio/luebeck/e082a2e125ae545f.mp3"
+  },
+  "Q1796493": {
+   "thorsten": "audio/luebeck/4fa9b975acc74b11.mp3",
+   "kerstin": "audio/luebeck/4315b5495911a918.mp3"
+  },
+  "Q1802073": {
+   "thorsten": "audio/luebeck/df82e14733e5bc1e.mp3",
+   "kerstin": "audio/luebeck/1a76195e8cc0351e.mp3"
+  },
+  "Q18629959": {
+   "thorsten": "audio/luebeck/8edbb25d39392eb5.mp3",
+   "kerstin": "audio/luebeck/e24516964a48dc59.mp3"
+  },
+  "Q1879877": {
+   "thorsten": "audio/luebeck/856751ab2f1a3278.mp3",
+   "kerstin": "audio/luebeck/08cb69a8459d6558.mp3"
+  },
+  "Q1880166": {
+   "thorsten": "audio/luebeck/c9703749d712aad8.mp3",
+   "kerstin": "audio/luebeck/11871e9aad150b02.mp3"
+  },
+  "Q18922485": {
+   "thorsten": "audio/luebeck/60970a780a3b7282.mp3",
+   "kerstin": "audio/luebeck/04f55bbd5b3e8a8e.mp3"
+  },
+  "Q1898021": {
+   "thorsten": "audio/luebeck/d0710389549f39a9.mp3",
+   "kerstin": "audio/luebeck/ae9d147b059f3794.mp3"
+  },
+  "Q1920503": {
+   "thorsten": "audio/luebeck/697ed27b02cd00db.mp3",
+   "kerstin": "audio/luebeck/78a5c77026d2d9d8.mp3"
+  },
+  "Q1954986": {
+   "thorsten": "audio/luebeck/fbc4cc0f9d0cb13c.mp3",
+   "kerstin": "audio/luebeck/6174a6b8129040c9.mp3"
+  },
+  "Q1958522": {
+   "thorsten": "audio/luebeck/9ac64bbf3fe4ce2c.mp3",
+   "kerstin": "audio/luebeck/90d553a26003cbea.mp3"
+  },
+  "Q196956": {
+   "thorsten": "audio/luebeck/d129e289adc03d6f.mp3",
+   "kerstin": "audio/luebeck/76e23d3b055125ad.mp3"
+  },
+  "Q2235612": {
+   "thorsten": "audio/luebeck/e3d8af55e3bd17fd.mp3",
+   "kerstin": "audio/luebeck/1f0bdd64e25a1a34.mp3"
+  },
+  "Q2243060": {
+   "thorsten": "audio/luebeck/c0f0f5d7e4b3503a.mp3",
+   "kerstin": "audio/luebeck/8301cb9b8c77453f.mp3"
+  },
+  "Q2245253": {
+   "thorsten": "audio/luebeck/868df528311a6a80.mp3",
+   "kerstin": "audio/luebeck/cf3913386d54cf04.mp3"
+  },
+  "Q2255232": {
+   "thorsten": "audio/luebeck/630cb401c30fa640.mp3",
+   "kerstin": "audio/luebeck/932dd202f6694ab2.mp3"
+  },
+  "Q22692207": {
+   "thorsten": "audio/luebeck/bd575600f8deed07.mp3",
+   "kerstin": "audio/luebeck/e85446eeadf7f5d7.mp3"
+  },
+  "Q2316268": {
+   "thorsten": "audio/luebeck/8d1daee975b1d83f.mp3",
+   "kerstin": "audio/luebeck/b242fce0671f3b59.mp3"
+  },
+  "Q2316312": {
+   "thorsten": "audio/luebeck/e48e713e643413cd.mp3",
+   "kerstin": "audio/luebeck/0011ae34ea562ab4.mp3"
+  },
+  "Q2415873": {
+   "thorsten": "audio/luebeck/87a356b2d6c8b8f5.mp3",
+   "kerstin": "audio/luebeck/2de18457428ddc08.mp3"
+  },
+  "Q2443638": {
+   "thorsten": "audio/luebeck/2f6b200e760f4a4d.mp3",
+   "kerstin": "audio/luebeck/83462c9c27ed9f5f.mp3"
+  },
+  "Q24669830": {
+   "thorsten": "audio/luebeck/14b21f81dc850365.mp3",
+   "kerstin": "audio/luebeck/54e92a3bbeb2f5a4.mp3"
+  },
+  "Q247787": {
+   "thorsten": "audio/luebeck/bf9e0ccdaa89964e.mp3",
+   "kerstin": "audio/luebeck/59640fcc6daf065a.mp3"
+  },
+  "Q25089255": {
+   "thorsten": "audio/luebeck/39e1971c6d97da17.mp3",
+   "kerstin": "audio/luebeck/8f93bad06e6b6484.mp3"
+  },
+  "Q2550616": {
+   "thorsten": "audio/luebeck/4afe8f9e9048476d.mp3",
+   "kerstin": "audio/luebeck/3ad4eed22ca5091f.mp3"
+  },
+  "Q2560411": {
+   "thorsten": "audio/luebeck/1979f16ad1278b4d.mp3",
+   "kerstin": "audio/luebeck/b26b8b83753a3a99.mp3"
+  },
+  "Q2581800": {
+   "thorsten": "audio/luebeck/0093b9a4b265e578.mp3",
+   "kerstin": "audio/luebeck/5a116512e44015f7.mp3"
+  },
+  "Q2592800": {
+   "thorsten": "audio/luebeck/94a123465a9b2ccf.mp3",
+   "kerstin": "audio/luebeck/85d2943052f7c848.mp3"
+  },
+  "Q2713736": {
+   "thorsten": "audio/luebeck/50eff107a8574baf.mp3",
+   "kerstin": "audio/luebeck/65740ed4539454ba.mp3"
+  },
+  "Q315187": {
+   "thorsten": "audio/luebeck/edc97b6c979cbaa7.mp3",
+   "kerstin": "audio/luebeck/45bde753b9825ade.mp3"
+  },
+  "Q316973": {
+   "thorsten": "audio/luebeck/c262c779e0a70ace.mp3",
+   "kerstin": "audio/luebeck/53a0a37f90a766e5.mp3"
+  },
+  "Q317388": {
+   "thorsten": "audio/luebeck/d4d43d35dc36841d.mp3",
+   "kerstin": "audio/luebeck/a52e1a2aa969f469.mp3"
+  },
+  "Q321229": {
+   "thorsten": "audio/luebeck/303ac28c31119d48.mp3",
+   "kerstin": "audio/luebeck/742497b64db89480.mp3"
+  },
+  "Q375042": {
+   "thorsten": "audio/luebeck/074fae2c5f1fadfe.mp3",
+   "kerstin": "audio/luebeck/b0e82eea901967b8.mp3"
+  },
+  "Q380609": {
+   "thorsten": "audio/luebeck/fb07dced49bf3650.mp3",
+   "kerstin": "audio/luebeck/825578b42d0a6b12.mp3"
+  },
+  "Q380610": {
+   "thorsten": "audio/luebeck/a72fd9fd2e90efc0.mp3",
+   "kerstin": "audio/luebeck/ca6c38b24b0dbb4c.mp3"
+  },
+  "Q3916007": {
+   "thorsten": "audio/luebeck/ff12e518b7738443.mp3",
+   "kerstin": "audio/luebeck/8a071b05298aec34.mp3"
+  },
+  "Q438230": {
+   "thorsten": "audio/luebeck/a06a35d75d7097b9.mp3",
+   "kerstin": "audio/luebeck/1f1d30b0cc2cfc98.mp3"
+  },
+  "Q482579": {
+   "thorsten": "audio/luebeck/c4c12f7c022ba6e8.mp3",
+   "kerstin": "audio/luebeck/e41cb1401ae32ec7.mp3"
+  },
+  "Q51247046": {
+   "thorsten": "audio/luebeck/c003c8dd8d197c98.mp3",
+   "kerstin": "audio/luebeck/28d23b1db660ad76.mp3"
+  },
+  "Q538276": {
+   "thorsten": "audio/luebeck/4907b976c0e79531.mp3",
+   "kerstin": "audio/luebeck/9b9ee5441b20c9fc.mp3"
+  },
+  "Q538453": {
+   "thorsten": "audio/luebeck/85262c0d0630e358.mp3",
+   "kerstin": "audio/luebeck/478da043eb614d52.mp3"
+  },
+  "Q657603": {
+   "thorsten": "audio/luebeck/44a3cc223ec0ebd0.mp3",
+   "kerstin": "audio/luebeck/b185ac05415dd600.mp3"
+  },
+  "Q695065": {
+   "thorsten": "audio/luebeck/20ef1c9992d50a67.mp3",
+   "kerstin": "audio/luebeck/942957c8a6b7174a.mp3"
+  },
+  "Q798435": {
+   "thorsten": "audio/luebeck/25cb97ade1540473.mp3",
+   "kerstin": "audio/luebeck/30ee0c58c2dc61cd.mp3"
+  },
+  "Q806787": {
+   "thorsten": "audio/luebeck/5bdb87c671d4951f.mp3",
+   "kerstin": "audio/luebeck/167fc6e201da0c07.mp3"
+  },
+  "Q814533": {
+   "thorsten": "audio/luebeck/5e6870c842175999.mp3",
+   "kerstin": "audio/luebeck/68fe046d21112330.mp3"
+  },
+  "Q880381": {
+   "thorsten": "audio/luebeck/4b469aa6cbfa40ad.mp3",
+   "kerstin": "audio/luebeck/9eff1f84be6b40b5.mp3"
+  },
+  "Q896458": {
+   "thorsten": "audio/luebeck/62554c2b5b7fd07d.mp3",
+   "kerstin": "audio/luebeck/f66fa534c2ac574f.mp3"
+  },
+  "Q995760": {
+   "thorsten": "audio/luebeck/c2460df49cc6e280.mp3",
+   "kerstin": "audio/luebeck/2e7a3522b0d6ab93.mp3"
+  },
+  "Q99735836": {
+   "thorsten": "audio/luebeck/663f749838f82ff2.mp3",
+   "kerstin": "audio/luebeck/a7caaca918867b5e.mp3"
+  }
  }
 }
