@@ -108,7 +108,7 @@ body.memorial #outline-world,body.memorial #hover-world,body.memorial #tours-tit
 <section id="info" hidden aria-label="Credits and provenance"><p id="status"></p><p id="credits"></p><p id="licence"></p><a id="download" download="provenance.json">Provenance ↓</a><details><summary>Camera and method</summary><pre id="method"></pre></details></section>
 <script>
 'use strict';
-const DATA=__DATA__, ART=__ART__, SOURCE=__SOURCE__;
+const DATA=__DATA__, ART=__ART__, SOURCE=__SOURCE__, TB=DATA.tiles_base||'';   // TB: where tiles are served from ('' = this site)
 const $=id=>document.getElementById(id),view=$('view'),W=DATA.width,H=DATA.height;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),ease=t=>t*t*(3-2*t);
 const route=(DATA.landmarks||[]).map((p,i)=>({...p,id:p.id||String(i+1)}));
@@ -117,6 +117,7 @@ let vw=0,vh=0,s=1,x=0,y=0,fitted=false,initialised=false,compare=false,reveal=50
 const minScale=()=>Math.min(vw/W,vh/H),maxScale=()=>Math.max(4,minScale()),pose=()=>({s,x,y});
 for(const world of worlds){world.style.width=W+'px';world.style.height=H+'px'}
 for(const id of ['picture','source-picture']){$(id).style.width=W+'px';$(id).style.height=H+'px'}
+if(TB)for(const id of ['picture','mini-picture','source-picture'])$(id).crossOrigin='anonymous';   // cross-origin tiles feed WebGL textures
 $('picture').onload=()=>gl2d.frame();$('picture').src=ART;$('mini-picture').src=ART;   // the source preview loads with the first comparison
 $('mini').style.setProperty('--map-aspect',W+'/'+H);
 function bound(){s=clamp(s,minScale(),maxScale());x=W*s<=vw?(vw-W*s)/2:clamp(x,vw-W*s,0);y=H*s<=vh?(vh-H*s)/2:clamp(y,vh-H*s,0)}
@@ -133,7 +134,7 @@ function refreshTiles(now=performance.now()){
     for(let row=r0;row<=r1;row++)for(let col=c0;col<=c1;col++){
       const key=`${level}/${col}_${row}`,left=Math.max(0,col*tile-pad),top=Math.max(0,row*tile-pad),right=Math.min(size.width,(col+1)*tile+pad),bottom=Math.min(size.height,(row+1)*tile+pad);
       needed.add(key);let image=cache.get(key);
-      if(!image){image=document.createElement('img');image.alt='';image.draggable=false;image.decoding='async';image.style.cssText=`left:${left*sx}px;top:${top*sy}px;width:${(right-left)*sx}px;height:${(bottom-top)*sy}px`;if(!layer)image.onload=()=>{if(depth.on)depth.frame();gl2d.ready(image)};image.src=`${[artDir,'source_files',outlineMode===1&&DATA.fill_tiles?'fill_files':'outline_files'][layer]}/${key}.${spec.format||'png'}`;if(!(layer===0&&gl2d.on))worlds[layer].appendChild(image);image.dataset.level=String(level);image.dataset.box=[left*sx,top*sy,(right-left)*sx,(bottom-top)*sy,col*tile*sx,row*tile*sy,Math.min(size.width,(col+1)*tile)*sx,Math.min(size.height,(row+1)*tile)*sy,left,top,right,bottom].join(',');cache.set(key,image)}
+      if(!image){image=document.createElement('img');image.alt='';image.draggable=false;image.decoding='async';image.style.cssText=`left:${left*sx}px;top:${top*sy}px;width:${(right-left)*sx}px;height:${(bottom-top)*sy}px`;if(!layer)image.onload=()=>{if(depth.on)depth.frame();gl2d.ready(image)};if(TB)image.crossOrigin='anonymous';image.src=`${TB}${[artDir,'source_files',outlineMode===1&&DATA.fill_tiles?'fill_files':'outline_files'][layer]}/${key}.${spec.format||'png'}`;if(!(layer===0&&gl2d.on))worlds[layer].appendChild(image);image.dataset.level=String(level);image.dataset.box=[left*sx,top*sy,(right-left)*sx,(bottom-top)*sy,col*tile*sx,row*tile*sy,Math.min(size.width,(col+1)*tile)*sx,Math.min(size.height,(row+1)*tile)*sy,left,top,right,bottom].join(',');cache.set(key,image)}
       image.dataset.seen=String(now);
     }
     for(const [key,image] of cache){if(!needed.has(key)&&now-Number(image.dataset.seen)>1000){image.remove();if(!layer)gl2d.forget(image);cache.delete(key)}}
@@ -233,7 +234,7 @@ const depth={on:false,gl:null,tilt:[0,0],goal:[0,0],tex:new Map(),loading:new Ma
     gl.bindBuffer(gl.ARRAY_BUFFER,this.buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([x0,y0,u0,v0,x1,y0,u1,v0,x0,y1,u0,v1,x1,y1,u1,v1]),gl.STREAM_DRAW);
     for(const [name,offset] of [['p',0],['t',8]]){const a=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,16,offset)}
     gl.drawArrays(gl.TRIANGLE_STRIP,0,4)},
-  depthImage(key){let image=this.loading.get(key);if(!image){image=new Image();image.decoding='async';image.onload=()=>this.frame();image.src=`depth_files/${key}.${(DATA.depth_tiles&&DATA.depth_tiles.format)||'png'}`;this.loading.set(key,image)}return image},
+  depthImage(key){let image=this.loading.get(key);if(!image){image=new Image();image.decoding='async';if(TB)image.crossOrigin='anonymous';image.onload=()=>this.frame();image.src=`${TB}depth_files/${key}.${(DATA.depth_tiles&&DATA.depth_tiles.format)||'png'}`;this.loading.set(key,image)}return image},
   frame(){
     if(!this.on||!this.gl)return;const gl=this.gl,canvas=$('depth-canvas'),dpr=devicePixelRatio||1,w=Math.max(1,Math.round(vw*dpr)),h=Math.max(1,Math.round(vh*dpr));
     if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}

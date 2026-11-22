@@ -6,6 +6,13 @@
 Each city needs cities/<name>/ (a map bundle from isometric-cities `atlas.py bundle`) and
 config/<name>.json (title, landmark Wikidata ids, opening landmark). info/<name>.<lang>.json is
 optional; without it buildings still open with name and links, just without Wikipedia text.
+
+Tiles can live outside Git (Cloudflare R2). Make them once per map version, upload, then build
+pages that point to them; the bundle's large images then need not be in the repository:
+
+  python3 scripts/build.py --tiles-out tiles --tiles-base https://pub-….r2.dev/   # writes tiles/<city>/<version>/
+  python3 scripts/upload_r2.py tiles                                              # and config/<city>.tiles.json
+  python3 scripts/build.py                     # pages only; tiles come from the URL in config/<city>.tiles.json
 """
 import base64, html, io, json, re, shutil
 from pathlib import Path
@@ -110,7 +117,7 @@ def outline_tiles(bundle, out, wanted):
     return {'tile_size': 256, 'overlap': 1, 'format': 'png', 'max_level': maximum, 'levels': levels}
 
 
-def city_page(name, config, cities, outline=None, tiles=None, fill=None):
+def city_page(name, config, cities, outline=None, tiles=None, fill=None, base='', hitmap=None):
     bundle = ROOT / 'cities' / name
     manifest = json.loads((bundle / 'manifest.json').read_text())
     camera = json.loads((bundle / 'camera.json').read_text())
@@ -178,10 +185,10 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None):
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': manifest['tiles']['hitmap'], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'tiles_base': base, 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
             'bundle': {'format': manifest['format'], 'files_sha256': manifest['files']}}
-    values = {'ART': script_json('preview-map.webp'), 'SOURCE': script_json('preview-source.webp'),
+    values = {'ART': script_json(base + 'preview-map.webp'), 'SOURCE': script_json(base + 'preview-source.webp'),
               'DATA': script_json(data), 'TITLE': html.escape(config['title'] + ' · Pixel Map')}
     import hashlib
     version = hashlib.sha256((ROOT / 'app/info.js').read_bytes()).hexdigest()[:10]
@@ -189,36 +196,78 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None):
     return page.replace('src="../app/info.js"', f'src="../app/info.js?v={version}"')   # new code is never served from cache
 
 
-def main():
+def make_tiles(name, root, out, configs):
+    """Every image the viewer loads for one city: art, raw art, source, depth, hit map, outlines, previews."""
+    out.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(root / 'hitmap_files', out / 'hitmap_files', dirs_exist_ok=True)   # exact ids: the bundle's PNG tiles
+    art = Image.open(root / 'map.png').convert('RGB')
+    graded = grade(art, *DEFAULT_GRADE)
+    tiles = {'map': pyramid(graded, out / 'map_files'), 'raw': pyramid(art, out / 'raw_files'),
+             'source': pyramid(Image.open(root / 'source.png').convert('RGB'), out / 'source_files'),
+             'depth': pyramid(Image.open(root / 'depth.png').convert('L'), out / 'depth_files', fmt='png', resample=Image.Resampling.NEAREST)}
+    for kind, src in (('map', graded), ('source', Image.open(root / 'source.png').convert('RGB'))):
+        p = src.copy(); p.thumbnail((1600, 1600), Image.Resampling.BOX); p.save(out / f'preview-{kind}.webp', 'WEBP', quality=80)
+    wanted = outline_ids(name, root, configs)
+    outline, fill = outline_tiles(root, out, wanted) if wanted else (None, None)
+    return {'tiles': tiles, 'outline': outline, 'fill': fill, 'outline_ids_sha256': ids_digest(wanted),
+            'hitmap': json.loads((root / 'manifest.json').read_text())['tiles']['hitmap']}
+
+
+def outline_ids(name, root, configs):
+    """Buildings that open an info panel: those whose Wikidata id has an info entry."""
+    lang = configs[name].get('lang', 'de'); info_file = ROOT / 'info' / f'{name}.{lang}.json'
+    info = json.loads(info_file.read_text())['items'] if info_file.exists() else {}
+    return {b['id'] for b in json.loads((root / 'buildings.json').read_text())['buildings'] if b.get('wikidata') in info}
+
+
+def ids_digest(ids):
+    import hashlib
+    return hashlib.sha256(','.join(map(str, sorted(ids))).encode()).hexdigest()
+
+
+def main(argv=None):
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--tiles-out', type=Path, help='make the tiles of every city here instead of building pages')
+    ap.add_argument('--tiles-base', help='public URL the tiles directory will be served from (with --tiles-out)')
+    a = ap.parse_args(argv)
+    configs = {p.stem: json.loads(p.read_text()) for p in sorted((ROOT / 'config').glob('*.json')) if '.' not in p.stem}
+    cities = [(n, c['title']) for n, c in configs.items() if (ROOT / 'cities' / n / 'manifest.json').exists()]
+    if a.tiles_out:
+        if not a.tiles_base:
+            raise SystemExit('--tiles-out needs --tiles-base')
+        for name, _ in cities:
+            root = ROOT / 'cities' / name
+            version = json.loads((root / 'manifest.json').read_text())['tiles']['map']['image_sha256'][:12]
+            meta = make_tiles(name, root, a.tiles_out / name / version, configs)
+            record = {'base': a.tiles_base.rstrip('/') + '/', 'path': f'{name}/{version}/', **meta}
+            (ROOT / 'config' / f'{name}.tiles.json').write_text(json.dumps(record, indent=1) + '\n')
+            print(f'tiles {name}: {a.tiles_out / name / version}')
+        return
     if SITE.exists():
         shutil.rmtree(SITE)
     SITE.mkdir()
     shutil.copytree(ROOT / 'app', SITE / 'app', ignore=shutil.ignore_patterns('*.template.html'))
     if (ROOT / 'info').exists():
         shutil.copytree(ROOT / 'info', SITE / 'info')
-    configs = {p.stem: json.loads(p.read_text()) for p in sorted((ROOT / 'config').glob('*.json'))}
-    cities = [(n, c['title']) for n, c in configs.items() if (ROOT / 'cities' / n / 'manifest.json').exists()]
     for name, title in cities:
         out = SITE / name
         root = ROOT / 'cities' / name
         out.mkdir()
         for f in ('buildings.json', 'manifest.json', 'camera.json', 'walkable.json', 'landmark-repaints.json'):
             if (root / f).exists(): shutil.copyfile(root / f, out / f)
-        shutil.copytree(root / 'hitmap_files', out / 'hitmap_files')      # exact ids: keep the bundle's PNG tiles
-        art = Image.open(root / 'map.png').convert('RGB')
-        tiles = {'map': pyramid(grade(art, *DEFAULT_GRADE), out / 'map_files'), 'raw': pyramid(art, out / 'raw_files'),
-                 'source': pyramid(Image.open(root / 'source.png').convert('RGB'), out / 'source_files'),
-                 'depth': pyramid(Image.open(root / 'depth.png').convert('L'), out / 'depth_files', fmt='png', resample=Image.Resampling.NEAREST)}
-        for kind, src in (('map', grade(art, *DEFAULT_GRADE)), ('source', Image.open(root / 'source.png').convert('RGB'))):
-            p = src.copy(); p.thumbnail((1600, 1600), Image.Resampling.BOX); p.save(out / f'preview-{kind}.webp', 'WEBP', quality=80)
-        lang = configs[name].get('lang', 'de'); info_file = ROOT / 'info' / f'{name}.{lang}.json'
-        info = json.loads(info_file.read_text())['items'] if info_file.exists() else {}
-        wanted = {b['id'] for b in json.loads((root / 'buildings.json').read_text())['buildings'] if b.get('wikidata') in info}
-        outline, fill = outline_tiles(root, out, wanted) if wanted else (None, None)
-        (out / 'index.html').write_text(city_page(name, configs[name], cities, outline, tiles, fill))
+        remote = ROOT / 'config' / f'{name}.tiles.json'
+        if remote.exists():                         # tiles are served from object storage
+            meta = json.loads(remote.read_text()); base = meta['base'] + meta['path']
+            if meta['outline_ids_sha256'] != ids_digest(outline_ids(name, root, configs)):
+                print(f'warning: {name}: info entries changed since the outline tiles were made; remake tiles to update outlines')
+        else:                                       # tiles are made into the site
+            meta = make_tiles(name, root, out, configs); base = ''
+        (out / 'tiles.json').write_text(json.dumps({'base': base}) + '\n')         # for other apps on the same map
+        (out / 'index.html').write_text(city_page(name, configs[name], cities, meta['outline'], meta['tiles'], meta['fill'], base, meta['hitmap']))
         (out / 'viewer.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./">'
                                          '<script>location.replace("./"+location.hash)</script><a href="./">Karte öffnen</a>')
-        print(f'built {name}')
+        print(f'built {name}' + (f' (tiles from {base})' if base else ''))
     items = ''.join(f'<li><a href="{n}/">{html.escape(t)}</a></li>' for n, t in cities)
     (SITE / 'index.html').write_text((ROOT / 'app/index.template.html').read_text().replace('__CITIES__', items))
     (SITE / '.nojekyll').write_text('')

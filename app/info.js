@@ -18,7 +18,8 @@
       image.onload = () => { const c = document.createElement('canvas'); c.width = image.naturalWidth; c.height = image.naturalHeight;
         const g = c.getContext('2d', {willReadFrequently: true}); g.imageSmoothingEnabled = false; g.drawImage(image, 0, 0); resolve(g); };
       image.onerror = reject;
-      image.src = `hitmap_files/${level}/${key}.png`;
+      if (DATA.tiles_base) image.crossOrigin = 'anonymous';
+      image.src = `${DATA.tiles_base || ''}hitmap_files/${level}/${key}.png`;
     }));
     return tiles.get(key);
   }
