@@ -2,3 +2,7 @@ _site/
 .DS_Store
 tiles/
 .venv/
+# large bundle files: tiles are served from R2 (config/<city>.tiles.json), bundles are backed up in pixel-map-<city> releases
+cities/*/*.png
+cities/*/*.dzi
+cities/*/*_files/
