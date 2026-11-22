@@ -1,0 +1,120 @@
+{
+ "voice": "Piper, Stimme „Thorsten“ (Datensatz CC0, thorsten-voice.de); Texte nach Wikipedia (CC BY-SA 4.0)",
+ "stations": {
+  "hanse-1": {
+   "file": "audio/luebeck/91ca611c581b2709.mp3",
+   "seconds": 42.4,
+   "text": "Station 1: Holstentor. Das Holstentor ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt. Das spätgotische Gebäude gehört zu den Überresten der Lübecker Stadtbefestigung. Das Holstentor ist neben dem Burgtor das einzige erhaltene Stadttor Lübecks. Mehr als 300 Jahre lang stand es als Mittleres Holstentor in einer Reihe mit drei weiteren Holstentoren, die im 19. Jahrhundert abgerissen wurden. Das Mittlere Holstentor, das heute als Holstentor bekannt ist, wurde hingegen mehrmals restauriert, zuletzt in den Jahren 2005/2006. Nächste Station: Salzspeicher. Bis dorthin sind es etwa eine Minute zu Fuß."
+  },
+  "hanse-2": {
+   "file": "audio/luebeck/7bb43a4567e1407a.mp3",
+   "seconds": 16.8,
+   "text": "Station 2: Salzspeicher. Die Salzspeicher sind eine Gruppe von Lagerhäusern an der Lübecker Obertrave direkt neben dem Holstentor. Sie wurden im Stil der Backsteinrenaissance und des Backsteinbarock erbaut. Nächste Station: Lübecker Rathaus. Bis dorthin sind es etwa fünf Minuten zu Fuß."
+  },
+  "hanse-3": {
+   "file": "audio/luebeck/5b9c62c38680ced8.mp3",
+   "seconds": 15.0,
+   "text": "Station 3: Lübecker Rathaus. Das Rathaus der Hansestadt Lübeck zählt zu den bekanntesten Bauwerken der Backsteingotik. Es ist eines der größten mittelalterlichen Rathäuser in Deutschland. Nächste Station: Kanzleigebäude. Bis dorthin sind es etwa vier Minuten zu Fuß."
+  },
+  "hanse-4": {
+   "file": "audio/luebeck/5adab3b2b52d9452.mp3",
+   "seconds": 18.2,
+   "text": "Station 4: Kanzleigebäude. Das Kanzleigebäude wurde 1485 nach fünfjähriger Bauphase im gotischen Stil erbaut und befindet sich nördlich des Lübecker Rathauses an der Breiten Straße. Nächste Station: Haus der Kaufmannschaft. Bis dorthin sind es etwa sechs Minuten zu Fuß."
+  },
+  "hanse-5": {
+   "file": "audio/luebeck/98d3209653203ffd.mp3",
+   "seconds": 45.9,
+   "text": "Station 5: Haus der Kaufmannschaft. Das Haus der Kaufmannschaft in Lübeck beherbergt hinter seiner neugotischen Putzfassade von 1838 zwei der schönsten Sitzungsräume der Hansestadt aus der Zeit der Renaissance. Das nach wie vor der Kaufmannschaft zu Lübeck als Nachfolgeorganisation der Lübecker Kaufmanns-Gilden gehörende Haus in der Breite Straße 6–8 neben der Schiffergesellschaft wurde seit 1853 bis Ende des 20. Jahrhunderts von der Handelskammer, später ab 1937 der Industrie- und Handelskammer zu Lübeck als Verwaltungsgebäude genutzt. Heute beherbergt es die Geschäftsstelle der Kaufmannschaft zu Lübeck und mehrere Unternehmen und Betriebe. Nächste Station: Jakobikirche. Bis dorthin sind es etwa eine Minute zu Fuß."
+  },
+  "hanse-6": {
+   "file": "audio/luebeck/6f816a62c0c1f39d.mp3",
+   "seconds": 39.7,
+   "text": "Station 6: Jakobikirche. St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt. Sie wurde im Jahre 1334 als Kirche der Seefahrer und Fischer geweiht, die ihr Schütting noch heute in der gegenüberliegenden Schiffergesellschaft haben. Ihr Patron ist der Heilige Jakobus der Ältere. Die Kirche, das Heiligen-Geist-Hospital und die benachbarte Gertrudenherberge sind Stationen auf einem Zweig des norddeutschen Jakobswegs. Seit September 2007 ist die nördliche Turmkapelle der Kirche als Pamir-Kapelle Nationale Gedenkstätte für die zivile Seefahrt. Nächste Station: Kornspeicher Die Eiche. Bis dorthin sind es etwa sechs Minuten zu Fuß."
+  },
+  "hanse-7": {
+   "file": "audio/luebeck/eaeba6f0553895d6.mp3",
+   "seconds": 40.4,
+   "text": "Station 7: Kornspeicher Die Eiche. Der Kornspeicher Die Eiche ist ein denkmalgeschütztes Speichergebäude in der Lübecker Altstadt. Das Grundstück An der Untertrave 34 wurde im Jahr 1323 erstmals als mit einem Kornhaus bebaut urkundlich erwähnt. Zu dem Grundstück gehörte damals noch ein Gang, der mit kleineren Buden bebaut war und Harder Gang genannt wurde. Im Jahr 1873 errichtete der Lübecker Kaufmann und spätere Senator Henry Mann das heute noch bestehende Speichergebäude mit sieben Geschossen am Lübecker Hansahafen, wobei Gang samt Buden bei dieser Gelegenheit mit überbaut wurden. Das war die letzte Station des Rundgangs Hanse: Salz, Rat und Hafen. Danke fürs Mitgehen!"
+  },
+  "kirchen-1": {
+   "file": "audio/luebeck/5b8d36f9d4872919.mp3",
+   "seconds": 30.7,
+   "text": "Station 1: Lübecker Dom. Der Lübecker Dom ist der erste große Backsteinkirchbau an der Ostsee und mit fast 132 Metern Länge eine der längsten Backsteinkirchen. 1173 wurde der Lübecker Dom von Heinrich dem Löwen begründet und 1247 geweiht. Patrone der evangelischen Kirche sind die Heiligen Johannes der Täufer und Blasius, Maria und Nikolaus. Nächste Station: Aegidienkirche. Bis dorthin sind es etwa sechs Minuten zu Fuß."
+  },
+  "kirchen-2": {
+   "file": "audio/luebeck/70e8b22d27f12d03.mp3",
+   "seconds": 40.5,
+   "text": "Station 2: Aegidienkirche. Die St.-Aegidien-Kirche, auch Aegidienkirche, ist die kleinste und östlichste der Lübecker Innenstadtkirchen und dem heiligen Ägidius geweiht. Sie war das Zentrum des Viertels der Handwerker, das auf dem östlichen Abhang des Innenstadthügels in Richtung Wakenitz angesiedelt war. In diesem Viertel lebten in Umgebung der Kirche seit jeher viele Menschen, die der sozialen Fürsorge bedurften. Die verbliebenen Gebäude der Beginenkonvente werden wie der Aegidienhof heute zum Wohnen genutzt, das St.-Annen-Kloster als Museumsquartier St. Annen. Zusammen machen sie heute das Aegidien-Viertel der Lübecker Altstadt aus. Nächste Station: Petrikirche. Bis dorthin sind es etwa sieben Minuten zu Fuß."
+  },
+  "kirchen-3": {
+   "file": "audio/luebeck/790d4ee42f3e6b93.mp3",
+   "seconds": 50.1,
+   "text": "Station 3: Petrikirche. St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde. Wie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Nächste Station: Marienkirche. Bis dorthin sind es etwa vier Minuten zu Fuß."
+  },
+  "kirchen-4": {
+   "file": "audio/luebeck/95e0c66e467be576.mp3",
+   "seconds": 42.0,
+   "text": "Station 4: Marienkirche. Die Lübecker Marienkirche ist die Lübecker Markt- und Hauptpfarrkirche und befindet sich auf dem höchsten Punkt der Lübecker Altstadtinsel. Sie ist Teil des UNESCO-Welterbes Lübecker Altstadt. Als eine der größten Backsteinkirchen wird sie auch als Mutterkirche der Backsteingotik bezeichnet und gilt als ein Hauptwerk des Kirchenbaus im Ostseeraum. Der Bau der gotischen Kirche, die einen romanischen Vorgängerbau ersetzte, begann 1251 und war mit der Fertigstellung der Türme hundert Jahre später, 1351, abgeschlossen. St. Marien gehört zur Evangelisch-Lutherischen Kirche in Norddeutschland. Nächste Station: Katharinenkirche. Bis dorthin sind es etwa fünf Minuten zu Fuß."
+  },
+  "kirchen-5": {
+   "file": "audio/luebeck/1a40de5873195c42.mp3",
+   "seconds": 39.5,
+   "text": "Station 5: Katharinenkirche. Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien. Das Katharinenkloster bestand als Konvent der Franziskaner von 1225 bis zur Reformation 1531. Es gehörte zur Sächsischen Franziskanerprovinz und war ab 1274 Sitz einer der zwölf Kustodien der Saxonia, und zwar für die an der Ostsee gelegenen Konvente. Nächste Station: Jakobikirche. Bis dorthin sind es etwa zwei Minuten zu Fuß."
+  },
+  "kirchen-6": {
+   "file": "audio/luebeck/e7899a44d402d997.mp3",
+   "seconds": 38.6,
+   "text": "Station 6: Jakobikirche. St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt. Sie wurde im Jahre 1334 als Kirche der Seefahrer und Fischer geweiht, die ihr Schütting noch heute in der gegenüberliegenden Schiffergesellschaft haben. Ihr Patron ist der Heilige Jakobus der Ältere. Die Kirche, das Heiligen-Geist-Hospital und die benachbarte Gertrudenherberge sind Stationen auf einem Zweig des norddeutschen Jakobswegs. Seit September 2007 ist die nördliche Turmkapelle der Kirche als Pamir-Kapelle Nationale Gedenkstätte für die zivile Seefahrt. Das war die letzte Station des Rundgangs Die Hauptkirchen. Danke fürs Mitgehen!"
+  },
+  "buergerhaeuser-1": {
+   "file": "audio/luebeck/19e68b7138ca7620.mp3",
+   "seconds": 26.7,
+   "text": "Station 1: Schabbelhaus. Das Schabbelhaus in der Lübecker Mengstraße sind zwei Bürgerhäuser der Backsteinrenaissance unterhalb des Buddenbrookhauses zum Ufer der Trave, in einem vom Bombenangriff im März 1942 nicht betroffenen Teil der Straße gelegen. Das Schabbelhaus ist nach dem stiftenden Bäckermeister Schabbel benannt; das Schabbellhaus in Wismar hat einen anderen Hintergrund. Nächste Station: Buddenbrookhaus. Bis dorthin sind es etwa vier Minuten zu Fuß."
+  },
+  "buergerhaeuser-2": {
+   "file": "audio/luebeck/54bf9d14dd1c3bfc.mp3",
+   "seconds": 41.1,
+   "text": "Station 2: Buddenbrookhaus. Das Buddenbrookhaus in Lübeck ist seit 1993 eine Gedenkstätte in Trägerschaft der Kulturstiftung Hansestadt Lübeck. Es beherbergt den Förderverein Buddenbrookhaus, die Deutsche Thomas Mann-Gesellschaft, die Heinrich Mann-Gesellschaft, die Golo Mann-Gesellschaft und die Erich-Mühsam-Gesellschaft. Direktorin des Buddenbrookhauses ist seit Februar 2024 Caren Heuer. Im Haus befindet sich ein Museum mit zwei festen Ausstellungen: Die Buddenbrooks – Ein Jahrhundertroman und Die Manns – eine Schriftstellerfamilie. Ferner gibt es eine Etage für wechselnde Sonderausstellungen. Nächste Station: Löwen-Apotheke. Bis dorthin sind es etwa zwei Minuten zu Fuß."
+  },
+  "buergerhaeuser-3": {
+   "file": "audio/luebeck/7d3efd1d42279039.mp3",
+   "seconds": 27.8,
+   "text": "Station 3: Löwen-Apotheke. Die Löwen-Apotheke ist einer der ältesten Profanbauten des Weltkulturerbes der Lübecker Altstadt. Die teilweise romanische Bausubstanz geht auf die Zeit vor den großen Lübecker Stadtbränden des 13. Jahrhunderts zurück. Die Gründung der Apotheke wurde während der Lübecker Franzosenzeit im Jahr 1812 durch die eingetretene Gewerbefreiheit ermöglicht. Nächste Station: Willy-Brandt-Haus Lübeck. Bis dorthin sind es etwa drei Minuten zu Fuß."
+  },
+  "buergerhaeuser-4": {
+   "file": "audio/luebeck/b0fb85a0f08b1bf5.mp3",
+   "seconds": 25.6,
+   "text": "Station 4: Willy-Brandt-Haus Lübeck. Das Willy-Brandt-Haus Lübeck ist ein Museum und eine Gedenkstätte für den früheren deutschen SPD-Politiker, Bundeskanzler und Friedensnobelpreisträger Willy Brandt. Das Gebäude, eine Außenstelle der Bundeskanzler-Willy-Brandt-Stiftung mit Sitz in Berlin, ist außerdem Sitz der Abteilung Denkmalpflege der Hansestadt Lübeck in Schleswig-Holstein. Nächste Station: Behnhaus. Bis dorthin sind es etwa eine Minute zu Fuß."
+  },
+  "buergerhaeuser-5": {
+   "file": "audio/luebeck/e40d725efc144c92.mp3",
+   "seconds": 31.4,
+   "text": "Station 5: Behnhaus. Das Behnhaus, offizieller Name Museum Behnhaus Drägerhaus, Galerie des 19. Jahrhunderts und der Klassischen Moderne, ist ein Lübecker Museum und Teil der Lübecker Museen, verwaltet durch die Kulturstiftung Hansestadt Lübeck. Es zeigt die Malerei der Nazarener und vorwiegend deutsche Malerei des 19. Jahrhunderts, des Impressionismus und Expressionismus sowie bürgerliche Wohnkultur aus Rokoko, Klassizismus und Biedermeier. Nächste Station: Hoghehus. Bis dorthin sind es etwa zwei Minuten zu Fuß."
+  },
+  "buergerhaeuser-6": {
+   "file": "audio/luebeck/86ce3eef99971714.mp3",
+   "seconds": 18.4,
+   "text": "Station 6: Hoghehus. Das Hoghehus am Koberg in Lübeck ist das größte erhaltene mittelalterliche Bürgerhaus in Lübeck und steht als Bestandteil des Flächendenkmals der Lübecker Altstadt unter Denkmalschutz. Das war die letzte Station des Rundgangs Kaufmannshäuser, Thomas Mann und Willy Brandt. Danke fürs Mitgehen!"
+  },
+  "kloester-1": {
+   "file": "audio/luebeck/0e36a03d773e9403.mp3",
+   "seconds": 34.1,
+   "text": "Station 1: St.-Johannis-Kloster. Das St.-Johannis-Kloster in Lübeck wurde zur Zeit Heinrichs des Löwen durch Bischof Heinrich I. als Benediktinerkloster gegründet und 1177 dem Evangelisten Johannes geweiht. Es gehörte zur Diözese Lübeck. Nachdem es zwischenzeitlich ein Doppelkloster war, wurde es 1246 in ein Zisterzienserinnenkloster umgewandelt und nach der Reformation bis 1803 als Jungfrauenstift fortgeführt. Nächste Station: Katharinenkirche. Bis dorthin sind es etwa fünf Minuten zu Fuß."
+  },
+  "kloester-2": {
+   "file": "audio/luebeck/8a30126eb291f6ac.mp3",
+   "seconds": 40.2,
+   "text": "Station 2: Katharinenkirche. Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien. Das Katharinenkloster bestand als Konvent der Franziskaner von 1225 bis zur Reformation 1531. Es gehörte zur Sächsischen Franziskanerprovinz und war ab 1274 Sitz einer der zwölf Kustodien der Saxonia, und zwar für die an der Ostsee gelegenen Konvente. Nächste Station: Kranen-Konvent. Bis dorthin sind es etwa fünf Minuten zu Fuß."
+  },
+  "kloester-3": {
+   "file": "audio/luebeck/c3025676f2982d03.mp3",
+   "seconds": 44.9,
+   "text": "Station 3: Kranen-Konvent. Das Gebäude des Kranen-Konvents ist eines der ältesten erhaltenen backsteingotischen Bauwerke in der Lübecker Altstadt und Bestandteil des Weltkulturerbes. Die Bausubstanz des Gebäudes in der Kleinen Burgstraße 22 geht auf das Jahr 1283 zurück. Der Dachstuhl ist dendrochronologisch auf das Jahr 1283 datiert worden. Sein dreischiffiger und mit drei Jochen Kreuzrippengewölben ausgestatteter Keller ist der älteste erhaltene Gewölbekeller in Lübeck. Gleichwohl fehlen die repräsentativen Architekturmerkmale der privaten Profanbauten der Gotik in Lübeck, insbesondere die vertikalen Gliederungen des schlicht dreieckigen Giebels. Nächste Station: Gertrudenherberge. Bis dorthin sind es etwa drei Minuten zu Fuß."
+  },
+  "kloester-4": {
+   "file": "audio/luebeck/94a9089c69ebf0bc.mp3",
+   "seconds": 28.3,
+   "text": "Station 4: Gertrudenherberge. Die Gertrudenherberge ist eine mittelalterliche Pilgerherberge in der Hansestadt Lübeck. Die nach der Heiligen Gertrud von Nivelles, der Schutzheiligen der Pilger, benannte Einrichtung gehörte ursprünglich zum Heiligen-Geist-Hospital. Sie ist eines der jüngst wiederentdeckten und damit erst sehr spät unter Schutz gestellten Baudenkmale des mittelalterlichen Welterbes auf der Lübecker Altstadtinsel. Das war die letzte Station des Rundgangs Klöster, Konvente und eine Pilgerherberge. Danke fürs Mitgehen!"
+  }
+ }
+}

@@ -21,7 +21,7 @@
 
   // a running walk stays on top of every tab, also while a station's details are open
   const step = (label, id) => el('button', { textContent: label, onclick: () => $(id).click() });
-  const walk = el('div', { className: 'side-walk' }, $('tour-bar'), el('div', { className: 'side-steps' }, step('‹ Zurück', 'previous'), step('Weiter ›', 'next')));
+  const walk = el('div', { className: 'side-walk' }, $('tour-bar'));   // tours.js adds the player with ⏮ ⏯ ⏭
 
   // walks: each entry also says what it is about
   for (const [i, b] of [...$('tour-list').children].entries()) {
@@ -177,7 +177,9 @@
 
   // a running walk when the drawer is closed (phones): a small bar on the map
   const float = el('div', { id: 'walk-float', hidden: true },
-    el('span', { id: 'walk-float-step' }), step('‹', 'previous'), step('›', 'next'), step('✕', 'tour-end'));
+    el('span', { id: 'walk-float-step' }), step('‹', 'previous'),
+    el('button', { textContent: '⏯', ariaLabel: 'Vorlesen abspielen oder pausieren', onclick: () => document.querySelector('.au-play')?.click() }),
+    step('›', 'next'), step('✕', 'tour-end'));
   body.append(float);
   const syncWalk = () => { float.hidden = $('tour-bar').hidden || !body.classList.contains('side-closed'); $('walk-float-step').textContent = $('tour-step').textContent };
   new MutationObserver(syncWalk).observe($('tour-bar'), { attributes: true, subtree: true, childList: true, characterData: true });

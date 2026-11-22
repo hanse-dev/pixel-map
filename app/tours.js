@@ -74,6 +74,66 @@
   }
   [...list.children].forEach((b, i) => { if (tours[i]) b.onclick = () => overview(tours[i], b) });
 
+  // ---------- reading aloud ----------
+  // Each station has a spoken introduction (scripts/narrate.py). While "Vorlesen" is on, arriving at a
+  // station plays it; when it ends and "Automatisch weiter" is on, the walk moves on after a short pause.
+  const audio = new Audio(); audio.preload = 'auto'; window.pixelMapAudio = audio;   // for tests and the console
+  const pref = (k, d) => { try { const v = localStorage.getItem('pixel-map-' + k); return v === null ? d : v === '1' } catch { return d } };
+  const keep = (k, v) => { try { localStorage.setItem('pixel-map-' + k, v ? '1' : '0') } catch {} };
+  let speak = pref('vorlesen', true), auto = pref('weiter', true), wait = null, playingFor = null;
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  const play = el('button', { className: 'au-play', ariaLabel: 'Vorlesen abspielen', textContent: '▶' });
+  const time = el('span', { className: 'au-time', textContent: '0:00 / 0:00' });
+  const bar = el('input', { type: 'range', min: 0, max: 1000, value: 0, className: 'au-bar', ariaLabel: 'Position im Text' });
+  const speakBox = el('input', { type: 'checkbox', checked: speak }), autoBox = el('input', { type: 'checkbox', checked: auto });
+  const player = el('div', { className: 'au', hidden: true },
+    el('div', { className: 'au-row' },
+      el('button', { className: 'au-step', ariaLabel: 'Vorige Station', textContent: '⏮', onclick: () => step(-1) }), play,
+      el('button', { className: 'au-step', ariaLabel: 'Nächste Station', textContent: '⏭', onclick: () => step(1) }), time),
+    bar,
+    el('div', { className: 'au-opts' }, el('label', {}, speakBox, ' Vorlesen'), el('label', {}, autoBox, ' Automatisch weiter')),
+    el('div', { className: 'au-next', hidden: true }),
+    el('div', { className: 'au-credit', textContent: 'Gelesen von Piper, Stimme „Thorsten“ (CC0) · Text: Wikipedia (CC BY-SA 4.0)' }));
+  (document.querySelector('.side-walk') || $('tour-bar')).append(player);
+  const countdown = player.querySelector('.au-next');
+  function step(d) { cancel(); if (d > 0) $('next').click(); else $('previous').click() }
+  function cancel() { clearInterval(wait); wait = null; countdown.hidden = true }
+  function load(st) {
+    cancel(); playingFor = st;
+    if (!st || !st.audio) { audio.removeAttribute('src'); player.classList.add('silent'); return }
+    player.classList.remove('silent');
+    audio.src = st.audio.url; time.textContent = `0:00 / ${fmt(st.audio.seconds)}`; bar.value = 0;
+    if (speak) setTimeout(() => { if (playingFor === st) audio.play().catch(() => sync()) }, reduced.matches ? 0 : 800);
+  }
+  function sync() { play.textContent = audio.paused ? '▶' : '⏸'; play.setAttribute('aria-label', audio.paused ? 'Abspielen' : 'Pause') }
+  play.onclick = () => {
+    if (wait) { cancel(); return }                         // pause also stops the countdown
+    if (!audio.src) return;
+    audio.paused ? audio.play() : audio.pause();
+  };
+  audio.addEventListener('play', sync); audio.addEventListener('pause', sync);
+  audio.addEventListener('timeupdate', () => {
+    const d = audio.duration || (playingFor && playingFor.audio && playingFor.audio.seconds) || 0;
+    time.textContent = `${fmt(audio.currentTime)} / ${fmt(d)}`; if (d) bar.value = Math.round(audio.currentTime / d * 1000);
+  });
+  bar.addEventListener('input', () => { if (audio.duration) audio.currentTime = bar.value / 1000 * audio.duration });
+  audio.addEventListener('ended', () => {
+    sync();
+    if (!auto || !tourActive) return;
+    let n = 4;
+    const tick = () => { countdown.textContent = current === route.length - 1 ? `Rundgang endet in ${n} s · Pause zum Bleiben` : `Weiter in ${n} s · Pause zum Bleiben`; countdown.hidden = false; if (n-- <= 0) { cancel(); $('next').click() } };
+    tick(); wait = setInterval(tick, 1000);
+  });
+  speakBox.onchange = () => { speak = speakBox.checked; keep('vorlesen', speak); if (!speak) audio.pause() };
+  autoBox.onchange = () => { auto = autoBox.checked; keep('weiter', auto); if (!auto) cancel() };
+  addEventListener('keydown', e => { if (tourActive && e.key === 'k' && !e.target.closest('input,textarea')) play.click() });
+  (function follow() {                                   // a new station (or the end of the walk) changes what is read
+    const st = tourActive ? route[current] : null;
+    player.hidden = !tourActive;
+    if (st !== playingFor) { audio.pause(); load(st) }
+    requestAnimationFrame(follow);
+  })();
+
   // ---------- the end of a walk ----------
   const done = el('section', { id: 'walk-done', hidden: true, role: 'dialog', ariaLabel: 'Rundgang beendet' });
   document.body.append(done);
@@ -90,7 +150,7 @@
         el('button', { textContent: 'Schließen', onclick: () => { done.hidden = true; endTour() } })));
     done.hidden = false;
   }
-  const next = $('next'), step = next.onclick;
-  next.onclick = e => { if (tourActive && current === route.length - 1) return finish(); return step && step.call(next, e) };
+  const next = $('next'), advanceStep = next.onclick;
+  next.onclick = e => { if (tourActive && current === route.length - 1) return finish(); return advanceStep && advanceStep.call(next, e) };
   document.addEventListener('keydown', e => { if (e.key === 'Escape') done.hidden = true });
 })();

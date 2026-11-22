@@ -325,6 +325,12 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
                                   'minutes': round(length / 75), 'stations': stations})
             if ids is not None:
                 cache.write_text(json.dumps({'key': key, 'tours': tours}, ensure_ascii=False, separators=(',', ':')) + '\n')
+    audio_file = ROOT / 'config' / f'{name}.audio.json'
+    if audio_file.exists() and (ROOT / 'config' / f'{name}.tiles.json').exists():
+        spoken = json.loads(audio_file.read_text())['stations']; root_url = json.loads((ROOT / 'config' / f'{name}.tiles.json').read_text())['base']
+        for t in tours:
+            for st in t['stations']:
+                if st['id'] in spoken: st['audio'] = {'url': root_url + spoken[st['id']]['file'], 'seconds': spoken[st['id']]['seconds']}
     stones, stones_credit = [], None
     stone_file = ROOT / 'info' / f'{name}.stolpersteine.json'
     if stone_file.exists() and (bundle / 'ground.json').exists():
