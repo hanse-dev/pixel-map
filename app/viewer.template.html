@@ -67,14 +67,20 @@ body.side #side #cities[hidden]{display:none}
 body.side #side #tour-bar{flex-direction:column;align-items:stretch;gap:6px;padding:10px 12px}body.side #side #tour-end{align-self:flex-start}
 body.side #side #info{position:static;width:auto;max-width:none;max-height:none;margin-top:8px;padding:10px;background:#0002}
 .side-row{display:flex;gap:6px}.side-row button{flex:1}
-.side-detail{display:none}
-#side.detail .side-detail{display:block}#side.detail .side-lists{display:none}
-body.side #side #building{position:static;width:auto;max-width:none;max-height:none;background:none;border:0;border-radius:0;padding:12px 14px}
-body.side #side #building-close.side-back{position:static;display:inline-block;width:auto;height:auto;margin:0 0 10px;padding:6px 12px;border-radius:10px;font-size:.95em}
 body.memorial #side .sec-tours,body.memorial #side .sec-places{display:none}
 body.side #pill,body.side #tour-bar{left:calc(var(--side-w) + (100% - var(--side-w)) / 2)}
 body.side.side-closed #pill{left:50%}
 @media (max-width:760px){body.side #view,body.side.side-closed #view{left:0}body.side #side{width:min(var(--side-w),88vw)}body.side #pill{left:50%}}
+
+body.side #building.popup{top:0;left:0;width:420px;max-width:calc(100vw - 24px);max-height:min(72vh,640px);z-index:6;box-shadow:0 12px 40px #000a}
+body.side #building.popup::before{content:"";position:absolute;top:calc(var(--arrow-y,40px) - 9px);width:0;height:0;border:9px solid transparent}
+body.side #building.popup[data-arrow=right]::before{left:-18px;border-right-color:#1c2226f5}
+body.side #building.popup[data-arrow=left]::before{right:-18px;border-left-color:#1c2226f5}
+body.side #building.popup.sheet{left:0!important;right:0;top:auto!important;bottom:0;width:auto;max-width:none;max-height:55dvh;border-radius:16px 16px 0 0}
+body.side #building.popup.sheet::before{display:none}
+#walk-float{position:fixed;z-index:6;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;padding:6px 6px 6px 12px;background:var(--panel);border:1px solid var(--line);border-radius:99px;max-width:calc(100% - 120px)}
+#walk-float[hidden]{display:none}#walk-float span{font-size:.85em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#walk-float button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#ffffff10;color:inherit;font:inherit;cursor:pointer;flex:none}
 </style>
 </head>
 <body>

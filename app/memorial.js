@@ -41,6 +41,7 @@
     const src = document.createElement('a'); src.href = DATA.stones_source; src.target = '_blank'; src.rel = 'noopener';
     src.textContent = 'Wikipedia-Liste der Stolpersteine in Lübeck'; credit.append(src, ' (CC BY-SA 4.0), nach Angaben der Initiative „Stolpersteine für Lübeck“.');
     credit.hidden = false;
+    panel.dataset.box = [place.x - 4, place.y - 4, place.x + 4, place.y + 4].join(',');
     panel.hidden = false;
   }
   window.pixelMapTheme = t => { if (t === 'memorial') build(); else panel.hidden = true };

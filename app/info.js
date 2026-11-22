@@ -109,6 +109,7 @@
     const o = document.createElement('a'); o.href = `https://www.openstreetmap.org/${b.osm}`; o.target = '_blank'; o.rel = 'noopener'; o.textContent = 'OpenStreetMap'; links.append(o);
     links.hidden = false;
     text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
+    panel.dataset.box = b.box ? b.box.join(',') : '';   // map pixels, for a popup placed next to the building
     panel.hidden = false;
     highlight(b);
   }
