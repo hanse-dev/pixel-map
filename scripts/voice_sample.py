@@ -17,7 +17,13 @@ candidates = [{'id': 'piper-thorsten', 'model': 'de_DE-thorsten-high'}, {'id': '
 env = Path.home() / '.config/pixel-map/speechify.env'
 if env.exists() and 'HIER_' not in env.read_text():
     candidates += [{'id': f'speechify-{v}', 'provider': 'speechify', 'voice_id': v} for v in ('henrik-agent', 'benedikt-agent', 'runa-agent')]
+genv = Path.home() / '.config/pixel-map/google.env'
+if genv.exists() and 'HIER_' not in genv.read_text():
+    names = sorted(v['name'] for v in ns['Google']().voices())
+    print('Google-Stimmen de-DE:', len(names))
+    pick = [n for n in names if 'Chirp3-HD' in n][:6] + [n for n in names if 'Neural2' in n or 'Studio' in n]
+    candidates += [{'id': f'google-{n}', 'provider': 'google', 'voice_id': n} for n in pick]
 for c in candidates:
-    voice = ns['Speechify'](c['voice_id']) if c.get('provider') else PiperVoice.load(str(ns['MODELS'] / f"{c['model']}.onnx"))
+    voice = ns['Speechify'](c['voice_id']) if c.get('provider') == 'speechify' else ns['Google'](c['voice_id']) if c.get('provider') == 'google' else PiperVoice.load(str(ns['MODELS'] / f"{c['model']}.onnx"))
     ns['speak'](c, voice, text, out / f"{c['id']}.mp3"); print('ok', c['id'])
 (out / 'text.txt').write_text(text + '\n')

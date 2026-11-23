@@ -64,10 +64,35 @@ class Speechify:
         path.write_bytes(self.b64.b64decode(json.loads(self.req.urlopen(r, timeout=120).read())['audio_data']))
 
 
+class Google:
+    """Google Cloud Text-to-Speech (REST, API key in ~/.config/pixel-map/google.env): text:synthesize, MP3."""
+    URL = 'https://texttospeech.googleapis.com/v1/'
+
+    def __init__(self, voice_id=None):
+        import base64, urllib.request
+        env = dict(l.split('=', 1) for l in (Path.home() / '.config/pixel-map/google.env').read_text().splitlines() if '=' in l and not l.startswith('#'))
+        self.key = env['GOOGLE_TTS_API_KEY'].strip()
+        if self.key.startswith('HIER_'): sys.exit('~/.config/pixel-map/google.env: API-Schlüssel fehlt noch')
+        self.voice, self.b64, self.req = voice_id, base64, urllib.request
+
+    def call(self, path, body=None):
+        r = self.req.Request(self.URL + path + ('&' if '?' in path else '?') + 'key=' + self.key, data=json.dumps(body).encode() if body else None,
+                             method='POST' if body else 'GET', headers={'Content-Type': 'application/json'})
+        return json.loads(self.req.urlopen(r, timeout=120).read())
+
+    def voices(self):
+        return self.call('voices?languageCode=de-DE')['voices']
+
+    def mp3(self, text, path):
+        out = self.call('text:synthesize', {'input': {'text': text}, 'voice': {'languageCode': 'de-DE', 'name': self.voice},
+                                            'audioConfig': {'audioEncoding': 'MP3', 'speakingRate': 0.97}})
+        path.write_bytes(self.b64.b64decode(out['audioContent']))
+
+
 def speak(v, voice, text, mp3):
     """One clip: Speechify voices (config "provider": "speechify") or Piper."""
-    if v.get('provider') == 'speechify':
-        voice.mp3(text[:1990], mp3); return          # texts stay below the API's 2000 spoken characters
+    if v.get('provider') in ('speechify', 'google'):
+        voice.mp3(text[:1990], mp3); return          # texts stay below the services' request limits
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / 'a.wav'
         with wave.open(str(wav), 'wb') as w:
@@ -79,7 +104,7 @@ from piper import PiperVoice
 folder = out / 'audio' / city; folder.mkdir(parents=True, exist_ok=True)
 index, buildings, made = {}, {}, 0
 for v in voices:
-    voice = Speechify(v['voice_id']) if v.get('provider') == 'speechify' else PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
+    voice = Speechify(v['voice_id']) if v.get('provider') == 'speechify' else Google(v['voice_id']) if v.get('provider') == 'google' else PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
     for t in walks:
         for k, st in enumerate(t['stations']):
             text = script(t, k)
