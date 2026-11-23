@@ -461,7 +461,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
     page = page.replace('</head>', analytics_tag() + '</head>', 1)
-    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history'):                                    # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history', 'life'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page

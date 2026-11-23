@@ -33,6 +33,10 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 ## Website / UX
 
+- [x] **Leben auf der Straße** (Ansicht): Autos auf Fahrstraßen, Menschen auf Wegen und Plätzen, verdeckt durch Gebäude; aus bei „Bewegung reduzieren“, im Gedenken und beim Tiefeneffekt
+- [ ] Gemalte Autos entfernen: Probelauf Retusche (CPU) vs. Straßen neu malen (GPU), dann entscheiden
+- [ ] Später: Busse auf Buslinien, Züge auf Gleisen, Schiffe auf der Trave
+
 - [x] **Rundgänge überarbeitet**: 4 neue Rundgänge mit rotem Faden (Hanse · Hauptkirchen · Kaufmannshäuser/Thomas Mann/Willy Brandt · Klöster und Herbergen), Reihenfolge nach echten Fußwegen; Weg als Linie entlang der Straßen mit nummerierten Stationen; Übersicht vor dem Start mit Länge und Gehzeit; Fortsetzen bei der letzten Station; Abschluss mit Vorschlag für den nächsten
 - [x] Rundgang-Wege folgen Straßen statt Gängen; hinter Häusern verdeckte Stücke zart gestrichelt
 - [x] **Vorlesen**: jede Station als Audio (Piper, Stimme Thorsten, lokal erzeugt, in R2); Player mit ⏮ ⏯ ⏭, Timer, Fortschritt, „Automatisch weiter“ mit Countdown; Taste K
@@ -51,6 +55,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Karte Lübeck
 
 - [ ] **Uferkacheln neu malen**: der Renderer glättet jetzt Infrarot-Ufer und setzt keine Bäume mehr ins Wasser (isometric-cities `6cfff3f`, `c1840c1`); die schon gemalten Kacheln mit Wasser-Sprenkeln (Wakenitz, Wallanlagen) und dunklen „Bäumen“ an Brücken neu malen
+- [ ] **Brücken über die Gleise** neu malen (Schienen in Straßenrichtung) – läuft nach dem Bahnhof
 - [ ] **Bahnhofsgebäude:** die knallblaue Fassade stammt aus einer OSM-Farbangabe; prüfen und gedämpft korrigieren
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
 - [ ] „Geistergleise“: verblasste Gleise am Übergang östlich vom Bahnhof
