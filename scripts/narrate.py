@@ -46,22 +46,47 @@ def script(t, k):
     return ' '.join(l for l in lines if l)
 
 
+class Speechify:
+    """Speechify API (platform.speechify.ai): POST /v1/audio/speech with model simba-3.5, MP3 back as base64.
+    The key stays in ~/.config/pixel-map/speechify.env."""
+    def __init__(self, voice_id):
+        import base64, urllib.request
+        env = dict(l.split('=', 1) for l in (Path.home() / '.config/pixel-map/speechify.env').read_text().splitlines() if '=' in l and not l.startswith('#'))
+        self.key = env['SPEECHIFY_API_KEY'].strip()
+        if self.key.startswith('HIER_'): sys.exit('~/.config/pixel-map/speechify.env: API-Schlüssel fehlt noch')
+        self.voice, self.b64, self.req = voice_id, base64, urllib.request
+
+    def mp3(self, text, path):
+        body = json.dumps({'input': text, 'voice_id': self.voice, 'model': 'simba-3.5', 'language': 'de-DE', 'audio_format': 'mp3',
+                           'options': {'loudness_normalization': True}}).encode()
+        r = self.req.Request('https://eu.api.speechify.ai/v1/audio/speech', data=body, method='POST',
+                             headers={'Authorization': f'Bearer {self.key}', 'Content-Type': 'application/json'})
+        path.write_bytes(self.b64.b64decode(json.loads(self.req.urlopen(r, timeout=120).read())['audio_data']))
+
+
+def speak(v, voice, text, mp3):
+    """One clip: Speechify voices (config "provider": "speechify") or Piper."""
+    if v.get('provider') == 'speechify':
+        voice.mp3(text[:1990], mp3); return          # texts stay below the API's 2000 spoken characters
+    with tempfile.TemporaryDirectory() as tmp:
+        wav = Path(tmp) / 'a.wav'
+        with wave.open(str(wav), 'wb') as w:
+            voice.synthesize_wav(text, w)
+        subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
+
+
 from piper import PiperVoice
 folder = out / 'audio' / city; folder.mkdir(parents=True, exist_ok=True)
 index, buildings, made = {}, {}, 0
 for v in voices:
-    voice = PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
+    voice = Speechify(v['voice_id']) if v.get('provider') == 'speechify' else PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
     for t in walks:
         for k, st in enumerate(t['stations']):
             text = script(t, k)
-            h = hashlib.sha256((v['model'] + text).encode()).hexdigest()[:16]
+            h = hashlib.sha256(((v.get('model') or v.get('voice_id')) + text).encode()).hexdigest()[:16]
             mp3 = folder / f'{h}.mp3'
             if not mp3.exists():
-                with tempfile.TemporaryDirectory() as tmp:
-                    wav = Path(tmp) / 'a.wav'
-                    with wave.open(str(wav), 'wb') as w:
-                        voice.synthesize_wav(text, w)
-                    subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
+                speak(v, voice, text, mp3)
                 made += 1
             secs = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(mp3)],
                                         capture_output=True, text=True, check=True).stdout)
@@ -70,14 +95,10 @@ for v in voices:
     for q, item in info.items():
         if not item.get('intro'): continue
         text = f"{(item.get('title') or item.get('label') or '').replace(' (Lübeck)', '')}. {speakable(item['intro'], 900)}"
-        h = hashlib.sha256((v['model'] + text).encode()).hexdigest()[:16]
+        h = hashlib.sha256(((v.get('model') or v.get('voice_id')) + text).encode()).hexdigest()[:16]
         mp3 = folder / f'{h}.mp3'
         if not mp3.exists():
-            with tempfile.TemporaryDirectory() as tmp:
-                wav = Path(tmp) / 'a.wav'
-                with wave.open(str(wav), 'wb') as w:
-                    voice.synthesize_wav(text, w)
-                subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', str(wav), '-ac', '1', '-b:a', '56k', str(mp3)], check=True)
+            speak(v, voice, text, mp3)
             made += 1
         buildings.setdefault(q, {})[v['id']] = f'audio/{city}/{h}.mp3'
 (ROOT / 'config' / f'{city}.audio.json').write_text(json.dumps({
