@@ -36,7 +36,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 - [x] **Rundgänge überarbeitet**: 4 neue Rundgänge mit rotem Faden (Hanse · Hauptkirchen · Kaufmannshäuser/Thomas Mann/Willy Brandt · Klöster und Herbergen), Reihenfolge nach echten Fußwegen; Weg als Linie entlang der Straßen mit nummerierten Stationen; Übersicht vor dem Start mit Länge und Gehzeit; Fortsetzen bei der letzten Station; Abschluss mit Vorschlag für den nächsten
 - [x] Rundgang-Wege folgen Straßen statt Gängen; hinter Häusern verdeckte Stücke zart gestrichelt
 - [x] **Vorlesen**: jede Station als Audio (Piper, Stimme Thorsten, lokal erzeugt, in R2); Player mit ⏮ ⏯ ⏭, Timer, Fortschritt, „Automatisch weiter“ mit Countdown; Taste K
-- [ ] **Vorlese-Pilot mit Chatterbox Multilingual** (MIT, lokal, GPU) nach allen laufenden Berechnungen: männliche Stimme aus Thorsten-Probe (CC0), weibliche aus Common Voice (CC0) oder MLS (CC BY 4.0); 2–3 Hörproben derselben Station zum Vergleich, dann entscheiden
+- [ ] **Vorlesen mit Chatterbox Multilingual** (entschieden statt Speechify/Azure/Google): vorbereitet in `~/MyStuff/models/chatterbox` (Umgebung, `speak.py`, Referenzen Kerstin CC0 und Thorsten CC BY 4.0, siehe `refs/SOURCES.md`). Wenn die GPU frei ist: Hörprobe Holstentor, dann alle ~58.000 Zeichen in zwei Stimmen neu, Namensnennung „Thorsten-Voice“ ergänzen
 - [x] Stimmenauswahl männlich/weiblich (`config/luebeck.json` → `voices`)
 - [ ] Vorlesen: Aussprache prüfen (Namen, Jahreszahlen), ggf. eigene Texte statt Wikipedia-Einleitung
 - [ ] Rundgänge: eigene Überleitungstexte zwischen den Stationen (bisher erster Satz der Wikipedia-Einleitung im Popup); weitere Themen (z. B. Gänge und Höfe, Stadtmauer und Wälle)
