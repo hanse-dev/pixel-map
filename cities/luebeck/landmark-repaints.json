@@ -1,6 +1,6 @@
 {
  "base_map_sha256": "87e9f0df47f113e048404e461d19a35d532404157c1d33cb339d373322537b44",
- "map_sha256": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa",
+ "map_sha256": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90",
  "island_offset_px": [
   2400,
   2400
@@ -50,7 +50,7 @@
    "mask_sha256": "070b84762fa6b3853fe6f413130a57722e20700cce15a0975b2ee927cb0510b9"
   }
  ],
- "rails": "rail windows from outputs/rail-paint (offset 1600) and outputs/rail-paint2 (offset 800); new ring-3 rails pending",
+ "rails": "all rails repainted from OSM tracks: outputs/rail-paint3 (track templates at 2x, bridges excluded)",
  "repairs": [
   {
    "what": "allotments painted as apartment blocks",

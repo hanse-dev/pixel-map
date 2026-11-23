@@ -106,7 +106,7 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa"
+      "image_sha256": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90"
     },
     "source": {
       "tile_size": 256,
@@ -421,7 +421,7 @@
     "osm": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
   },
   "files": {
-    "buildings.json": "f019568805689b171f4260ff9b10dd60fc52171c6326b7e080dfa4039fbbb8a1",
+    "buildings.json": "fc76eeb643a6456a189f869b8414f4ccec510225d252e7b83c7491201d1cd10c",
     "camera.json": "6ae4676020956f1f15d09d17bc6e879b92b7779969b1fa33e9bca94a4d2f7557",
     "depth.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "depth.png": "a2e90f9d5063db4c800049c95032797ddfd1bc9b5e14bc4f3773bff101fa4756",
@@ -429,9 +429,19 @@
     "hitmap.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "hitmap.png": "9a507ae073a078c21e24b5cd8460e2b979c7d1f0918c20aafcd97a128e980b3c",
     "map.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
-    "map.png": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa",
+    "map.png": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90",
     "source.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "source.png": "fcab7a6e7d921503cc426321115dabc2147485eb74337ca992614111f1436dd4",
     "walkable.json": "d8df4974f327910ed29e35d656257d132ed66f7367499e0e05523c700f2c0136"
-  }
+  },
+  "repairs": [
+    {
+      "buildings": "addresses from OSM address points inside footprints",
+      "added": 87
+    },
+    {
+      "map": "rails repainted from OSM tracks (outputs/recipes/rail_tracks_paint.py, 49 windows, bridges kept)",
+      "map_sha256": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90"
+    }
+  ]
 }
