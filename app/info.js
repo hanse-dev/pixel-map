@@ -177,6 +177,7 @@
   view.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY] });
   view.addEventListener('pointerup', async e => {
     if (!down || !ready || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
+    if (typeof depth !== 'undefined' && depth.on) depth.set(false);   // the parallax moves the picture, not the hit map: click on the flat map
     const r = view.getBoundingClientRect(), mx = (e.clientX - r.left - x) / s, my = (e.clientY - r.top - y) / s;
     try {
       const id = await idAt(mx, my), b = byId.get(id);
