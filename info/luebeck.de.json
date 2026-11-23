@@ -1,5 +1,5 @@
 {
- "retrieved": "2026-11-16T06:23:15+00:00",
+ "retrieved": "2026-11-23T11:17:02+00:00",
  "lang": "de",
  "source": "Wikidata (CC0), Wikipedia introductions (CC BY-SA 4.0), Wikimedia Commons thumbnails (per-file licence)",
  "items": {
@@ -47,6 +47,57 @@
     "height": 349
    }
   },
+  "Q106486253": {
+   "wikidata": "Q106486253",
+   "label": "Auferstehungskirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q106486253",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Schleswig-Holstein"
+    ]
+   },
+   "title": "Auferstehungskirche (Lübeck)",
+   "intro": "Die Auferstehungskirche ist ein evangelisch-lutherisches Kirchengebäude im Ortsteil Marli in Lübeck-St. Gertrud. Sie wurde zwischen 1968 und 1970 erbaut.",
+   "url": "https://de.wikipedia.org/wiki/Auferstehungskirche_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „Auferstehungskirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q106486253.jpg",
+    "author": "Nur Luis",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Glockenl%C3%A4uten_L%C3%BCbeck_13.03.2022_005.jpg",
+    "width": 640,
+    "height": 360
+   }
+  },
+  "Q106486388": {
+   "wikidata": "Q106486388",
+   "label": "St. Philippuskirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q106486388",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Schleswig-Holstein"
+    ],
+    "architect": [
+     "Gerhard Langmaack"
+    ]
+   },
+   "title": "St. Philippus (Lübeck)",
+   "intro": "Die St.-Philippus-Kirche ist ein evangelisch-lutherisches Kirchengebäude der Moderne in Lübeck.\n\nWegen ihres eigenwilligen Äußeren, das einem Seehund ähnelt, der einen Ball auf der Schnauze balanciert, wird die Kirche im Volksmund auch St. Seehund genannt.",
+   "url": "https://de.wikipedia.org/wiki/St._Philippus_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St. Philippus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q106486388.jpg",
+    "author": "Peter Oldekop",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_St_Phillippus.jpg",
+    "width": 640,
+    "height": 480
+   }
+  },
   "Q107558531": {
    "wikidata": "Q107558531",
    "label": "Mengstraße 25 (Lübeck)",
@@ -64,6 +115,25 @@
     "file": "https://commons.wikimedia.org/wiki/File:HL_Damals_%E2%80%93_Mengstra%C3%9Fe_25_%E2%80%93_2016.jpg",
     "width": 640,
     "height": 1508
+   }
+  },
+  "Q111012402": {
+   "wikidata": "Q111012402",
+   "label": "St. Markus",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q111012402",
+   "title": "St. Markus (Lübeck)",
+   "intro": "Die St.-Markus-Kirche ist ein evangelisch-lutherisches Kirchengebäude im Lübecker Stadtteil St. Lorenz. Sie wurde zwischen 1952 und 1953 erbaut.",
+   "url": "https://de.wikipedia.org/wiki/St._Markus_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St. Markus (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q111012402.jpg",
+    "author": "Nur Luis",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "https://commons.wikimedia.org/wiki/File:Stra%C3%9Fenlampen_09.10.2021_%26_Glockenl%C3%A4uten_Vorwerk_078.jpg",
+    "width": 640,
+    "height": 360
    }
   },
   "Q116771483": {
@@ -632,6 +702,34 @@
     "file": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck-Kanzleigeb%C3%A4ude.01.jpg",
     "width": 640,
     "height": 480
+   }
+  },
+  "Q1618736": {
+   "wikidata": "Q1618736",
+   "label": "St.-Gertrud-Kirche",
+   "wikidata_url": "https://www.wikidata.org/wiki/Q1618736",
+   "facts": {
+    "heritage": [
+     "Kulturdenkmal in Deutschland"
+    ],
+    "style": [
+     "Jugendstilarchitektur"
+    ],
+    "built": "1909"
+   },
+   "title": "St.-Gertrud-Kirche (Lübeck)",
+   "intro": "Die St.-Gertrud-Kirche in Lübeck ist die nach einem Entwurf der Charlottenburger Architekten Jürgensen & Bachmann erbaute Gemeindekirche der evangelischen Kirchengemeinde im Lübecker Stadtteil St. Gertrud, die der Heiligen Gertrud von Nivelles geweiht ist. Das Patrozinium ist für die Vorstadt auf dem Burgfeld vor dem Burgtor seit dem Mittelalter historisch. 1373 weihte der Lübecker Bischof Burkhard von Serkem die erste St.-Gertruden-Kapelle.",
+   "url": "https://de.wikipedia.org/wiki/St.-Gertrud-Kirche_(L%C3%BCbeck)",
+   "licence": "CC BY-SA 4.0",
+   "attribution": "Wikipedia, „St.-Gertrud-Kirche (Lübeck)“, CC BY-SA 4.0",
+   "image": {
+    "src": "img/luebeck/Q1618736.jpg",
+    "author": "User:Kresspahl",
+    "licence": "Public domain",
+    "licence_url": null,
+    "file": "https://commons.wikimedia.org/wiki/File:Gertrudkirche_hl.jpg",
+    "width": 640,
+    "height": 954
    }
   },
   "Q1623386": {
@@ -2157,7 +2255,7 @@
     "website": "https://www.st-petri-luebeck.de/"
    },
    "title": "Petrikirche (Lübeck)",
-   "intro": "St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde.\nWie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 (Palmarum) sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Da die Ausstattung zerstört und die Petri-Gemeinde inzwischen auf die Nachbarkirchen aufgeteilt worden war, wurde St. Petri 1987 als Kirche für die ganze Stadt wiedereröffnet. Als Stadtkirche ohne Gemeinde ist sie heute ein Ort für Kunst und Kultur, für Wissenschaft und Diskussion, für theologische Veranstaltungen, experimentelle Gottesdienste und Rituale. Sie ist und bleibt jedoch auch ohne Gemeinde eine evangelische Kirche und gehört zum evangelischen Kirchenkreis Lübeck-Lauenburg. Als Hochschulkirche ist sie zudem der Ort für akademische Feierstunden, wie Begrüßungs- und Graduierungsfeiern der Universität zu Lübeck, der Technischen Hochschule Lübeck und der Musikhochschule Lübeck.\nDer weiß getünchte, lichtdurchflutete Kirchraum ist heute bis auf wenige Prinzipalstücke (Altar, Taufbecken, Kreuz und Orgel) leer und bietet so unendliche viele Möglichkeiten der Gestaltung: für Kunst genauso wie für Großveranstaltungen, für Gottesdienste wie für Experimente aller Art.\nIm Kirchraum finden sich zudem einige moderne Kunstwerke. Das Altarkreuz des österreichischen Künstlers Arnulf Rainer, das illuminierte Neonkreuz von Hanna Jäger im Gewölbe und die Neon-Installation \"Yes, it is a church!\" des Berliner Künstlers Christian Jankowski am Eingang zum Kirchraum laden Besuchende zum Nachdenken ein.\nNeben den Ausstellungen und Veranstaltungen im Kirchraum ist St. Petri bei Touristen wie Lübeckerinnen für ihren [Aussichtsturm] bekannt, von dem aus man die ganze Lübecker Altstadt überblickt. Auch das hauseigene Petri-Café lädt zum Verweilen ein.",
+   "intro": "St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde.\nWie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 (Palmarum) sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Da die Ausstattung zerstört und die Petri-Gemeinde inzwischen auf die Nachbarkirchen aufgeteilt worden war, wurde St. Petri 1987 als Kirche für die ganze Stadt wiedereröffnet. Als Stadtkirche ohne Gemeinde ist sie heute ein Ort für Kunst und Kultur, für Wissenschaft und Diskussion, für theologische Veranstaltungen, experimentelle Gottesdienste und Rituale. Sie ist und bleibt jedoch auch ohne Gemeinde eine evangelische Kirche und gehört zum evangelischen Kirchenkreis Lübeck-Lauenburg. Als Hochschulkirche ist sie zudem der Ort für akademische Feierstunden, wie Begrüßungs- und Graduierungsfeiern der Universität zu Lübeck, der Technischen Hochschule Lübeck und der Musikhochschule Lübeck.\nDer weiß getünchte, lichtdurchflutete Kirchraum ist heute bis auf wenige Prinzipalstücke (Altar, Taufbecken, Kreuz und Orgel) leer und bietet so unendliche viele Möglichkeiten der Gestaltung: für Kunst genauso wie für Großveranstaltungen, für Gottesdienste wie für Experimente aller Art.\nIm Kirchraum finden sich zudem einige moderne Kunstwerke. Das Altarkreuz des österreichischen Künstlers Arnulf Rainer, das illuminierte Neonkreuz von Hanna Jäger im Gewölbe und die Neon-Installation „Yes, it is a church!“ des Berliner Künstlers Christian Jankowski am Eingang zum Kirchraum laden Besuchende zum Nachdenken ein.\nNeben den Ausstellungen und Veranstaltungen im Kirchraum ist St. Petri bei Touristen wie Lübeckerinnen für ihren [Aussichtsturm] bekannt, von dem aus man die ganze Lübecker Altstadt überblickt. Auch das hauseigene Petri-Café lädt zum Verweilen ein.",
    "url": "https://de.wikipedia.org/wiki/Petrikirche_(L%C3%BCbeck)",
    "licence": "CC BY-SA 4.0",
    "attribution": "Wikipedia, „Petrikirche (Lübeck)“, CC BY-SA 4.0",

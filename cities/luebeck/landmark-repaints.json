@@ -1,9 +1,9 @@
 {
- "base_map_sha256": "468ad4456e07c2607fbed00f55ba7023e80feb2da36ecb221ddfb9371a5d4a44",
- "map_sha256": "10433c0d14c5b76f4062c69df482c6df0e5a37a30bd3a6b79ffcedcffdc90460",
+ "base_map_sha256": "87e9f0df47f113e048404e461d19a35d532404157c1d33cb339d373322537b44",
+ "map_sha256": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa",
  "island_offset_px": [
-  1600,
-  1600
+  2400,
+  2400
  ],
  "method": "each landmark repainted from a 2x or 4x nearest zoom with the art inside its mask reset to source; blended inside the mask (+6 px, 4 px feather, changed pixels up to 60 px above)",
  "landmarks": [
@@ -50,5 +50,12 @@
    "mask_sha256": "070b84762fa6b3853fe6f413130a57722e20700cce15a0975b2ee927cb0510b9"
   }
  ],
- "rails": "rail windows from outputs/rail-paint (ring 1, offset 800) and outputs/rail-paint2 (ring 2)"
+ "rails": "rail windows from outputs/rail-paint (offset 1600) and outputs/rail-paint2 (offset 800); new ring-3 rails pending",
+ "repairs": [
+  {
+   "what": "allotments painted as apartment blocks",
+   "how": "rail_paint.py with landmarks2/allot.txt over allot-mask3-fix.npy",
+   "out": "outputs/allot-paint3"
+  }
+ ]
 }

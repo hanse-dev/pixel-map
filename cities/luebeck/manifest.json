@@ -1,94 +1,100 @@
 {
   "format": "pixel-map-bundle/1",
   "city": "luebeck-altstadt-04",
-  "title": "L\u00fcbeck, zweiter Ring",
+  "title": "L\u00fcbeck, dritter Ring",
   "size": [
-    7732,
-    5499
+    9332,
+    7099
   ],
   "tiles": {
     "map": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
-      "max_level": 13,
-      "tile_count": 931,
+      "max_level": 14,
+      "tile_count": 1409,
       "levels": {
+        "14": {
+          "width": 9332,
+          "height": 7099,
+          "columns": 37,
+          "rows": 28
+        },
         "13": {
-          "width": 7732,
-          "height": 5499,
-          "columns": 31,
-          "rows": 22
+          "width": 4666,
+          "height": 3550,
+          "columns": 19,
+          "rows": 14
         },
         "12": {
-          "width": 3866,
-          "height": 2750,
-          "columns": 16,
-          "rows": 11
+          "width": 2333,
+          "height": 1775,
+          "columns": 10,
+          "rows": 7
         },
         "11": {
-          "width": 1933,
-          "height": 1375,
-          "columns": 8,
-          "rows": 6
+          "width": 1167,
+          "height": 888,
+          "columns": 5,
+          "rows": 4
         },
         "10": {
-          "width": 967,
-          "height": 688,
-          "columns": 4,
-          "rows": 3
-        },
-        "9": {
-          "width": 484,
-          "height": 344,
-          "columns": 2,
+          "width": 584,
+          "height": 444,
+          "columns": 3,
           "rows": 2
         },
+        "9": {
+          "width": 292,
+          "height": 222,
+          "columns": 2,
+          "rows": 1
+        },
         "8": {
-          "width": 242,
-          "height": 172,
+          "width": 146,
+          "height": 111,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 121,
-          "height": 86,
+          "width": 73,
+          "height": 56,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 61,
-          "height": 43,
+          "width": 37,
+          "height": 28,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 31,
-          "height": 22,
+          "width": 19,
+          "height": 14,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 16,
-          "height": 11,
+          "width": 10,
+          "height": 7,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 8,
-          "height": 6,
+          "width": 5,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
         "2": {
-          "width": 4,
-          "height": 3,
+          "width": 3,
+          "height": 2,
           "columns": 1,
           "rows": 1
         },
         "1": {
           "width": 2,
-          "height": 2,
+          "height": 1,
           "columns": 1,
           "rows": 1
         },
@@ -100,90 +106,96 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "10433c0d14c5b76f4062c69df482c6df0e5a37a30bd3a6b79ffcedcffdc90460"
+      "image_sha256": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa"
     },
     "source": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
-      "max_level": 13,
-      "tile_count": 931,
+      "max_level": 14,
+      "tile_count": 1409,
       "levels": {
+        "14": {
+          "width": 9332,
+          "height": 7099,
+          "columns": 37,
+          "rows": 28
+        },
         "13": {
-          "width": 7732,
-          "height": 5499,
-          "columns": 31,
-          "rows": 22
+          "width": 4666,
+          "height": 3550,
+          "columns": 19,
+          "rows": 14
         },
         "12": {
-          "width": 3866,
-          "height": 2750,
-          "columns": 16,
-          "rows": 11
+          "width": 2333,
+          "height": 1775,
+          "columns": 10,
+          "rows": 7
         },
         "11": {
-          "width": 1933,
-          "height": 1375,
-          "columns": 8,
-          "rows": 6
+          "width": 1167,
+          "height": 888,
+          "columns": 5,
+          "rows": 4
         },
         "10": {
-          "width": 967,
-          "height": 688,
-          "columns": 4,
-          "rows": 3
-        },
-        "9": {
-          "width": 484,
-          "height": 344,
-          "columns": 2,
+          "width": 584,
+          "height": 444,
+          "columns": 3,
           "rows": 2
         },
+        "9": {
+          "width": 292,
+          "height": 222,
+          "columns": 2,
+          "rows": 1
+        },
         "8": {
-          "width": 242,
-          "height": 172,
+          "width": 146,
+          "height": 111,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 121,
-          "height": 86,
+          "width": 73,
+          "height": 56,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 61,
-          "height": 43,
+          "width": 37,
+          "height": 28,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 31,
-          "height": 22,
+          "width": 19,
+          "height": 14,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 16,
-          "height": 11,
+          "width": 10,
+          "height": 7,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 8,
-          "height": 6,
+          "width": 5,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
         "2": {
-          "width": 4,
-          "height": 3,
+          "width": 3,
+          "height": 2,
           "columns": 1,
           "rows": 1
         },
         "1": {
           "width": 2,
-          "height": 2,
+          "height": 1,
           "columns": 1,
           "rows": 1
         },
@@ -195,90 +207,96 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "1fb277c9d2bc5badcdf704fe6658d8df4232bbe1eacaa0dc1f754aab0d2483cd"
+      "image_sha256": "fcab7a6e7d921503cc426321115dabc2147485eb74337ca992614111f1436dd4"
     },
     "depth": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
-      "max_level": 13,
-      "tile_count": 931,
+      "max_level": 14,
+      "tile_count": 1409,
       "levels": {
+        "14": {
+          "width": 9332,
+          "height": 7099,
+          "columns": 37,
+          "rows": 28
+        },
         "13": {
-          "width": 7732,
-          "height": 5499,
-          "columns": 31,
-          "rows": 22
+          "width": 4666,
+          "height": 3550,
+          "columns": 19,
+          "rows": 14
         },
         "12": {
-          "width": 3866,
-          "height": 2750,
-          "columns": 16,
-          "rows": 11
+          "width": 2333,
+          "height": 1775,
+          "columns": 10,
+          "rows": 7
         },
         "11": {
-          "width": 1933,
-          "height": 1375,
-          "columns": 8,
-          "rows": 6
+          "width": 1167,
+          "height": 888,
+          "columns": 5,
+          "rows": 4
         },
         "10": {
-          "width": 967,
-          "height": 688,
-          "columns": 4,
-          "rows": 3
-        },
-        "9": {
-          "width": 484,
-          "height": 344,
-          "columns": 2,
+          "width": 584,
+          "height": 444,
+          "columns": 3,
           "rows": 2
         },
+        "9": {
+          "width": 292,
+          "height": 222,
+          "columns": 2,
+          "rows": 1
+        },
         "8": {
-          "width": 242,
-          "height": 172,
+          "width": 146,
+          "height": 111,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 121,
-          "height": 86,
+          "width": 73,
+          "height": 56,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 61,
-          "height": 43,
+          "width": 37,
+          "height": 28,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 31,
-          "height": 22,
+          "width": 19,
+          "height": 14,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 16,
-          "height": 11,
+          "width": 10,
+          "height": 7,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 8,
-          "height": 6,
+          "width": 5,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
         "2": {
-          "width": 4,
-          "height": 3,
+          "width": 3,
+          "height": 2,
           "columns": 1,
           "rows": 1
         },
         "1": {
           "width": 2,
-          "height": 2,
+          "height": 1,
           "columns": 1,
           "rows": 1
         },
@@ -290,90 +308,96 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "1ecec4ca52afee60ba34204688dc6455c23723f8f53a9ac1ad90bb8fd3e1d3da"
+      "image_sha256": "a2e90f9d5063db4c800049c95032797ddfd1bc9b5e14bc4f3773bff101fa4756"
     },
     "hitmap": {
       "tile_size": 256,
       "overlap": 1,
       "format": "png",
-      "max_level": 13,
-      "tile_count": 931,
+      "max_level": 14,
+      "tile_count": 1409,
       "levels": {
+        "14": {
+          "width": 9332,
+          "height": 7099,
+          "columns": 37,
+          "rows": 28
+        },
         "13": {
-          "width": 7732,
-          "height": 5499,
-          "columns": 31,
-          "rows": 22
+          "width": 4666,
+          "height": 3550,
+          "columns": 19,
+          "rows": 14
         },
         "12": {
-          "width": 3866,
-          "height": 2750,
-          "columns": 16,
-          "rows": 11
+          "width": 2333,
+          "height": 1775,
+          "columns": 10,
+          "rows": 7
         },
         "11": {
-          "width": 1933,
-          "height": 1375,
-          "columns": 8,
-          "rows": 6
+          "width": 1167,
+          "height": 888,
+          "columns": 5,
+          "rows": 4
         },
         "10": {
-          "width": 967,
-          "height": 688,
-          "columns": 4,
-          "rows": 3
-        },
-        "9": {
-          "width": 484,
-          "height": 344,
-          "columns": 2,
+          "width": 584,
+          "height": 444,
+          "columns": 3,
           "rows": 2
         },
+        "9": {
+          "width": 292,
+          "height": 222,
+          "columns": 2,
+          "rows": 1
+        },
         "8": {
-          "width": 242,
-          "height": 172,
+          "width": 146,
+          "height": 111,
           "columns": 1,
           "rows": 1
         },
         "7": {
-          "width": 121,
-          "height": 86,
+          "width": 73,
+          "height": 56,
           "columns": 1,
           "rows": 1
         },
         "6": {
-          "width": 61,
-          "height": 43,
+          "width": 37,
+          "height": 28,
           "columns": 1,
           "rows": 1
         },
         "5": {
-          "width": 31,
-          "height": 22,
+          "width": 19,
+          "height": 14,
           "columns": 1,
           "rows": 1
         },
         "4": {
-          "width": 16,
-          "height": 11,
+          "width": 10,
+          "height": 7,
           "columns": 1,
           "rows": 1
         },
         "3": {
-          "width": 8,
-          "height": 6,
+          "width": 5,
+          "height": 4,
           "columns": 1,
           "rows": 1
         },
         "2": {
-          "width": 4,
-          "height": 3,
+          "width": 3,
+          "height": 2,
           "columns": 1,
           "rows": 1
         },
         "1": {
           "width": 2,
-          "height": 2,
+          "height": 1,
           "columns": 1,
           "rows": 1
         },
@@ -385,7 +409,7 @@
         }
       },
       "resampling": "nearest",
-      "image_sha256": "8ca447a5e69dc174ec92ff1c3a32afbd6481865f28bb24daf07ea60958075f9b"
+      "image_sha256": "9a507ae073a078c21e24b5cd8460e2b979c7d1f0918c20aafcd97a128e980b3c"
     }
   },
   "credits": {
@@ -397,27 +421,17 @@
     "osm": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
   },
   "files": {
-    "buildings.json": "94ed357a8d3bfc54c1e1deb75270fd48e173c0b32cb7e70a4be1bf7a8ea1ada6",
-    "camera.json": "1ee9de78d9fd3f23a5b7b2b4e191e77c748838125a42fee6860911b7f9cdf46f",
-    "depth.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
-    "depth.png": "1ecec4ca52afee60ba34204688dc6455c23723f8f53a9ac1ad90bb8fd3e1d3da",
-    "ground.json": "0eaae2f801b1c388394f009051ea639372cf6ff2d3cc94923e05ebce251acc99",
-    "hitmap.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
-    "hitmap.png": "8ca447a5e69dc174ec92ff1c3a32afbd6481865f28bb24daf07ea60958075f9b",
-    "map.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
-    "map.png": "10433c0d14c5b76f4062c69df482c6df0e5a37a30bd3a6b79ffcedcffdc90460",
-    "source.dzi": "5b0f5be3501fe79d7610841cb973c210f7f2130996b0e97163fb044df8633b8e",
-    "source.png": "1fb277c9d2bc5badcdf704fe6658d8df4232bbe1eacaa0dc1f754aab0d2483cd",
-    "walkable.json": "5b688616e3cd460439043956bf524d08cbe0c452662718197ba07218394d3f9c"
-  },
-  "repairs": [
-    {
-      "hitmap": "close_gaps (1-3 px slits inside one building)",
-      "filled_px": 124462
-    },
-    {
-      "hitmap": "close_gaps across<=10, down<=4 (ground between parts of one building)",
-      "filled_px": 208045
-    }
-  ]
+    "buildings.json": "f019568805689b171f4260ff9b10dd60fc52171c6326b7e080dfa4039fbbb8a1",
+    "camera.json": "6ae4676020956f1f15d09d17bc6e879b92b7779969b1fa33e9bca94a4d2f7557",
+    "depth.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
+    "depth.png": "a2e90f9d5063db4c800049c95032797ddfd1bc9b5e14bc4f3773bff101fa4756",
+    "ground.json": "a0bedf939af863a013e06c0e9b615bf15685d2f6da4a018ec730a1acf9b4f839",
+    "hitmap.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
+    "hitmap.png": "9a507ae073a078c21e24b5cd8460e2b979c7d1f0918c20aafcd97a128e980b3c",
+    "map.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
+    "map.png": "c4672e16d390656627312e408775664425d499a86d15628b6c48c1a1773a45fa",
+    "source.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
+    "source.png": "fcab7a6e7d921503cc426321115dabc2147485eb74337ca992614111f1436dd4",
+    "walkable.json": "d8df4974f327910ed29e35d656257d132ed66f7367499e0e05523c700f2c0136"
+  }
 }
