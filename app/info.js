@@ -92,7 +92,7 @@
   function show(b) {
     const i = b.wikidata ? info[b.wikidata] : null;
     text('building-name', (i && (i.title || i.label)) || b.name || 'Gebäude');
-    text('building-address', b.address ? '📍 ' + b.address : '');
+    text('building-address', b.address ? '📍 ' + b.address + (b.address_source === 'ALKIS Hauskoordinaten SH' ? ' (Adresse: GeoBasis-DE/LVermGeo SH, CC BY 4.0)' : '') : '');
     text('building-kind', [b.historic === 'city_gate' ? 'Stadttor' : kindName(b.kind), b.start_date && !(info[b.wikidata] && info[b.wikidata].facts && info[b.wikidata].facts.built) ? `erbaut ${b.start_date}` : null].filter(Boolean).join(' · '));
     const fig = el('building-figure'), img = el('building-image'), cap = el('building-image-credit');
     if (i && i.image) {
