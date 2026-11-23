@@ -23,7 +23,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Gerade in Arbeit
 
 - [ ] **Dritter Kachelring** malen (80 von 108 Kacheln), prüfen, als neue Kartenversion nach R2 laden und veröffentlichen
-- [ ] **Seitenleiste** (zum Ausprobieren: `?seite=1`), danach als Standard
+- [x] **Seitenleiste** ist Standard (`config/luebeck.json` → `"layout": "seitenleiste"` oder `"klassisch"`; `?seite=0/1` zum Vergleich); Aufklappen schließt die anderen Gruppen; Gedenken: Liste aller Stolpersteine nach Straßen mit Suche
   - [x] Thema, Rundgänge, Orte, Ansicht, Hilfe und Quellen links in einer Leiste; auf dem Handy als Schublade
   - [x] Gebäude-Infos als größeres Popup neben dem angeklickten Gebäude (folgt beim Verschieben, Pfeil zum Gebäude); auf dem Handy als Blatt von unten
   - [x] Laufender Rundgang bleibt oben in der Leiste; auf dem Handy kleine Leiste mit ‹ › ✕ über der Karte

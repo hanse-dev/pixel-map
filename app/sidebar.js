@@ -5,7 +5,9 @@
 // is a drawer.
 (() => {
   const params = new URLSearchParams(location.search);
-  if (params.get('seite') !== '1') return;           // trial: ?seite=1
+  // the city config chooses the layout ("layout": "seitenleiste" or "klassisch"); ?seite=1 or ?seite=0 overrides it
+  const wanted = params.has('seite') ? params.get('seite') === '1' : DATA.layout === 'seitenleiste';
+  if (!wanted) return;
   const $ = id => document.getElementById(id), body = document.body;
   const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); e.append(...kids.filter(Boolean)); return e };
   const section = (cls, title, ...kids) => el('section', { className: `side-sec ${cls}` }, title ? el('h2', { textContent: title }) : null, ...kids);
@@ -118,6 +120,12 @@
   }).observe(body, { attributes: true, attributeFilter: ['class'] });
 
   side.append(head, walk, bar, panels);
+  // opening one group closes the others in the same list (place categories, memorial streets)
+  side.addEventListener('toggle', e => {
+    const d = e.target;
+    if (d.tagName !== 'DETAILS' || !d.open || !d.parentElement) return;
+    for (const other of d.parentElement.querySelectorAll(':scope > details[open]')) if (other !== d) other.open = false;
+  }, true);
   body.prepend(side);                                   // first in the tab order, as on screen
   // themes are a choice of one
   const group = el('div', { role: 'radiogroup', ariaLabel: 'Thema', className: 'theme-group' }, ...$('themes').querySelectorAll('button')); $('themes').append(group);

@@ -242,5 +242,7 @@
    "credit": "Piper, Stimme „Kerstin“ (Datensatz CC0)"
   }
  ],
- "default_voice": "thorsten"
+ "default_voice": "thorsten",
+ "layout": "seitenleiste",
+ "layout_note": "\"seitenleiste\" (Leiste links mit Tabs) oder \"klassisch\" (Leiste unten); zum Vergleich in der Adresse ?seite=1 bzw. ?seite=0"
 }
