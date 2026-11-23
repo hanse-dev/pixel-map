@@ -34,7 +34,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Website / UX
 
 - [x] **Leben auf der Straße** (Ansicht): Autos auf Fahrstraßen, Menschen auf Wegen und Plätzen, verdeckt durch Gebäude; aus bei „Bewegung reduzieren“, im Gedenken und beim Tiefeneffekt
-- [ ] Gemalte Autos entfernen: Probelauf Retusche (CPU) vs. Straßen neu malen (GPU), dann entscheiden
+- [ ] Gemalte Autos entfernen: CPU-Retusche im Probelauf gescheitert (gemalte Straßen liegen nicht genau auf den OSM-Linien, Ziegelrot sieht aus wie Autos). Nächster Versuch: ein Fenster mit „leere Straßen, keine Autos“ auf der GPU neu malen
 - [ ] Später: Busse auf Buslinien, Züge auf Gleisen, Schiffe auf der Trave
 
 - [x] **Rundgänge überarbeitet**: 4 neue Rundgänge mit rotem Faden (Hanse · Hauptkirchen · Kaufmannshäuser/Thomas Mann/Willy Brandt · Klöster und Herbergen), Reihenfolge nach echten Fußwegen; Weg als Linie entlang der Straßen mit nummerierten Stationen; Übersicht vor dem Start mit Länge und Gehzeit; Fortsetzen bei der letzten Station; Abschluss mit Vorschlag für den nächsten
