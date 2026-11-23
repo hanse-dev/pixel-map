@@ -7,20 +7,24 @@
   if (!T) return;
   const $ = id => document.getElementById(id), body = document.body;
   const el = (tag, props = {}, ...kids) => { const e = Object.assign(document.createElement(tag), props); e.append(...kids.filter(Boolean)); return e };
-  const years = T.events.map(e => e.year).concat(T.built.map(b => b.year)), lo = 1143, hi = new Date().getFullYear();
+  // the slider stops only at years with an event or a building date
+  const years = [...new Set(T.events.map(e => e.year).concat(T.built.map(b => b.year)))].sort((a, b) => a - b);
+  const at = y => years.reduce((best, v, i) => Math.abs(v - y) < Math.abs(years[best] - y) ? i : best, 0);
 
   // ---------- timeline in the sidebar ----------
-  const slider = el('input', { type: 'range', min: lo, max: hi, value: 1370, step: 1, className: 'tl-range', ariaLabel: 'Jahr wählen' });
+  const slider = el('input', { type: 'range', min: 0, max: years.length - 1, value: at(1370), step: 1, className: 'tl-range', ariaLabel: 'Jahr wählen' });
+  const ticks = el('div', { className: 'tl-ticks', ariaHidden: 'true' }, ...years.map(() => el('i')));
   const year = el('output', { className: 'tl-year' });
   const events = el('ol', { className: 'tl-events' }), standing = el('div', { className: 'tl-built' });
   const jumps = el('div', { className: 'tl-jumps' }, ...[[1143, 'Gründung'], [1370, 'Hansezeit'], [1669, 'Letzter Hansetag'], [1900, 'um 1900'], [1942, 'Luftangriff'], [1987, 'Welterbe']]
     .map(([y, t]) => el('button', { textContent: t, onclick: () => set(y) })));
   const box = el('section', { className: 'side-sec sec-history', hidden: true },
-    el('h2', { textContent: 'Zeitleiste' }), el('div', { className: 'tl-head' }, year, slider), jumps, events,
+    el('h2', { textContent: 'Zeitleiste' }), el('div', { className: 'tl-head' }, year, el('div', { className: 'tl-track' }, slider, ticks)), jumps, events,
     el('h3', { className: 'tl-sub', textContent: 'Damals schon gebaut' }), standing,
     el('p', { className: 'tl-credit', textContent: T.credit }));
   function set(y) {
-    slider.value = y; y = Number(y); year.value = y;
+    y = years[at(Number(y))]; slider.value = years.indexOf(y); year.value = y;
+    slider.setAttribute('aria-valuetext', String(y));
     const near = T.events.filter(e => e.year <= y).slice(-3);
     events.replaceChildren(...near.map(e => el('li', { className: e === near[near.length - 1] ? 'now' : '' },
       el('b', { textContent: e.until ? `${e.year}–${e.until}` : String(e.year) }), ' ', e.text, ' ', el('a', { href: e.source, target: '_blank', rel: 'noopener', textContent: 'Quelle' }))));
@@ -29,7 +33,7 @@
     standing.replaceChildren(...(b.length ? b.map(x => el('button', { textContent: `${x.name} · ${x.label}`, onclick: () => flyToBuilding(x) }))
       : [el('p', { textContent: 'Von den Gebäuden mit bekanntem Baujahr stand noch keins.' })]));
   }
-  slider.addEventListener('input', () => set(slider.value));
+  slider.addEventListener('input', () => set(years[slider.value]));
   set(1370);
   const anchor = document.querySelector('#pane-entdecken .sec-places') || $('places');
   anchor.before(box);
