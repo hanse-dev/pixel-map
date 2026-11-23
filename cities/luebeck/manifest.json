@@ -418,10 +418,11 @@
       "(c) OpenStreetMap contributors, ODbL"
     ],
     "art": "FLUX.2 Klein 9B (FLUX Non-Commercial) with Pixel Art Redmond (Apache-2.0); non-commercial use only",
-    "osm": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
+    "osm": "\u00a9 OpenStreetMap contributors, ODbL 1.0",
+    "addresses": "Adressen: GeoBasis-DE/LVermGeo SH, Hauskoordinaten (ALKIS), CC BY 4.0, wo OpenStreetMap keine hat"
   },
   "files": {
-    "buildings.json": "fc76eeb643a6456a189f869b8414f4ccec510225d252e7b83c7491201d1cd10c",
+    "buildings.json": "fbf10c12121c3be91eccfce284cb7b5236a951525b5c58044ce28b5b8fec9804",
     "camera.json": "6ae4676020956f1f15d09d17bc6e879b92b7779969b1fa33e9bca94a4d2f7557",
     "depth.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "depth.png": "a2e90f9d5063db4c800049c95032797ddfd1bc9b5e14bc4f3773bff101fa4756",
@@ -442,6 +443,14 @@
     {
       "map": "rails repainted from OSM tracks (outputs/recipes/rail_tracks_paint.py, 49 windows, bridges kept)",
       "map_sha256": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90"
+    },
+    {
+      "buildings": "addresses from ALKIS house coordinates inside footprints",
+      "added": 22
+    },
+    {
+      "buildings": "addresses from ALKIS house coordinates inside footprints",
+      "added": 642
     }
   ]
 }
