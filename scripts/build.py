@@ -410,10 +410,11 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
         for b in json.loads((bundle / 'buildings.json').read_text())['buildings']:
             if b.get('wikidata') and 'centre' in b and b['visible_px'] > by_wd.get(b['wikidata'], {}).get('visible_px', 0): by_wd[b['wikidata']] = b
         built = [{'year': x['year'], 'label': x['label'], 'name': (info.get(x['wikidata'], {}).get('title') or x['name']).replace(' (Lübeck)', ''),
-                  'building': by_wd[x['wikidata']]['id'], 'x': by_wd[x['wikidata']]['centre'][0], 'y': by_wd[x['wikidata']]['centre'][1], 'view_width': 900}
+                  'building': by_wd[x['wikidata']]['id'], 'x': by_wd[x['wikidata']]['centre'][0], 'y': by_wd[x['wikidata']]['centre'][1], 'view_width': 900,
+                  'text': x.get('text'), 'source': x.get('source')}
                  for x in tl['buildings'] if x['wikidata'] in by_wd]
         timeline = {'events': [{k: e.get(k) for k in ('year', 'until', 'text', 'source')} for e in tl['events']], 'built': built,
-                    'credit': 'Ereignisse: Wikipedia, „Geschichte der Hansestadt Lübeck“ (CC BY-SA 4.0); Baujahre: Wikidata (CC0)'}
+                    'credit': 'Ereignisse und Baujahre: Wikipedia (CC BY-SA 4.0), Baujahre einzeln am Artikel geprüft'}
     h_file = ROOT / 'info' / f'{name}.historic.json'
     if h_file.exists():
         historic = json.loads(h_file.read_text())['items']

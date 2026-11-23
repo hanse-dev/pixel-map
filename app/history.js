@@ -25,9 +25,15 @@
   function set(y) {
     y = years[at(Number(y))]; slider.value = years.indexOf(y); year.value = y;
     slider.setAttribute('aria-valuetext', String(y));
-    const near = T.events.filter(e => e.year <= y).slice(-3);
-    events.replaceChildren(...near.map(e => el('li', { className: e === near[near.length - 1] ? 'now' : '' },
-      el('b', { textContent: e.until ? `${e.year}–${e.until}` : String(e.year) }), ' ', e.text, ' ', el('a', { href: e.source, target: '_blank', rel: 'noopener', textContent: 'Quelle' }))));
+    // city events and buildings in one list: the latest three up to the chosen year
+    const items = T.events.map(e => ({ year: e.year, label: e.until ? `${e.year}–${e.until}` : String(e.year), text: e.text, source: e.source }))
+      .concat(T.built.filter(b => b.text).map(b => ({ year: b.year, label: b.label, title: b.name, text: b.text, source: b.source, go: b })))
+      .sort((a, b) => a.year - b.year);
+    const near = items.filter(e => e.year <= y).slice(-3);
+    events.replaceChildren(...near.map(e => el('li', { className: (e === near[near.length - 1] ? 'now' : '') + (e.go ? ' built' : '') },
+      el('b', { textContent: e.label }), ' ',
+      e.go ? el('button', { className: 'tl-link', textContent: e.title, onclick: () => flyToBuilding(e.go) }) : null, e.go ? ': ' : '',
+      e.text, ' ', el('a', { href: e.source, target: '_blank', rel: 'noopener', textContent: 'Quelle' }))));
     if (!near.length) events.replaceChildren(el('li', { textContent: 'Vor der Gründung der Stadt.' }));
     const b = T.built.filter(x => x.year <= y);
     standing.replaceChildren(...(b.length ? b.map(x => el('button', { textContent: `${x.name} · ${x.label}`, onclick: () => flyToBuilding(x) }))

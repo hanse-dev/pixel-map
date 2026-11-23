@@ -1,5 +1,5 @@
 {
- "status": "Daten für die Zeitleiste. Ereignisse wörtlich aus Wikipedia (mit Artikelversion), Baudaten aus Wikidata (P571/P1619). Noch nicht im Viewer.",
+ "status": "Ereignisse wörtlich aus Wikipedia; Baujahre am 23.11.2026 einzeln am Wikipedia-Artikel geprüft (Wikidata-Daten waren teils Ersterwähnungen oder Eröffnungen).",
  "events": [
   {
    "year": 819,
@@ -197,204 +197,184 @@
  "buildings": [
   {
    "year": 1173,
-   "label": "1173",
+   "label": "1173–1247",
    "wikidata": "Q3916007",
    "name": "Lübecker Dom",
-   "source": "https://www.wikidata.org/wiki/Q3916007",
-   "precision": "year"
+   "text": "1173 wurde der Lübecker Dom von Heinrich dem Löwen begründet und 1247 geweiht.",
+   "source": "https://de.wikipedia.org/wiki/Lübecker_Dom",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1227,
-   "label": "1227",
+   "label": "1227 erwähnt",
    "wikidata": "Q316973",
    "name": "Aegidienkirche",
-   "source": "https://www.wikidata.org/wiki/Q316973",
-   "precision": "year"
+   "text": "Im Turmbereich finden sich romanische Spuren der 1227 erwähnten ersten steinernen Kirche.",
+   "source": "https://de.wikipedia.org/wiki/Aegidienkirche_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1227,
-   "label": "1227",
-   "wikidata": "Q375042",
-   "name": "Jakobikirche",
-   "source": "https://www.wikidata.org/wiki/Q375042",
-   "precision": "year"
+   "year": 1251,
+   "label": "1251–1351",
+   "wikidata": "Q695065",
+   "name": "Marienkirche",
+   "text": "Der Bau der gotischen Kirche, die einen romanischen Vorgängerbau ersetzte, begann 1251 und war mit der Fertigstellung der Türme hundert Jahre später, 1351, abgeschlossen.",
+   "source": "https://de.wikipedia.org/wiki/Marienkirche_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1283,
    "label": "1283",
    "wikidata": "Q1786466",
    "name": "Kranen-Konvent",
-   "source": "https://www.wikidata.org/wiki/Q1786466",
-   "precision": "year"
+   "text": "Der Dachstuhl ist dendrochronologisch auf das Jahr 1283 datiert worden.",
+   "source": "https://de.wikipedia.org/wiki/Kranen-Konvent",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1350,
-   "label": "14. Jh.",
+   "year": 1300,
+   "label": "um 1300, geweiht 1334",
+   "wikidata": "Q375042",
+   "name": "Jakobikirche",
+   "text": "Der heutige Bau am Koberg entstand um 1300 und ersetzte nach dem großen Stadtbrand von 1276 eine romanische Hallenkirche an gleicher Stelle, die bereits um 1227 erwähnt wurde.",
+   "source": "https://de.wikipedia.org/wiki/Jakobikirche_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
+  },
+  {
+   "year": 1303,
+   "label": "um 1303–1356",
    "wikidata": "Q317388",
    "name": "Katharinenkirche",
-   "source": "https://www.wikidata.org/wiki/Q317388",
-   "precision": "century"
+   "text": "Vermutlich um 1303 (dendrochronologische Datierung des Dachwerks) wurde zunächst der Ostteil mit Chorraum und Querschiff neu im Stil der Backsteingotik erbaut; im Jahre 1356 wird der Bau vollendet gewesen sein.",
+   "source": "https://de.wikipedia.org/wiki/Katharinenkirche_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1350,
-   "label": "14. Jh.",
-   "wikidata": "Q695065",
-   "name": "Marienkirche",
-   "source": "https://www.wikidata.org/wiki/Q695065",
-   "precision": "century"
+   "year": 1358,
+   "label": "Giebel 1358",
+   "wikidata": "Q1879877",
+   "name": "Löwen-Apotheke",
+   "text": "Nach den beiden großen Stadtbränden von 1251 und 1276 erhielt das Haus 1358 den gotischen Hauptgiebel an der Johannisstraße.",
+   "source": "https://de.wikipedia.org/wiki/Löwen-Apotheke_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1444,
    "label": "1444",
    "wikidata": "Q538276",
    "name": "Burgtor",
-   "source": "https://www.wikidata.org/wiki/Q538276",
-   "precision": "year"
+   "text": "Das heutige Burgtor wurde 1444 vom Stadtbaumeister Nicolas Peck anstelle eines romanischen Tores innerhalb einer Befestigungsanlage erbaut.",
+   "source": "https://de.wikipedia.org/wiki/Burgtor_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
+  },
+  {
+   "year": 1478,
+   "label": "fertiggestellt 1478",
+   "wikidata": "Q321229",
+   "name": "Holstentor",
+   "text": "Das spätgotische Stadttor wurde 1478 fertiggestellt und ist das Wahrzeichen der Stadt.",
+   "source": "https://de.wikipedia.org/wiki/Holstentor",
+   "note": "Einleitung des Wikipedia-Artikels: „wurde 1478 fertiggestellt“; der Baubeginn ist dort nicht genannt"
   },
   {
    "year": 1749,
    "label": "1749",
    "wikidata": "Q482579",
    "name": "An der Mauer 154",
-   "source": "https://www.wikidata.org/wiki/Q482579",
-   "precision": "year"
+   "text": "An der Mauer 154 ist ein historisches Kleinwohnhaus von 1749; das Grundstück wurde erstmals 1315 als bebaut erwähnt.",
+   "source": "https://de.wikipedia.org/wiki/An_der_Mauer_154",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1758,
    "label": "1758",
    "wikidata": "Q315187",
    "name": "Buddenbrookhaus",
-   "source": "https://www.wikidata.org/wiki/Q315187",
-   "precision": "year"
+   "text": "1758 kaufte der Nowgorodfahrer Johann Michael Croll das Anwesen Mengstr. 4 und ließ dort neu bauen; das Datum „1758“ ist noch heute über dem Portal zu sehen.",
+   "source": "https://de.wikipedia.org/wiki/Buddenbrookhaus",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1783,
    "label": "1783",
    "wikidata": "Q814533",
    "name": "Behnhaus",
-   "source": "https://www.wikidata.org/wiki/Q814533",
-   "precision": "year"
-  },
-  {
-   "year": 1812,
-   "label": "1812",
-   "wikidata": "Q1879877",
-   "name": "Löwen-Apotheke",
-   "source": "https://www.wikidata.org/wiki/Q1879877",
-   "precision": "year"
-  },
-  {
-   "year": 1824,
-   "label": "1824",
-   "wikidata": "Q18629959",
-   "name": "Progymnasium Dr. Bussenius",
-   "source": "https://www.wikidata.org/wiki/Q18629959",
-   "precision": "year"
+   "text": "Es wurde 1783 als großbürgerliches Wohnhaus errichtet und Anfang des 19. Jahrhunderts im klassizistischen Stil umgebaut und eingerichtet.",
+   "source": "https://de.wikipedia.org/wiki/Behnhaus",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1880,
-   "label": "1880",
+   "label": "eingeweiht 1880",
    "wikidata": "Q1494883",
    "name": "Synagoge Lübeck",
-   "source": "https://www.wikidata.org/wiki/Q1494883",
-   "precision": "year"
+   "text": "Am 10. Juni 1880 nahm der gesamte Lübecker Senat an der Einweihung der Synagoge teil.",
+   "source": "https://de.wikipedia.org/wiki/Synagoge_Lübeck",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1891,
-   "label": "1891",
+   "year": 1888,
+   "label": "1888–1891",
    "wikidata": "Q880381",
    "name": "Propsteikirche Herz Jesu",
-   "source": "https://www.wikidata.org/wiki/Q880381",
-   "precision": "year"
+   "text": "Sie wurde 1888 bis 1891 nach einem Entwurf des Architekten Arnold Güldenpfennig errichtet und am 10. Mai 1891 konsekriert.",
+   "source": "https://de.wikipedia.org/wiki/Propsteikirche_Herz_Jesu_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1899,
-   "label": "1899",
+   "year": 1900,
+   "label": "geweiht 1900",
    "wikidata": "Q1649884",
    "name": "St. Matthäi",
-   "source": "https://www.wikidata.org/wiki/Q1649884",
-   "precision": "year"
+   "text": "Der Bau einer Kirche samt Gemeindesaal und Pfarrwohnung wurde 1899 beschlossen; im Mai 1900 wurde die Kirche geweiht.",
+   "source": "https://de.wikipedia.org/wiki/St._Matthäi_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1908,
-   "label": "1908",
+   "label": "eröffnet 1908",
    "wikidata": "Q2415873",
    "name": "Theater Lübeck",
-   "source": "https://www.wikidata.org/wiki/Q2415873",
-   "precision": "year"
+   "text": "Das nach Martin Dülfers Entwurf im Jugendstil neu errichtete Theater wurde am 1. Oktober 1908 eröffnet.",
+   "source": "https://de.wikipedia.org/wiki/Theater_Lübeck",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1910,
-   "label": "1910",
+   "label": "1910/11",
    "wikidata": "Q1009493",
    "name": "Buniamshof",
-   "source": "https://www.wikidata.org/wiki/Q1009493",
-   "precision": "year"
-  },
-  {
-   "year": 1913,
-   "label": "1913",
-   "wikidata": "Q140571655",
-   "name": "Falkenplatz 10",
-   "source": "https://www.wikidata.org/wiki/Q140571655",
-   "precision": "year"
+   "text": "Der Buniamshof wurde 1910/11 von dem Gartenarchitekten Erwin Barth entworfen.",
+   "source": "https://de.wikipedia.org/wiki/Buniamshof",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1940,
-   "label": "1940",
+   "label": "1940/41",
    "wikidata": "Q51247046",
    "name": "Bunker An der Obertrave",
-   "source": "https://www.wikidata.org/wiki/Q51247046",
-   "precision": "year"
+   "text": "Der Luftschutzbunker entstand 1940/1941.",
+   "source": "https://de.wikipedia.org/wiki/Bunker_An_der_Obertrave",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
-   "year": 1949,
-   "label": "1949",
-   "wikidata": "Q2550616",
-   "name": "Wasserstraßen- und Schifffahrtsamt Lübeck",
-   "source": "https://www.wikidata.org/wiki/Q2550616",
-   "precision": "year"
-  },
-  {
-   "year": 1951,
-   "label": "1951",
+   "year": 1950,
+   "label": "1950–1951",
    "wikidata": "Q99735836",
    "name": "St. Thomas",
-   "source": "https://www.wikidata.org/wiki/Q99735836",
-   "precision": "year"
-  },
-  {
-   "year": 1973,
-   "label": "1973",
-   "wikidata": "Q99735520",
-   "name": "Friedenskirche",
-   "source": "https://www.wikidata.org/wiki/Q99735520",
-   "precision": "year"
+   "text": "Der Grundstein der Kirche wurde 1950 gelegt, Pfingsten 1951 wurde das Kirchengebäude schon eingeweiht.",
+   "source": "https://de.wikipedia.org/wiki/St._Thomas_(Lübeck)",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   },
   {
    "year": 1994,
-   "label": "1994",
+   "label": "eröffnet 1994",
    "wikidata": "Q1954986",
    "name": "Musik- und Kongresshalle Lübeck",
-   "source": "https://www.wikidata.org/wiki/Q1954986",
-   "precision": "year"
-  },
-  {
-   "year": 1998,
-   "label": "1998",
-   "wikidata": "Q1802073",
-   "name": "Landesamt für Arbeitsschutz, Soziales und Gesundheit",
-   "source": "https://www.wikidata.org/wiki/Q1802073",
-   "precision": "year"
-  },
-  {
-   "year": 2007,
-   "label": "2007",
-   "wikidata": "Q2581800",
-   "name": "Willy-Brandt-Haus Lübeck",
-   "source": "https://www.wikidata.org/wiki/Q2581800",
-   "precision": "year"
+   "text": "Die Musik- und Kongresshalle wurde im Oktober 1994 eröffnet.",
+   "source": "https://de.wikipedia.org/wiki/Musik-_und_Kongresshalle_Lübeck",
+   "note": "Satz aus dem Wikipedia-Artikel (sinngemäß gekürzt), Jahr = Baubeginn bzw. ältester erhaltener Teil"
   }
  ],
- "gaps": "Ohne Datum auf Wikidata: u. a. Rathaus, Holstentor, Petrikirche, Salzspeicher. Daten stehen in den Wikipedia-Texten, sollten aber mit Beleg auf Wikidata nachgetragen werden."
+ "gaps": "Ohne geprüftes Baujahr: Holstentor (1478 in der Einleitung, ergänzt), Rathaus, Petrikirche, Salzspeicher, Willy-Brandt-Haus (Museum seit 2007, Haus mittelalterlich)."
 }
