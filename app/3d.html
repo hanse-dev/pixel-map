@@ -10,43 +10,84 @@ html,body{margin:0;height:100%;background:#cfd8de;font:15px/1.4 system-ui,sans-s
 .box{position:fixed;left:12px;top:12px;background:#1c2226e6;color:#eee;padding:10px 14px;border-radius:12px;max-width:360px}
 .box a{color:inherit}.box h1{font-size:1.05em;margin:0 0 4px}.small{font-size:.8em;opacity:.8}
 #sun{width:100%}
+#info{position:fixed;right:12px;top:12px;width:340px;max-height:calc(100vh - 24px);overflow:auto;background:#1c2226ee;color:#eee;padding:12px 16px;border-radius:12px}#info[hidden]{display:none}#info h2{margin:0 0 4px;font-size:1.1em}#info img{width:100%;border-radius:8px;margin:6px 0}#info a{color:#ffd27a}#info button{float:right;background:none;border:0;color:#eee;font-size:1.3em;cursor:pointer}
 </style>
 </head>
 <body>
 <canvas id="c" aria-label="3D-Modell der Lübecker Altstadt. Ziehen dreht, Mausrad zoomt, rechte Maustaste verschiebt."></canvas>
 <div class="box">
-  <h1>Lübeck 3D – Pilot</h1>
-  <div>Ziehen dreht · Mausrad zoomt · rechte Maustaste verschiebt</div>
+  <h1>Lübeck 3D – Innenstadt</h1>
+  <div>Ziehen dreht · Mausrad zoomt · rechte Maustaste verschiebt · Gebäude anklicken</div>
   <label class="small">Sonnenstand <input id="sun" type="range" min="0" max="360" value="200"></label>
-  <div class="small"><a href="../luebeck/">← zur Pixelkarte</a> · Gebäudemodelle (LoD2): ©GeoBasis-DE/LVermGeo SH/CC BY 4.0 (Quelle verändert)</div>
+  <div class="small"><a href="../luebeck/">← zur Pixelkarte</a> · Gebäudemodelle (LoD2): ©GeoBasis-DE/LVermGeo SH/CC BY 4.0 (Quelle verändert) · Wasser: © OpenStreetMap-Mitwirkende</div>
   <div class="small" id="status">lädt …</div>
 </div>
+<section id="info" hidden aria-live="polite"><button id="close" aria-label="Schließen">×</button><h2 id="iname"></h2><div id="iaddr" class="small"></div><img id="iimg" alt="" hidden><p id="itext"></p><div id="ilinks" class="small"></div></section>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const q = new URLSearchParams(location.search);
-const MODEL = q.get('model') || 'https://pub-39c7cc4b830c4985b269c19eacf46b83.r2.dev/luebeck-3d/altstadt-mitte.glb';
+const BASE = q.get('model') || 'https://pub-39c7cc4b830c4985b269c19eacf46b83.r2.dev/luebeck-3d/innenstadt';
+const MODEL = BASE + '.glb';
 const canvas = document.getElementById('c');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-const scene = new THREE.Scene(); scene.background = new THREE.Color(0xcfd8de); scene.fog = new THREE.Fog(0xcfd8de, 900, 2200);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0xcfd8de); scene.fog = new THREE.Fog(0xcfd8de, 2500, 6000);
 const camera = new THREE.PerspectiveCamera(40, 1, 1, 5000);
 const controls = new OrbitControls(camera, canvas); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * .49;
 scene.add(new THREE.HemisphereLight(0xffffff, 0xb0a490, 1.6));
 const sun = new THREE.DirectionalLight(0xfff1dd, 2.8); sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096);
-Object.assign(sun.shadow.camera, { left: -700, right: 700, top: 700, bottom: -700, near: 10, far: 3000 }); scene.add(sun, sun.target);
+Object.assign(sun.shadow.camera, { left: -1400, right: 1400, top: 1400, bottom: -1400, near: 10, far: 4000 }); scene.add(sun, sun.target);
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.MeshStandardMaterial({ color: 0xd8d2c4, roughness: 1 }));
-ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground); ground.visible = false;   // the model brings its own terrain
 function placeSun(deg) { const a = deg * Math.PI / 180; sun.position.set(controls.target.x + Math.sin(a) * 900, 700, controls.target.z + Math.cos(a) * 900); sun.target.position.copy(controls.target) }
+// clicks: triangle -> building (ranges from the model JSON) -> the pixel map's data
+let meta = null, byId = new Map(), info = {}, mesh = null, lit = null;
+Promise.all([fetch(BASE + '.json').then(r => r.json()), fetch('../luebeck/buildings.json').then(r => r.json()), fetch('../info/luebeck.de.json').then(r => r.json()).catch(() => ({ items: {} }))])
+  .then(([m, b, i]) => { meta = m; for (const x of b.buildings) byId.set(x.id, x); info = i.items || {} });
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(); let downAt = null;
+canvas.addEventListener('pointerdown', e => { downAt = [e.clientX, e.clientY] });
+canvas.addEventListener('pointerup', e => {
+  if (!downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 5 || !mesh || !meta) return;
+  ptr.set(e.clientX / innerWidth * 2 - 1, -e.clientY / innerHeight * 2 + 1); ray.setFromCamera(ptr, camera);
+  const hit = ray.intersectObject(mesh, false)[0]; if (!hit) return;
+  const f = hit.faceIndex, R = meta.buildings; let lo = 0, hi = R.length - 1, k = -1;
+  while (lo <= hi) { const mid = (lo + hi) >> 1; if (R[mid][0] <= f) { k = mid; lo = mid + 1 } else hi = mid - 1 }
+  if (k < 0 || f >= R[k][1]) { $('info').hidden = true; mark(null); return }
+  show(R[k]);
+});
+const $ = id => document.getElementById(id);
+$('close').onclick = () => { $('info').hidden = true; mark(null) };
+function mark(range) {                      // tint the chosen building gold, restore the previous one
+  const col = mesh.geometry.attributes.color, idx = mesh.geometry.index;
+  const paint = (r, fn) => { const vs = new Set(); for (let t = r[0] * 3; t < r[1] * 3; t++) vs.add(idx.getX(t)); for (const v of vs) fn(v) };
+  if (lit) { paint(lit.r, v => col.setXYZW(v, ...lit.saved.get(v))); lit = null }
+  if (range) { const saved = new Map(); paint(range, v => { saved.set(v, [col.getX(v), col.getY(v), col.getZ(v), col.getW(v)]); col.setXYZ(v, Math.min(1, col.getX(v) * .6 + .45), Math.min(1, col.getY(v) * .6 + .35), col.getZ(v) * .5) }); lit = { r: range, saved } }
+  col.needsUpdate = true;
+}
+function show(r) {
+  mark(r);
+  const b = byId.get(r[2]), i = b && b.wikidata ? info[b.wikidata] : null;
+  $('iname').textContent = (i && (i.title || i.label)) || (b && b.name) || 'Gebäude';
+  $('iaddr').textContent = b && b.address ? '📍 ' + b.address : '';
+  $('itext').textContent = i && i.intro ? i.intro.split('\n')[0].slice(0, 600) : (b ? '' : 'Dieses Gebäude ist in der Pixelkarte nicht eigens verzeichnet.');
+  const img = $('iimg'); if (i && i.image) { img.src = '../info/' + i.image.src; img.hidden = false } else img.hidden = true;
+  const links = $('ilinks'); links.replaceChildren();
+  const a = (href, text) => { const e = document.createElement('a'); e.href = href; e.target = '_blank'; e.rel = 'noopener'; e.textContent = text; links.append(e, ' · ') };
+  if (i && i.url) a(i.url, 'Wikipedia');
+  if (b) a(`https://www.openstreetmap.org/${b.osm}`, 'OpenStreetMap');
+  links.append(i && i.attribution ? `Text: ${i.attribution}` : '');
+  $('info').hidden = false;
+}
 new GLTFLoader().load(MODEL, g => {
-  const m = g.scene; m.traverse(o => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .9, side: THREE.DoubleSide }) } });
+  const m = g.scene; m.traverse(o => { if (o.isMesh) { mesh = o; o.castShadow = o.receiveShadow = true; o.material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .9, side: THREE.DoubleSide }) } });
   scene.add(m);
   const box = new THREE.Box3().setFromObject(m), c = box.getCenter(new THREE.Vector3());
   ground.position.y = box.min.y - .2; controls.target.set(c.x, box.min.y + 10, c.z);
-  camera.position.set(c.x - 380, box.min.y + 330, c.z + 420); placeSun(200);
-  document.getElementById('status').textContent = 'Altstadt-Mitte, 1 km × 1 km, 1.642 Gebäude';
+  camera.position.set(c.x - 700, box.min.y + 650, c.z + 900); placeSun(200);
+  document.getElementById('status').textContent = 'Innenstadt (Altstadtinsel), 4.300 Gebäude';
 }, undefined, e => { document.getElementById('status').textContent = 'Modell nicht ladbar: ' + e.message });
 document.getElementById('sun').oninput = e => placeSun(+e.target.value);
 function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix() }

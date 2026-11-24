@@ -41,7 +41,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Digitaler Zwilling
 
 - [x] Pilot 3D (`app/3d.html`): amtliche LoD2-Gebäudemodelle (LVermGeo SH, CC BY 4.0) der Kachel Altstadt-Mitte, 1.642 Gebäude, drehbar, Sonnenstand mit Schatten
-- [ ] Ganze Altstadt bzw. Kartenausschnitt (alle 1-km-Kacheln), Wasser und Gelände, Gebäude anklickbar mit denselben Infos wie die Pixelkarte, Dachfarben aus dem Luftbild
+- [x] Innenstadt (Altstadtinsel, OSM-Stadtteilgrenze): 4.300 Gebäude, Gelände (DGM), Wasser, Gebäude anklickbar (3.720 mit Pixelkarten-Infos), Startseite verlinkt
+- [ ] Dachfarben aus dem Luftbild, Wahrzeichen hervorheben, Rundgänge in 3D
 
 ## Website / UX
 
