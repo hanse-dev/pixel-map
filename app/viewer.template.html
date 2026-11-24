@@ -156,6 +156,7 @@ body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85)
 .mem-list button{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;padding:6px 10px;border:0;border-radius:8px;background:none;color:inherit;font:inherit;cursor:pointer}
 .mem-list button:hover{background:#ffffff12}.mem-list button span{font-size:.85em;opacity:.75}.mem-credit{font-size:.72em;opacity:.55;margin:8px 0 0}
 #life-canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}#life-canvas[hidden]{display:none}
+#me{position:absolute;left:0;top:0;pointer-events:none;z-index:3}#me[hidden]{display:none}#me i{position:absolute;width:14px;height:14px;margin:-7px;border-radius:50%;background:#2f80ed;border:2px solid #fff;box-shadow:0 0 0 var(--acc,12px) #2f80ed33,0 1px 4px #0008}
 </style>
 </head>
 <body>
@@ -220,6 +221,7 @@ body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85)
   <button id="source" role="menuitem" aria-pressed="false">◐ <span>Ausgangsbild vergleichen</span></button>
   <button id="overview" role="menuitem" aria-pressed="true">⌖ <span>Übersichtskarte</span><small>M</small></button>
   <button id="fit" role="menuitem">⤢ <span>Ganze Karte</span><small>0</small></button>
+  <button id="locate" role="menuitem" aria-pressed="false">📍 <span>Wo bin ich?</span><small>Standort auf der Karte</small></button>
   <button id="life" role="menuitem" aria-pressed="false">🚶 <span>Leben auf der Straße</span><small>Autos und Menschen</small></button>
   <button id="tour" role="menuitem" aria-pressed="false">▶ <span>Wahrzeichen-Tour</span><small>Leertaste</small></button>
 </section>
@@ -479,5 +481,6 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 <script src="../app/tours.js"></script>
 <script src="../app/history.js"></script>
 <script src="../app/life.js"></script>
+<script src="../app/locate.js"></script>
 </body>
 </html>

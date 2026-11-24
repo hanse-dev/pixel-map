@@ -16,7 +16,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 **Später:**
 - [x] Teilen-Link für Gebäude (`#gebaeude=way-123`, Teilen-Knopf im Popup)
 - [ ] Rundgang offline mitnehmen (Kacheln und Audio vorab laden)
-- [ ] „Wo bin ich?“: GPS-Standort auf der Karte
+- [x] „Wo bin ich?“ (Ansicht): GPS-Standort als Punkt, mit Genauigkeitskreis; Umrechnung im Browser, nichts wird gesendet
 - [ ] Schnitzeljagd vor Ort (Fragen nur an der Station lösbar)
 - [ ] Englische Fassung (Texte und Vorlesen)
 

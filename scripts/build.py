@@ -461,7 +461,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
     page = page.replace('</head>', analytics_tag() + '</head>', 1)
-    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history', 'life'):                                    # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history', 'life', 'locate'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page
@@ -526,7 +526,7 @@ def main(argv=None):
         out = SITE / name
         root = ROOT / 'cities' / name
         out.mkdir()
-        for f in ('buildings.json', 'manifest.json', 'camera.json', 'walkable.json', 'landmark-repaints.json'):
+        for f in ('buildings.json', 'manifest.json', 'camera.json', 'walkable.json', 'landmark-repaints.json', 'ground.json'):
             if (root / f).exists(): shutil.copyfile(root / f, out / f)
         remote = ROOT / 'config' / f'{name}.tiles.json'
         if remote.exists():                         # tiles are served from object storage
