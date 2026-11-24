@@ -38,6 +38,11 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 - Leere Straßen (outputs/nocars-pilot): Autos weg, Straßen mit Markierungen – für alle Straßen mehrere Nächte
 - Hörprobe Chatterbox: ~Desktop/stimmen-vergleich (je ~5 Min. Rechenzeit pro 40 s Audio)
 
+## Digitaler Zwilling
+
+- [x] Pilot 3D (`app/3d.html`): amtliche LoD2-Gebäudemodelle (LVermGeo SH, CC BY 4.0) der Kachel Altstadt-Mitte, 1.642 Gebäude, drehbar, Sonnenstand mit Schatten
+- [ ] Ganze Altstadt bzw. Kartenausschnitt (alle 1-km-Kacheln), Wasser und Gelände, Gebäude anklickbar mit denselben Infos wie die Pixelkarte, Dachfarben aus dem Luftbild
+
 ## Website / UX
 
 - [x] **Leben auf der Straße** (Ansicht): Autos auf Fahrstraßen, Menschen auf Wegen und Plätzen, verdeckt durch Gebäude; aus bei „Bewegung reduzieren“, im Gedenken und beim Tiefeneffekt
