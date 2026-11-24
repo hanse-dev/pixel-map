@@ -25,6 +25,11 @@
     if (g) { const c = Math.round((e - g.west) / g.step_m), r = Math.round((g.north - n) / g.step_m); if (r >= 0 && c >= 0 && r < g.rows && c < g.columns) z = g.heights_dm[r * g.columns + c] / 10 }
     return [M[0][0] * e + M[0][1] * n + M[0][2] * z + M[0][3], M[1][0] * e + M[1][1] * n + M[1][2] * z + M[1][3]];
   }
+  // for other scripts (the on-site riddle round): the position in map pixels, or null
+  window.pixelMapHere = () => new Promise(done => navigator.geolocation.getCurrentPosition(async p => {
+    if (!ground) try { ground = await (await fetch('ground.json')).json() } catch {}
+    done({ xy: toMap(p.coords.latitude, p.coords.longitude), accuracy: p.coords.accuracy });
+  }, () => done(null), { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 }));
   function place() { if (!last) return; layer.style.transform = `translate(${x + last[0] * s}px, ${y + last[1] * s}px)` }
   (function follow() { if (!layer.hidden) place(); requestAnimationFrame(follow) })();
   async function start() {

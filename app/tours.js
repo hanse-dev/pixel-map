@@ -153,8 +153,25 @@
     quizFor = st; quiz.replaceChildren(); quiz.hidden = !(st && st.quiz); delete quiz.dataset.solved;
     if (quiz.hidden) return;
     const q = st.quiz, note = el('p', { className: 'quiz-note', ariaLive: 'polite' });
-    quiz.append(el('b', { textContent: '🧩 ' + q.q }),
-      el('div', { className: 'quiz-opts' }, ...q.options.map((o, i) => el('button', { textContent: o, onclick: e => {
+    // on site: the answers open only within 40 m of the station (GPS, nothing is sent)
+    const onSite = (() => { try { return localStorage.getItem('pixel-map-vor-ort') === '1' } catch { return false } })();
+    const siteBox = el('input', { type: 'checkbox', checked: onSite });
+    siteBox.onchange = () => { try { localStorage.setItem('pixel-map-vor-ort', siteBox.checked ? '1' : '0') } catch {}; riddle(st) };
+    const gate = el('div', { className: 'quiz-gate' });
+    if (onSite && window.pixelMapHere) {
+      const check = el('button', { textContent: '📍 Bin ich da?', onclick: async () => {
+        check.textContent = 'Suche Standort …';
+        const here = await window.pixelMapHere();
+        if (!here) { check.textContent = '📍 Standort nicht verfügbar – nochmal'; return }
+        const metres = Math.hypot(here.xy[0] - st.x, here.xy[1] - st.y) / ((DATA.camera && DATA.camera.px_per_m) || 2.45);
+        if (metres <= 40 + Math.min(30, here.accuracy)) { gate.hidden = true; quiz.querySelectorAll('.quiz-opts button').forEach(b => b.disabled = false) }
+        else check.textContent = `📍 Noch ${Math.round(metres)} m – geh näher heran und prüf nochmal`;
+      } });
+      gate.append(check);
+    } else gate.hidden = true;
+    quiz.append(el('label', { className: 'quiz-site' }, siteBox, ' Vor Ort spielen (Rätsel erst an der Station)'), gate,
+      el('b', { textContent: '🧩 ' + q.q }),
+      el('div', { className: 'quiz-opts' }, ...q.options.map((o, i) => el('button', { textContent: o, disabled: onSite && !!window.pixelMapHere, onclick: e => {
         const right = i === q.answer; e.target.classList.add(right ? 'right' : 'wrong');
         if (right) {
           quiz.querySelectorAll('.quiz-opts button').forEach(b => b.disabled = true);
