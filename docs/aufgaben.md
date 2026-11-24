@@ -31,6 +31,13 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
   - [x] **Orte nach Kategorien**: 28 Wahrzeichen plus alle 66 weiteren Gebäude mit Wikipedia-Eintrag in 6 aufklappbaren Kategorien (automatisch eingeordnet, Ausnahmen in `config/luebeck.json` → `category_overrides`)
   - [x] **Suche** nach Gebäudenamen und Adressen (16.000 Gebäude), Taste `/`
 
+## Piloten (24.11.2026, zur Entscheidung)
+
+- Nachtfassung (outputs/night-pilot): sehr gut – ganze Karte ≈ 400 Fenster, mehrere Nächte
+- Drehen, Blick von Süden (outputs/south-pilot): stimmig – pro Richtung eine ganze Karte
+- Leere Straßen (outputs/nocars-pilot): Autos weg, Straßen mit Markierungen – für alle Straßen mehrere Nächte
+- Hörprobe Chatterbox: ~Desktop/stimmen-vergleich (je ~5 Min. Rechenzeit pro 40 s Audio)
+
 ## Website / UX
 
 - [x] **Leben auf der Straße** (Ansicht): Autos auf Fahrstraßen, Menschen auf Wegen und Plätzen, verdeckt durch Gebäude; aus bei „Bewegung reduzieren“, im Gedenken und beim Tiefeneffekt
@@ -55,7 +62,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Karte Lübeck
 
 - [ ] **Uferkacheln neu malen**: der Renderer glättet jetzt Infrarot-Ufer und setzt keine Bäume mehr ins Wasser (isometric-cities `6cfff3f`, `c1840c1`); die schon gemalten Kacheln mit Wasser-Sprenkeln (Wakenitz, Wallanlagen) und dunklen „Bäumen“ an Brücken neu malen
-- [ ] **Brücken über die Gleise** neu malen (Schienen in Straßenrichtung) – läuft nach dem Bahnhof
+- [x] Bahnhof in 4-facher Vergrößerung neu gemalt (Gleisfeld, Bahnsteige, Brücke am Bahnhof)
+- [ ] **Brücken über die Gleise** (Schienen in Straßenrichtung): erster Lauf verworfen, die Maske traf bewaldete Bahndämme; neue Maske aus OSM bridge=yes-Straßen statt Höhe
 - [ ] **Bahnhofsgebäude:** die knallblaue Fassade stammt aus einer OSM-Farbangabe; prüfen und gedämpft korrigieren
 - [ ] Marienkirche: Hauptdach blass graugrün statt Kupfer
 - [ ] „Geistergleise“: verblasste Gleise am Übergang östlich vom Bahnhof

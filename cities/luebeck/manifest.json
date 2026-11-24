@@ -106,7 +106,7 @@
         }
       },
       "resampling": "box",
-      "image_sha256": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90"
+      "image_sha256": "8106e548acf67756d22a45a74939f5f0f9826f27c6c3f58693b633e1d76043b6"
     },
     "source": {
       "tile_size": 256,
@@ -430,7 +430,7 @@
     "hitmap.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "hitmap.png": "9a507ae073a078c21e24b5cd8460e2b979c7d1f0918c20aafcd97a128e980b3c",
     "map.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
-    "map.png": "97490c9c33b1365f92406144b3c9512fde26c1178de969942c9721754d77ae90",
+    "map.png": "8106e548acf67756d22a45a74939f5f0f9826f27c6c3f58693b633e1d76043b6",
     "source.dzi": "dc016a93f4580d9affdfa8e22cc9c4d110d0f1a04cf7ef04bf512bee9456a8b6",
     "source.png": "fcab7a6e7d921503cc426321115dabc2147485eb74337ca992614111f1436dd4",
     "walkable.json": "d8df4974f327910ed29e35d656257d132ed66f7367499e0e05523c700f2c0136"
@@ -451,6 +451,10 @@
     {
       "buildings": "addresses from ALKIS house coordinates inside footprints",
       "added": 642
+    },
+    {
+      "map": "main station repainted at 4x from OSM tracks (outputs/station-paint); bridge pass rejected (mask hit wooded embankments)",
+      "map_sha256": "8106e548acf67756d22a45a74939f5f0f9826f27c6c3f58693b633e1d76043b6"
     }
   ]
 }
