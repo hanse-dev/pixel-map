@@ -42,7 +42,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 - [x] Pilot 3D (`app/3d.html`): amtliche LoD2-Gebäudemodelle (LVermGeo SH, CC BY 4.0) der Kachel Altstadt-Mitte, 1.642 Gebäude, drehbar, Sonnenstand mit Schatten
 - [x] Innenstadt (Altstadtinsel, OSM-Stadtteilgrenze): 4.300 Gebäude, Gelände (DGM), Wasser, Gebäude anklickbar (3.720 mit Pixelkarten-Infos), Startseite verlinkt
-- [ ] Dachfarben aus dem Luftbild, Wahrzeichen hervorheben, Rundgänge in 3D
+- [x] Dachfarben aus dem Luftbild (DOP20)
+- [ ] Wahrzeichen hervorheben, Rundgänge in 3D
 
 ## Website / UX
 

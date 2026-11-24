@@ -45,6 +45,25 @@ def tri(ring):
     return t.reshape(-1, 3) if len(t) else None
 
 
+# roof colours from the orthophoto (DOP20 RGB, LVermGeo SH): median of the roof polygon's middle
+import os, rasterio
+DOP = os.environ.get('DOP_DIR')
+_dop = {}
+def roof_colour(ring):
+    if not DOP: return COLOURS['RoofSurface']
+    cx, cy = ring[:, 0].mean(), ring[:, 1].mean(); key = (int(cx // 1000), int(cy // 1000))
+    if key not in _dop:
+        f = Path(DOP) / f'dop20rgbi_32_{key[0]}_{key[1]}_1_sh_2025.tif'
+        _dop[key] = rasterio.open(f) if f.exists() else None
+    d = _dop[key]
+    if d is None: return COLOURS['RoofSurface']
+    r, c = d.index(cx, cy)
+    win = d.read([1, 2, 3], window=((max(r - 3, 0), r + 4), (max(c - 3, 0), c + 4))).reshape(3, -1)
+    if win.size == 0: return COLOURS['RoofSurface']
+    rgb = np.median(win, axis=1)
+    return [int(v) for v in np.clip(rgb * 1.05, 0, 255)]
+
+
 V, F, C, ranges = [], [], [], []
 def add(v, t, colour):
     base = sum(len(x) for x in V); V.append(v); F.append(t + base); C.append(np.tile(list(colour) + [255], (len(v), 1)))
@@ -60,7 +79,7 @@ for path in tiles:
         f0 = sum(len(f) for f in F)
         for kind, r in rings:
             t = tri(r)
-            if t is not None: add(r, t, COLOURS[kind])
+            if t is not None: add(r, t, roof_colour(r) if kind == 'RoofSurface' else COLOURS[kind])
         ranges.append([f0, sum(len(f) for f in F), hit[0] if hit else 0, b.get('{http://www.opengis.net/gml}id')]); nb += 1
 
 # terrain from the bundle ground grid, inside the district (10 m cells)
