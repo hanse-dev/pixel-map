@@ -117,6 +117,17 @@
     if (b.wikidata) { const a = document.createElement('a'); a.href = `https://www.wikidata.org/wiki/${b.wikidata}`; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Wikidata'; links.append(a, ' ') }
     const o = document.createElement('a'); o.href = `https://www.openstreetmap.org/${b.osm}`; o.target = '_blank'; o.rel = 'noopener'; o.textContent = 'OpenStreetMap'; links.append(o);
     links.hidden = false;
+    // share: a link that opens the map on this building (#gebaeude=<osm id>, stable across map versions)
+    const key = b.osm.replace('/', '-');
+    try { history.replaceState(null, '', '#gebaeude=' + key) } catch {}
+    const share = document.createElement('button'); share.className = 'share'; share.textContent = '🔗 Teilen';
+    share.onclick = async () => {
+      const url = location.href.split('#')[0] + '#gebaeude=' + key, title = (i && i.title) || b.name || b.address || 'Gebäude in Lübeck';
+      try { if (navigator.share) { await navigator.share({ title, url }); return } } catch { return }
+      try { await navigator.clipboard.writeText(url); share.textContent = '✓ Link kopiert' } catch { prompt('Link zum Kopieren:', url) }
+      setTimeout(() => share.textContent = '🔗 Teilen', 2500);
+    };
+    links.append(' ', share);
     text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
     // read aloud (spoken in advance with the chosen voice; see scripts/narrate.py)
     const say = el('building-say'), clips = (DATA.spoken || {})[b.wikidata];
@@ -154,6 +165,17 @@
     panel.dataset.box = [st.x - 4, st.y - 4, st.x + 4, st.y + 4].join(',');
     panel.hidden = false;
   };
+  // a shared link: fly to the building once the data is ready
+  const byOsm = () => { const m = new Map(); for (const b of byId.values()) m.set(b.osm.replace('/', '-'), b); return m };
+  function fromHash() {
+    const m = /#gebaeude=([a-z]+-\d+)/.exec(location.hash); if (!m || !ready) return;
+    const b = byOsm().get(m[1]); if (!b || !b.centre) return;
+    if (typeof flyToBuilding === 'function') flyToBuilding({ x: b.centre[0], y: b.centre[1], view_width: 700, building: b.id });
+  }
+  addEventListener('hashchange', fromHash);
+  (function wait() { if (ready) fromHash(); else setTimeout(wait, 200) })();
+  const closeHash = () => { if (/#gebaeude=/.test(location.hash)) try { history.replaceState(null, '', location.pathname + location.search) } catch {} };
+  new MutationObserver(() => { if (panel.hidden) closeHash() }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
   window.pixelMapShowBuilding = id => { const b = id ? byId.get(id) : null; if (b) show(b); else { panel.hidden = true; highlight(null) } };
   el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };
