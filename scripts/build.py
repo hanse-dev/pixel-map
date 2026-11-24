@@ -520,6 +520,7 @@ def main(argv=None):
         shutil.rmtree(SITE)
     SITE.mkdir()
     shutil.copytree(ROOT / 'app', SITE / 'app', ignore=shutil.ignore_patterns('*.template.html'))
+    shutil.copyfile(ROOT / 'app/sw.js', SITE / 'sw.js')            # a service worker controls only pages below its own folder
     if (ROOT / 'info').exists():
         shutil.copytree(ROOT / 'info', SITE / 'info')
     for name, title in cities:

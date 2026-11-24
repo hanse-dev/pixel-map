@@ -65,9 +65,10 @@
     const at = progress.get(t.id);
     const steps = el('ol', { className: 'tour-steps' }, ...t.stations.map((s, k) =>
       el('li', {}, el('b', { textContent: s.name }), s.leg ? el('small', { textContent: ` · ${s.leg.minutes} Min. zu Fuß` }) : el('small', { textContent: ' · Start' }))));
+    const save = el('button', { textContent: '⤓ Offline speichern', onclick: () => offline(t, save) });
     const buttons = el('div', { className: 'tour-go' },
       at > 0 && at < t.stations.length - 1 ? el('button', { className: 'primary', textContent: `▶ Weiter bei Station ${at + 1}`, onclick: () => begin(t, at) }) : null,
-      el('button', { className: at > 0 && at < t.stations.length - 1 ? '' : 'primary', textContent: at > 0 && at < t.stations.length - 1 ? 'Von vorn' : '▶ Rundgang starten', onclick: () => begin(t) }));
+      el('button', { className: at > 0 && at < t.stations.length - 1 ? '' : 'primary', textContent: at > 0 && at < t.stations.length - 1 ? 'Von vorn' : '▶ Rundgang starten', onclick: () => begin(t) }), 'serviceWorker' in navigator ? save : null);
     open = el('div', { className: 'tour-detail' },
       el('p', { className: 'tour-meta', textContent: `${t.stations.length} Stationen · ${km(t.length_m)} km · ca. ${t.minutes} Min. reine Gehzeit` }), steps, buttons);
     button.after(open);
@@ -170,6 +171,33 @@
     if (st !== quizFor) riddle(st);
     requestAnimationFrame(follow);
   })();
+
+  // ---------- offline ----------
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('../sw.js', { scope: '../' }).catch(() => {});
+  function tileUrls(spec, dir, fmt, pts, pad) {
+    const out = new Set();
+    for (const lv of [spec.max_level, spec.max_level - 1, spec.max_level - 2]) {
+      const size = spec.levels[String(lv)], k = W / size.width, T = spec.tile_size;
+      for (const [px, py] of pts) for (let dy = -pad; dy <= pad; dy += 256) for (let dx = -pad; dx <= pad; dx += 256) {
+        const c = Math.floor((px + dx) / k / T), r = Math.floor((py + dy) / k / T);
+        if (c >= 0 && r >= 0 && c < size.columns && r < size.rows) out.add(`${TB}${dir}/${lv}/${c}_${r}.${fmt}`);
+      }
+    }
+    return out;
+  }
+  async function offline(t, btn) {
+    const pts = t.stations.flatMap(st => [[st.x, st.y], ...(st.leg ? st.leg.path.flatMap(r => r[1]) : [])]);
+    const urls = new Set([location.href.split('#')[0], 'buildings.json', 'walkable.json', 'ground.json', ART]);
+    const v = DATA.viewer_tiles[0];
+    for (const u of tileUrls(v, 'map_files', v.format || 'webp', pts, 500)) urls.add(u);
+    for (const u of tileUrls(DATA.hitmap_tiles, 'hitmap_files', 'png', pts, 300)) urls.add(u);
+    for (const u of tileUrls(DATA.depth_tiles, 'depth_files', 'png', pts, 300)) urls.add(u);
+    for (const st of t.stations) for (const a of Object.values(st.audio || {})) urls.add(a.url);
+    const reg = await navigator.serviceWorker.ready, ch = new MessageChannel();
+    btn.disabled = true; btn.textContent = '⤓ 0 %';
+    ch.port1.onmessage = e => { const d = e.data; btn.textContent = d.finished ? '✓ Offline verfügbar' : `⤓ ${Math.round(d.done / d.of * 100)} %`; if (d.finished) btn.disabled = false };
+    reg.active.postMessage({ cache: [...urls].map(u => new URL(u, location.href).href) }, [ch.port2]);
+  }
 
   // ---------- the end of a walk ----------
   const done = el('section', { id: 'walk-done', hidden: true, role: 'dialog', ariaLabel: 'Rundgang beendet' });
