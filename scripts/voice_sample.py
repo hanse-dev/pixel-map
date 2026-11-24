@@ -23,7 +23,13 @@ if genv.exists() and 'HIER_' not in genv.read_text():
     print('Google-Stimmen de-DE:', len(names))
     pick = [n for n in names if 'Chirp3-HD' in n][:6] + [n for n in names if 'Neural2' in n or 'Studio' in n]
     candidates += [{'id': f'google-{n}', 'provider': 'google', 'voice_id': n} for n in pick]
+aenv = Path.home() / '.config/pixel-map/azure.env'
+if aenv.exists() and 'HIER_' not in aenv.read_text():
+    vs = ns['Azure']().voices()
+    print('Azure-Stimmen de-DE:', len(vs))
+    pick = [v['ShortName'] for v in vs if v['ShortName'] in ('de-DE-ConradNeural', 'de-DE-KatjaNeural', 'de-DE-FlorianMultilingualNeural', 'de-DE-SeraphinaMultilingualNeural', 'de-DE-KillianNeural', 'de-DE-AmalaNeural')]
+    candidates += [{'id': f'azure-{n}', 'provider': 'azure', 'voice_id': n} for n in pick]
 for c in candidates:
-    voice = ns['Speechify'](c['voice_id']) if c.get('provider') == 'speechify' else ns['Google'](c['voice_id']) if c.get('provider') == 'google' else PiperVoice.load(str(ns['MODELS'] / f"{c['model']}.onnx"))
+    voice = ns['Speechify'](c['voice_id']) if c.get('provider') == 'speechify' else ns['Google'](c['voice_id']) if c.get('provider') == 'google' else ns['Azure'](c['voice_id']) if c.get('provider') == 'azure' else PiperVoice.load(str(ns['MODELS'] / f"{c['model']}.onnx"))
     ns['speak'](c, voice, text, out / f"{c['id']}.mp3"); print('ok', c['id'])
 (out / 'text.txt').write_text(text + '\n')

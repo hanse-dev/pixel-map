@@ -89,9 +89,33 @@ class Google:
         path.write_bytes(self.b64.b64decode(out['audioContent']))
 
 
+class Azure:
+    """Azure AI Speech (REST): SSML in, MP3 out. Key and region in ~/.config/pixel-map/azure.env."""
+    def __init__(self, voice_id=None):
+        import urllib.request
+        env = dict(l.split('=', 1) for l in (Path.home() / '.config/pixel-map/azure.env').read_text().splitlines() if '=' in l and not l.startswith('#'))
+        self.key, self.region = env['AZURE_SPEECH_KEY'].strip(), env['AZURE_SPEECH_REGION'].strip()
+        if self.key.startswith('HIER_') or self.region.startswith('HIER_'): sys.exit('~/.config/pixel-map/azure.env: Schlüssel oder Region fehlt noch')
+        self.voice, self.req = voice_id, urllib.request
+
+    def call(self, path, body=None, headers=None):
+        r = self.req.Request(f'https://{self.region}.tts.speech.microsoft.com/cognitiveservices/{path}', data=body, method='POST' if body else 'GET',
+                             headers={'Ocp-Apim-Subscription-Key': self.key, 'User-Agent': 'pixel-map', **(headers or {})})
+        return self.req.urlopen(r, timeout=120).read()
+
+    def voices(self):
+        return [v for v in json.loads(self.call('voices/list')) if v['Locale'] == 'de-DE']
+
+    def mp3(self, text, path):
+        from xml.sax.saxutils import escape
+        ssml = (f'<speak version="1.0" xml:lang="de-DE"><voice name="{self.voice}">'
+                f'<prosody rate="-4%">{escape(text)}</prosody></voice></speak>').encode()
+        path.write_bytes(self.call('v1', ssml, {'Content-Type': 'application/ssml+xml', 'X-Microsoft-OutputFormat': 'audio-24khz-96kbitrate-mono-mp3'}))
+
+
 def speak(v, voice, text, mp3):
     """One clip: Speechify voices (config "provider": "speechify") or Piper."""
-    if v.get('provider') in ('speechify', 'google'):
+    if v.get('provider') in ('speechify', 'google', 'azure'):
         voice.mp3(text[:1990], mp3); return          # texts stay below the services' request limits
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / 'a.wav'
@@ -104,7 +128,7 @@ from piper import PiperVoice
 folder = out / 'audio' / city; folder.mkdir(parents=True, exist_ok=True)
 index, buildings, made = {}, {}, 0
 for v in voices:
-    voice = Speechify(v['voice_id']) if v.get('provider') == 'speechify' else Google(v['voice_id']) if v.get('provider') == 'google' else PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
+    voice = Speechify(v['voice_id']) if v.get('provider') == 'speechify' else Google(v['voice_id']) if v.get('provider') == 'google' else Azure(v['voice_id']) if v.get('provider') == 'azure' else PiperVoice.load(str(MODELS / f"{v['model']}.onnx"))
     for t in walks:
         for k, st in enumerate(t['stations']):
             text = script(t, k)
