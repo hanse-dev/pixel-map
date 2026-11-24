@@ -228,21 +228,23 @@
  },
  "voices": [
   {
-   "id": "thorsten",
-   "name": "Thorsten",
+   "id": "conrad",
+   "name": "Conrad",
    "label": "männlich",
-   "model": "de_DE-thorsten-high",
-   "credit": "Piper, Stimme „Thorsten“ (Datensatz CC0, thorsten-voice.de)"
+   "provider": "azure",
+   "voice_id": "de-DE-ConradNeural",
+   "credit": "Microsoft Azure AI Speech, Stimme „Conrad“ (KI-Stimme)"
   },
   {
-   "id": "kerstin",
-   "name": "Kerstin",
+   "id": "amala",
+   "name": "Amala",
    "label": "weiblich",
-   "model": "de_DE-kerstin-low",
-   "credit": "Piper, Stimme „Kerstin“ (Datensatz CC0)"
+   "provider": "azure",
+   "voice_id": "de-DE-AmalaNeural",
+   "credit": "Microsoft Azure AI Speech, Stimme „Amala“ (KI-Stimme)"
   }
  ],
- "default_voice": "thorsten",
+ "default_voice": "conrad",
  "layout": "seitenleiste",
  "layout_note": "\"seitenleiste\" (Leiste links mit Tabs) oder \"klassisch\" (Leiste unten); zum Vergleich in der Adresse ?seite=1 bzw. ?seite=0"
 }

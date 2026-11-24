@@ -1,795 +1,795 @@
 {
  "voices": {
-  "thorsten": "Piper, Stimme „Thorsten“ (Datensatz CC0, thorsten-voice.de)",
-  "kerstin": "Piper, Stimme „Kerstin“ (Datensatz CC0)"
+  "conrad": "Microsoft Azure AI Speech, Stimme „Conrad“ (KI-Stimme)",
+  "amala": "Microsoft Azure AI Speech, Stimme „Amala“ (KI-Stimme)"
  },
  "texts": "nach Wikipedia (CC BY-SA 4.0)",
  "stations": {
   "hanse-1": {
    "text": "Station 1: Holstentor. Das Holstentor ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt. Das spätgotische Gebäude gehört zu den Überresten der Lübecker Stadtbefestigung. Das Holstentor ist neben dem Burgtor das einzige erhaltene Stadttor Lübecks. Mehr als 300 Jahre lang stand es als Mittleres Holstentor in einer Reihe mit drei weiteren Holstentoren, die im 19. Jahrhundert abgerissen wurden. Das Mittlere Holstentor, das heute als Holstentor bekannt ist, wurde hingegen mehrmals restauriert, zuletzt in den Jahren 2005/2006. Nächste Station: Salzspeicher. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/80befd8db235dcdb.mp3",
-    "seconds": 43.3
+   "conrad": {
+    "file": "audio/luebeck/6c5ecae40162f3b1.mp3",
+    "seconds": 52.2
    },
-   "kerstin": {
-    "file": "audio/luebeck/86629275ed20fa4f.mp3",
-    "seconds": 47.8
+   "amala": {
+    "file": "audio/luebeck/9f4766abd16b86ad.mp3",
+    "seconds": 59.8
    }
   },
   "hanse-2": {
    "text": "Station 2: Salzspeicher. Die Salzspeicher sind eine Gruppe von Lagerhäusern an der Lübecker Obertrave direkt neben dem Holstentor. Sie wurden im Stil der Backsteinrenaissance und des Backsteinbarock erbaut. Nächste Station: Lübecker Rathaus. Bis dorthin sind es etwa fünf Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/fceb2275d4f306d3.mp3",
-    "seconds": 16.8
+   "conrad": {
+    "file": "audio/luebeck/678da5883e7c233b.mp3",
+    "seconds": 21.7
    },
-   "kerstin": {
-    "file": "audio/luebeck/4b8672ca2f4451af.mp3",
-    "seconds": 17.9
+   "amala": {
+    "file": "audio/luebeck/3ced679ac74aee88.mp3",
+    "seconds": 24.8
    }
   },
   "hanse-3": {
    "text": "Station 3: Lübecker Rathaus. Das Rathaus der Hansestadt Lübeck zählt zu den bekanntesten Bauwerken der Backsteingotik. Es ist eines der größten mittelalterlichen Rathäuser in Deutschland. Nächste Station: Kanzleigebäude. Bis dorthin sind es etwa vier Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/e7f5f7904ed968e2.mp3",
-    "seconds": 15.3
+   "conrad": {
+    "file": "audio/luebeck/485454356286e1e5.mp3",
+    "seconds": 20.1
    },
-   "kerstin": {
-    "file": "audio/luebeck/64a0dd1a9b0a0008.mp3",
-    "seconds": 17.1
+   "amala": {
+    "file": "audio/luebeck/57aa189f35ed8ec7.mp3",
+    "seconds": 23.5
    }
   },
   "hanse-4": {
    "text": "Station 4: Kanzleigebäude. Das Kanzleigebäude wurde 1485 nach fünfjähriger Bauphase im gotischen Stil erbaut und befindet sich nördlich des Lübecker Rathauses an der Breiten Straße. Nächste Station: Haus der Kaufmannschaft. Bis dorthin sind es etwa sechs Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/0180e105f45cd23f.mp3",
-    "seconds": 18.1
+   "conrad": {
+    "file": "audio/luebeck/1c466bb6ea1e186d.mp3",
+    "seconds": 22.1
    },
-   "kerstin": {
-    "file": "audio/luebeck/d768c1d12640096c.mp3",
-    "seconds": 19.9
+   "amala": {
+    "file": "audio/luebeck/dfcf66e1987fbfab.mp3",
+    "seconds": 24.2
    }
   },
   "hanse-5": {
    "text": "Station 5: Haus der Kaufmannschaft. Das Haus der Kaufmannschaft in Lübeck beherbergt hinter seiner neugotischen Putzfassade von 1838 zwei der schönsten Sitzungsräume der Hansestadt aus der Zeit der Renaissance. Das nach wie vor der Kaufmannschaft zu Lübeck als Nachfolgeorganisation der Lübecker Kaufmanns-Gilden gehörende Haus in der Breite Straße 6–8 neben der Schiffergesellschaft wurde seit 1853 bis Ende des 20. Jahrhunderts von der Handelskammer, später ab 1937 der Industrie- und Handelskammer zu Lübeck als Verwaltungsgebäude genutzt. Heute beherbergt es die Geschäftsstelle der Kaufmannschaft zu Lübeck und mehrere Unternehmen und Betriebe. Nächste Station: Jakobikirche. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/d8049f2d8bc62af7.mp3",
-    "seconds": 46.0
+   "conrad": {
+    "file": "audio/luebeck/1adada15ea787b7e.mp3",
+    "seconds": 50.6
    },
-   "kerstin": {
-    "file": "audio/luebeck/e2b392aff8b61bc8.mp3",
-    "seconds": 49.0
+   "amala": {
+    "file": "audio/luebeck/ca0acf1de26d2a3e.mp3",
+    "seconds": 56.9
    }
   },
   "hanse-6": {
    "text": "Station 6: Jakobikirche. St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt. Sie wurde im Jahre 1334 als Kirche der Seefahrer und Fischer geweiht, die ihr Schütting noch heute in der gegenüberliegenden Schiffergesellschaft haben. Ihr Patron ist der Heilige Jakobus der Ältere. Die Kirche, das Heiligen-Geist-Hospital und die benachbarte Gertrudenherberge sind Stationen auf einem Zweig des norddeutschen Jakobswegs. Seit September 2007 ist die nördliche Turmkapelle der Kirche als Pamir-Kapelle Nationale Gedenkstätte für die zivile Seefahrt. Nächste Station: Kornspeicher Die Eiche. Bis dorthin sind es etwa sechs Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/7804e375dc4001a9.mp3",
-    "seconds": 39.9
+   "conrad": {
+    "file": "audio/luebeck/247ee3a44ef08afa.mp3",
+    "seconds": 47.7
    },
-   "kerstin": {
-    "file": "audio/luebeck/ba06a22c32e4421c.mp3",
-    "seconds": 42.8
+   "amala": {
+    "file": "audio/luebeck/dd5bdb559c6fe44a.mp3",
+    "seconds": 53.3
    }
   },
   "hanse-7": {
    "text": "Station 7: Kornspeicher Die Eiche. Der Kornspeicher Die Eiche ist ein denkmalgeschütztes Speichergebäude in der Lübecker Altstadt. Das Grundstück An der Untertrave 34 wurde im Jahr 1323 erstmals als mit einem Kornhaus bebaut urkundlich erwähnt. Zu dem Grundstück gehörte damals noch ein Gang, der mit kleineren Buden bebaut war und Harder Gang genannt wurde. Im Jahr 1873 errichtete der Lübecker Kaufmann und spätere Senator Henry Mann das heute noch bestehende Speichergebäude mit sieben Geschossen am Lübecker Hansahafen, wobei Gang samt Buden bei dieser Gelegenheit mit überbaut wurden. Das war die letzte Station des Rundgangs Hanse: Salz, Rat und Hafen. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/38cc8bd96b31fe5c.mp3",
-    "seconds": 40.9
+   "conrad": {
+    "file": "audio/luebeck/6fb12bba6dbd5241.mp3",
+    "seconds": 48.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/c27b017a9ed2cf39.mp3",
-    "seconds": 44.7
+   "amala": {
+    "file": "audio/luebeck/10efa50925de66f6.mp3",
+    "seconds": 53.9
    }
   },
   "kirchen-1": {
    "text": "Station 1: Lübecker Dom. Der Lübecker Dom ist der erste große Backsteinkirchbau an der Ostsee und mit fast 132 Metern Länge eine der längsten Backsteinkirchen. 1173 wurde der Lübecker Dom von Heinrich dem Löwen begründet und 1247 geweiht. Patrone der evangelischen Kirche sind die Heiligen Johannes der Täufer und Blasius, Maria und Nikolaus. Nächste Station: Aegidienkirche. Bis dorthin sind es etwa sechs Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/3c76add79b4ccc1b.mp3",
-    "seconds": 30.3
+   "conrad": {
+    "file": "audio/luebeck/5d4ef0971ab63aec.mp3",
+    "seconds": 35.4
    },
-   "kerstin": {
-    "file": "audio/luebeck/a91cbc730f7a43ba.mp3",
-    "seconds": 32.8
+   "amala": {
+    "file": "audio/luebeck/9c1e3d5c499eb0f2.mp3",
+    "seconds": 40.2
    }
   },
   "kirchen-2": {
    "text": "Station 2: Aegidienkirche. Die St.-Aegidien-Kirche, auch Aegidienkirche, ist die kleinste und östlichste der Lübecker Innenstadtkirchen und dem heiligen Ägidius geweiht. Sie war das Zentrum des Viertels der Handwerker, das auf dem östlichen Abhang des Innenstadthügels in Richtung Wakenitz angesiedelt war. In diesem Viertel lebten in Umgebung der Kirche seit jeher viele Menschen, die der sozialen Fürsorge bedurften. Die verbliebenen Gebäude der Beginenkonvente werden wie der Aegidienhof heute zum Wohnen genutzt, das St.-Annen-Kloster als Museumsquartier St. Annen. Zusammen machen sie heute das Aegidien-Viertel der Lübecker Altstadt aus. Nächste Station: Petrikirche. Bis dorthin sind es etwa sieben Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/ab4fa13d9b434e74.mp3",
-    "seconds": 39.2
+   "conrad": {
+    "file": "audio/luebeck/0e5174de694832fd.mp3",
+    "seconds": 49.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/2e362bece1157340.mp3",
-    "seconds": 43.3
+   "amala": {
+    "file": "audio/luebeck/1ba945ab126e071a.mp3",
+    "seconds": 55.5
    }
   },
   "kirchen-3": {
    "text": "Station 3: Petrikirche. St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde. Wie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Nächste Station: Marienkirche. Bis dorthin sind es etwa vier Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/de7c8f2576ea3e1c.mp3",
-    "seconds": 49.7
+   "conrad": {
+    "file": "audio/luebeck/d4861b467986008e.mp3",
+    "seconds": 54.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/b6a89b1dbd4b780d.mp3",
-    "seconds": 52.4
+   "amala": {
+    "file": "audio/luebeck/b3bdf3f5d4dd028d.mp3",
+    "seconds": 60.4
    }
   },
   "kirchen-4": {
    "text": "Station 4: Marienkirche. Die Lübecker Marienkirche ist die Lübecker Markt- und Hauptpfarrkirche und befindet sich auf dem höchsten Punkt der Lübecker Altstadtinsel. Sie ist Teil des UNESCO-Welterbes Lübecker Altstadt. Als eine der größten Backsteinkirchen wird sie auch als Mutterkirche der Backsteingotik bezeichnet und gilt als ein Hauptwerk des Kirchenbaus im Ostseeraum. Der Bau der gotischen Kirche, die einen romanischen Vorgängerbau ersetzte, begann 1251 und war mit der Fertigstellung der Türme hundert Jahre später, 1351, abgeschlossen. St. Marien gehört zur Evangelisch-Lutherischen Kirche in Norddeutschland. Nächste Station: Katharinenkirche. Bis dorthin sind es etwa fünf Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/80ea24fb0f902040.mp3",
-    "seconds": 41.2
+   "conrad": {
+    "file": "audio/luebeck/8a2fe35d2a96d2de.mp3",
+    "seconds": 51.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/86344b712c7bdb18.mp3",
-    "seconds": 45.2
+   "amala": {
+    "file": "audio/luebeck/f291dc8cb74b5a42.mp3",
+    "seconds": 57.7
    }
   },
   "kirchen-5": {
    "text": "Station 5: Katharinenkirche. Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien. Das Katharinenkloster bestand als Konvent der Franziskaner von 1225 bis zur Reformation 1531. Es gehörte zur Sächsischen Franziskanerprovinz und war ab 1274 Sitz einer der zwölf Kustodien der Saxonia, und zwar für die an der Ostsee gelegenen Konvente. Nächste Station: Jakobikirche. Bis dorthin sind es etwa zwei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/5498acd671e7466f.mp3",
-    "seconds": 39.9
+   "conrad": {
+    "file": "audio/luebeck/00e9826c0c74391e.mp3",
+    "seconds": 47.5
    },
-   "kerstin": {
-    "file": "audio/luebeck/4c66962bc731b0d3.mp3",
-    "seconds": 45.5
+   "amala": {
+    "file": "audio/luebeck/acaf468861213e88.mp3",
+    "seconds": 53.6
    }
   },
   "kirchen-6": {
    "text": "Station 6: Jakobikirche. St. Jakobi ist eine der fünf evangelisch-lutherischen Hauptpfarrkirchen in der Lübecker Altstadt. Sie wurde im Jahre 1334 als Kirche der Seefahrer und Fischer geweiht, die ihr Schütting noch heute in der gegenüberliegenden Schiffergesellschaft haben. Ihr Patron ist der Heilige Jakobus der Ältere. Die Kirche, das Heiligen-Geist-Hospital und die benachbarte Gertrudenherberge sind Stationen auf einem Zweig des norddeutschen Jakobswegs. Seit September 2007 ist die nördliche Turmkapelle der Kirche als Pamir-Kapelle Nationale Gedenkstätte für die zivile Seefahrt. Das war die letzte Station des Rundgangs Die Hauptkirchen. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/e864b6e55b1b9e33.mp3",
-    "seconds": 39.0
+   "conrad": {
+    "file": "audio/luebeck/e8ef1e004a288353.mp3",
+    "seconds": 47.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/cf57e6da8863d6ac.mp3",
-    "seconds": 41.9
+   "amala": {
+    "file": "audio/luebeck/9c3f34d9b9eeffeb.mp3",
+    "seconds": 51.8
    }
   },
   "buergerhaeuser-1": {
    "text": "Station 1: Schabbelhaus. Das Schabbelhaus in der Lübecker Mengstraße sind zwei Bürgerhäuser der Backsteinrenaissance unterhalb des Buddenbrookhauses zum Ufer der Trave, in einem vom Bombenangriff im März 1942 nicht betroffenen Teil der Straße gelegen. Das Schabbelhaus ist nach dem stiftenden Bäckermeister Schabbel benannt; das Schabbellhaus in Wismar hat einen anderen Hintergrund. Nächste Station: Buddenbrookhaus. Bis dorthin sind es etwa vier Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/75c21c5aa9da1654.mp3",
-    "seconds": 26.8
+   "conrad": {
+    "file": "audio/luebeck/2d19844f459991be.mp3",
+    "seconds": 31.5
    },
-   "kerstin": {
-    "file": "audio/luebeck/07545a2b959a3479.mp3",
-    "seconds": 28.2
+   "amala": {
+    "file": "audio/luebeck/93b038b3309743b2.mp3",
+    "seconds": 36.1
    }
   },
   "buergerhaeuser-2": {
    "text": "Station 2: Buddenbrookhaus. Das Buddenbrookhaus in Lübeck ist seit 1993 eine Gedenkstätte in Trägerschaft der Kulturstiftung Hansestadt Lübeck. Es beherbergt den Förderverein Buddenbrookhaus, die Deutsche Thomas Mann-Gesellschaft, die Heinrich Mann-Gesellschaft, die Golo Mann-Gesellschaft und die Erich-Mühsam-Gesellschaft. Direktorin des Buddenbrookhauses ist seit Februar 2024 Caren Heuer. Im Haus befindet sich ein Museum mit zwei festen Ausstellungen: Die Buddenbrooks – Ein Jahrhundertroman und Die Manns – eine Schriftstellerfamilie. Ferner gibt es eine Etage für wechselnde Sonderausstellungen. Nächste Station: Löwen-Apotheke. Bis dorthin sind es etwa zwei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/a101fa61df1e5396.mp3",
-    "seconds": 41.4
+   "conrad": {
+    "file": "audio/luebeck/ae6b092ea4668e87.mp3",
+    "seconds": 48.6
    },
-   "kerstin": {
-    "file": "audio/luebeck/f54199acef2cffcb.mp3",
-    "seconds": 44.0
+   "amala": {
+    "file": "audio/luebeck/1c075b57389cb2ec.mp3",
+    "seconds": 54.1
    }
   },
   "buergerhaeuser-3": {
    "text": "Station 3: Löwen-Apotheke. Die Löwen-Apotheke ist einer der ältesten Profanbauten des Weltkulturerbes der Lübecker Altstadt. Die teilweise romanische Bausubstanz geht auf die Zeit vor den großen Lübecker Stadtbränden des 13. Jahrhunderts zurück. Die Gründung der Apotheke wurde während der Lübecker Franzosenzeit im Jahr 1812 durch die eingetretene Gewerbefreiheit ermöglicht. Nächste Station: Willy-Brandt-Haus Lübeck. Bis dorthin sind es etwa drei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/b70323315187ed6a.mp3",
-    "seconds": 28.6
+   "conrad": {
+    "file": "audio/luebeck/8db763bdc9213d26.mp3",
+    "seconds": 32.8
    },
-   "kerstin": {
-    "file": "audio/luebeck/7dc8a9b5130b5afd.mp3",
-    "seconds": 31.5
+   "amala": {
+    "file": "audio/luebeck/48b0bc5cc0178ef3.mp3",
+    "seconds": 37.0
    }
   },
   "buergerhaeuser-4": {
    "text": "Station 4: Willy-Brandt-Haus Lübeck. Das Willy-Brandt-Haus Lübeck ist ein Museum und eine Gedenkstätte für den früheren deutschen SPD-Politiker, Bundeskanzler und Friedensnobelpreisträger Willy Brandt. Das Gebäude, eine Außenstelle der Bundeskanzler-Willy-Brandt-Stiftung mit Sitz in Berlin, ist außerdem Sitz der Abteilung Denkmalpflege der Hansestadt Lübeck in Schleswig-Holstein. Nächste Station: Behnhaus. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/9df864b3b2a08769.mp3",
-    "seconds": 25.5
+   "conrad": {
+    "file": "audio/luebeck/e32802a0332c7736.mp3",
+    "seconds": 31.1
    },
-   "kerstin": {
-    "file": "audio/luebeck/b8a23c7a5d30212b.mp3",
-    "seconds": 28.0
+   "amala": {
+    "file": "audio/luebeck/66236b479aeed236.mp3",
+    "seconds": 35.7
    }
   },
   "buergerhaeuser-5": {
    "text": "Station 5: Behnhaus. Das Behnhaus, offizieller Name Museum Behnhaus Drägerhaus, Galerie des 19. Jahrhunderts und der Klassischen Moderne, ist ein Lübecker Museum und Teil der Lübecker Museen, verwaltet durch die Kulturstiftung Hansestadt Lübeck. Es zeigt die Malerei der Nazarener und vorwiegend deutsche Malerei des 19. Jahrhunderts, des Impressionismus und Expressionismus sowie bürgerliche Wohnkultur aus Rokoko, Klassizismus und Biedermeier. Nächste Station: Hoghehus. Bis dorthin sind es etwa zwei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/de17a8fcfcd4eeff.mp3",
-    "seconds": 31.4
+   "conrad": {
+    "file": "audio/luebeck/d1ab4d921b181c0b.mp3",
+    "seconds": 35.6
    },
-   "kerstin": {
-    "file": "audio/luebeck/76102ff8dde6598e.mp3",
-    "seconds": 35.3
+   "amala": {
+    "file": "audio/luebeck/33976ef31c52a35c.mp3",
+    "seconds": 41.5
    }
   },
   "buergerhaeuser-6": {
    "text": "Station 6: Hoghehus. Das Hoghehus am Koberg in Lübeck ist das größte erhaltene mittelalterliche Bürgerhaus in Lübeck und steht als Bestandteil des Flächendenkmals der Lübecker Altstadt unter Denkmalschutz. Das war die letzte Station des Rundgangs Kaufmannshäuser, Thomas Mann und Willy Brandt. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/21d54470b9723e71.mp3",
-    "seconds": 17.5
+   "conrad": {
+    "file": "audio/luebeck/0f07bcd8def1c501.mp3",
+    "seconds": 21.9
    },
-   "kerstin": {
-    "file": "audio/luebeck/47cdabe0ab4c0855.mp3",
-    "seconds": 19.6
+   "amala": {
+    "file": "audio/luebeck/503866ea7326c0a7.mp3",
+    "seconds": 24.4
    }
   },
   "kloester-1": {
    "text": "Station 1: St.-Johannis-Kloster. Das St.-Johannis-Kloster in Lübeck wurde zur Zeit Heinrichs des Löwen durch Bischof Heinrich I. als Benediktinerkloster gegründet und 1177 dem Evangelisten Johannes geweiht. Es gehörte zur Diözese Lübeck. Nachdem es zwischenzeitlich ein Doppelkloster war, wurde es 1246 in ein Zisterzienserinnenkloster umgewandelt und nach der Reformation bis 1803 als Jungfrauenstift fortgeführt. Nächste Station: Katharinenkirche. Bis dorthin sind es etwa fünf Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/d6c2964faa888348.mp3",
-    "seconds": 34.3
+   "conrad": {
+    "file": "audio/luebeck/b4c07a8c4bdc92f6.mp3",
+    "seconds": 40.4
    },
-   "kerstin": {
-    "file": "audio/luebeck/27f23f0d7ac07d64.mp3",
-    "seconds": 38.3
+   "amala": {
+    "file": "audio/luebeck/df1194e775fee406.mp3",
+    "seconds": 46.2
    }
   },
   "kloester-2": {
    "text": "Station 2: Katharinenkirche. Die Katharinenkirche, auch Museumskirche St. Katharinen zu Lübeck, ist die Kirche des ehemaligen Franziskanerklosters und die einzige erhaltene Klosterkirche in Lübeck. Sie trägt das Patrozinium der heiligen Katharina von Alexandrien. Das Katharinenkloster bestand als Konvent der Franziskaner von 1225 bis zur Reformation 1531. Es gehörte zur Sächsischen Franziskanerprovinz und war ab 1274 Sitz einer der zwölf Kustodien der Saxonia, und zwar für die an der Ostsee gelegenen Konvente. Nächste Station: Kranen-Konvent. Bis dorthin sind es etwa fünf Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/29d06a9568091c06.mp3",
-    "seconds": 39.8
+   "conrad": {
+    "file": "audio/luebeck/052b8105985c3ced.mp3",
+    "seconds": 47.5
    },
-   "kerstin": {
-    "file": "audio/luebeck/962438605a18b407.mp3",
-    "seconds": 45.7
+   "amala": {
+    "file": "audio/luebeck/228fd775c001d1c8.mp3",
+    "seconds": 53.7
    }
   },
   "kloester-3": {
    "text": "Station 3: Kranen-Konvent. Das Gebäude des Kranen-Konvents ist eines der ältesten erhaltenen backsteingotischen Bauwerke in der Lübecker Altstadt und Bestandteil des Weltkulturerbes. Die Bausubstanz des Gebäudes in der Kleinen Burgstraße 22 geht auf das Jahr 1283 zurück. Der Dachstuhl ist dendrochronologisch auf das Jahr 1283 datiert worden. Sein dreischiffiger und mit drei Jochen Kreuzrippengewölben ausgestatteter Keller ist der älteste erhaltene Gewölbekeller in Lübeck. Gleichwohl fehlen die repräsentativen Architekturmerkmale der privaten Profanbauten der Gotik in Lübeck, insbesondere die vertikalen Gliederungen des schlicht dreieckigen Giebels. Nächste Station: Gertrudenherberge. Bis dorthin sind es etwa drei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/a5824911c429a9d2.mp3",
-    "seconds": 44.5
+   "conrad": {
+    "file": "audio/luebeck/10e0d3de56102743.mp3",
+    "seconds": 52.1
    },
-   "kerstin": {
-    "file": "audio/luebeck/4bfbf2ad13037302.mp3",
-    "seconds": 51.4
+   "amala": {
+    "file": "audio/luebeck/b6c1c3c7cfb63446.mp3",
+    "seconds": 58.7
    }
   },
   "kloester-4": {
    "text": "Station 4: Gertrudenherberge. Die Gertrudenherberge ist eine mittelalterliche Pilgerherberge in der Hansestadt Lübeck. Die nach der Heiligen Gertrud von Nivelles, der Schutzheiligen der Pilger, benannte Einrichtung gehörte ursprünglich zum Heiligen-Geist-Hospital. Sie ist eines der jüngst wiederentdeckten und damit erst sehr spät unter Schutz gestellten Baudenkmale des mittelalterlichen Welterbes auf der Lübecker Altstadtinsel. Das war die letzte Station des Rundgangs Klöster, Konvente und eine Pilgerherberge. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/f4edaea030170db7.mp3",
-    "seconds": 28.5
+   "conrad": {
+    "file": "audio/luebeck/a396779639f51282.mp3",
+    "seconds": 36.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/1410d9f01fd54f6b.mp3",
-    "seconds": 32.3
+   "amala": {
+    "file": "audio/luebeck/4168544a440acc0e.mp3",
+    "seconds": 39.7
    }
   },
   "gaenge-1": {
    "text": "Station 1: Schiffer Hof. Der 1538 erstmals erwähnte Hof befindet sich noch heute im Besitz der Schiffergesellschaft. Er bestand 1601 erstmals aus drei Giebelhäusern, die von Schifferwitwen als Freiwohnungen genutzt wurden. Die Statue war eine Karikatur Bismarcks. Der jetzige Gebäudekomplex stammt von 1908/09. Das Vorderhaus wurde mit Renaissance-Treppengiebeln und Blendnischen neu gebaut. Nächste Station: Krusenhof. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/b44296d255feade9.mp3",
-    "seconds": 30.9
+   "conrad": {
+    "file": "audio/luebeck/0b404ad3878fbc85.mp3",
+    "seconds": 37.8
    },
-   "kerstin": {
-    "file": "audio/luebeck/3a4c94e09a745c26.mp3",
-    "seconds": 33.9
+   "amala": {
+    "file": "audio/luebeck/a5d61656982846a8.mp3",
+    "seconds": 43.5
    }
   },
   "gaenge-2": {
    "text": "Station 2: Krusenhof. 1540 als Albert-Klever-Gang erwähnt, 1545 von Hans Kruse als Armengang mit Wohnungen gestiftet. Der kleine Hof, 1597 mit zweigeschossigen Fachwerktraufenhäusern umgebaut, wurde 1994 bis 1996 grundlegend saniert. Nächste Station: Bäcker-Gang. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/c2acf06ffcefde2f.mp3",
-    "seconds": 28.2
+   "conrad": {
+    "file": "audio/luebeck/6f47110975c1a69c.mp3",
+    "seconds": 31.4
    },
-   "kerstin": {
-    "file": "audio/luebeck/7597225838403a54.mp3",
-    "seconds": 29.7
+   "amala": {
+    "file": "audio/luebeck/d5ab360f519ba83c.mp3",
+    "seconds": 36.5
    }
   },
   "gaenge-3": {
    "text": "Station 3: Bäcker-Gang. Mündet an seinem hinteren Ende in den Lüngreens Gang. Vom Anfang des 14. Jh.s Rovereshagen nach den Brüdern Rovere, 1409 fälschlich als Oberer Rolofshagen bezeichnet. 1630, da im Vorderhaus Bäcker ihr Handwerk betrieben, Bäcker Gang. 1707 nach dem Bäcker Detlev Gloy Gloys-Gang und 1732 nach dem Gangeigentümer Martin Nikolaus Thomsen Thomsen Gang. Seit 1812 wieder Bäcker Gang. Nächste Station: Füchtingshof. Bis dorthin sind es etwa sieben Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/2db9e0b91c175bb8.mp3",
-    "seconds": 34.5
+   "conrad": {
+    "file": "audio/luebeck/32f0e2be84979b36.mp3",
+    "seconds": 43.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/bcb0060cb04d2bff.mp3",
-    "seconds": 39.3
+   "amala": {
+    "file": "audio/luebeck/01cfacdec15bc921.mp3",
+    "seconds": 49.7
    }
   },
   "gaenge-4": {
    "text": "Station 4: Füchtingshof. Benannt nach Johann Füchting, das Innere des Füchtingshofs diente Friedrich Wilhelm Murnau für seinen Film Nosferatu – Eine Symphonie des Grauens bei seinen Lübecker Außenaufnahmen in zwei Szenen als Kulisse. Nächste Station: Glandorps Hof. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/eb99633a46f23e27.mp3",
-    "seconds": 17.0
+   "conrad": {
+    "file": "audio/luebeck/016dea59167799c3.mp3",
+    "seconds": 22.3
    },
-   "kerstin": {
-    "file": "audio/luebeck/a384d8a730e04eb8.mp3",
-    "seconds": 19.2
+   "amala": {
+    "file": "audio/luebeck/e75b788d18b4316c.mp3",
+    "seconds": 25.1
    }
   },
   "gaenge-5": {
    "text": "Station 5: Glandorps Hof. 1612 gestiftet von Johann Glandorp. Ältester der größeren Stiftungshöfe der Stadt. Vorderhaus aus der Gründungszeit als langes Traufenhaus mit getreppten Zwerchgiebeln ausgebildet. Stiftungsinschrift und -wappen über dem Durchgang. Traufenhausflügel im Hof mit Wappen von 1609, 1872–84 teilweise erneuert. 1975/77 zu Wohnzwecken durchgebaut. Nächste Station: Lödings Hof. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/e3dfa4252b076c4c.mp3",
-    "seconds": 33.9
+   "conrad": {
+    "file": "audio/luebeck/d8afcc13f9a2c421.mp3",
+    "seconds": 40.9
    },
-   "kerstin": {
-    "file": "audio/luebeck/a314bc4cc1f71d2a.mp3",
-    "seconds": 35.8
+   "amala": {
+    "file": "audio/luebeck/cf3610d578269f6b.mp3",
+    "seconds": 47.2
    }
   },
   "gaenge-6": {
    "text": "Station 6: Lödings Hof. 1538 musste Valentin Schröder das Querhaus an der Straße mit einigen Buden im Hof den Vorstehern des Pockenhofes, da er bei ihnen Schulden hatte, überlassen. 1602–1687 Kruses Hof nach dem Besitzer Hans Kruse, als dieser an die Familie Klodt überging wurde er 1740 in Klodts Hof und als er den Brockmöllers gehörte um 1800 in Brockmöllers Hof umbenannt. Letzte Umbenennung erfolgte nach 1810 in Lödings Hof nach dem Branntweinbrenner Gottlieb Heinrich Löding. Das war die letzte Station des Rundgangs Gänge und Höfe. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/715d262c6792234f.mp3",
-    "seconds": 37.0
+   "conrad": {
+    "file": "audio/luebeck/15363421682f12bc.mp3",
+    "seconds": 45.3
    },
-   "kerstin": {
-    "file": "audio/luebeck/edfc7c7ef859a4b8.mp3",
-    "seconds": 41.7
+   "amala": {
+    "file": "audio/luebeck/82fbf2ee645cb3d8.mp3",
+    "seconds": 51.3
    }
   },
   "befestigung-1": {
    "text": "Station 1: Burgtor. Das 1444 im spätgotischen Stil erbaute Burgtor in Lübeck ist das nördliche von ehemals vier Stadttoren der Lübecker Stadtbefestigung und neben dem Holstentor das einzige, das noch heute erhalten ist. Es hat seinen Namen nach der alten, hoch über der Trave gelegenen Lübecker Burg, die 1227 zum Burgkloster umgebaut wurde. Durch das Tor führt die Große Burgstraße zum Stadtzentrum. Nächste Station: Hüxtertor. Bis dorthin sind es etwa 16 Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/a0c6db318c7eec78.mp3",
-    "seconds": 30.1
+   "conrad": {
+    "file": "audio/luebeck/1a42cfd80e4d5d46.mp3",
+    "seconds": 37.4
    },
-   "kerstin": {
-    "file": "audio/luebeck/d869c9024fab6131.mp3",
-    "seconds": 34.0
+   "amala": {
+    "file": "audio/luebeck/23ca4d2b5c64caee.mp3",
+    "seconds": 42.7
    }
   },
   "befestigung-2": {
    "text": "Station 2: Hüxtertor. Das Hüxtertor war eines der mittelalterlichen Stadttore Lübecks und Teil der Lübecker Stadtbefestigung. Nächste Station: Mühlentor. Bis dorthin sind es etwa 13 Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/aa6960b3037263c5.mp3",
-    "seconds": 12.0
+   "conrad": {
+    "file": "audio/luebeck/d431d1ee8dc51e69.mp3",
+    "seconds": 16.2
    },
-   "kerstin": {
-    "file": "audio/luebeck/c06f13bdf90ea751.mp3",
-    "seconds": 13.6
+   "amala": {
+    "file": "audio/luebeck/37e880acbf8b65b4.mp3",
+    "seconds": 18.8
    }
   },
   "befestigung-3": {
    "text": "Station 3: Mühlentor. Mühlentor ist die zusammenfassende Bezeichnung für die Stadttor-Anlage der Lübecker Stadtbefestigung, welche den Eingang zur Stadt von Süden her sicherte. Daneben findet der Begriff bis in die Gegenwart Verwendung als Bezeichnung für den Teil von Lübeck-St. Jürgen, der das unmittelbare ehemalige Torvorland umfasst. Insgesamt bestand die Mühlentor-Anlage aus vier hintereinander gestaffelten Toren, die in verschiedenen Jahrhunderten errichtet wurden, wobei die jüngeren den älteren vorgelagert wurden. Allerdings existierten zu keinem Zeitpunkt alle vier Torbauten zugleich. Nächste Station: Kaisertor. Bis dorthin sind es etwa sieben Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/17d8f8d2ee65498a.mp3",
-    "seconds": 36.0
+   "conrad": {
+    "file": "audio/luebeck/e64e9d00d645767f.mp3",
+    "seconds": 44.6
    },
-   "kerstin": {
-    "file": "audio/luebeck/df11def6705b0f89.mp3",
-    "seconds": 41.1
+   "amala": {
+    "file": "audio/luebeck/2e998f854454c7ba.mp3",
+    "seconds": 50.5
    }
   },
   "befestigung-4": {
    "text": "Station 4: Kaisertor. Das Kaisertor ist ein Teil der ehemaligen Stadtbefestigungsanlage Lübecks. Nächste Station: Wallanlagen. Bis dorthin sind es etwa fünf Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/48d5bb2eff0801c6.mp3",
-    "seconds": 10.9
+   "conrad": {
+    "file": "audio/luebeck/e878909ef5e4d180.mp3",
+    "seconds": 15.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/58d716340f6dcea7.mp3",
-    "seconds": 12.9
+   "amala": {
+    "file": "audio/luebeck/cd9b95a42c4c8e64.mp3",
+    "seconds": 17.1
    }
   },
   "befestigung-5": {
    "text": "Station 5: Wallanlagen. Die Wallanlagen sind die größte und älteste Parkanlage der Stadt Lübeck. Nächste Station: Holstentor. Bis dorthin sind es etwa 13 Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/88f9433389fb35a4.mp3",
-    "seconds": 11.5
+   "conrad": {
+    "file": "audio/luebeck/9ca7222720a2c7b8.mp3",
+    "seconds": 14.8
    },
-   "kerstin": {
-    "file": "audio/luebeck/91845fa431263cdc.mp3",
-    "seconds": 12.1
+   "amala": {
+    "file": "audio/luebeck/873c0c6f98ea5325.mp3",
+    "seconds": 17.2
    }
   },
   "befestigung-6": {
    "text": "Station 6: Holstentor. Das Holstentor ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt. Das spätgotische Gebäude gehört zu den Überresten der Lübecker Stadtbefestigung. Das Holstentor ist neben dem Burgtor das einzige erhaltene Stadttor Lübecks. Mehr als 300 Jahre lang stand es als Mittleres Holstentor in einer Reihe mit drei weiteren Holstentoren, die im 19. Jahrhundert abgerissen wurden. Das Mittlere Holstentor, das heute als Holstentor bekannt ist, wurde hingegen mehrmals restauriert, zuletzt in den Jahren 2005/2006. Das war die letzte Station des Rundgangs Stadtmauer und Tore. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/5af8978af480c92d.mp3",
-    "seconds": 42.5
+   "conrad": {
+    "file": "audio/luebeck/36dda3c03ca294a0.mp3",
+    "seconds": 52.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/c52720f48d0d6224.mp3",
-    "seconds": 48.4
+   "amala": {
+    "file": "audio/luebeck/c966db526e3f2aa5.mp3",
+    "seconds": 59.4
    }
   },
   "kinder-1": {
    "text": "Station 1: Holstentor. Das Holstentor ist ein Stadttor, das die Altstadt der Hansestadt Lübeck nach Westen begrenzt. Es ist das Wahrzeichen der Stadt und wurde 1478 fertiggestellt. Das spätgotische Gebäude gehört zu den Überresten der Lübecker Stadtbefestigung. Das Holstentor ist neben dem Burgtor das einzige erhaltene Stadttor Lübecks. Mehr als 300 Jahre lang stand es als Mittleres Holstentor in einer Reihe mit drei weiteren Holstentoren, die im 19. Jahrhundert abgerissen wurden. Das Mittlere Holstentor, das heute als Holstentor bekannt ist, wurde hingegen mehrmals restauriert, zuletzt in den Jahren 2005/2006. Und jetzt ein Rätsel: Auf welchem Geldschein war das Holstentor früher abgebildet? A: auf dem 5-Euro-Schein. B: auf dem 50-DM-Schein. C: auf dem 100-Mark-Schein. Tippe deine Antwort an! Nächste Station: Salzspeicher. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/f08909ad9b1d31dd.mp3",
-    "seconds": 54.2
+   "conrad": {
+    "file": "audio/luebeck/7b1f83d5c3efbda5.mp3",
+    "seconds": 69.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/48210028679b1ee0.mp3",
-    "seconds": 61.0
+   "amala": {
+    "file": "audio/luebeck/a14de5b15312421b.mp3",
+    "seconds": 79.4
    }
   },
   "kinder-2": {
    "text": "Station 2: Salzspeicher. Die Salzspeicher sind eine Gruppe von Lagerhäusern an der Lübecker Obertrave direkt neben dem Holstentor. Sie wurden im Stil der Backsteinrenaissance und des Backsteinbarock erbaut. Und jetzt ein Rätsel: Wofür brauchte man das viele Salz aus den Salzspeichern vor allem? A: zum Streuen auf glatten Straßen. B: um Fisch haltbar zu machen. C: zum Brotbacken. Tippe deine Antwort an! Nächste Station: Petrikirche. Bis dorthin sind es etwa eine Minute zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/783b03e428bcb3ba.mp3",
-    "seconds": 26.8
+   "conrad": {
+    "file": "audio/luebeck/58bad00de5059c17.mp3",
+    "seconds": 38.4
    },
-   "kerstin": {
-    "file": "audio/luebeck/737a4a9b5a30f9f0.mp3",
-    "seconds": 30.2
+   "amala": {
+    "file": "audio/luebeck/e91d271c347e4ed5.mp3",
+    "seconds": 43.0
    }
   },
   "kinder-3": {
    "text": "Station 3: Petrikirche. St. Petri zu Lübeck ist die Kultur- und Hochschulkirche der Hansestadt Lübeck. Sie wurde erstmals im Jahr 1170 erwähnt. Ihre heutige architektonische Gestalt als fünfschiffige gotische Hallenkirche hat St. Petri seit dem 15. Jahrhundert. Seit der Reformation in Lübeck im Jahr 1530 ist St. Petri eine evangelische Kirche und seit 1987 ist sie Kirche für die ganze Stadt ohne eigene Gemeinde. Wie auch St. Marien und der Lübecker Dom erlitt St. Petri im März 1942 sehr starke Schäden durch einen britischen Bombenangriff und brannte vollkommen aus. Die Restaurierung wurde erst in den Achtzigerjahren abgeschlossen. Und jetzt ein Rätsel: Wie kommt man auf die Aussichtsplattform der Petrikirche in 50 Metern Höhe? A: mit einem Aufzug. B: nur über eine Leiter. C: mit einer Seilbahn. Tippe deine Antwort an! Nächste Station: Lübecker Rathaus. Bis dorthin sind es etwa vier Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/544a8fb5ecfdfe63.mp3",
-    "seconds": 61.6
+   "conrad": {
+    "file": "audio/luebeck/9184797baa55d575.mp3",
+    "seconds": 71.1
    },
-   "kerstin": {
-    "file": "audio/luebeck/f9be2f405e9faee8.mp3",
-    "seconds": 64.4
+   "amala": {
+    "file": "audio/luebeck/7d8c043ca0868a57.mp3",
+    "seconds": 79.5
    }
   },
   "kinder-4": {
    "text": "Station 4: Lübecker Rathaus. Das Rathaus der Hansestadt Lübeck zählt zu den bekanntesten Bauwerken der Backsteingotik. Es ist eines der größten mittelalterlichen Rathäuser in Deutschland. Und jetzt ein Rätsel: Wozu sind die runden Löcher in der hohen Ziermauer des Rathauses am Markt? A: damit Tauben darin wohnen. B: damit der Wind hindurchkann und die Mauer nicht umdrückt. C: für Kanonen. Tippe deine Antwort an! Nächste Station: Marienkirche. Bis dorthin sind es etwa drei Minuten zu Fuß.",
-   "thorsten": {
-    "file": "audio/luebeck/0627d7931f821b27.mp3",
-    "seconds": 27.9
+   "conrad": {
+    "file": "audio/luebeck/4655dc17dd313d4e.mp3",
+    "seconds": 38.0
    },
-   "kerstin": {
-    "file": "audio/luebeck/74592750164b0fd5.mp3",
-    "seconds": 31.0
+   "amala": {
+    "file": "audio/luebeck/e52bcdcd0a1a5f6a.mp3",
+    "seconds": 44.2
    }
   },
   "kinder-5": {
    "text": "Station 5: Marienkirche. Die Lübecker Marienkirche ist die Lübecker Markt- und Hauptpfarrkirche und befindet sich auf dem höchsten Punkt der Lübecker Altstadtinsel. Sie ist Teil des UNESCO-Welterbes Lübecker Altstadt. Als eine der größten Backsteinkirchen wird sie auch als Mutterkirche der Backsteingotik bezeichnet und gilt als ein Hauptwerk des Kirchenbaus im Ostseeraum. Der Bau der gotischen Kirche, die einen romanischen Vorgängerbau ersetzte, begann 1251 und war mit der Fertigstellung der Türme hundert Jahre später, 1351, abgeschlossen. St. Marien gehört zur Evangelisch-Lutherischen Kirche in Norddeutschland. Und jetzt ein Rätsel: Was dachte der Teufel der Sage nach, als er beim Bau der Marienkirche half? A: dass hier eine Burg entsteht. B: dass hier ein Wirtshaus gebaut wird. C: dass hier ein Schloss für ihn entsteht. Tippe deine Antwort an! Das war die letzte Station des Rundgangs Rätselrunde für Kinder. Danke fürs Mitgehen!",
-   "thorsten": {
-    "file": "audio/luebeck/bbb889f00f5ceaf6.mp3",
-    "seconds": 54.8
+   "conrad": {
+    "file": "audio/luebeck/4a21492dfb9800a4.mp3",
+    "seconds": 69.2
    },
-   "kerstin": {
-    "file": "audio/luebeck/17a20e7a5ae17146.mp3",
-    "seconds": 60.4
+   "amala": {
+    "file": "audio/luebeck/3b8d9547f1fb28d9.mp3",
+    "seconds": 77.7
    }
   }
  },
  "buildings": {
   "Q1009493": {
-   "thorsten": "audio/luebeck/24beb86f36ed29a9.mp3",
-   "kerstin": "audio/luebeck/c6e99370628d7ef9.mp3"
+   "conrad": "audio/luebeck/59b265869f5a44ee.mp3",
+   "amala": "audio/luebeck/3ba82ff4beed3dcf.mp3"
   },
   "Q105785986": {
-   "thorsten": "audio/luebeck/467b0979d96d315c.mp3",
-   "kerstin": "audio/luebeck/d81536df36fb895c.mp3"
+   "conrad": "audio/luebeck/c3e6e79454102d53.mp3",
+   "amala": "audio/luebeck/bc747ac53b23de01.mp3"
   },
   "Q106486253": {
-   "thorsten": "audio/luebeck/799462729c9c558d.mp3",
-   "kerstin": "audio/luebeck/31130947bccee24d.mp3"
+   "conrad": "audio/luebeck/1c587bdb747e981b.mp3",
+   "amala": "audio/luebeck/1ed15da8c1cec778.mp3"
   },
   "Q106486388": {
-   "thorsten": "audio/luebeck/d2dc2fc5222535a9.mp3",
-   "kerstin": "audio/luebeck/c9ffd126a440bfe5.mp3"
+   "conrad": "audio/luebeck/61ea915517189a2f.mp3",
+   "amala": "audio/luebeck/f98375f40bed1aab.mp3"
   },
   "Q107558531": {
-   "thorsten": "audio/luebeck/1a56bbb0a947956c.mp3",
-   "kerstin": "audio/luebeck/9b2e7288ad0faf7e.mp3"
+   "conrad": "audio/luebeck/1b8503f7beb554fe.mp3",
+   "amala": "audio/luebeck/8db0c91ec3483b3d.mp3"
   },
   "Q111012402": {
-   "thorsten": "audio/luebeck/f7edb734d4746a9a.mp3",
-   "kerstin": "audio/luebeck/76f2476b0f25d7d6.mp3"
+   "conrad": "audio/luebeck/5761131eb8d4980a.mp3",
+   "amala": "audio/luebeck/886b28d31a0a8115.mp3"
   },
   "Q1231989": {
-   "thorsten": "audio/luebeck/eb7602a2338669e4.mp3",
-   "kerstin": "audio/luebeck/ad500c6de0232417.mp3"
+   "conrad": "audio/luebeck/d9ee46f956f8a9d1.mp3",
+   "amala": "audio/luebeck/b1b8f687a7ee18d6.mp3"
   },
   "Q1247773": {
-   "thorsten": "audio/luebeck/e401c420b7ee6260.mp3",
-   "kerstin": "audio/luebeck/9c8dae669fe04952.mp3"
+   "conrad": "audio/luebeck/b35bf19644c77885.mp3",
+   "amala": "audio/luebeck/56fdc289d9490659.mp3"
   },
   "Q1264997": {
-   "thorsten": "audio/luebeck/8de9231253471911.mp3",
-   "kerstin": "audio/luebeck/fd8eaf41e05f71fe.mp3"
+   "conrad": "audio/luebeck/e24fd74c083c9e46.mp3",
+   "amala": "audio/luebeck/7e44ba97b60e22b9.mp3"
   },
   "Q1268724": {
-   "thorsten": "audio/luebeck/9898a4676bb213fa.mp3",
-   "kerstin": "audio/luebeck/59ae55feaf3c42dc.mp3"
+   "conrad": "audio/luebeck/8021c136de58b70f.mp3",
+   "amala": "audio/luebeck/a6a406138af5dd50.mp3"
   },
   "Q1269759": {
-   "thorsten": "audio/luebeck/e4993c112defbfce.mp3",
-   "kerstin": "audio/luebeck/c6ea27308ad84754.mp3"
+   "conrad": "audio/luebeck/355a57df5add9af7.mp3",
+   "amala": "audio/luebeck/ceee87e539e6d1a5.mp3"
   },
   "Q128763923": {
-   "thorsten": "audio/luebeck/0780a541e8cdc902.mp3",
-   "kerstin": "audio/luebeck/fe61d126cbd3d0ac.mp3"
+   "conrad": "audio/luebeck/8a2054d0f55bdb6b.mp3",
+   "amala": "audio/luebeck/66fe6c0966db5f18.mp3"
   },
   "Q1367741": {
-   "thorsten": "audio/luebeck/756dba03a0409c2c.mp3",
-   "kerstin": "audio/luebeck/416f14e4624cdd4c.mp3"
+   "conrad": "audio/luebeck/00a03a7ff8b773a3.mp3",
+   "amala": "audio/luebeck/772adad8f3a92f6e.mp3"
   },
   "Q1417152": {
-   "thorsten": "audio/luebeck/2a4580bff340ce7b.mp3",
-   "kerstin": "audio/luebeck/fa3d5ffc74d0d90b.mp3"
+   "conrad": "audio/luebeck/4fa2deb16a18ca16.mp3",
+   "amala": "audio/luebeck/ee9df35d12355242.mp3"
   },
   "Q1427855": {
-   "thorsten": "audio/luebeck/0773079a057d6691.mp3",
-   "kerstin": "audio/luebeck/3cb0f9ab171c1aa7.mp3"
+   "conrad": "audio/luebeck/c67e4c01fa250511.mp3",
+   "amala": "audio/luebeck/310fd7d7328f9ea7.mp3"
   },
   "Q1435580": {
-   "thorsten": "audio/luebeck/64d0ddf3d58fc76e.mp3",
-   "kerstin": "audio/luebeck/23ff825b6f7e0905.mp3"
+   "conrad": "audio/luebeck/25f96b4e143ca675.mp3",
+   "amala": "audio/luebeck/d6fd2cd7a389d6f5.mp3"
   },
   "Q14906296": {
-   "thorsten": "audio/luebeck/f7baeee06ab69c5e.mp3",
-   "kerstin": "audio/luebeck/55165c8f1195e7fc.mp3"
+   "conrad": "audio/luebeck/b80dded97c3888a5.mp3",
+   "amala": "audio/luebeck/0e840702990ab476.mp3"
   },
   "Q1494883": {
-   "thorsten": "audio/luebeck/c2f085d9c070f44b.mp3",
-   "kerstin": "audio/luebeck/5ac878022b3f0be5.mp3"
+   "conrad": "audio/luebeck/bc5998b89bad0294.mp3",
+   "amala": "audio/luebeck/d482214a5efacd58.mp3"
   },
   "Q1515805": {
-   "thorsten": "audio/luebeck/81bb4eeab6649ae4.mp3",
-   "kerstin": "audio/luebeck/744fc7126ee48694.mp3"
+   "conrad": "audio/luebeck/f558606852551619.mp3",
+   "amala": "audio/luebeck/5f620c781d900528.mp3"
   },
   "Q1565675": {
-   "thorsten": "audio/luebeck/96f5c01fdd9e008d.mp3",
-   "kerstin": "audio/luebeck/1f780f69ef0df8ce.mp3"
+   "conrad": "audio/luebeck/48abe22f9445c2c2.mp3",
+   "amala": "audio/luebeck/34954343b5c40c57.mp3"
   },
   "Q1595345": {
-   "thorsten": "audio/luebeck/31f39a6fe1d37d0f.mp3",
-   "kerstin": "audio/luebeck/0669c7979a517a17.mp3"
+   "conrad": "audio/luebeck/04b8606440e556f7.mp3",
+   "amala": "audio/luebeck/4d213810a0e07def.mp3"
   },
   "Q1596371": {
-   "thorsten": "audio/luebeck/c3a3e440c1ebb527.mp3",
-   "kerstin": "audio/luebeck/9f2a3ecc30b311ba.mp3"
+   "conrad": "audio/luebeck/90cc78e235c7ef41.mp3",
+   "amala": "audio/luebeck/b98d3cca609b8b74.mp3"
   },
   "Q1618163": {
-   "thorsten": "audio/luebeck/b57a7120da9a1096.mp3",
-   "kerstin": "audio/luebeck/8ecbbb9628f605a0.mp3"
+   "conrad": "audio/luebeck/f935a9333519a580.mp3",
+   "amala": "audio/luebeck/611e7f9db9bf4f81.mp3"
   },
   "Q1618736": {
-   "thorsten": "audio/luebeck/8b2e21a40555c45b.mp3",
-   "kerstin": "audio/luebeck/51451b9d244dc9e9.mp3"
+   "conrad": "audio/luebeck/c2719152e61e53a1.mp3",
+   "amala": "audio/luebeck/13155dac3f679eec.mp3"
   },
   "Q1623386": {
-   "thorsten": "audio/luebeck/3efa91c241a7e0a6.mp3",
-   "kerstin": "audio/luebeck/8be2fefea0ad407e.mp3"
+   "conrad": "audio/luebeck/f63f7bbcc518d195.mp3",
+   "amala": "audio/luebeck/cb8c503f75269c6b.mp3"
   },
   "Q1632968": {
-   "thorsten": "audio/luebeck/c22eed6e59318207.mp3",
-   "kerstin": "audio/luebeck/b53f205b47388481.mp3"
+   "conrad": "audio/luebeck/c3b823b2c6ec7741.mp3",
+   "amala": "audio/luebeck/1b4d0f8a5d05d012.mp3"
   },
   "Q1649884": {
-   "thorsten": "audio/luebeck/398c504a2bf57cf8.mp3",
-   "kerstin": "audio/luebeck/67f99a818dae5055.mp3"
+   "conrad": "audio/luebeck/b7c2765cf84c563b.mp3",
+   "amala": "audio/luebeck/caa29a61045f24d6.mp3"
   },
   "Q1712082": {
-   "thorsten": "audio/luebeck/da321206aeb4f121.mp3",
-   "kerstin": "audio/luebeck/463540864c88efd0.mp3"
+   "conrad": "audio/luebeck/61ba620b42876d11.mp3",
+   "amala": "audio/luebeck/518b0ce3b652d576.mp3"
   },
   "Q1721769": {
-   "thorsten": "audio/luebeck/03d9b43cddd0e26d.mp3",
-   "kerstin": "audio/luebeck/c50f80ddf8342a77.mp3"
+   "conrad": "audio/luebeck/1334614d32181945.mp3",
+   "amala": "audio/luebeck/87aa5c59cc9c40a7.mp3"
   },
   "Q1728606": {
-   "thorsten": "audio/luebeck/5d45f668acbb2426.mp3",
-   "kerstin": "audio/luebeck/38310a162c6593fb.mp3"
+   "conrad": "audio/luebeck/f4df2136b30a1191.mp3",
+   "amala": "audio/luebeck/8ff3c8eb250b916f.mp3"
   },
   "Q17506040": {
-   "thorsten": "audio/luebeck/c5fa53edc2212da6.mp3",
-   "kerstin": "audio/luebeck/74f21918937bb476.mp3"
+   "conrad": "audio/luebeck/44bc76a0034c43cc.mp3",
+   "amala": "audio/luebeck/d9261ff43f7b8429.mp3"
   },
   "Q17577149": {
-   "thorsten": "audio/luebeck/b17d96d02a91821a.mp3",
-   "kerstin": "audio/luebeck/7eb5d81c342717e4.mp3"
+   "conrad": "audio/luebeck/2e631187b7431965.mp3",
+   "amala": "audio/luebeck/34578fe23076c155.mp3"
   },
   "Q1766218": {
-   "thorsten": "audio/luebeck/e5d25684e9e5f8dd.mp3",
-   "kerstin": "audio/luebeck/84205bcc8b5732b4.mp3"
+   "conrad": "audio/luebeck/739fb410e07d8def.mp3",
+   "amala": "audio/luebeck/210b4b08ca70f94f.mp3"
   },
   "Q1779204": {
-   "thorsten": "audio/luebeck/e7a55408e4f20f27.mp3",
-   "kerstin": "audio/luebeck/35891f245e320ca2.mp3"
+   "conrad": "audio/luebeck/78fc7a7fe021dfe9.mp3",
+   "amala": "audio/luebeck/90f6a1ff2cb8683e.mp3"
   },
   "Q1784591": {
-   "thorsten": "audio/luebeck/2468b4c3f764037b.mp3",
-   "kerstin": "audio/luebeck/77851d3c311b5986.mp3"
+   "conrad": "audio/luebeck/cbadb9b1ea84d24e.mp3",
+   "amala": "audio/luebeck/e78f161bdf4809d8.mp3"
   },
   "Q1786466": {
-   "thorsten": "audio/luebeck/18e8ca8db76ee0b4.mp3",
-   "kerstin": "audio/luebeck/e082a2e125ae545f.mp3"
+   "conrad": "audio/luebeck/57a081fa24027664.mp3",
+   "amala": "audio/luebeck/7b080ccba55ee1f4.mp3"
   },
   "Q1796493": {
-   "thorsten": "audio/luebeck/4fa9b975acc74b11.mp3",
-   "kerstin": "audio/luebeck/4315b5495911a918.mp3"
+   "conrad": "audio/luebeck/71a57ec0b655b08c.mp3",
+   "amala": "audio/luebeck/45500341ecec5273.mp3"
   },
   "Q1802073": {
-   "thorsten": "audio/luebeck/df82e14733e5bc1e.mp3",
-   "kerstin": "audio/luebeck/1a76195e8cc0351e.mp3"
+   "conrad": "audio/luebeck/3a81c30dd43c0835.mp3",
+   "amala": "audio/luebeck/c9b2e2860b81e6e3.mp3"
   },
   "Q18629959": {
-   "thorsten": "audio/luebeck/8edbb25d39392eb5.mp3",
-   "kerstin": "audio/luebeck/e24516964a48dc59.mp3"
+   "conrad": "audio/luebeck/05fc569f95264f88.mp3",
+   "amala": "audio/luebeck/3fb4c4ea24fc6c6e.mp3"
   },
   "Q1879877": {
-   "thorsten": "audio/luebeck/856751ab2f1a3278.mp3",
-   "kerstin": "audio/luebeck/08cb69a8459d6558.mp3"
+   "conrad": "audio/luebeck/10332832011fd658.mp3",
+   "amala": "audio/luebeck/d37a3d792d1c11fe.mp3"
   },
   "Q1880166": {
-   "thorsten": "audio/luebeck/c9703749d712aad8.mp3",
-   "kerstin": "audio/luebeck/11871e9aad150b02.mp3"
+   "conrad": "audio/luebeck/8de191ac816eee8a.mp3",
+   "amala": "audio/luebeck/f41690cb121a4c58.mp3"
   },
   "Q18922485": {
-   "thorsten": "audio/luebeck/60970a780a3b7282.mp3",
-   "kerstin": "audio/luebeck/04f55bbd5b3e8a8e.mp3"
+   "conrad": "audio/luebeck/7ba5e3194fdf204b.mp3",
+   "amala": "audio/luebeck/23feaacbff646e58.mp3"
   },
   "Q1898021": {
-   "thorsten": "audio/luebeck/d0710389549f39a9.mp3",
-   "kerstin": "audio/luebeck/ae9d147b059f3794.mp3"
+   "conrad": "audio/luebeck/c944e48c94260927.mp3",
+   "amala": "audio/luebeck/692b634bba038cd9.mp3"
   },
   "Q1920503": {
-   "thorsten": "audio/luebeck/697ed27b02cd00db.mp3",
-   "kerstin": "audio/luebeck/78a5c77026d2d9d8.mp3"
+   "conrad": "audio/luebeck/97384b8a6e14f878.mp3",
+   "amala": "audio/luebeck/4dd6604f45b43056.mp3"
   },
   "Q1954986": {
-   "thorsten": "audio/luebeck/fbc4cc0f9d0cb13c.mp3",
-   "kerstin": "audio/luebeck/6174a6b8129040c9.mp3"
+   "conrad": "audio/luebeck/587c5c4fbc91ed2b.mp3",
+   "amala": "audio/luebeck/f50f08cc031123b0.mp3"
   },
   "Q1958522": {
-   "thorsten": "audio/luebeck/9ac64bbf3fe4ce2c.mp3",
-   "kerstin": "audio/luebeck/90d553a26003cbea.mp3"
+   "conrad": "audio/luebeck/e640f182330b16ca.mp3",
+   "amala": "audio/luebeck/4445dfe3b5e6a076.mp3"
   },
   "Q196956": {
-   "thorsten": "audio/luebeck/d129e289adc03d6f.mp3",
-   "kerstin": "audio/luebeck/76e23d3b055125ad.mp3"
+   "conrad": "audio/luebeck/d87f8aa3c8428b2d.mp3",
+   "amala": "audio/luebeck/9bc7ff6a301c2dae.mp3"
   },
   "Q2235612": {
-   "thorsten": "audio/luebeck/e3d8af55e3bd17fd.mp3",
-   "kerstin": "audio/luebeck/1f0bdd64e25a1a34.mp3"
+   "conrad": "audio/luebeck/6e233042cd53f202.mp3",
+   "amala": "audio/luebeck/e43034b0d9d7efd4.mp3"
   },
   "Q2243060": {
-   "thorsten": "audio/luebeck/c0f0f5d7e4b3503a.mp3",
-   "kerstin": "audio/luebeck/8301cb9b8c77453f.mp3"
+   "conrad": "audio/luebeck/c1e816e12d7f7111.mp3",
+   "amala": "audio/luebeck/9af04790d8bff1c0.mp3"
   },
   "Q2245253": {
-   "thorsten": "audio/luebeck/868df528311a6a80.mp3",
-   "kerstin": "audio/luebeck/cf3913386d54cf04.mp3"
+   "conrad": "audio/luebeck/1c09cfaa8f419d63.mp3",
+   "amala": "audio/luebeck/ed6eff52a02edb7e.mp3"
   },
   "Q2255232": {
-   "thorsten": "audio/luebeck/630cb401c30fa640.mp3",
-   "kerstin": "audio/luebeck/932dd202f6694ab2.mp3"
+   "conrad": "audio/luebeck/2f96e024cb8a893a.mp3",
+   "amala": "audio/luebeck/112f0f01371118a9.mp3"
   },
   "Q22692207": {
-   "thorsten": "audio/luebeck/bd575600f8deed07.mp3",
-   "kerstin": "audio/luebeck/e85446eeadf7f5d7.mp3"
+   "conrad": "audio/luebeck/d426b21d3c6e691f.mp3",
+   "amala": "audio/luebeck/45e127be2627e46d.mp3"
   },
   "Q2316268": {
-   "thorsten": "audio/luebeck/8d1daee975b1d83f.mp3",
-   "kerstin": "audio/luebeck/b242fce0671f3b59.mp3"
+   "conrad": "audio/luebeck/f588672085d27f44.mp3",
+   "amala": "audio/luebeck/e51e471933fe7209.mp3"
   },
   "Q2316312": {
-   "thorsten": "audio/luebeck/e48e713e643413cd.mp3",
-   "kerstin": "audio/luebeck/0011ae34ea562ab4.mp3"
+   "conrad": "audio/luebeck/7eadab760a433d80.mp3",
+   "amala": "audio/luebeck/ea12c8b8683f1259.mp3"
   },
   "Q2415873": {
-   "thorsten": "audio/luebeck/87a356b2d6c8b8f5.mp3",
-   "kerstin": "audio/luebeck/2de18457428ddc08.mp3"
+   "conrad": "audio/luebeck/dea01bee73896c61.mp3",
+   "amala": "audio/luebeck/e77ec5f55d95824c.mp3"
   },
   "Q2443638": {
-   "thorsten": "audio/luebeck/2f6b200e760f4a4d.mp3",
-   "kerstin": "audio/luebeck/83462c9c27ed9f5f.mp3"
+   "conrad": "audio/luebeck/be8a91bce2b47392.mp3",
+   "amala": "audio/luebeck/9d35bfa357b29fdc.mp3"
   },
   "Q24669830": {
-   "thorsten": "audio/luebeck/14b21f81dc850365.mp3",
-   "kerstin": "audio/luebeck/54e92a3bbeb2f5a4.mp3"
+   "conrad": "audio/luebeck/eb9ed8d75d0ce4a8.mp3",
+   "amala": "audio/luebeck/c4ebf7e96969b338.mp3"
   },
   "Q247787": {
-   "thorsten": "audio/luebeck/bf9e0ccdaa89964e.mp3",
-   "kerstin": "audio/luebeck/59640fcc6daf065a.mp3"
+   "conrad": "audio/luebeck/bae17300e8156767.mp3",
+   "amala": "audio/luebeck/6ae8079688000104.mp3"
   },
   "Q25089255": {
-   "thorsten": "audio/luebeck/39e1971c6d97da17.mp3",
-   "kerstin": "audio/luebeck/8f93bad06e6b6484.mp3"
+   "conrad": "audio/luebeck/67ce2b5db8920ae7.mp3",
+   "amala": "audio/luebeck/66242264f970e67d.mp3"
   },
   "Q2550616": {
-   "thorsten": "audio/luebeck/4afe8f9e9048476d.mp3",
-   "kerstin": "audio/luebeck/3ad4eed22ca5091f.mp3"
+   "conrad": "audio/luebeck/31bdb4a7346bcf1a.mp3",
+   "amala": "audio/luebeck/1bcca3c2e1dd188d.mp3"
   },
   "Q2560411": {
-   "thorsten": "audio/luebeck/1979f16ad1278b4d.mp3",
-   "kerstin": "audio/luebeck/b26b8b83753a3a99.mp3"
+   "conrad": "audio/luebeck/c180ad120512f830.mp3",
+   "amala": "audio/luebeck/c50561d9188f6163.mp3"
   },
   "Q2581800": {
-   "thorsten": "audio/luebeck/0093b9a4b265e578.mp3",
-   "kerstin": "audio/luebeck/5a116512e44015f7.mp3"
+   "conrad": "audio/luebeck/a6ae77f3139f563d.mp3",
+   "amala": "audio/luebeck/e81c3d57065379fc.mp3"
   },
   "Q2592800": {
-   "thorsten": "audio/luebeck/94a123465a9b2ccf.mp3",
-   "kerstin": "audio/luebeck/85d2943052f7c848.mp3"
+   "conrad": "audio/luebeck/133b60a5e9f41ce9.mp3",
+   "amala": "audio/luebeck/d788d00766be95b3.mp3"
   },
   "Q2713736": {
-   "thorsten": "audio/luebeck/50eff107a8574baf.mp3",
-   "kerstin": "audio/luebeck/65740ed4539454ba.mp3"
+   "conrad": "audio/luebeck/1d681e389bcf4d07.mp3",
+   "amala": "audio/luebeck/fd473092aaef7974.mp3"
   },
   "Q315187": {
-   "thorsten": "audio/luebeck/edc97b6c979cbaa7.mp3",
-   "kerstin": "audio/luebeck/45bde753b9825ade.mp3"
+   "conrad": "audio/luebeck/43b4978c5b163621.mp3",
+   "amala": "audio/luebeck/a3e68f57a81c6772.mp3"
   },
   "Q316973": {
-   "thorsten": "audio/luebeck/c262c779e0a70ace.mp3",
-   "kerstin": "audio/luebeck/53a0a37f90a766e5.mp3"
+   "conrad": "audio/luebeck/8b9460229d10e526.mp3",
+   "amala": "audio/luebeck/a654fdeaf662beac.mp3"
   },
   "Q317388": {
-   "thorsten": "audio/luebeck/d4d43d35dc36841d.mp3",
-   "kerstin": "audio/luebeck/a52e1a2aa969f469.mp3"
+   "conrad": "audio/luebeck/65aaca0a1520fbff.mp3",
+   "amala": "audio/luebeck/f07213341db0dd03.mp3"
   },
   "Q321229": {
-   "thorsten": "audio/luebeck/303ac28c31119d48.mp3",
-   "kerstin": "audio/luebeck/742497b64db89480.mp3"
+   "conrad": "audio/luebeck/2fa3a570db7f8f8d.mp3",
+   "amala": "audio/luebeck/1000198170cd7672.mp3"
   },
   "Q375042": {
-   "thorsten": "audio/luebeck/074fae2c5f1fadfe.mp3",
-   "kerstin": "audio/luebeck/b0e82eea901967b8.mp3"
+   "conrad": "audio/luebeck/5bcad1d167563c50.mp3",
+   "amala": "audio/luebeck/cf54453ddccd476e.mp3"
   },
   "Q380609": {
-   "thorsten": "audio/luebeck/fb07dced49bf3650.mp3",
-   "kerstin": "audio/luebeck/825578b42d0a6b12.mp3"
+   "conrad": "audio/luebeck/a19fa12c50817a60.mp3",
+   "amala": "audio/luebeck/a6828c72cc783c02.mp3"
   },
   "Q380610": {
-   "thorsten": "audio/luebeck/a72fd9fd2e90efc0.mp3",
-   "kerstin": "audio/luebeck/ca6c38b24b0dbb4c.mp3"
+   "conrad": "audio/luebeck/a32d034e77a30a2a.mp3",
+   "amala": "audio/luebeck/3bf04bfe994ea1a1.mp3"
   },
   "Q3916007": {
-   "thorsten": "audio/luebeck/ff12e518b7738443.mp3",
-   "kerstin": "audio/luebeck/8a071b05298aec34.mp3"
+   "conrad": "audio/luebeck/767d0fae4c25eec0.mp3",
+   "amala": "audio/luebeck/9877807982bd3607.mp3"
   },
   "Q438230": {
-   "thorsten": "audio/luebeck/a06a35d75d7097b9.mp3",
-   "kerstin": "audio/luebeck/1f1d30b0cc2cfc98.mp3"
+   "conrad": "audio/luebeck/d41f2d52abf5138f.mp3",
+   "amala": "audio/luebeck/befa85ad8fc04e31.mp3"
   },
   "Q482579": {
-   "thorsten": "audio/luebeck/c4c12f7c022ba6e8.mp3",
-   "kerstin": "audio/luebeck/e41cb1401ae32ec7.mp3"
+   "conrad": "audio/luebeck/ca57ba1875a3c08e.mp3",
+   "amala": "audio/luebeck/c14a04a7a8cb00e0.mp3"
   },
   "Q51247046": {
-   "thorsten": "audio/luebeck/c003c8dd8d197c98.mp3",
-   "kerstin": "audio/luebeck/28d23b1db660ad76.mp3"
+   "conrad": "audio/luebeck/6a45c9d0cf3489de.mp3",
+   "amala": "audio/luebeck/0d02af474abe4f18.mp3"
   },
   "Q538276": {
-   "thorsten": "audio/luebeck/4907b976c0e79531.mp3",
-   "kerstin": "audio/luebeck/9b9ee5441b20c9fc.mp3"
+   "conrad": "audio/luebeck/39f6f4eb38dec7aa.mp3",
+   "amala": "audio/luebeck/cc66a0fd60dd99da.mp3"
   },
   "Q538453": {
-   "thorsten": "audio/luebeck/85262c0d0630e358.mp3",
-   "kerstin": "audio/luebeck/478da043eb614d52.mp3"
+   "conrad": "audio/luebeck/b705040ef427a09d.mp3",
+   "amala": "audio/luebeck/0ae1c42b991ed161.mp3"
   },
   "Q657603": {
-   "thorsten": "audio/luebeck/44a3cc223ec0ebd0.mp3",
-   "kerstin": "audio/luebeck/b185ac05415dd600.mp3"
+   "conrad": "audio/luebeck/fabb4aa0bc054277.mp3",
+   "amala": "audio/luebeck/265c10ba74b40e08.mp3"
   },
   "Q695065": {
-   "thorsten": "audio/luebeck/20ef1c9992d50a67.mp3",
-   "kerstin": "audio/luebeck/942957c8a6b7174a.mp3"
+   "conrad": "audio/luebeck/48139ed2a2d726b2.mp3",
+   "amala": "audio/luebeck/0d2df6ba79f75444.mp3"
   },
   "Q798435": {
-   "thorsten": "audio/luebeck/25cb97ade1540473.mp3",
-   "kerstin": "audio/luebeck/30ee0c58c2dc61cd.mp3"
+   "conrad": "audio/luebeck/d01678d7404a40d5.mp3",
+   "amala": "audio/luebeck/c71896bfd35b55ca.mp3"
   },
   "Q806787": {
-   "thorsten": "audio/luebeck/5bdb87c671d4951f.mp3",
-   "kerstin": "audio/luebeck/167fc6e201da0c07.mp3"
+   "conrad": "audio/luebeck/feab5e00f53acc87.mp3",
+   "amala": "audio/luebeck/20a4c6bca17e0f5f.mp3"
   },
   "Q814533": {
-   "thorsten": "audio/luebeck/5e6870c842175999.mp3",
-   "kerstin": "audio/luebeck/68fe046d21112330.mp3"
+   "conrad": "audio/luebeck/5aaa5582b570dc0d.mp3",
+   "amala": "audio/luebeck/8124866f025c7915.mp3"
   },
   "Q880381": {
-   "thorsten": "audio/luebeck/4b469aa6cbfa40ad.mp3",
-   "kerstin": "audio/luebeck/9eff1f84be6b40b5.mp3"
+   "conrad": "audio/luebeck/42cafbd9a4821fa6.mp3",
+   "amala": "audio/luebeck/6f3fc4c9ac30b62f.mp3"
   },
   "Q896458": {
-   "thorsten": "audio/luebeck/62554c2b5b7fd07d.mp3",
-   "kerstin": "audio/luebeck/f66fa534c2ac574f.mp3"
+   "conrad": "audio/luebeck/758cdc55ae15fedc.mp3",
+   "amala": "audio/luebeck/a16573064e0109ca.mp3"
   },
   "Q995760": {
-   "thorsten": "audio/luebeck/c2460df49cc6e280.mp3",
-   "kerstin": "audio/luebeck/2e7a3522b0d6ab93.mp3"
+   "conrad": "audio/luebeck/9911b650d3a06382.mp3",
+   "amala": "audio/luebeck/7f468078b1986596.mp3"
   },
   "Q99735836": {
-   "thorsten": "audio/luebeck/663f749838f82ff2.mp3",
-   "kerstin": "audio/luebeck/a7caaca918867b5e.mp3"
+   "conrad": "audio/luebeck/99f57904894aada1.mp3",
+   "amala": "audio/luebeck/8f91219cd8b29a52.mp3"
   }
  }
 }
