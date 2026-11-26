@@ -7,3 +7,4 @@ cities/*/*.png
 cities/*/*.dzi
 cities/*/*_files/
 worker/.dev.vars
+__pycache__/
