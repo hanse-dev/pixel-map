@@ -5,7 +5,7 @@
 // right there with a pin. Shares the viewer's globals (DATA, view, x, y, s, W, H, $).
 (() => {
   const btn = $('report'), cfg = DATA.report || {};
-  if (!btn || !cfg.github) return;
+  if (!btn || !(cfg.github || cfg.worker)) return;
   const dialog = $('report-dialog'), banner = $('report-banner'), world = $('report-world');
   let picking = false, down = null, spot = null;
 
@@ -47,30 +47,59 @@
     if (building) spot.building = building;
     mark(spot);
     $('report-where').textContent = place(spot) + (spot.building && spot.building.name ? ` · ${spot.building.name}` : '');
-    $('report-text').value = '';
+    $('report-text').value = ''; status('');
+    $('report-form').hidden = false; $('report-done').hidden = true;
     dialog.showModal(); $('report-text').focus();
+    if (cfg.worker) human();
   }
   window.pixelMapReport = b => b && b.centre && open(b.centre[0], b.centre[1], b);
 
-  // ---------- sending: a prefilled GitHub issue in a new tab ----------
-  $('report-form').onsubmit = e => {
+  // ---------- sending ----------
+  // with a worker (DATA.report.worker): straight to it, guarded by Cloudflare Turnstile, no account needed;
+  // without one: a prefilled GitHub issue in a new tab
+  const status = t => { $('report-status').textContent = t; $('report-status').hidden = !t };
+  let widget = null;
+  function human() {
+    if (!cfg.turnstile) return;
+    const render = () => { if (widget === null) widget = turnstile.render('#report-human', { sitekey: cfg.turnstile, language: 'de', size: 'flexible' }); else turnstile.reset(widget) };
+    if (window.turnstile) return render();
+    const tag = document.createElement('script'); tag.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; tag.async = true; tag.onload = render;
+    document.head.append(tag);
+  }
+  const version = () => ((DATA.tiles_base || '').match(/([0-9a-f]{12}-[0-9a-f]{6})\/?$/) || [])[1] || '';
+  function tileImage(h) {                                          // the art tile one level up, about 512 map px around the spot
+    const spec = DATA.viewer_tiles || {}, L = (spec.max_level || 14) - 1, T = (spec.tile_size || 256) * 2;
+    return DATA.tiles_base ? `${DATA.tiles_base}${DATA.art_dir || 'map_files'}/${L}/${Math.floor(h.x / T)}_${Math.floor(h.y / T)}.${spec.format || 'webp'}` : '';
+  }
+  $('report-form').onsubmit = async e => {
     e.preventDefault();
     const kind = $('report-kind').value, text = $('report-text').value.trim(), h = spot;
-    const version = ((DATA.tiles_base || '').match(/([0-9a-f]{12}-[0-9a-f]{6})\/?$/) || [])[1] || '';
+    const where = place(h) + (h.building && h.building.name ? ` · ${h.building.name}` : '');
+    if (cfg.worker) {
+      const send = $('report-send'); send.disabled = true; status('Wird gesendet …');
+      try {
+        const token = window.turnstile && widget !== null ? turnstile.getResponse(widget) : '';
+        const q = await fetch(cfg.worker, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          kind, text, where, x: h.x, y: h.y, osm: h.building ? h.building.osm : '', link: linkTo(h), image: tileImage(h), version: version(), token }) });
+        const r = await q.json().catch(() => ({}));
+        if (!q.ok || !r.ok) throw new Error(r.error || 'Senden fehlgeschlagen.');
+        $('report-form').hidden = true; $('report-done').hidden = false;
+        $('report-done-text').textContent = r.merged ? `Danke! Diese Stelle war schon gemeldet, deine Beschreibung ist dazugekommen (Meldung #${r.number}).` : `Danke! Deine Meldung #${r.number} ist angekommen.`;
+        $('report-done-ok').focus();
+        if (window.pixelMapCount) pixelMapCount('fehler-gemeldet', 'Fehler gemeldet');
+      } catch (err) { status(err.message || 'Senden fehlgeschlagen.'); if (window.turnstile && widget !== null) turnstile.reset(widget) }
+      send.disabled = false;
+      return;
+    }
     const title = `${kind}: ${place(h)}`.slice(0, 120);
-    const body = [
-      `**Was:** ${kind}`,
-      `**Wo:** ${place(h)}${h.building && h.building.name ? ` · ${h.building.name}` : ''}`,
-      h.building ? `**Gebäude:** ${h.building.osm}` : null,
-      `**Kartenpunkt:** ${h.x}, ${h.y} (Karte ${DATA.slug || ''} ${version})`,
-      `**Auf der Karte:** ${linkTo(h)}`,
-      '', text || '(ohne Beschreibung)'
-    ].filter(v => v !== null).join('\n');
-    const url = `https://github.com/${cfg.github}/issues/new?` + new URLSearchParams({ title, body, ...(cfg.label ? { labels: cfg.label } : {}) });
-    window.open(url, '_blank', 'noopener');
+    const body = [`**Was:** ${kind}`, `**Wo:** ${where}`, h.building ? `**Gebäude:** ${h.building.osm}` : null,
+      `**Kartenpunkt:** ${h.x}, ${h.y} (Karte ${version()})`, `**Auf der Karte:** ${linkTo(h)}`, '', text || '(ohne Beschreibung)'].filter(v => v !== null).join('\n');
+    window.open(`https://github.com/${cfg.github}/issues/new?` + new URLSearchParams({ title, body, ...(cfg.label ? { labels: cfg.label } : {}) }), '_blank', 'noopener');
     if (window.pixelMapCount) pixelMapCount('fehler-gemeldet', 'Fehler gemeldet');
     dialog.close();
   };
+  $('report-done-ok').onclick = () => dialog.close();
+  if (cfg.worker) $('report-hint').textContent = 'Die Meldung geht ohne Anmeldung an das Kartenteam. Gespeichert werden nur die Angaben oben und die Stelle.';
   $('report-close').onclick = () => dialog.close();
   dialog.addEventListener('close', () => mark(null));
 

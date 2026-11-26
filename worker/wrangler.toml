@@ -1,0 +1,13 @@
+# Bugmelder: takes reports from the map and files them as GitHub issues. Deploy: scripts/deploy_worker.sh
+name = "pixel-map-meldung"
+main = "index.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://hanse-dev.github.io,http://localhost:8765"
+
+# at most 3 reports a minute from one connection (the address is only counted, never stored)
+[[ratelimits]]
+name = "LIMIT"
+namespace_id = "4711"
+simple = { limit = 3, period = 60 }
