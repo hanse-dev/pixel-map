@@ -451,7 +451,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
             'opening_landmark': config.get('opening'), 'navigation': [{'id': c, 'name': t, 'href': f'../{c}/'} for c, t in cities],
             'viewer_tiles': [tiles['map'], tiles['source']], 'art_dir': 'map_files', 'palettes': PALETTES,
             'depth_tiles': dict(tiles['depth'], metres_per_level=(camera.get('depth') or {}).get('metres_per_level', .5)),
-            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'layout': config.get('layout', 'klassisch'), 'timeline': timeline, 'historic': historic, 'voices': [{k: v[k] for k in ('id', 'name', 'label', 'credit')} for v in config.get('voices', [])], 'spoken': spoken_buildings, 'default_voice': config.get('default_voice'),
+            'tours': tours, 'stones': stones, 'stones_source': stones_credit, 'hitmap_tiles': hitmap or manifest['tiles']['hitmap'], 'layout': config.get('layout', 'klassisch'), 'timeline': timeline, 'historic': historic, 'voices': [{k: v[k] for k in ('id', 'name', 'label', 'credit')} for v in config.get('voices', [])], 'spoken': spoken_buildings, 'default_voice': config.get('default_voice'), 'report': config.get('report'),
             'tiles_base': base, 'groups': groups_of(name, ROOT / 'cities' / name, {name: config}),
             'places_extra': extra_places(config, bundle, info, groups_of(name, ROOT / 'cities' / name, {name: config})), 'categories': [c['name'] for c in config.get('categories', [])], 'buildings_url': 'buildings.json', 'outline_tiles': outline, 'fill_tiles': fill,
             'info_url': f'../info/{name}.{lang}.json' if info_file.exists() else None,
@@ -461,7 +461,7 @@ def city_page(name, config, cities, outline=None, tiles=None, fill=None, base=''
     import hashlib
     page = re.sub(r'__(ART|SOURCE|DATA|TITLE)__', lambda m: values[m[1]], TEMPLATE)
     page = page.replace('</head>', analytics_tag() + '</head>', 1)
-    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history', 'life', 'locate'):                                    # new code is never served from cache
+    for js in ('info', 'memorial', 'sidebar', 'tours', 'count', 'history', 'life', 'locate', 'streets', 'report'):                                    # new code is never served from cache
         version = hashlib.sha256((ROOT / f'app/{js}.js').read_bytes()).hexdigest()[:10]
         page = page.replace(f'src="../app/{js}.js"', f'src="../app/{js}.js?v={version}"')
     return page

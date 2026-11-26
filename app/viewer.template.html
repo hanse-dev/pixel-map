@@ -156,6 +156,10 @@ body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85)
 .mem-list summary{cursor:pointer;padding:6px 2px;font-size:.9em}.mem-list summary small{opacity:.6}
 .mem-list button{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;padding:6px 10px;border:0;border-radius:8px;background:none;color:inherit;font:inherit;cursor:pointer}
 .mem-list button:hover{background:#ffffff12}.mem-list button span{font-size:.85em;opacity:.75}.mem-credit{font-size:.72em;opacity:.55;margin:8px 0 0}
+#streets-canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}#streets-canvas[hidden]{display:none}
+#report-world{pointer-events:none}.report-pin{position:absolute;width:0;height:0}.report-pin::after{content:'';position:absolute;left:-11px;top:-30px;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:scale(var(--inv,1)) rotate(-45deg);transform-origin:50% 140%;background:#e74c3c;border:3px solid #fff;box-shadow:0 2px 6px #0008}
+body.reporting #view{cursor:crosshair}#report-banner{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:60;background:#1d2227;color:#f5efe2;border:1px solid var(--line);border-radius:10px;padding:8px 10px 8px 14px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 20px #0007}#report-banner[hidden]{display:none}#report-banner button{border:1px solid var(--line);background:#ffffff14;color:inherit;border-radius:8px;padding:4px 10px;font:inherit;cursor:pointer}
+#report-dialog{max-width:min(440px,calc(100vw - 32px));border:1px solid var(--line);border-radius:12px;background:#1d2227;color:#f5efe2;padding:18px}#report-dialog::backdrop{background:#0007}#report-dialog h2{margin:0 0 6px;font-size:1.1em}#report-dialog label{display:block;margin:12px 0 4px;font-size:.9em;opacity:.85}#report-dialog select,#report-dialog textarea{width:100%;box-sizing:border-box;background:#11161a;color:inherit;border:1px solid var(--line);border-radius:8px;padding:8px;font:inherit}#report-dialog textarea{min-height:90px;resize:vertical}#report-where{margin:0;font-weight:600}#report-dialog .hint{font-size:.82em;opacity:.7;margin:10px 0 0}#report-dialog .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}#report-dialog .actions button{border-radius:8px;padding:7px 14px;font:inherit;cursor:pointer;border:1px solid var(--line);background:#ffffff14;color:inherit}#report-dialog .actions button[type=submit]{background:#e9d8a6;color:#1d2227;border-color:#e9d8a6;font-weight:600}
 #life-canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}#life-canvas[hidden]{display:none}
 #me{position:absolute;left:0;top:0;pointer-events:none;z-index:3}#me[hidden]{display:none}#me i{position:absolute;width:14px;height:14px;margin:-7px;border-radius:50%;background:#2f80ed;border:2px solid #fff;box-shadow:0 0 0 var(--acc,12px) #2f80ed33,0 1px 4px #0008}
 </style>
@@ -169,6 +173,7 @@ body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85)
   <div class="world" id="hover-world"></div>
   <div class="world" id="select-world"></div>
   <div class="world" id="route-world"></div>
+  <div class="world" id="report-world"></div>
   <div class="world" id="memorial-world" hidden></div>
   <div class="clip" id="source-clip" hidden><div class="world" id="source-world"><img class="poster" id="source-picture" draggable="false" alt="Ausgangsbild aus Geodaten"></div></div>
 </div>
@@ -223,9 +228,17 @@ body.history #art-world,body.history #art-canvas{filter:sepia(.35) saturate(.85)
   <button id="overview" role="menuitem" aria-pressed="true">⌖ <span>Übersichtskarte</span><small>M</small></button>
   <button id="fit" role="menuitem">⤢ <span>Ganze Karte</span><small>0</small></button>
   <button id="locate" role="menuitem" aria-pressed="false">📍 <span>Wo bin ich?</span><small>Standort auf der Karte</small></button>
+  <button id="streets" role="menuitem" aria-pressed="false">🏷 <span>Straßennamen</span><small>auf der Karte</small></button>
   <button id="life" role="menuitem" aria-pressed="false">🚶 <span>Leben auf der Straße</span><small>Autos, Räder und Menschen</small></button>
   <button id="tour" role="menuitem" aria-pressed="false">▶ <span>Wahrzeichen-Tour</span><small>Leertaste</small></button>
+  <button id="report" role="menuitem">🐞 <span>Fehler auf der Karte melden</span><small>Stelle antippen</small></button>
 </section>
+<div id="report-banner" hidden role="status">Tippe auf die Stelle, die nicht stimmt. <button id="report-cancel-pick">Abbrechen</button></div>
+<dialog id="report-dialog" aria-labelledby="report-title"><form id="report-form"><h2 id="report-title">🐞 Fehler melden</h2><p id="report-where"></p>
+<label for="report-kind">Was stimmt nicht?</label><select id="report-kind"><option>Bildfehler auf der Karte</option><option>Gebäude fehlt oder ist erfunden</option><option>Falsche Angabe (Name, Adresse, Text)</option><option>Rundgang oder Weg</option><option>Sonstiges</option></select>
+<label for="report-text">Beschreibung</label><textarea id="report-text" placeholder="z. B. Dach hat die falsche Farbe, Straße endet im Haus …"></textarea>
+<p class="hint">„Melden“ öffnet eine vorausgefüllte Meldung auf GitHub (Konto nötig). Erst dort wird sie abgeschickt.</p>
+<div class="actions"><button type="button" id="report-close">Abbrechen</button><button type="submit">Melden</button></div></form></dialog>
 <section id="places" hidden aria-label="Orte"><div id="cities"></div><div id="place-list"></div><h3 id="tours-title" hidden>Rundgänge</h3><div id="tour-list"></div></section>
 <div id="tour-bar" hidden><span id="tour-step"></span><button id="tour-end" aria-label="Rundgang beenden">Rundgang beenden</button></div>
 <section id="building" hidden aria-live="polite" aria-label="Gebäude-Informationen"><button id="building-close" aria-label="Schließen">×</button><figure id="building-figure" hidden><img id="building-image" alt=""><figcaption id="building-image-credit"></figcaption></figure><h2 id="building-name"></h2><p id="building-address"></p><p id="building-kind"></p><ul id="building-facts" hidden></ul><div id="building-past" hidden></div><button id="building-say" class="say" hidden aria-pressed="false">🔊 Vorlesen</button><div id="building-summary"></div><button id="building-more" hidden>Weiterlesen</button><p id="building-links"></p><p id="building-credit"></p></section>
@@ -236,7 +249,7 @@ const DATA=__DATA__, ART=__ART__, SOURCE=__SOURCE__, TB=DATA.tiles_base||'';   /
 const $=id=>document.getElementById(id),view=$('view'),W=DATA.width,H=DATA.height;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),ease=t=>t*t*(3-2*t);
 const route=(DATA.landmarks||[]).map((p,i)=>({...p,id:p.id||String(i+1)}));
-const pointers=new Map(),worlds=[$('art-world'),$('source-world'),$('outline-world'),$('hover-world'),$('select-world'),$('route-world'),$('memorial-world')],tileMaps=[new Map(),new Map(),new Map()];let outlinesOn=!!DATA.outline_tiles,outlineMode=0,artDir=DATA.art_dir||'map_files';
+const pointers=new Map(),worlds=[$('art-world'),$('source-world'),$('outline-world'),$('hover-world'),$('select-world'),$('route-world'),$('memorial-world'),$('report-world')],tileMaps=[new Map(),new Map(),new Map()];let outlinesOn=!!DATA.outline_tiles,outlineMode=0,artDir=DATA.art_dir||'map_files';
 let vw=0,vh=0,s=1,x=0,y=0,fitted=false,initialised=false,compare=false,reveal=50,current=0,playing=false,raf=null,animation=null,tourStart=null,lastTileTime=-Infinity,pillTimer=null,tourBase=0,tourFrom=null,miniUser=null;
 const minScale=()=>Math.min(vw/W,vh/H),maxScale=()=>Math.max(4,minScale()),pose=()=>({s,x,y});
 for(const world of worlds){world.style.width=W+'px';world.style.height=H+'px'}
@@ -264,7 +277,7 @@ function refreshTiles(now=performance.now()){
     for(const [key,image] of cache){if(!needed.has(key)&&now-Number(image.dataset.seen)>1000){image.remove();if(!layer)gl2d.forget(image);cache.delete(key)}}
   }
 }
-function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));$('route-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();gl2d.frame();schedule()}
+function draw(){bound();for(const world of worlds)world.style.transform=`translate(${x}px,${y}px) scale(${s})`;$('memorial-world').style.setProperty('--inv',String(1/s));$('route-world').style.setProperty('--inv',String(1/s));$('report-world').style.setProperty('--inv',String(1/s));const left=clamp(-x/s/W,0,1),top=clamp(-y/s/H,0,1);$('extent').style.cssText=`left:${left*100}%;top:${top*100}%;width:${Math.min(1,vw/s/W)*100}%;height:${Math.min(1,vh/s/H)*100}%`;const now=performance.now();if(now-lastTileTime>70){refreshTiles(now);lastTileTime=now}if(depth.on)depth.frame();gl2d.frame();schedule()}
 function setPose(p){s=p.s;x=p.x;y=p.y;draw()}
 function stop(){clearTimeout(pillTimer);$('pill').classList.remove('visible');playing=false;tourStart=null;animation=null;$('tour').querySelector('span').textContent='Wahrzeichen-Tour';$('tour').setAttribute('aria-pressed','false');$('tour').setAttribute('aria-label','Play tour')}
 function schedule(){if(raf===null)raf=requestAnimationFrame(tick)}
@@ -482,6 +495,8 @@ reduced.addEventListener('change',preference);document.addEventListener('wheel',
 <script src="../app/tours.js"></script>
 <script src="../app/history.js"></script>
 <script src="../app/life.js"></script>
+<script src="../app/streets.js"></script>
+<script src="../app/report.js"></script>
 <script src="../app/locate.js"></script>
 </body>
 </html>

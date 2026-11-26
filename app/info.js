@@ -128,6 +128,7 @@
       setTimeout(() => share.textContent = '🔗 Teilen', 2500);
     };
     links.append(' ', share);
+    if (window.pixelMapReport) { const bug = document.createElement('button'); bug.className = 'share'; bug.textContent = '🐞 Fehler melden'; bug.onclick = () => pixelMapReport(b); links.append(' ', bug) }
     text('building-credit', intro ? `Text: ${i.attribution}. Fakten: Wikidata (CC0).` : '');
     // read aloud (spoken in advance with the chosen voice; see scripts/narrate.py)
     const say = el('building-say'), clips = (DATA.spoken || {})[b.wikidata];
@@ -176,6 +177,9 @@
   (function wait() { if (ready) fromHash(); else setTimeout(wait, 200) })();
   const closeHash = () => { if (/#gebaeude=/.test(location.hash)) try { history.replaceState(null, '', location.pathname + location.search) } catch {} };
   new MutationObserver(() => { if (panel.hidden) closeHash() }).observe(panel, { attributes: true, attributeFilter: ['hidden'] });
+  // for the error reporter: the building under a map point, and all buildings (for the nearest address)
+  window.pixelMapBuildingAt = async (mx, my) => ready ? byId.get(await idAt(mx, my)) || null : null;
+  window.pixelMapBuildings = () => new Set(byId.values());
   window.pixelMapShowBuilding = id => { const b = id ? byId.get(id) : null; if (b) show(b); else { panel.hidden = true; highlight(null) } };
   el('building-close').onclick = () => { panel.hidden = true; highlight(null) };
   el('building-more').onclick = () => { el('building-summary').classList.remove('clamped'); el('building-more').hidden = true };

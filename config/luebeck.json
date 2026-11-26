@@ -246,5 +246,6 @@
  ],
  "default_voice": "conrad",
  "layout": "seitenleiste",
+ "report": {"github": "hanse-dev/pixel-map", "label": "Kartenfehler"},
  "layout_note": "\"seitenleiste\" (Leiste links mit Tabs) oder \"klassisch\" (Leiste unten); zum Vergleich in der Adresse ?seite=1 bzw. ?seite=0"
 }
