@@ -35,7 +35,8 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 
 - Nachtfassung (outputs/night-pilot): sehr gut – ganze Karte ≈ 400 Fenster, mehrere Nächte
 - Drehen, Blick von Süden (outputs/south-pilot): stimmig – pro Richtung eine ganze Karte
-- Leere Straßen (outputs/nocars-pilot): Autos weg, Straßen mit Markierungen – für alle Straßen mehrere Nächte
+- Leere Straßen: ganze Karte fertig und online (26.11.)
+- Nachtfassung ganze Karte: läuft seit 26.11. 07:13 (391 Fenster, ≈ 33 h), Basis ist die Karte mit leeren Straßen
 - Hörprobe Chatterbox: ~Desktop/stimmen-vergleich (je ~5 Min. Rechenzeit pro 40 s Audio)
 
 ## Digitaler Zwilling
@@ -48,7 +49,7 @@ Offene Punkte für Pixel Map, die Lübeck-Karte und die Spiele. Stand: 22.11.202
 ## Website / UX
 
 - [x] **Leben auf der Straße** (Ansicht): Autos auf Fahrstraßen, Menschen auf Wegen und Plätzen, verdeckt durch Gebäude; aus bei „Bewegung reduzieren“, im Gedenken und beim Tiefeneffekt
-- [ ] Gemalte Autos entfernen: CPU-Retusche im Probelauf gescheitert (gemalte Straßen liegen nicht genau auf den OSM-Linien, Ziegelrot sieht aus wie Autos). Nächster Versuch: ein Fenster mit „leere Straßen, keine Autos“ auf der GPU neu malen
+- [x] Gemalte Autos entfernen: alle Straßen auf der GPU neu gemalt (378 Fenster, fertig 26.11.), veröffentlicht als Kacheln 859bb2b36ae9-9a507a, Sicherung luebeck-v4. Außerhalb der Straßenmaske kein Pixel verändert. Rest: einzelne Autos am Straßenrand, auf Parkplätzen und Brücken, wo die Maske nicht hinreicht
 - [ ] Später: Busse auf Buslinien, Züge auf Gleisen, Schiffe auf der Trave
 
 - [x] **Rundgänge überarbeitet**: 4 neue Rundgänge mit rotem Faden (Hanse · Hauptkirchen · Kaufmannshäuser/Thomas Mann/Willy Brandt · Klöster und Herbergen), Reihenfolge nach echten Fußwegen; Weg als Linie entlang der Straßen mit nummerierten Stationen; Übersicht vor dem Start mit Länge und Gehzeit; Fortsetzen bei der letzten Station; Abschluss mit Vorschlag für den nächsten
